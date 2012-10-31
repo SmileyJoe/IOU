@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_add_user"
+        android:icon="@drawable/add_user"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_add_user" />
+    <!-- <item android:id="@+id/menu_overflow"
+        android:icon="@drawable/overflow"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_overflow">
+        <menu>
+			<group android:id="@+id/menu_nav_group"
+				android:checkableBehavior="single">
+			    <item android:id="@+id/menu_filter"
+			        android:icon="@drawable/filter"
+			        android:showAsAction="ifRoom|withText"
+			        android:title="@string/menu_filter" />
+			    <item android:id="@+id/menu_sort"
+			        android:icon="@drawable/sort"
+			        android:showAsAction="ifRoom|withText"
+			        android:title="@string/menu_sort" />
+			    <item android:id="@+id/menu_settings"
+			        android:icon="@drawable/settings"
+			        android:showAsAction="ifRoom|withText"
+			        android:title="@string/menu_settings" />
+			</group>
+		</menu>
+    </item> -->
+    <item android:id="@+id/menu_filter"
+        android:icon="@drawable/filter"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_filter" />
+    <item android:id="@+id/menu_sort"
+        android:icon="@drawable/sort"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_sort" />
+    <item android:id="@+id/menu_settings"
+        android:icon="@drawable/settings"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_settings" />
+
+</menu>

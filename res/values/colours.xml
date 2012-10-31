@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="blue">#51A2C5</color>
+	<color name="black">#000000</color>
+	<color name="grey">#CCCCCC</color>
+	<color name="white">#FFFFFF</color>
+	<color name="transparent_color">#00000000</color>
+	<color name="light_grey">#B1B1B1</color>
+	<color name="dark_grey">#222222</color>
+	<color name="medium_grey">#2A2A2A</color>
+	<color name="green">#00FF00</color>
+	<color name="red">#FF0000</color>
+	
+
+	<color name="header_border">@color/blue</color>
+	<color name="header_button_stroke">@color/header_border</color>
+	<color name="positive_amount">@color/green</color>
+	<color name="negative_amount">@color/red</color>
+	<color name="linear_layout">@color/black</color>
+	
+	<color name="heading">@color/white</color>
+	
+	<color name="input_background">@color/black</color>
+	<color name="input_border">@color/blue</color>
+	<color name="dialog_content_background">@color/black</color>
+	<color name="app_background">@color/black</color>
+	<color name="app_font">@color/grey</color>
+	<color name="toast_text">@color/grey</color>
+	<color name="toast_background">@color/black</color>
+	<color name="toast_border">@color/blue</color>
+	<color name="image_grid_background">@color/black</color>
+	<color name="image_grid_text">@color/blue</color>
+	<color name="pager_indicator_selected">@color/white</color>
+	<color name="pager_indicator_backgroundk">@color/black</color>
+	<color name="pager_indicator_footer">@color/blue</color>
+	<color name="pager_indicator_text">@color/white</color>
+	<color name="spinner_dialog_text">@color/white</color>
+	<color name="spinner_dialog_background">@color/black</color>
+	<color name="button_text">@color/black</color>
+	<color name="button_disabled_text">@color/grey</color>
+	<color name="button_border">@color/blue</color>
+	<color name="button_background">@color/grey</color>
+	<color name="button_stroke">@color/black</color>
+	<color name="button_start">@color/light_grey</color>
+	<color name="button_end">@color/dark_grey</color>
+	<color name="button_pressed">@color/light_grey</color>
+	
+	<!-- Dark theme  -->
+	<color name="input_background_dark">@color/black</color>
+	<color name="input_border_dark">@color/blue</color>
+	<color name="dialog_content_background_dark">@color/black</color>
+	<color name="app_background_dark">@color/black</color>
+	<color name="app_font_dark">@color/grey</color>
+	<color name="toast_text_dark">@color/grey</color>
+	<color name="toast_background_dark">@color/black</color>
+	<color name="toast_border_dark">@color/blue</color>
+	<color name="image_grid_background_dark">@color/black</color>
+	<color name="image_grid_text_dark">@color/blue</color>
+	<color name="pager_indicator_selected_dark">@color/white</color>
+	<color name="pager_indicator_background_dark">@color/black</color>
+	<color name="pager_indicator_footer_dark">@color/blue</color>
+	<color name="pager_indicator_text_dark">@color/white</color>
+	<color name="spinner_dialog_text_dark">@color/white</color>
+	<color name="spinner_dialog_background_dark">@color/black</color>
+	<color name="button_text_dark">@color/black</color>
+	<color name="button_border_dark">@color/blue</color>
+	<color name="button_background_dark">@color/grey</color>
+	<color name="button_stroke_dark">@color/black</color>
+	<color name="button_start_dark">@color/light_grey</color>
+	<color name="button_end_dark">@color/dark_grey</color>
+	<color name="button_pressed_dark">@color/light_grey</color>
+	
+	<!-- Light theme  -->
+	<color name="input_background_light">@color/white</color>
+	<color name="input_border_light">@color/blue</color>
+	<color name="dialog_content_background_light">@color/white</color>
+	<color name="app_background_light">@color/white</color>
+	<color name="app_font_light">@color/grey</color>
+	<color name="toast_text_light">@color/grey</color>
+	<color name="toast_background_light">@color/white</color>
+	<color name="toast_border_light">@color/blue</color>
+	<color name="image_grid_background_light">@color/white</color>
+	<color name="image_grid_text_light">@color/blue</color>
+	<color name="pager_indicator_selected_light">@color/black</color>
+	<color name="pager_indicator_background_light">@color/white</color>
+	<color name="pager_indicator_footer_light">@color/blue</color>
+	<color name="pager_indicator_text_light">@color/black</color>
+	<color name="spinner_dialog_text_light">@color/black</color>
+	<color name="spinner_dialog_background_light">@color/white</color>
+	<color name="button_text_light">@color/black</color>
+	<color name="button_border_light">@color/blue</color>
+	<color name="button_background_light">@color/grey</color>
+	<color name="button_stroke_light">@color/white</color>
+	<color name="button_start_light">@color/light_grey</color>
+	<color name="button_end_light">@color/dark_grey</color>
+	<color name="button_pressed_light">@color/light_grey</color>		
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <!-- DARK -->
+    <style name="edit_text_dark" parent="@android:style/Widget.EditText">
+	    <item name="android:textColor">#FFFFFF</item>
+	    <item name="android:background">@drawable/input_dark</item>
+	    <item name="android:padding">5dip</item>
+	    <item name="android:minWidth">25dip</item>
+	</style>
+	
+    <style name="autocomplete_text_dark" parent="@android:style/Widget.AutoCompleteTextView">
+	    <item name="android:textColor">#FFFFFF</item>
+	    <item name="android:background">@drawable/input_dark</item>
+	    <item name="android:padding">5dip</item>
+	    <item name="android:minWidth">25dip</item>
+	</style>
+	
+	<style name="dialog_content_dark">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@color/dialog_content_background_dark</item>
+		<item name="android:padding">5dip</item>
+	</style>
+    
+<!--     <style name="spinner_dark" parent="@android:style/Widget.Spinner">
+    	<item name="android:background">@drawable/spinner_background</item>
+    	<item name="android:paddingLeft">5dip</item>
+    	<item name="android:paddingRight">25dip</item>
+    	<item name="android:layout_marginRight">20dip</item>
+    </style>  -->
+    
+<!-- 	<style name="page_indicator_dark">
+        <item name="footerColor">@color/pager_indicator_footer_dark</item>
+        <item name="footerLineHeight">1dp</item>
+        <item name="footerIndicatorHeight">3dp</item>
+        <item name="footerIndicatorStyle">underline</item>
+        <item name="selectedColor">@color/pager_indicator_selected_dark</item>
+        <item name="selectedBold">true</item>
+    </style>  -->
+    
+    <style name="spinner_dialog_dark" parent="@android:style/Widget.DropDownItem.Spinner">
+        <item name="android:textColor">@color/spinner_dialog_text_dark</item>
+        <item name="android:background">@null</item>
+       	<item name="android:windowFrame">@null</item>
+	    <item name="android:windowContentOverlay">@null</item>
+	    <item name="android:windowBackground">@color/transparent_color</item>
+        <!-- <item name="android:checkMark">@drawable/radio_button</item>  -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    
+    <style name="popup_window" parent="@android:style/Widget.PopupWindow">
+        <item name="android:popupBackground">@drawable/dialog_background</item>
+        <item name="android:background">@drawable/dialog_background</item>
+    </style>
+    
+    <style name="grid_view_dark" parent="@android:style/Widget.GridView">
+        <item name="android:textColor">@color/image_grid_text_dark</item>
+        <item name="android:background">@color/image_grid_background_dark</item>
+    </style>    
+    
+    <style name="button_dark" parent="@android:style/Widget.Button">
+	    <item name="android:textColor">@color/button_text_dark</item>
+	    <item name="android:background">@drawable/button_dark</item>
+	    <item name="android:textSize">15dip</item>
+	    <item name="android:padding">10dip</item>
+	</style>
+</resources>

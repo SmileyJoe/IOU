@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:id="@+id/rl_main_wrapper">
+    
+    <!-- HEADER -->
+    
+<!--    	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/rl_header_wrapper"
+		style="@style/header_wrapper">
+		<ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/default_user_large"
+	        android:id="@+id/iv_header_image">
+	    </ImageView>
+		<TextView
+			style="@style/header_title"
+			android:id="@+id/tv_header_text"
+    		android:text="@string/title_main"
+    		android:layout_alignParentLeft="false"
+    		android:layout_toRightOf="@id/iv_header_image"/>
+		<ImageView 
+		    android:layout_width="15dip"
+		    android:layout_height="15dip"
+		    android:id="@+id/iv_menu_dropdown"
+		 	android:layout_toRightOf="@id/tv_header_text"
+		 	android:src="@drawable/dropdown_indicator"
+		 	android:baselineAlignBottom="true"
+		 	android:layout_alignBaseline="@id/tv_header_text">
+		</ImageView>
+		<Button
+			style="@style/header_overflow"
+			android:id="@+id/bt_overflow"
+    		android:text=" ">
+		</Button>
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:id="@+id/ll_add_wrapper"
+		    android:layout_centerVertical="true"
+		    android:layout_toLeftOf="@id/bt_overflow">
+			<Button
+				style="@style/header_button_add_user"
+				android:id="@+id/bt_add_user"
+	    		android:text=" "/>
+			<Button
+				style="@style/header_button_add_group"
+				android:id="@+id/bt_add_group"
+	    		android:text=" "
+	    		android:visibility="gone"/>    
+		</LinearLayout>
+		<Button
+			style="@style/header_filter"
+			android:id="@+id/bt_filter"
+    		android:text=" "
+    		android:layout_alignParentRight="false"
+    		android:layout_toLeftOf="@id/ll_add_wrapper"
+    		android:visibility="gone">
+		</Button>
+		<Button
+			style="@style/header_sort"
+			android:id="@+id/bt_sort"
+    		android:text=" "
+    		android:layout_alignParentRight="false"
+    		android:layout_toLeftOf="@id/bt_filter"
+    		android:visibility="gone">
+		</Button>
+		<Button
+			style="@style/header_settings"
+			android:id="@+id/bt_settings"
+	  		android:text=" "
+	  		android:layout_alignParentRight="false"
+    		android:layout_toLeftOf="@id/bt_sort"
+    		android:visibility="gone"/>
+	</RelativeLayout>  -->
+	
+   	<!-- DROPDOWNS -->
+   	
+<!-- 	<LinearLayout
+	    style="@style/header_drop_down_wrapper"
+		android:id="@+id/ll_header_menu_wrapper"
+		android:layout_alignLeft="@id/iv_menu_dropdown">
+		<LinearLayout
+		    style="@style/drop_menu_item_wrapper"
+		    android:id="@+id/ll_header_menu_individual">
+		    <ImageView
+				style="@style/drop_menu_item_image"
+		        android:src="@drawable/default_user">
+		    </ImageView>
+			<TextView
+			    style="@style/drop_menu_item_text"
+				android:text="@string/menu_individual">
+			</TextView>    
+		</LinearLayout>
+		<include layout="@layout/xml_1dip_line" />
+		<LinearLayout
+		   	style="@style/drop_menu_item_wrapper"
+		    android:id="@+id/ll_header_menu_group">
+		    <ImageView
+		        style="@style/drop_menu_item_image"
+		        android:src="@drawable/default_group">
+		    </ImageView>
+			<TextView
+			   	style="@style/drop_menu_item_text"
+				android:text="@string/menu_group">
+			</TextView>    
+		</LinearLayout>
+	</LinearLayout>
+	
+	<LinearLayout
+	    style="@style/header_drop_down_wrapper"
+		android:id="@+id/ll_menu_individual_wrapper"
+		android:layout_alignParentRight="true">
+		<LinearLayout
+		    style="@style/drop_menu_item_wrapper"
+		    android:id="@+id/ll_individual_filter">
+		    <ImageView
+				style="@style/drop_menu_item_image"
+		        android:src="@drawable/filter">
+		    </ImageView>
+			<TextView
+			    style="@style/drop_menu_item_text"
+				android:text="@string/menu_filter">
+			</TextView>    
+		</LinearLayout>
+		<include layout="@layout/xml_1dip_line" />
+		<LinearLayout
+		   	style="@style/drop_menu_item_wrapper"
+		    android:id="@+id/ll_individual_sort">
+		    <ImageView
+		        style="@style/drop_menu_item_image"
+		        android:src="@drawable/sort">
+		    </ImageView>
+			<TextView
+			   	style="@style/drop_menu_item_text"
+				android:text="@string/menu_sort">
+			</TextView>    
+		</LinearLayout>
+		<include layout="@layout/xml_1dip_line" />
+		<LinearLayout
+		   	style="@style/drop_menu_item_wrapper"
+		    android:id="@+id/ll_settings">
+		    <ImageView
+		        style="@style/drop_menu_item_image"
+		        android:src="@drawable/settings">
+		    </ImageView>
+			<TextView
+			   	style="@style/drop_menu_item_text"
+				android:text="@string/menu_settings">
+			</TextView>    
+		</LinearLayout>
+	</LinearLayout>
+	
+	<LinearLayout
+	    style="@style/header_drop_down_wrapper"
+		android:id="@+id/ll_menu_group_wrapper"
+		android:layout_alignParentRight="true">
+		<LinearLayout
+		   	style="@style/drop_menu_item_wrapper"
+		    android:id="@+id/ll_settings_group">
+		    <ImageView
+		        style="@style/drop_menu_item_image"
+		        android:src="@drawable/settings">
+		    </ImageView>
+			<TextView
+			   	style="@style/drop_menu_item_text"
+				android:text="@string/menu_settings">
+			</TextView>    
+		</LinearLayout>
+	</LinearLayout>  -->
+
+	<!-- LISTS -->
+	
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:id="@+id/ll_user_list"
+		android:layout_below="@id/rl_header_wrapper">
+		<ListView
+			android:id="@+id/lv_user_list"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_below="@id/rl_header_wrapper">
+		</ListView>
+		<TextView 
+		    android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:id="@+id/tv_no_users"
+			android:visibility="gone"
+			android:gravity="center"
+			android:textStyle="bold"
+			android:textSize="15dip">
+		</TextView>    
+	</LinearLayout>
+ 	
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:id="@+id/ll_group_list"
+		android:visibility="gone"
+		android:layout_below="@id/rl_header_wrapper">
+	    <ListView
+			android:id="@+id/lv_group_list"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+		</ListView>
+		<TextView 
+		    android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:id="@+id/tv_no_groups"
+			android:visibility="gone"
+			android:gravity="center"
+			android:textStyle="bold"
+			android:textSize="15dip">
+		</TextView>
+	</LinearLayout>
+	
+	<!-- HIDDEN SPINNERS -->
+	
+	<Spinner 
+	    android:layout_height="0dip"
+	    android:layout_width="0dip"
+	    android:id="@+id/sp_filter"
+	    android:popupBackground="@drawable/dialog_background"
+	    android:windowBackground="@drawable/dialog_background"
+	    android:background="@drawable/dialog_background">
+	</Spinner>
+	<Spinner 
+	    android:layout_height="0dip"
+	    android:layout_width="0dip"
+	    android:id="@+id/sp_sort"
+	    android:popupBackground="@drawable/dialog_background"
+	    android:windowBackground="@drawable/dialog_background"
+	    android:background="@drawable/dialog_background">
+	</Spinner>
+	<Spinner 
+	    android:layout_height="0dip"
+	    android:layout_width="0dip"
+	    android:id="@+id/sp_email_list"
+	    android:popupBackground="@drawable/dialog_background"
+	    android:windowBackground="@drawable/dialog_background"
+	    android:background="@drawable/dialog_background">
+	</Spinner>
+	<Spinner 
+	    android:layout_height="0dip"
+	    android:layout_width="0dip"
+	    android:id="@+id/sp_phone_number_list"
+	    android:popupBackground="@drawable/dialog_background"
+	    android:windowBackground="@drawable/dialog_background"
+	    android:background="@drawable/dialog_background">
+	</Spinner>
+</RelativeLayout>
