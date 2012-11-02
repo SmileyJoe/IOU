@@ -106,13 +106,33 @@
     <string name="repayment_description">Repayment</string>
     <string name="tv_no_repayments">The group is all squared up</string>
     
+    <string name="tv_sp_filter_title">Filter:</string>
+    <string name="tv_sp_sort_title">Sort:</string>
+    
+    <!-- SPINNERS -->
+    
+    <string-array name="sp_user_list_filter">
+        <item>All</item>
+        <item>Owe me</item>
+        <item>I owe</item>
+        <item>Neutral</item>
+    </string-array>
+    
+    <string-array name="sp_user_list_sort">
+        <item>Alphabetical</item>
+        <item>Owe me - I owe</item>
+        <item>I owe - Owe me</item>
+    </string-array>
+    
     <!-- MENU BAR -->
     
     <string name="bar_title_user_new">New User</string>
     <string name="bar_title_user_edit">Edit User</string>
     <string name="bar_title_user_view">User Details</string>
+    <string name="bar_title_user_list">Users</string>
     <string name="bar_title_payment_new">New Payment</string>
     <string name="bar_title_payment_edit">Edit Payment</string>
+    <string name="bar_title_group_list">Groups</string>
     
     <!-- DROPDOWN MENUS -->
     
@@ -126,6 +146,7 @@
     <string name="menu_add_user">Add User</string>
     <string name="menu_overflow">More</string>
     <string name="menu_add_payment">Add Payment</string>
+    <string name="menu_add_group">Add Group</string>
     
     <!-- DIALOG HEADINGS -->
     

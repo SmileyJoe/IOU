@@ -82,12 +82,12 @@ public class Views {
 	}
 	
 	public void user_list(ArrayList<User> users, LinearLayout llUserList, boolean showCheck) {
-		TextView tv = (TextView) llUserList.findViewById(R.id.tv_no_users);
+//		TextView tv = (TextView) llUserList.findViewById(R.id.tv_no_users);
 		ListView list = (ListView) llUserList.findViewById(R.id.lv_user_list);
 		if(users.size() == 0){
-			tv.setText(this.context.getText(R.string.tv_no_users).toString());
-			tv.setVisibility(View.VISIBLE);
-			list.setVisibility(View.GONE);
+//			tv.setText(this.context.getText(R.string.tv_no_users).toString());
+//			tv.setVisibility(View.VISIBLE);
+//			list.setVisibility(View.GONE);
 		} else {
 			int first = list.getFirstVisiblePosition();
 			View topChild = list.getChildAt(0);
@@ -102,7 +102,7 @@ public class Views {
 			UserListAdapter adapter = new UserListAdapter(this.context, users, showCheck);
 			list.setAdapter(adapter);
 			list.setSelectionFromTop(first, top);
-			tv.setVisibility(View.GONE);
+//			tv.setVisibility(View.GONE);
 			list.setVisibility(View.VISIBLE);
 		}
 	}
@@ -130,12 +130,12 @@ public class Views {
 	}
 	
 	public void group_list(ArrayList<Group> groups, LinearLayout llGroupList) {
-		TextView tv = (TextView) llGroupList.findViewById(R.id.tv_no_groups);
+//		TextView tv = (TextView) llGroupList.findViewById(R.id.tv_no_groups);
 		ListView list = (ListView) llGroupList.findViewById(R.id.lv_group_list);
 		if(groups.size() == 0){
-			tv.setText(this.context.getText(R.string.tv_no_groups).toString());
-			tv.setVisibility(View.VISIBLE);
-			list.setVisibility(View.GONE);
+//			tv.setText(this.context.getText(R.string.tv_no_groups).toString());
+//			tv.setVisibility(View.VISIBLE);
+//			list.setVisibility(View.GONE);
 		} else {
 			int first = list.getFirstVisiblePosition();
 			View topChild = list.getChildAt(0);
@@ -150,7 +150,7 @@ public class Views {
 			GroupListAdapter adapter = new GroupListAdapter(this.context, groups);
 			list.setAdapter(adapter);
 			list.setSelectionFromTop(first, top);
-			tv.setVisibility(View.GONE);
+//			tv.setVisibility(View.GONE);
 			list.setVisibility(View.VISIBLE);
 		}
 	}

@@ -32,6 +32,8 @@ public class Constants {
 	public static final int ACTIVITY_GROUP_REPAYMENT = 15;
 	public static final int ACTIVITY_GROUP_PAYMENT_EDIT = 16;
 	public static final int ACTIVITY_GROUP_USER_PAYMENT_DETAILS = 17;
+	public static final int ACTIVITY_USER_LIST = 18;
+	public static final int ACTIVITY_GROUP_LIST = 19;
 	
 	public static final int PAYMENT = 101;
 	public static final int USER = 102;

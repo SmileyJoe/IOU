@@ -36,6 +36,16 @@ public class Intents {
 		return intent;
 	}
 	
+	public static Intent user_list(Context context){
+		Intent intent = new Intent(context, UserList.class);
+		return intent;
+	}
+	
+	public static Intent group_list(Context context){
+		Intent intent = new Intent(context, GroupList.class);
+		return intent;
+	}
+	
 	public static Intent edit_user(Context context, int userId){
 		Intent intent = new Intent(context, UserNew.class);
 		

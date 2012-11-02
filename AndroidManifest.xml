@@ -47,6 +47,12 @@
    		<activity android:name=".UserNew" 
 			android:label="@string/bar_title_user_new">
    		</activity>
+   		<activity android:name=".UserList" 
+			android:label="@string/bar_title_user_list">
+   		</activity>
+   		<activity android:name=".GroupList" 
+			android:label="@string/bar_title_group_list">
+   		</activity>
    		<activity android:name=".UserView" 
    		    android:label="@string/bar_title_user_view">
 		</activity>
