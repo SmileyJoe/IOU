@@ -89,7 +89,6 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     }
     
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
 			case R.id.menu_add_user:
 				startActivityForResult(Intents.new_user(this), Constants.ACTIVITY_NEW_USER);

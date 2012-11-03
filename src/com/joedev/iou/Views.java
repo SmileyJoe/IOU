@@ -202,6 +202,11 @@ public class Views {
 	 * GENERAL
 	 *****************************************************/
 	
+	public void action_grid(ArrayList<User> users, GridView gvActionGrid) {
+		ActionGridAdapter adapter = new ActionGridAdapter(this.context, users);
+		gvActionGrid.setAdapter(adapter);
+	}
+	
 	public TextView add_td(int content, int width) {
 		return this.add_td(Integer.toString(content), width);
 	}

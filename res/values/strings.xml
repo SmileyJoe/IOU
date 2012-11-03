@@ -109,6 +109,9 @@
     <string name="tv_sp_filter_title">Filter:</string>
     <string name="tv_sp_sort_title">Sort:</string>
     
+    <string name="dash_summary_total_user_owed">You owe</string>
+    <string name="dash_summary_total_owed_user">Owed to you</string>
+    
     <!-- SPINNERS -->
     
     <string-array name="sp_user_list_filter">

@@ -4,8 +4,118 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-	
-    <Button 
+    <LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="60dip"
+		android:paddingTop="5dip"
+		android:paddingBottom="5dip"
+		android:paddingLeft="5dip"
+		android:background="@color/dark_grey"
+		android:weightSum="1.0"
+		android:orientation="horizontal">
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:orientation="vertical"
+		    android:gravity="center_vertical"
+		    android:paddingRight="20dip"
+		    android:paddingLeft="20dip"
+		    android:layout_weight="0.45">
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center_horizontal"
+		        android:text="@string/dash_summary_total_owed_user"
+		        android:textColor="@color/green">
+		    </TextView>
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/tv_total_owed_user"
+		        android:gravity="center_horizontal"
+		        android:text="0.00"
+		        android:textColor="@color/green">
+		    </TextView>
+		</LinearLayout>
+		<View 
+		    android:background="@color/light_grey"
+		    android:layout_width="1dip"
+		    android:layout_height="fill_parent">
+		</View>
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:orientation="vertical"
+		    android:gravity="center_vertical"
+		    android:paddingRight="20dip"
+		    android:paddingLeft="20dip"
+		    android:layout_weight="0.45">
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/tv_total_state_text"
+		        android:gravity="center_horizontal"
+		        android:text="@string/dash_summary_total_user_owed"
+		        android:textColor="@color/red">
+		    </TextView>
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/tv_total_user_owed"
+		        android:gravity="center_horizontal"
+		        android:text="0.00"
+		        android:textColor="@color/red">
+		    </TextView>
+		</LinearLayout>
+	</LinearLayout>
+    <LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="60dip"
+		android:orientation="horizontal"
+		android:id="@+id/ll_user_list_wrapper">
+	    <View 
+		    android:layout_width="4dip"
+		    android:layout_height="fill_parent"
+		    android:background="@color/red">
+		</View>
+		<TextView 
+		    android:layout_height="wrap_content"
+		    android:layout_width="fill_parent"
+		    android:text="All Users"
+		    android:paddingLeft="10dip"
+		    android:textSize="25dip"
+		    android:textStyle="bold"
+		    android:layout_gravity="center_vertical">
+		</TextView>
+	</LinearLayout>
+    <LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="60dip"
+		android:orientation="horizontal"
+		android:id="@+id/ll_group_list_wrapper">
+	    <View 
+		    android:layout_width="4dip"
+		    android:layout_height="fill_parent"
+		    android:background="@color/green">
+		</View>
+		<TextView 
+		    android:layout_height="wrap_content"
+		    android:layout_width="fill_parent"
+		    android:text="All Groups"
+		    android:paddingLeft="10dip"
+		    android:textSize="25dip"
+		    android:textStyle="bold"
+		    android:layout_gravity="center_vertical">
+		</TextView>
+	</LinearLayout>
+	<GridView
+	    android:id="@+id/gv_actions"
+	    android:numColumns="3"
+	    android:stretchMode="columnWidth"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	</GridView>
+<!--     <Button 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bt_user_list"
@@ -17,6 +127,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/bt_group_list"
         android:text="Group List">
-    </Button>
+    </Button>  -->
     
 </LinearLayout>

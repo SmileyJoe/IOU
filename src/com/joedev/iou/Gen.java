@@ -119,6 +119,30 @@ public class Gen {
 		return imageFound;
 	}
 	
+	public static boolean set_action_image(Context context, ImageView ivUserImage, User user){
+		boolean imageFound = false;
+		String userName = user.get_name();
+		if(user.is_in_contact_dir()){
+			Contacts cont = new Contacts(context);
+			Bitmap image = cont.get_photo(user.get_contact_id());
+			
+			try{
+				image.equals(null);
+				ivUserImage.setImageBitmap(image);
+				imageFound = true;
+			} catch (NullPointerException e){
+				ivUserImage.setImageResource(R.drawable.default_user_large);
+//				ivUserImage.setBackgroundColor(context.getResources().getColor(R.color.medium_grey));
+			}
+			
+		} else {
+			ivUserImage.setImageResource(R.drawable.default_user_large);
+//			ivUserImage.setBackgroundColor(context.getResources().getColor(R.color.medium_grey));
+		}
+		
+		return imageFound;
+	}
+	
 	public static String get_amount_text(float amount){
 		boolean positive;
 		
