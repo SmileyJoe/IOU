@@ -20,6 +20,7 @@ public class DbGroupAdapter {
 	private DbUserAdapter userAdapter;
 	private int idCol;
 	private int titleCol;
+	private int descriptionCol;
 	private DbGroupPaymentAdapter groupPaymentAdapter;
 	
 	/*****************************************
@@ -149,7 +150,7 @@ public class DbGroupAdapter {
 	
 	private void set_cursor(String where){
 		this.cursor = this.db.rawQuery(
-				"SELECT _id, group_title "
+				"SELECT _id, group_title, group_description "
 				+ "FROM group_detail "
 				+ " " + where + " "
 				+ "ORDER BY group_title DESC", null);
@@ -158,6 +159,7 @@ public class DbGroupAdapter {
 	private void set_coloumns(){
 		this.idCol = this.cursor.getColumnIndex("_id");
 		this.titleCol = this.cursor.getColumnIndex("group_title");
+		this.descriptionCol = this.cursor.getColumnIndex("group_description");
 	}
 	
 	private Group get_group_data(){
@@ -165,6 +167,7 @@ public class DbGroupAdapter {
 		
 		group.set_id(this.cursor.getInt(this.idCol));
 		group.set_title(this.cursor.getString(this.titleCol));
+		group.set_description(this.cursor.getString(this.descriptionCol));
 		group.set_users(this.userAdapter.get_by_group(group.get_id()));
 		
 		return group;
@@ -206,6 +209,7 @@ public class DbGroupAdapter {
 		ContentValues values = new ContentValues();
 		
 		values.put("group_title", group.get_title());
+		values.put("group_description", group.get_description());
 		
 		return values;
 	}

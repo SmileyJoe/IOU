@@ -24,6 +24,8 @@
 		android:id="@+id/tv_user_name"
 		android:layout_toLeftOf="@id/et_amount"
 		android:layout_toRightOf="@id/iv_user_image"
-		android:layout_centerVertical="true">
+		android:layout_centerVertical="true"
+		android:paddingLeft="10dip"
+		android:paddingRight="10dip">
 	</TextView>
 </RelativeLayout>

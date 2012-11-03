@@ -10,7 +10,7 @@ public class Db {
 	private static final String CREATE_USER_REL_PAYMENT = "CREATE TABLE user_rel_payment (_id integer primary key autoincrement, user_id int not null, payment_id int not null);";
 	private static final String CREATE_GROUP_REL_PAYMENT = "CREATE TABLE group_rel_payment (_id integer primary key autoincrement, group_id int not null, payment_id int not null);";
 	private static final String CREATE_USER_REL_GROUP = "CREATE TABLE user_rel_group (_id integer primary key autoincrement, group_id int not null, user_id int not null);";
-	private static final String CREATE_GROUP_DETAIL = "CREATE TABLE group_detail (_id integer primary key autoincrement, group_title text);";
+	private static final String CREATE_GROUP_DETAIL = "CREATE TABLE group_detail (_id integer primary key autoincrement, group_title text, group_description text);";
 	private static final String CREATE_PAYMENT_SPLIT = "CREATE TABLE payment_split (_id integer primary key autoincrement, payment_id int not null, user_id int not null, payment_amount float not null, split_type int not null);";
 	
 	
@@ -73,6 +73,10 @@ public class Db {
 		
 		if(!is_column_exists(database, "payment", "payment_title")){
 			database.execSQL("ALTER TABLE payment ADD payment_title text DEFAULT '' not null");
+		}
+		
+		if(!is_column_exists(database, "group_detail", "group_description")){
+			database.execSQL("ALTER TABLE group_detail ADD group_description text DEFAULT '' not null");
 		}
 		
 	}

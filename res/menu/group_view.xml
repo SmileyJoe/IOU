@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_add_payment"
+        android:icon="@drawable/add_payment"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_add_payment" />
+    <item android:id="@+id/menu_repayment"
+        android:icon="@drawable/info"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_repayment" />
+    <item android:id="@+id/menu_user_details"
+        android:icon="@drawable/info"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_user_details" />
+</menu>

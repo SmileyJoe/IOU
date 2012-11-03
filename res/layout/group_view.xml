@@ -1,70 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
     android:id="@+id/rl_main_wrapper">
-    <RelativeLayout
-		android:layout_width="fill_parent"
-		android:layout_height="60dip"
-		android:layout_alignParentTop="true"
-		android:id="@+id/rl_header_wrapper"
-		style="@style/header_wrapper">
-		<Button
-			style="@style/header_overflow"
-			android:id="@+id/bt_overflow"
-    		android:text=" ">
-		</Button>
-		<Button
-			style="@style/header_button_add_payment"
-			android:id="@+id/bt_add_payment"
-    		android:text=" "
-    		android:layout_alignParentRight="false"
-		    android:layout_toLeftOf="@id/bt_overflow"/>
-		<TextView
-		    style="@style/header_title"
-			android:id="@+id/tv_header_text"
-    		android:text="@string/title_main"
-    		android:background="@null"
-    		android:layout_toLeftOf="@id/bt_add_payment"
-    		android:layout_alignParentLeft="true"
-    		android:singleLine="true"/>
-	</RelativeLayout>
-	
-	<LinearLayout
-	    style="@style/header_drop_down_wrapper"
-		android:id="@+id/ll_overflow_wrapper"
-		android:layout_alignParentRight="true">
-		<LinearLayout
-		   	style="@style/drop_menu_item_wrapper"
-		    android:id="@+id/ll_repayment">
-		    <ImageView
-		        style="@style/drop_menu_item_image"
-		        android:src="@drawable/info">
-		    </ImageView>
-			<TextView
-			   	style="@style/drop_menu_item_text"
-				android:text="@string/menu_group_payback">
-			</TextView>    
-		</LinearLayout>
-		<LinearLayout
-		   	style="@style/drop_menu_item_wrapper"
-		    android:id="@+id/ll_user_details">
-		    <ImageView
-		        style="@style/drop_menu_item_image"
-		        android:src="@drawable/info">
-		    </ImageView>
-			<TextView
-			   	style="@style/drop_menu_item_text"
-				android:text="@string/menu_user_details">
-			</TextView>    
-		</LinearLayout>
-	</LinearLayout>
-    
 	<ListView
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
-	    android:id="@+id/lv_payment_list"
-	    android:layout_below="@id/rl_header_wrapper">
+	    android:id="@+id/lv_payment_list">
 	</ListView>
-</RelativeLayout>
+</LinearLayout>

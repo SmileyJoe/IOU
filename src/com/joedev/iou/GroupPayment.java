@@ -7,6 +7,7 @@ public class GroupPayment {
 	private int id;
 	private float amount;
 	private int type;
+	private String title;
 	private String description;
 	private long pdt;
 	private int groupId;
@@ -20,6 +21,7 @@ public class GroupPayment {
 		this.id = 0;
 		this.amount = 0;
 		this.type = 0;
+		this.title = "";
 		this.description = "";
 		this.pdt = Gen.get_pdt();
 		this.splits = new ArrayList<PaymentSplit>();
@@ -40,6 +42,10 @@ public class GroupPayment {
 	
 	public void set_type(int type) {
 		this.type = type;
+	}
+	
+	public void set_title(String title) {
+		this.title = title;
 	}
 	
 	public void set_description(String description) {
@@ -86,6 +92,10 @@ public class GroupPayment {
 	
 	public int get_type() {
 		return type;
+	}
+	
+	public String get_title() {
+		return title;
 	}
 	
 	public String get_description() {

@@ -28,7 +28,6 @@ public class PopupDelete extends SherlockActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		Gen.setTheme(this);
 		setContentView(R.layout.popup_delete);
-		Gen.fill_window(getWindow());
 		Bundle extras = getIntent().getExtras();
 		this.sectionId = extras.getInt("section_id");
 		

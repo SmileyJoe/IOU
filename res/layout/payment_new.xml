@@ -67,7 +67,11 @@
 		        android:layout_width="fill_parent"
 		        android:id="@+id/et_payment_description"
 		        android:hint="@string/et_payment_description_hint"
-		        android:layout_marginTop="10dip">
+		        android:layout_marginTop="10dip"
+		        android:singleLine="false"
+			    android:minLines="3"
+			    android:maxLines="4"
+			    android:scrollbars="vertical">
 		    </EditText>
 		    <EditText
 		        android:layout_height="wrap_content"

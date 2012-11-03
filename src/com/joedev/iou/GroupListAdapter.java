@@ -48,9 +48,11 @@ public class GroupListAdapter extends BaseAdapter {
 		convertView = inflater.inflate(R.layout.xml_group_row, null);
 		
 		TextView tvGroupTitle = (TextView) convertView.findViewById(R.id.tv_group_title);
+		TextView tvGroupDescription = (TextView) convertView.findViewById(R.id.tv_group_description);
 		LinearLayout llGroupDetails = (LinearLayout) convertView.findViewById(R.id.ll_group_details);
 		
 		tvGroupTitle.setText(group.get_title());
+		tvGroupDescription.setText(group.get_description());
 		llGroupDetails.addView(views.add_field(R.string.tv_user_list_title, Gen.get_user_csv(group.get_users())));
 		
 //		Gen.set_group_image(this.context, ivUserImage, user);

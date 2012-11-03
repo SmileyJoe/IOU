@@ -29,9 +29,6 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		setContentView(R.layout.group_user_payment_details);
 		this.initialize();
 		
-		TextView tvDialogHeading = (TextView) findViewById(R.id.tv_dialog_heading);
-		tvDialogHeading.setText("User Details");
-		
 		Bundle extras = getIntent().getExtras();
 		
 		int groupId = extras.getInt("group_id");

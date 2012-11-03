@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     style="@style/dialog_content">"
-    <include layout="@layout/dialog_heading"/>
 	<ScrollView 
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
@@ -14,17 +13,22 @@
 		    android:layout_width="fill_parent"
 		    android:layout_height="fill_parent"
 		    android:orientation="vertical" >
-		    <TextView
+			<EditText
 		        android:layout_height="wrap_content"
 		        android:layout_width="fill_parent"
-		        android:id="@+id/tv_payment_description"
-		        android:text="@string/tv_payment_description">
-		    </TextView>
+		        android:id="@+id/et_payment_title"
+		        android:hint="@string/et_payment_title_hint"
+		        android:singleLine="true">
+		    </EditText>
 		    <EditText
 		        android:layout_height="wrap_content"
 		        android:layout_width="fill_parent"
 		        android:id="@+id/et_payment_description"
-		        android:hint="@string/et_payment_description_hint">
+		        android:hint="@string/et_payment_description_hint"
+		        android:singleLine="false"
+			    android:minLines="3"
+			    android:maxLines="4"
+			    android:scrollbars="vertical">
 		    </EditText>
 		   	<TextView
 		        android:layout_height="wrap_content"

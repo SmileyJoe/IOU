@@ -11,7 +11,7 @@ public class Constants {
 	public static final String TEMP_IMAGE_NAME = "temp";
 	
 	public static final String DB_NAME = "iou";
-	public static final int DB_VERSION = 19;
+	public static final int DB_VERSION = 21;
 	
 	public static final String PREFERENCE_NAME = "iou";
 	

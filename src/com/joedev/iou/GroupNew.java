@@ -2,6 +2,11 @@ package com.joedev.iou;
 
 import java.util.ArrayList;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +21,12 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class GroupNew extends Activity implements OnClickListener, OnItemClickListener {
+public class GroupNew extends SherlockActivity implements OnClickListener, OnItemClickListener {
 	
 	private Button btSave;
 	private Button btCancel;
 	private EditText etGroupTitle;
+	private EditText etGroupDescription;
 	private ListView lvUserList;
 	private ArrayList<User> users;
 	private Views views;
@@ -28,7 +34,7 @@ public class GroupNew extends Activity implements OnClickListener, OnItemClickLi
 	private DbGroupAdapter groupAdapter;
 	private Group group;
 	private boolean edit;
-	private Button btAddUser;
+//	private Button btAddUser;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,9 +43,9 @@ public class GroupNew extends Activity implements OnClickListener, OnItemClickLi
         setContentView(R.layout.group_new);
         
         this.initialize();
-        
-		TextView tvDialogHeading = (TextView) findViewById(R.id.tv_dialog_heading);
-		tvDialogHeading.setText(R.string.dialog_heading_group_new);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//		TextView tvDialogHeading = (TextView) findViewById(R.id.tv_dialog_heading);
+//		tvDialogHeading.setText(R.string.dialog_heading_group_new);
         
         try{
 			Bundle extras = getIntent().getExtras();
@@ -72,12 +78,34 @@ public class GroupNew extends Activity implements OnClickListener, OnItemClickLi
         this.populate_view();
     }
     
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getSupportMenuInflater();
+        inflater.inflate(R.menu.group_new, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+			case R.id.menu_add_user:
+				startActivityForResult(Intents.new_user(this), Constants.ACTIVITY_NEW_USER);
+				return true;
+			case android.R.id.home:
+				finish();
+				return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+        }
+
+    }
+    
     private void initialize(){
     	this.btSave = (Button) findViewById(R.id.bt_save);
     	this.btSave.setOnClickListener(this);
     	this.btCancel = (Button) findViewById(R.id.bt_cancel);
     	this.btCancel.setOnClickListener(this);
     	this.etGroupTitle = (EditText) findViewById(R.id.et_group_title);
+    	this.etGroupDescription = (EditText) findViewById(R.id.et_group_description);
     	this.lvUserList = (ListView) findViewById(R.id.lv_user_list);
     	this.lvUserList.setOnItemClickListener(this);
     	this.users = new ArrayList<User>();
@@ -86,8 +114,8 @@ public class GroupNew extends Activity implements OnClickListener, OnItemClickLi
     	this.groupAdapter = new DbGroupAdapter(this);
     	this.group = new Group();
     	this.edit = false;
-    	this.btAddUser = (Button) findViewById(R.id.bt_add_user);
-    	this.btAddUser.setOnClickListener(this);
+//    	this.btAddUser = (Button) findViewById(R.id.bt_add_user);
+//    	this.btAddUser.setOnClickListener(this);
     }
     
     private void populate_view(){
@@ -96,6 +124,7 @@ public class GroupNew extends Activity implements OnClickListener, OnItemClickLi
     	} else {
     		this.users = this.group.get_users();
     		this.etGroupTitle.setText(this.group.get_title());
+    		this.etGroupDescription.setText(this.group.get_description());
     	}
     	
     	this.views.user_list(this.users, this.lvUserList, true);
@@ -108,6 +137,7 @@ public class GroupNew extends Activity implements OnClickListener, OnItemClickLi
 				String groupTitle = this.etGroupTitle.getText().toString().trim();
 				
 				this.group.set_title(groupTitle);
+				this.group.set_description(this.etGroupDescription.getText().toString().trim());
 				this.group.set_users(this.users);
 				
 				if(!this.edit){
@@ -128,9 +158,9 @@ public class GroupNew extends Activity implements OnClickListener, OnItemClickLi
 			case R.id.bt_cancel:
 				finish();
 				break;
-			case R.id.bt_add_user:
-				startActivityForResult(Intents.new_user(this), Constants.ACTIVITY_NEW_USER);
-				break;
+//			case R.id.bt_add_user:
+//				startActivityForResult(Intents.new_user(this), Constants.ACTIVITY_NEW_USER);
+//				break;
 		}
 		
 	}

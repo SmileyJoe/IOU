@@ -49,9 +49,11 @@ public class GroupPaymentListAdapter extends BaseAdapter {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		convertView = inflater.inflate(R.layout.xml_group_payment_row, null);
 		
+		TextView tvPaymentTitle = (TextView) convertView.findViewById(R.id.tv_payment_title);
 		TextView tvPaymentDescription = (TextView) convertView.findViewById(R.id.tv_payment_description);
 		LinearLayout llGroupDetails = (LinearLayout) convertView.findViewById(R.id.ll_payment_details);
 		
+		tvPaymentTitle.setText(payment.get_title());
 		tvPaymentDescription.setText(payment.get_description());
 		
 		llGroupDetails.addView(this.views.add_field(R.string.date_title, Gen.convert_pdt(payment.get_pdt(), false)));

@@ -10,6 +10,7 @@ public class Group {
 	
 	private int id;
 	private String title;
+	private String description;
 	private ArrayList<User> users;
 	
 	/************************************
@@ -19,6 +20,7 @@ public class Group {
 	public Group(){
 		this.id = 0;
 		this.title = "";
+		this.description = "";
 		this.users = new ArrayList<User>();
 	}
 	
@@ -32,6 +34,10 @@ public class Group {
 	
 	public void set_title(String title){
 		this.title = title;
+	}
+	
+	public void set_description(String description){
+		this.description = description;
 	}
 	
 	public void set_users(ArrayList<User> users){
@@ -52,6 +58,10 @@ public class Group {
 	
 	public String get_title(){
 		return this.title;
+	}
+	
+	public String get_description(){
+		return this.description;
 	}
 	
 	public ArrayList<User> get_users(){

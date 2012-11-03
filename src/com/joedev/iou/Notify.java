@@ -25,15 +25,7 @@ public class Notify {
 				length = Toast.LENGTH_SHORT;
 				break;
 		}
-		LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-		View layout = inflater.inflate(R.layout.xml_toast,(ViewGroup) ((Activity) context).findViewById(R.id.ll_toast_wrapper));
-
-		TextView text = (TextView) layout.findViewById(R.id.tv_text);
-		text.setText(msg);
-
-		Toast toast = new Toast(context);
-		toast.setDuration(length);
-		toast.setView(layout);
+		Toast toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
 		toast.show();
 	}
 	

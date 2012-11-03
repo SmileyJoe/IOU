@@ -63,27 +63,25 @@
 				android:name="com.joedev.iou.Constants.ACTION_WIDGET_QUICK_ADD"/>
 		</intent-filter>
   	   	<activity android:name=".Settings" 
-			android:label="Settings"/>
+			android:label="@string/bar_title_settings"/>
   	   	<activity android:name=".PopupDelete" 
-			android:label=""
+			android:label="@string/bar_title_delete"
 			android:theme="@style/Holo.Theme.Dialog"/>
   	   	<activity android:name=".GroupNew" 
-			android:label="Group" 
-			android:theme="@style/Holo.Theme.Dialog">
+			android:label="@string/bar_title_group_new">
    		</activity>
    		<activity android:name=".GroupView" 
-   		    android:label="Group">
+   		    android:label="@string/bar_title_group_view">
 		</activity>
 		<activity android:name=".GroupPaymentNew" 
-			android:label="New Payment" 
-			android:theme="@style/Holo.Theme.Dialog">
+			android:label="@string/bar_title_group_payment_new">
    		</activity>
    		<activity android:name=".GroupPayback" 
-			android:label="Payback" 
+			android:label="@string/bar_title_group_payback" 
 			android:theme="@style/Holo.Theme.Dialog">
    		</activity>
    		<activity android:name=".GroupUserPaymentDetails" 
-			android:label="User Details" 
+			android:label="@string/bar_title_group_user_details" 
 			android:theme="@style/Holo.Theme.Dialog">
    		</activity>
     </application>

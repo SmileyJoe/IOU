@@ -22,6 +22,7 @@ public class DbGroupPaymentAdapter {
 	private int groupIdCol;
 	private int amountCol;
 	private int typeCol;
+	private int titleCol;
 	private int descriptionCol;
 	private int dateCol;
 	private int splitAmountCol;
@@ -179,7 +180,7 @@ public class DbGroupPaymentAdapter {
 	
 	private void set_cursor(String where){
 		this.cursor = this.db.rawQuery(
-				"SELECT pay._id, grouprel.group_id, pay.payment_amount, pay.payment_description, pay.payment_date "
+				"SELECT pay._id, grouprel.group_id, pay.payment_amount, pay.payment_title, pay.payment_description, pay.payment_date "
 				+ "FROM payment pay "
 				+ "JOIN group_rel_payment grouprel ON grouprel.payment_id = pay._id"
 				+ " " + where + " "
@@ -190,6 +191,7 @@ public class DbGroupPaymentAdapter {
 		this.idCol = this.cursor.getColumnIndex("_id");
 		this.groupIdCol = this.cursor.getColumnIndex("group_id");
 		this.amountCol = this.cursor.getColumnIndex("payment_amount");
+		this.titleCol = this.cursor.getColumnIndex("payment_title");
 		this.descriptionCol = this.cursor.getColumnIndex("payment_description");
 		this.dateCol = this.cursor.getColumnIndex("payment_date");
 	}
@@ -224,6 +226,7 @@ public class DbGroupPaymentAdapter {
 		
 		payment.set_id(this.cursor.getInt(this.idCol));
 		payment.set_amount(this.cursor.getFloat(this.amountCol));
+		payment.set_title(this.cursor.getString(this.titleCol));
 		payment.set_description(this.cursor.getString(this.descriptionCol));
 		payment.set_pdt(this.cursor.getLong(this.dateCol));
 		payment.set_splits(this.get_split(payment.get_id()));
@@ -270,6 +273,7 @@ public class DbGroupPaymentAdapter {
 		
 		values.put("payment_amount", payment.get_amount());
 		values.put("payment_type", payment.get_type());
+		values.put("payment_title", payment.get_title());
 		values.put("payment_description", payment.get_description());
 		values.put("payment_date", payment.get_pdt());
 		

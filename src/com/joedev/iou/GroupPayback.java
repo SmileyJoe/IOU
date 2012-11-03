@@ -38,9 +38,6 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
         setContentView(R.layout.group_payback);
         this.initialize();
         
-		TextView tvDialogHeading = (TextView) findViewById(R.id.tv_dialog_heading);
-		tvDialogHeading.setText(R.string.dialog_heading_group_payback);
-        
         Bundle extras = getIntent().getExtras();
 		
 		int groupId = extras.getInt("group_id");

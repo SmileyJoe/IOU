@@ -2,6 +2,11 @@ package com.joedev.iou;
 
 import java.util.ArrayList;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -23,7 +28,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-public class GroupPaymentNew extends Activity implements OnClickListener {
+public class GroupPaymentNew extends SherlockActivity implements OnClickListener {
 	
 	private DbGroupAdapter groupAdapter;
 	private DbGroupPaymentAdapter groupPaymentAdapter;
@@ -36,6 +41,7 @@ public class GroupPaymentNew extends Activity implements OnClickListener {
 	private ArrayList<EditText> paidForFields;
 	private Button btSave;
 	private Button btCancel;
+	private EditText etTitle;
 	private EditText etDescription;
 	private float payingAmount;
 	private float paidAmount;
@@ -59,11 +65,8 @@ public class GroupPaymentNew extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		Gen.setTheme(this);
 		setContentView(R.layout.group_payment_new);
-		Gen.fill_window(getWindow());
 		this.initialize();
-		
-		TextView tvDialogHeading = (TextView) findViewById(R.id.tv_dialog_heading);
-		tvDialogHeading.setText(R.string.dialog_heading_group_payment_new);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		try{
 			Bundle extras = getIntent().getExtras();
@@ -85,6 +88,24 @@ public class GroupPaymentNew extends Activity implements OnClickListener {
 		this.populate_view();
 	}
 	
+   @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getSupportMenuInflater();
+        inflater.inflate(R.menu.group_payment_new, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        	case android.R.id.home:
+        		finish();
+        		return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+        }
+
+    }
+	
 	private void initialize() {
 		this.groupAdapter = new DbGroupAdapter(this);
 		this.groupPaymentAdapter = new DbGroupPaymentAdapter(this);
@@ -99,6 +120,7 @@ public class GroupPaymentNew extends Activity implements OnClickListener {
 		this.btSave.setOnClickListener(this);
 		this.btCancel = (Button) findViewById(R.id.bt_cancel);
 		this.btCancel.setOnClickListener(this);
+		this.etTitle = (EditText) findViewById(R.id.et_payment_title);
 		this.etDescription = (EditText) findViewById(R.id.et_payment_description);
 		this.payingAmount = 0;
 		this.paidAmount = 0;
@@ -123,6 +145,7 @@ public class GroupPaymentNew extends Activity implements OnClickListener {
 		}
 		
 		if(this.isEdit){
+			this.etTitle.setText(this.payment.get_title());
 			this.etDescription.setText(this.payment.get_description());
 		}
 		
@@ -284,6 +307,7 @@ public class GroupPaymentNew extends Activity implements OnClickListener {
 					Debug.v("Amount", this.payment.get_split(i).get_amount());
 				}
 				
+				this.payment.set_title(this.etTitle.getText().toString().trim());
 				this.payment.set_description(this.etDescription.getText().toString().trim());
 				this.payment.set_group_id(this.group.get_id());
 				
