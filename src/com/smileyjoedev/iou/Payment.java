@@ -26,7 +26,7 @@ public class Payment {
 		this.amount = 0;
 		this.direction = 0;
 		this.description = "";
-		this.date = Gen.get_pdt();
+		this.date = Gen.getPdt();
 		this.user = new User();
 		this.type = 0;
 		this.title = "";
@@ -36,81 +36,81 @@ public class Payment {
 	 * SETTERS
 	 *********************************************************/
 	
-	public void set_id(int id){
+	public void setId(int id){
 		this.id = id;
 	}
 	
-	public void set_user_id(int id){
+	public void setUserId(int id){
 		this.userId = id;
 	}
 	
-	public void set_amount(float amount){
+	public void setAmount(float amount){
 		amount = (float) (Math.round(amount*100.0)/100.0);
 		this.amount = amount;
 	}
 	
-	public void set_direction(int direction){
+	public void setDirection(int direction){
 		this.direction = direction;
 	}
 	
-	public void set_description(String description){
+	public void setDescription(String description){
 		this.description = description;
 	}
 	
-	public void set_title(String title){
+	public void setTitle(String title){
 		this.title = title;
 	}
 	
-	public void set_date(long date){
+	public void setDate(long date){
 		this.date = date;
 	}
 	
-	public void set_user(User user){
+	public void setUser(User user){
 		this.user = user;
 	}
 	
-	public void set_type(int type){
+	public void setType(int type){
 		this.type = type;
 	}
 	
-	public void set_type_db(int type){
+	public void setTypeDb(int type){
 		this.typeDb = type;
-    	switch(this.get_type_db()){
+    	switch(this.getTypeDb()){
     		case 0:
-    			this.set_type(0);
-    			this.set_direction(0);
+    			this.setType(0);
+    			this.setDirection(0);
     			break;
     		case 1:
-    			this.set_type(0);
-    			this.set_direction(1);
+    			this.setType(0);
+    			this.setDirection(1);
     			break;
     		case 2:
-    			this.set_type(1);
-    			this.set_direction(0);
+    			this.setType(1);
+    			this.setDirection(0);
     			break;
     		case 3:
-    			this.set_type(1);
-    			this.set_direction(1);
+    			this.setType(1);
+    			this.setDirection(1);
     			break;
     	}
 		
 		
 	}
 	
-	public void set_type_db(){
-		switch(this.get_type()){
+	public void setTypeDb(){
+		switch(this.getType()){
 			case 0:
-				if(this.is_from_user()){
-					this.set_type_db(1);
+				if(this.isFromUser()){
+					this.setTypeDb(1);
 				} else {
-					this.set_type_db(0);
+					this.setTypeDb(0);
 				}
 				break;
 			case 1:
-				if(this.is_from_user()){
-					this.set_type_db(3);
+				if(this.isFromUser()){
+					this.setTypeDb(3);
 				} else {
-					this.set_type_db(2);
+					this.setTypeDb(2);
 				}
 				break;
 		}
@@ -121,53 +121,54 @@ public class Payment {
 	 * GETTERS
 	 ********************************************************/
 	
-	public int get_id(){
+	public int getId(){
 		return this.id;
 	}
 	
-	public int get_user_id(){
+	public int getUserId(){
 		return this.userId;
 	}
 	
-	public float get_amount(){
-		return Gen.format_number(this.amount);
+	public float getAmount(){
+		return Gen.formatNumber(this.amount);
 	}
 	
-	public int get_direction(){
+	public int getDirection(){
 		return this.direction;
 	}
 	
-	public String get_description(){
+	public String getDescription(){
 		return this.description;
 	}
 	
-	public String get_title(){
+	public String getTitle(){
 		return this.title;
 	}
 	
-	public long get_date(){
+	public long getDate(){
 		return this.date;
 	}
 	
-	public int get_type(){
+	public int getType(){
 		return this.type;
 	}
 	
-	public int get_type_db(){
+	public int getTypeDb(){
 		return this.typeDb;
 	}
 	
-	public User get_user(){
+	public User getUser(){
 		return this.user;
 	}
 	
-	public String get_date_text(boolean includeTime){
-		return Gen.convert_pdt(this.get_date(), includeTime);
+	public String getDateText(boolean includeTime){
+		return Gen.convertPdt(this.getDate(), includeTime);
 	}
 	
-	public String get_direction_text(){
+	public String getDirectionText(){
+		// TODO: Use strings from strings.xml //
 		String direction = "";
-		switch(this.get_direction()){
+		switch(this.getDirection()){
 			case 0:
 				direction = "To User";
 				break;
@@ -182,8 +183,8 @@ public class Payment {
 		return direction;
 	}
 	
-	public String get_type_text(){
-		switch(this.get_type()){
+	public String getTypeText(){
+		switch(this.getType()){
 			case 0:
 				return "Loan";
 			case 1:
@@ -193,9 +194,9 @@ public class Payment {
 		}
 	}
 	
-	public String get_type_db_text(){
+	public String getTypeDbText(){
 		String type = "";
-		switch(this.get_type_db()){
+		switch(this.getTypeDb()){
 			case 0:
 				type = "Loan to user";
 				break;
@@ -216,11 +217,11 @@ public class Payment {
 		return type;
 	}
 	
-	public String get_amount_text(boolean includeSymbol){
+	public String getAmountText(boolean includeSymbol){
 		if(includeSymbol){
-			return Gen.get_amount_text(this.get_amount());
+			return Gen.getAmountText(this.getAmount());
 		} else {
-			return Gen.get_formatted_amount(this.get_amount());
+			return Gen.getFormattedAmount(this.getAmount());
 		}
 		
 	}
@@ -229,23 +230,23 @@ public class Payment {
 	 * CHECKS
 	 *********************************************************/
 	
-	public boolean is_to_user(){
-		if(this.get_direction() == 0){
+	public boolean isToUser(){
+		if(this.getDirection() == 0){
 			return true;
 		} else {
 			return false;
 		}
 	}
 	
-	public boolean is_from_user(){
-		if(this.get_direction() == 1){
+	public boolean isFromUser(){
+		if(this.getDirection() == 1){
 			return true;
 		} else {
 			return false;
 		}
 	}
 	
-	public boolean is_loan(){
+	public boolean isLoan(){
 		if(this.type == 0){
 			return true;
 		} else {
@@ -253,7 +254,7 @@ public class Payment {
 		}
 	}
 	
-	public boolean is_payment(){
+	public boolean isPayment(){
 		if(this.type == 1){
 			return true;
 		} else {

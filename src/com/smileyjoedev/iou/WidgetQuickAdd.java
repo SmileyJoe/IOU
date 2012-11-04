@@ -16,7 +16,7 @@ public class WidgetQuickAdd extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_quick_add);
 		
-		PendingIntent quickAdd = PendingIntent.getActivity(context, 0, Intents.widget_quick_add(context), 0);
+		PendingIntent quickAdd = PendingIntent.getActivity(context, 0, Intents.widgetQuickAdd(context), 0);
 		
 		remoteViews.setOnClickPendingIntent(R.id.iv_quick_add, quickAdd);
 		

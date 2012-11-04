@@ -82,7 +82,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
         
         this.initialize();
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        this.populate_view();
+        this.populateView();
     }
     
     @Override
@@ -95,7 +95,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 			case R.id.menu_add_user:
-				startActivityForResult(Intents.new_user(this), Constants.ACTIVITY_NEW_USER);
+				startActivityForResult(Intents.newUser(this), Constants.ACTIVITY_NEW_USER);
 				return true;
 			case R.id.menu_filter:
 				if(this.llFilterWrapper.getVisibility() == View.VISIBLE){
@@ -112,16 +112,6 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
         }
 
     }
-    
-	public boolean is_table_exists(SQLiteDatabase database, String tableName) {
-	    Cursor cursor = database.rawQuery("select DISTINCT tbl_name FROM sqlite_master WHERE tbl_name = '"+tableName+"'", null);
-	    if(cursor!=null) {
-	        if(cursor.getCount()>0) {
-	            return true;
-	        }
-	    }
-	    return false;
-	}
     
     public void initialize(){
     	this.users = new ArrayList<User>();
@@ -148,7 +138,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     	
     }
     
-    public void populate_view(boolean getAll){
+    public void populateView(boolean getAll){
     	if(getAll){
     		this.users.clear();
     		for(int i = 0; i < this.allUsers.size(); i++){
@@ -156,14 +146,14 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     		}
     	}
     	
-    	this.views.user_list(this.users, this.lvUserList);
+    	this.views.userList(this.users, this.lvUserList);
     }
     
-    private void populate_view(){
-    	this.populate_view(true);
+    private void populateView(){
+    	this.populateView(true);
     }
     
-    private void populate_sp_email_list(long id){
+    private void populateSpEmailList(long id){
     	Contacts cont = new Contacts(this);
     	this.contact = cont.getDetails(id);
     	
@@ -181,7 +171,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 		
     }
     
-    private void populate_sp_phone_number_list(long id){
+    private void populateSpPhoneNumberList(long id){
     	Contacts cont = new Contacts(this);
     	this.contact = cont.getDetails(id);
     	
@@ -198,33 +188,33 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 		this.spPhoneNumberList.setSelection(-1);
     }
     
-    private void sort_users(int sort){
+    private void sortUsers(int sort){
     	/*
     	 * 0 - Alphabetical
     	 * 1 - desc
     	 * 2 - asc
     	 */
     	
-    	Gen.sort_user(this.users, sort);
+    	Gen.sortUser(this.users, sort);
     }
     
 	@Override
 	public void onItemSelected(AdapterView<?> view, View arg1, int position, long arg3) {
 		switch(view.getId()){
 			case R.id.sp_filter:
-				this.filter_users(position);
-				this.sort_users(this.sort);
+				this.filterUsers(position);
+				this.sortUsers(this.sort);
 				break;
 			case R.id.sp_sort:
 				this.sort = position;
-				this.sort_users(position);
+				this.sortUsers(position);
 				break;
 			case R.id.sp_email_list:
 				if(position > 0){
 					position = position - 1;
 					String subject = this.prefs.getString("default_email_reminder_subject", this.getString(R.string.default_email_reminder_subject));
 					
-					Send.emailDialog(this, this.contact.getEmail(position).getAddress(), subject, Gen.create_email_body(this, this.users.get(this.selectedUser)));
+					Send.emailDialog(this, this.contact.getEmail(position).getAddress(), subject, Gen.createEmailBody(this, this.users.get(this.selectedUser)));
 				}
 				break;
 			case R.id.sp_phone_number_list:
@@ -232,8 +222,8 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 					position = position - 1;
 					
 					String message = this.prefs.getString("default_sms_reminder_body", this.getString(R.string.default_sms_reminder_body));
-					String username = this.users.get(this.selectedUser).get_name();
-					String balance = this.prefs.getString("default_currency", this.getString(R.string.default_currency)) + this.users.get(this.selectedUser).get_balance_text();
+					String username = this.users.get(this.selectedUser).getName();
+					String balance = this.prefs.getString("default_currency", this.getString(R.string.default_currency)) + this.users.get(this.selectedUser).getBalanceText();
 					String number = this.contact.getNumber(position).getNumber();
 					
 					message = message.replace("%USERNAME", username);
@@ -245,11 +235,11 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				break;
 		}
 		
-		this.populate_view(false);
+		this.populateView(false);
 		
 	}
 	
-	private void filter_users(int filter){
+	private void filterUsers(int filter){
 		/*
 		 * 0 - all
 		 * 1 - owe me
@@ -264,17 +254,17 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 					this.users.add(this.allUsers.get(i));
 					break;
 				case 1:
-					if(this.allUsers.get(i).get_balance() > 0){
+					if(this.allUsers.get(i).getBalance() > 0){
 						this.users.add(this.allUsers.get(i));
 					}
 					break;
 				case 2:
-					if(this.allUsers.get(i).get_balance() < 0){
+					if(this.allUsers.get(i).getBalance() < 0){
 						this.users.add(this.allUsers.get(i));
 					}
 					break;
 				case 3:
-					if(this.allUsers.get(i).get_balance() == 0){
+					if(this.allUsers.get(i).getBalance() == 0){
 						this.users.add(this.allUsers.get(i));
 					}
 					break;
@@ -286,7 +276,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 	public void onItemClick(AdapterView<?> view, View arg1, int position, long arg3) {
 		switch(view.getId()){
 			case R.id.lv_user_list:
-				startActivityForResult(Intents.user_view(this, this.users.get(position).get_id()), Constants.ACTIVITY_USER_VIEW);
+				startActivityForResult(Intents.userView(this, this.users.get(position).getId()), Constants.ACTIVITY_USER_VIEW);
 				break;
 		}
 		
@@ -299,19 +289,19 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 		}
 	}
 	
-	private void get_all_users(){
+	private void getAllUsers(){
 		this.allUsers = this.userAdapter.get();
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch(requestCode){
 			case Constants.ACTIVITY_NEW_USER:
-				this.get_all_users();
-				this.populate_view();
+				this.getAllUsers();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_USER_VIEW:
-				this.get_all_users();
-				this.populate_view();
+				this.getAllUsers();
+				this.populateView();
 				break;	
 			case Constants.ACTIVITY_SETTINGS:
 				Gen.changeTheme(this);
@@ -320,27 +310,27 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				if(resultCode == Activity.RESULT_OK){
 					if(data.getBooleanExtra("result", false)){
 						this.userAdapter.delete(this.users.get(this.selectedUser));
-						this.get_all_users();
-						this.populate_view();
+						this.getAllUsers();
+						this.populateView();
 					}
 				}
 				break;
 			case Constants.ACTIVITY_REPAY_PAYMENT_USER:
-				this.get_all_users();
-				this.populate_view();
+				this.getAllUsers();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_EDIT_USER:
-				this.get_all_users();
-				this.populate_view();
+				this.getAllUsers();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_GROUP_NEW:
-				this.populate_view();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_GROUP_EDIT:
-				this.populate_view();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_GROUP_VIEW:
-				this.populate_view();
+				this.populateView();
 				break;
 		}
 	}
@@ -356,15 +346,15 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				menu.add(Menu.NONE, Constants.CONTEXT_EDIT, Constants.CONTEXT_EDIT, this.getString(R.string.context_edit));
 				menu.add(Menu.NONE, Constants.CONTEXT_DELETE, Constants.CONTEXT_DELETE, this.getString(R.string.context_delete));
 				
-				if(this.users.get(this.selectedUser).get_balance() != 0){
+				if(this.users.get(this.selectedUser).getBalance() != 0){
 					menu.add(Menu.NONE, Constants.CONTEXT_REPAY_ALL, Constants.CONTEXT_REPAY_ALL, this.getString(R.string.context_user_repay_all));
 					menu.add(Menu.NONE, Constants.CONTEXT_REPAY_SOME, Constants.CONTEXT_REPAY_SOME, this.getString(R.string.context_user_repay_some));
 				}
 				
-				if(this.users.get(this.selectedUser).is_in_contact_dir()){
+				if(this.users.get(this.selectedUser).isInContactDir()){
 					menu.add(Menu.NONE, Constants.CONTEXT_VIEW_CONTACT_CARD, Constants.CONTEXT_VIEW_CONTACT_CARD, this.getString(R.string.context_user_open_contact_card));
 					
-					if(this.users.get(this.selectedUser).get_balance() > 0){
+					if(this.users.get(this.selectedUser).getBalance() > 0){
 						if(this.prefs.getBoolean("allow_email_reminders", true)){
 							menu.add(Menu.NONE, Constants.CONTEXT_REMINDER_EMAIL, Constants.CONTEXT_REMINDER_EMAIL, this.getString(R.string.context_user_reminder_email));
 						}
@@ -385,51 +375,51 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				// repay all //
 				Payment payment = new Payment();
 				
-				payment.set_description("Repayment: All");
+				payment.setDescription("Repayment: All");
 				
-				if(this.users.get(this.selectedUser).get_balance() > 0){
-					payment.set_type_db(3);
+				if(this.users.get(this.selectedUser).getBalance() > 0){
+					payment.setTypeDb(3);
 				} else {
-					payment.set_type_db(2);
+					payment.setTypeDb(2);
 				}
 				
 				
-				payment.set_amount(Math.abs(this.users.get(this.selectedUser).get_balance()));
+				payment.setAmount(Math.abs(this.users.get(this.selectedUser).getBalance()));
 				
 				
-				payment.set_date(Gen.get_pdt());
+				payment.setDate(Gen.getPdt());
 				
-				payment.set_user_id(this.users.get(this.selectedUser).get_id());
-				payment.set_id(0);
+				payment.setUserId(this.users.get(this.selectedUser).getId());
+				payment.setId(0);
 				
 				this.userPaymentAdapter.save(payment);
 				
-				Gen.display_minimalistic_text(this, this.users.get(this.selectedUser), payment);
+				Gen.displayMinimalisticText(this, this.users.get(this.selectedUser), payment);
 				
-				this.populate_view();
+				this.populateView();
 				
 				break;
 			case Constants.CONTEXT_REPAY_SOME:
-				startActivityForResult(Intents.repay_payment_user(this, this.users.get(this.selectedUser).get_id()), Constants.ACTIVITY_REPAY_PAYMENT_USER);
+				startActivityForResult(Intents.repayPaymentUser(this, this.users.get(this.selectedUser).getId()), Constants.ACTIVITY_REPAY_PAYMENT_USER);
 				break;
 			case Constants.CONTEXT_EDIT:
-				startActivityForResult(Intents.edit_user(this, this.users.get(this.selectedUser).get_id()), Constants.ACTIVITY_EDIT_USER);
+				startActivityForResult(Intents.editUser(this, this.users.get(this.selectedUser).getId()), Constants.ACTIVITY_EDIT_USER);
 				break;
 			case Constants.CONTEXT_DELETE:
-				startActivityForResult(Intents.popup_delete(this, Constants.GROUP), Constants.ACTIVITY_POPUP_DELETE);
+				startActivityForResult(Intents.popupDelete(this, Constants.GROUP), Constants.ACTIVITY_POPUP_DELETE);
 				break;
 			case Constants.CONTEXT_REMINDER_EMAIL:
 				// email reminder //
-				this.populate_sp_email_list(this.users.get(this.selectedUser).get_contact_id());
+				this.populateSpEmailList(this.users.get(this.selectedUser).getContactId());
 				this.spEmailList.performClick();
 				break;
 			case Constants.CONTEXT_REMINDER_SMS:
 				// sms reminder //
-				this.populate_sp_phone_number_list(this.users.get(this.selectedUser).get_contact_id());
+				this.populateSpPhoneNumberList(this.users.get(this.selectedUser).getContactId());
 				this.spPhoneNumberList.performClick();
 				break;
 			case Constants.CONTEXT_VIEW_CONTACT_CARD:
-				Contacts.openContact(this, this.users.get(this.selectedUser).get_contact_id());
+				Contacts.openContact(this, this.users.get(this.selectedUser).getContactId());
 				break;
 		}
 		return true;

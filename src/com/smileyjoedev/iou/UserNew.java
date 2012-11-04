@@ -87,19 +87,19 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 			this.userId = extras.getInt("user_id");
 			getSupportActionBar().setTitle(R.string.bar_title_user_edit);
 			this.user = new User();
-			this.user = this.userAdapter.get_details(this.userId);
+			this.user = this.userAdapter.getDetails(this.userId);
 			this.edit = true;
-			this.oldUserName = this.user.get_name();
-			this.oldContactId = this.user.get_contact_id();
+			this.oldUserName = this.user.getName();
+			this.oldContactId = this.user.getContactId();
 		} catch(NullPointerException e){
 			this.user = new User();
 			this.edit = false;
 		}
 		
 		
-		this.populate_auto_names();
-		this.populate_user_image();
-		this.populate_view();
+		this.populateAutoNames();
+		this.populateUserImage();
+		this.populateView();
 		
 	}
 	
@@ -114,7 +114,7 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 
         switch (item.getItemId()) {
 			case android.R.id.home:
-				this.hide_keyboard();
+				this.hideKeyboard();
 				finish();
 				return true;
 			default:
@@ -154,12 +154,12 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 //		this.allowImageDelete = false;
 	}
 	
-	public void populate_view(){
+	public void populateView(){
 		if(this.edit){
-			this.etName.setText(this.user.get_name());
+			this.etName.setText(this.user.getName());
 			
 			
-			this.populate_user_image();
+			this.populateUserImage();
 
 //			java.io.File file = new java.io.File(Constants.IMAGE_PATH + fileName + Constants.IMAGE_EXTENSION);
 //			if(file.exists()){
@@ -171,11 +171,11 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 //				this.ivUserImage.setVisibility(View.GONE);
 //			}
 			
-			if(this.user.is_using_minimalistic_text()){
+			if(this.user.isUsingMinimalisticText()){
 				this.tbMinimalisticTextFlag.setChecked(true);
 				this.llVariableName.setVisibility(View.VISIBLE);
-				this.etVariableName.setText(this.user.get_variable_name());
-				this.populate_variable_name_info(this.user.get_name());
+				this.etVariableName.setText(this.user.getVariableName());
+				this.populateVariableNameInfo(this.user.getName());
 			}
 		}
 		
@@ -185,8 +185,8 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 		}
 	}
 	
-	private void populate_user_image(){
-		Gen.set_user_image(this, this.ivUserImage, this.user);
+	private void populateUserImage(){
+		Gen.setUserImage(this, this.ivUserImage, this.user);
 //		if(Gen.set_user_image(this, this.ivUserImage, this.user)){
 //			this.ivUserImage.setVisibility(View.VISIBLE);
 //		} else {
@@ -199,25 +199,25 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 //		}
 	}
 	
-	private void populate_variable_name_info(String name){
+	private void populateVariableNameInfo(String name){
 		this.tvVariableNameInfo.setText("A variable with the name " + name + "SIGN will be created for you. It will contain '0' for a positive balance or '1' for a negative balance");
 	}
 	
-	private void populate_auto_names(){
+	private void populateAutoNames(){
 		this.contacts = cont.getList(true);
 		   
 		this.etName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, cont.getNameList(contacts)));
 	}
 	
-	private void update_user(){
+	private void updateUser(){
 		this.userAdapter.update(this.user);
 	}
 	
-	private void save_user(){
+	private void saveUser(){
 		this.userAdapter.save(this.user);
 	}
 	
-	private void hide_keyboard(){
+	private void hideKeyboard(){
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(this.etName.getWindowToken(), 0);
 		imm.hideSoftInputFromWindow(this.etVariableName.getWindowToken(), 0);
@@ -229,7 +229,7 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 			case R.id.bt_save:
 				String userName = this.etName.getText().toString().trim();
 				this.userName = userName;
-				String oldName = this.user.get_name();
+				String oldName = this.user.getName();
 				
 				if(userName.equals("")){
 					Notify.toast(this, R.string.toast_no_user_name);
@@ -238,47 +238,47 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 				}
 				
 				if(this.contactId == 0){
-					if(this.user.get_name().equals(userName)){
+					if(this.user.getName().equals(userName)){
 						this.contactId = this.oldContactId;
 					}
 				}
 				
-				this.user.set_name(userName);
-				this.user.set_variable_name(this.etVariableName.getText().toString().trim().replace(" ", ""));
+				this.user.setName(userName);
+				this.user.setVariableName(this.etVariableName.getText().toString().trim().replace(" ", ""));
 				
 				
-				this.user.set_contact_id(this.contactId);
+				this.user.setContactId(this.contactId);
 				
 				if(this.edit){
 					if(oldName.equals(userName)){
-						this.update_user();
+						this.updateUser();
 //						this.rename_image();
 						finish();
 					} else {
-						if(!this.userAdapter.check_user_exists(user.get_name())){
-							this.update_user();
+						if(!this.userAdapter.checkUserExists(user.getName())){
+							this.updateUser();
 //							this.rename_image();
 							finish();
 						} else {
-							Notify.toast(this, R.string.toast_user_exists, user.get_name());
+							Notify.toast(this, R.string.toast_user_exists, user.getName());
 						}
 					}
 				} else {
-					if(!this.userAdapter.check_user_exists(user.get_name())){
-						this.save_user();
+					if(!this.userAdapter.checkUserExists(user.getName())){
+						this.saveUser();
 //						this.rename_image();
 //						this.delete_image();
 						finish();
 					} else {
-						Notify.toast(this, R.string.toast_user_exists, user.get_name());
+						Notify.toast(this, R.string.toast_user_exists, user.getName());
 					}
 				}
 				
-				Gen.display_minimalistic_text(this, this.user, 0);
-				this.hide_keyboard();
+				Gen.displayMinimalisticText(this, this.user, 0);
+				this.hideKeyboard();
 				break;
 			case R.id.bt_cancel:
-				this.hide_keyboard();
+				this.hideKeyboard();
 				finish();
 				break;
 //			case R.id.bt_choose_photo:
@@ -295,20 +295,20 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 //				
 //				break;
 			case R.id.tb_minimalistic_text_flag:
-				if(this.user.is_using_minimalistic_text()){
-					this.user.set_minimalistic_text_flag(0);
+				if(this.user.isUsingMinimalisticText()){
+					this.user.setMinimalisticTextFlag(0);
 					this.llVariableName.setVisibility(View.GONE);
 				} else {
-					this.user.set_minimalistic_text_flag(1);
+					this.user.setMinimalisticTextFlag(1);
 					this.llVariableName.setVisibility(View.VISIBLE);
 					String name = this.etName.getText().toString().trim().toUpperCase().replace(" ", "");
 					if(name.equals("")){
 						this.etVariableName.setHint("eg. %IOUUSERNAME");
-						this.populate_variable_name_info(" eg. %IOUUSERNAME");
+						this.populateVariableNameInfo(" eg. %IOUUSERNAME");
 					} else {
 						this.etVariableName.setText("%IOU" + name);
 						this.etVariableName.setHint("eg. %IOU" + name);
-						this.populate_variable_name_info("%IOU" + name);
+						this.populateVariableNameInfo("%IOU" + name);
 					}
 					
 				}
@@ -440,8 +440,8 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 	public void onItemClick(AdapterView<?> parent, View view, int position, long rowId) {
 		HashMap<String, Long> map = this.cont.getNameHash(this.contacts);
 		this.contactId = map.get((String)parent.getItemAtPosition(position));
-		this.user.set_contact_id(this.contactId);
-		this.populate_user_image();
+		this.user.setContactId(this.contactId);
+		this.populateUserImage();
 	}
 	
 }

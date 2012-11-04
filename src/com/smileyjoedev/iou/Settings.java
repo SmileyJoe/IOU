@@ -37,7 +37,7 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		addPreferencesFromResource(R.layout.settings);
 		
 		this.initialize();
-		this.populate_view();
+		this.populateView();
 	}
 	
 	public void initialize(){
@@ -70,7 +70,7 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		this.prefStartPage.setEntryValues(this.startPageIds);
 	}
 	
-	public void populate_view(){
+	public void populateView(){
 		
 	}
 

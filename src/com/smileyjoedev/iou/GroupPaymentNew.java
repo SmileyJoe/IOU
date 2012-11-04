@@ -75,19 +75,19 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 			
 			if(extras.containsKey("group_id")){
 				int groupId = extras.getInt("group_id");
-				this.group = this.groupAdapter.get_details(groupId);
+				this.group = this.groupAdapter.getDetails(groupId);
 			}
 			
 			if(extras.containsKey("payment_id")){
 				this.isEdit = true;
-				this.payment = this.groupPaymentAdapter.get_details(extras.getInt("payment_id"));
+				this.payment = this.groupPaymentAdapter.getDetails(extras.getInt("payment_id"));
 				// this.group =
 				// this.groupAdapter.get_details(this.payment.get_group_id());
 			}
 		}catch(NullPointerException e){
 		}
 		
-		this.populate_view();
+		this.populateView();
 	}
 	
    @Override
@@ -140,23 +140,23 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 		this.tvDifferenceAmountTitle = (TextView) findViewById(R.id.tv_difference_amount_title);
 	}
 	
-	private void populate_view() {
-		for(int i = 0; i < this.group.get_users().size(); i++){
-			this.populate_user_row(this.group.get_user(i), true);
-			this.populate_user_row(this.group.get_user(i), false);
+	private void populateView() {
+		for(int i = 0; i < this.group.getUsers().size(); i++){
+			this.populateUserRow(this.group.getUser(i), true);
+			this.populateUserRow(this.group.getUser(i), false);
 		}
 		
 		if(this.isEdit){
-			this.etTitle.setText(this.payment.get_title());
-			this.etDescription.setText(this.payment.get_description());
+			this.etTitle.setText(this.payment.getTitle());
+			this.etDescription.setText(this.payment.getDescription());
 		}
 		
-		this.tvPayingTotal.setText(Gen.get_amount_text(this.totalPaying));
-		this.tvPaidForTotal.setText(Gen.get_amount_text(this.totalPaidFor));
+		this.tvPayingTotal.setText(Gen.getAmountText(this.totalPaying));
+		this.tvPaidForTotal.setText(Gen.getAmountText(this.totalPaidFor));
 		
 	}
 	
-	public EditText populate_user_row(User user, boolean paying) {
+	public EditText populateUserRow(User user, boolean paying) {
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View view = inflater.inflate(R.xml.group_payment_user, null);
 		
@@ -164,9 +164,9 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 		EditText amount = (EditText) view.findViewById(R.id.et_amount);
 		ImageView userImage = (ImageView) view.findViewById(R.id.iv_user_image);
 		
-		name.setText(user.get_name());
+		name.setText(user.getName());
 		
-		amount.setTag(user.get_id());
+		amount.setTag(user.getId());
 		
 		amount.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
@@ -187,14 +187,14 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 			}
 		});
 		
-		Gen.set_user_image(this, userImage, user);
+		Gen.setUserImage(this, userImage, user);
 		
 		if(paying){
 			if(this.isEdit){
-				for(int i = 0; i < this.payment.get_splits().size(); i++){
-					if(this.payment.get_split(i).get_user_id() == user.get_id() && this.payment.get_split(i).is_paying()){
-						amount.setText(this.payment.get_split(i).get_amount_text(false));
-						GroupPaymentNew.totalPaying += this.payment.get_split(i).get_amount();
+				for(int i = 0; i < this.payment.getSplits().size(); i++){
+					if(this.payment.getSplit(i).getUserId() == user.getId() && this.payment.getSplit(i).isPaying()){
+						amount.setText(this.payment.getSplit(i).getAmountText(false));
+						GroupPaymentNew.totalPaying += this.payment.getSplit(i).getAmount();
 					}
 				}
 			}
@@ -213,17 +213,17 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 						GroupPaymentNew.lastEnteredNumber = Float.parseFloat(s.toString());
 						GroupPaymentNew.totalPaying += GroupPaymentNew.lastEnteredNumber;
 						if(GroupPaymentNew.equalPayment){
-							GroupPaymentNew.tvPaidForTotal.setText(Gen.get_amount_text(GroupPaymentNew.totalPaying / GroupPaymentNew.group.get_users().size()));
+							GroupPaymentNew.tvPaidForTotal.setText(Gen.getAmountText(GroupPaymentNew.totalPaying / GroupPaymentNew.group.getUsers().size()));
 						}
-						GroupPaymentNew.tvPayingTotal.setText(Gen.get_amount_text(GroupPaymentNew.totalPaying));
+						GroupPaymentNew.tvPayingTotal.setText(Gen.getAmountText(GroupPaymentNew.totalPaying));
 					} else {
 						if(GroupPaymentNew.equalPayment){
-							GroupPaymentNew.tvPaidForTotal.setText(Gen.get_amount_text(GroupPaymentNew.totalPaying / GroupPaymentNew.group.get_users().size()));
+							GroupPaymentNew.tvPaidForTotal.setText(Gen.getAmountText(GroupPaymentNew.totalPaying / GroupPaymentNew.group.getUsers().size()));
 						}
-						GroupPaymentNew.tvPayingTotal.setText(Gen.get_amount_text(GroupPaymentNew.totalPaying));
+						GroupPaymentNew.tvPayingTotal.setText(Gen.getAmountText(GroupPaymentNew.totalPaying));
 					}
 					
-					GroupPaymentNew.set_difference_total(getApplicationContext());
+					GroupPaymentNew.setDifferenceTotal(getApplicationContext());
 				}
 				
 				@Override
@@ -235,10 +235,10 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 			this.payingFields.add(amount);
 		}else{
 			if(this.isEdit){
-				for(int i = 0; i < this.payment.get_splits().size(); i++){
-					if(this.payment.get_split(i).get_user_id() == user.get_id() && this.payment.get_split(i).is_paid_for()){
-						amount.setText(this.payment.get_split(i).get_amount_text(false));
-						GroupPaymentNew.totalPaidFor += this.payment.get_split(i).get_amount();
+				for(int i = 0; i < this.payment.getSplits().size(); i++){
+					if(this.payment.getSplit(i).getUserId() == user.getId() && this.payment.getSplit(i).isPaidFor()){
+						amount.setText(this.payment.getSplit(i).getAmountText(false));
+						GroupPaymentNew.totalPaidFor += this.payment.getSplit(i).getAmount();
 					}
 				}
 			}
@@ -256,12 +256,12 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 					if(s != null && !s.toString().equals("")){
 						GroupPaymentNew.lastEnteredNumber = Float.parseFloat(s.toString());
 						GroupPaymentNew.totalPaidFor += GroupPaymentNew.lastEnteredNumber;
-						GroupPaymentNew.tvPaidForTotal.setText(Gen.get_amount_text(GroupPaymentNew.totalPaidFor));
+						GroupPaymentNew.tvPaidForTotal.setText(Gen.getAmountText(GroupPaymentNew.totalPaidFor));
 					} else {
-						GroupPaymentNew.tvPaidForTotal.setText(Gen.get_amount_text(GroupPaymentNew.totalPaidFor));
+						GroupPaymentNew.tvPaidForTotal.setText(Gen.getAmountText(GroupPaymentNew.totalPaidFor));
 					}
 					
-					GroupPaymentNew.set_difference_total(getApplicationContext());
+					GroupPaymentNew.setDifferenceTotal(getApplicationContext());
 				}
 				
 				@Override
@@ -277,16 +277,16 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 		return amount;
 	}
 	
-	private static void set_difference_total(Context context){
+	private static void setDifferenceTotal(Context context){
 		if(!GroupPaymentNew.equalPayment){
 			float diff = GroupPaymentNew.totalPaidFor - GroupPaymentNew.totalPaying; 
 			
 			if(diff > 0){
-				GroupPaymentNew.tvDifferenceAmount.setText(Gen.get_amount_text(Math.abs(diff)));
+				GroupPaymentNew.tvDifferenceAmount.setText(Gen.getAmountText(Math.abs(diff)));
 				GroupPaymentNew.tvDifferenceAmountTitle.setText(context.getString(R.string.tv_need_more_paid_title));
 			} else {
 				if(diff < 0){
-					GroupPaymentNew.tvDifferenceAmount.setText(Gen.get_amount_text(Math.abs(diff)));
+					GroupPaymentNew.tvDifferenceAmount.setText(Gen.getAmountText(Math.abs(diff)));
 					GroupPaymentNew.tvDifferenceAmountTitle.setText(context.getString(R.string.tv_need_more_paid_for_title));
 				} else {
 					GroupPaymentNew.tvDifferenceAmount.setText("");
@@ -300,18 +300,18 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 	public void onClick(View v) {
 		switch(v.getId()){
 			case R.id.bt_save:
-				this.payment.set_splits(new ArrayList<PaymentSplit>());
-				this.set_split(this.payingFields, 0);
-				this.set_split(this.paidForFields, 1);
+				this.payment.setSplits(new ArrayList<PaymentSplit>());
+				this.setSplit(this.payingFields, 0);
+				this.setSplit(this.paidForFields, 1);
 				
 //				for(int i = 0; i < this.payment.get_splits().size(); i++){
 //					Debug.v("ID", this.payment.get_split(i).get_user_id());
 //					Debug.v("Amount", this.payment.get_split(i).get_amount());
 //				}
 				
-				this.payment.set_title(this.etTitle.getText().toString().trim());
-				this.payment.set_description(this.etDescription.getText().toString().trim());
-				this.payment.set_group_id(this.group.get_id());
+				this.payment.setTitle(this.etTitle.getText().toString().trim());
+				this.payment.setDescription(this.etDescription.getText().toString().trim());
+				this.payment.setGroupId(this.group.getId());
 				
 				if(this.paidAmount == this.payingAmount || this.equalPayment){
 					if(this.isEdit){
@@ -323,7 +323,7 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 					finish();
 				}else{
 					Notify.toast(this, "Paying for and paid amounts are not equal");
-					this.payment.set_amount(0);
+					this.payment.setAmount(0);
 					this.paidAmount = 0;
 					this.payingAmount = 0;
 				}
@@ -339,14 +339,14 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 					this.llPaidForSectionWrapper.setVisibility(View.VISIBLE);
 					this.tvPaidForTotalTitle.setText(this.getText(R.string.tv_total_title));
 //					this.totalPaidFor = 0;
-					this.tvPaidForTotal.setText(Gen.get_amount_text(this.totalPaidFor));
-					this.set_difference_total(this);
+					this.tvPaidForTotal.setText(Gen.getAmountText(this.totalPaidFor));
+					this.setDifferenceTotal(this);
 				} else {
 //					this.tbEqualPayment.setChecked(true);
 					this.equalPayment = true;
 					this.llPaidForSectionWrapper.setVisibility(View.GONE);
 					this.tvPaidForTotalTitle.setText(this.getText(R.string.tv_total_title_per_user));
-					this.tvPaidForTotal.setText(Gen.get_amount_text(this.totalPaying / this.group.get_users().size()));
+					this.tvPaidForTotal.setText(Gen.getAmountText(this.totalPaying / this.group.getUsers().size()));
 					this.tvDifferenceAmount.setText("");
 					this.tvDifferenceAmountTitle.setText("");
 				}
@@ -355,7 +355,7 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 		
 	}
 	
-	private void set_split(ArrayList<EditText> array, int type) {
+	private void setSplit(ArrayList<EditText> array, int type) {
 		EditText etAmount;
 		PaymentSplit split;
 		int userId;
@@ -369,7 +369,7 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 			
 			if(type == 1){
 				if(this.equalPayment){
-					amount = Float.parseFloat(Gen.get_formatted_amount((this.totalPaying/this.group.get_users().size())));
+					amount = Float.parseFloat(Gen.getFormattedAmount((this.totalPaying/this.group.getUsers().size())));
 				} else {
 					if(etAmount.getText().toString().trim().equals("")){
 						amount = 0;
@@ -387,10 +387,10 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 			
 			
 			if(amount > 0){
-				split.set_amount(amount);
-				split.set_user_Id(userId);
-				split.set_type(type);
-				this.payment.add_split(split);
+				split.setAmount(amount);
+				split.setUserId(userId);
+				split.setType(type);
+				this.payment.addSplit(split);
 				
 				switch(type){
 					case 0:

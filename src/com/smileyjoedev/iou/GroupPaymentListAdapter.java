@@ -56,17 +56,17 @@ public class GroupPaymentListAdapter extends BaseAdapter {
 		TextView tvPaymentDescription = (TextView) convertView.findViewById(R.id.tv_payment_description);
 		LinearLayout llGroupDetails = (LinearLayout) convertView.findViewById(R.id.ll_payment_details);
 		
-		tvPaymentTitle.setText(payment.get_title());
-		tvPaymentDescription.setText(payment.get_description());
+		tvPaymentTitle.setText(payment.getTitle());
+		tvPaymentDescription.setText(payment.getDescription());
 		
-		llGroupDetails.addView(this.views.add_field(R.string.date_title, Gen.convert_pdt(payment.get_pdt(), false)));
-		llGroupDetails.addView(this.views.add_field(R.string.tv_payment_description, payment.get_description()));
+		llGroupDetails.addView(this.views.addField(R.string.date_title, Gen.convertPdt(payment.getPdt(), false)));
+		llGroupDetails.addView(this.views.addField(R.string.tv_payment_description, payment.getDescription()));
 		
-		llGroupDetails.addView(this.views.add_field(R.string.tv_paying_title));
-		llGroupDetails.addView(this.views.add_field(payment.get_paying_csv()));
+		llGroupDetails.addView(this.views.addField(R.string.tv_paying_title));
+		llGroupDetails.addView(this.views.addField(payment.getPayingCsv()));
 		
-		llGroupDetails.addView(this.views.add_field(R.string.tv_payed_for_title));
-		llGroupDetails.addView(this.views.add_field(payment.get_paid_for_csv()));
+		llGroupDetails.addView(this.views.addField(R.string.tv_payed_for_title));
+		llGroupDetails.addView(this.views.addField(payment.getPaidForCsv()));
 		
 		return convertView;
 	}

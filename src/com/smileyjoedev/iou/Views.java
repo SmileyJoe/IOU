@@ -58,12 +58,12 @@ public class Views {
 	 * PLAYER
 	 *****************************************************/
 
-	public void user_list(ArrayList<User> users, ListView lvUserList) {
-		this.user_list(users, lvUserList, false);
+	public void userList(ArrayList<User> users, ListView lvUserList) {
+		this.userList(users, lvUserList, false);
 	}
 	
-	public void user_list(ArrayList<User> users, ListView lvUserList, boolean showCheck) {
-		if(this.check_list_contents(users, lvUserList, Constants.USER)){
+	public void userList(ArrayList<User> users, ListView lvUserList, boolean showCheck) {
+		if(this.checkListContents(users, lvUserList, Constants.USER)){
 			int first = lvUserList.getFirstVisiblePosition();
 			View top_child = lvUserList.getChildAt(0);
 			int top;
@@ -80,11 +80,11 @@ public class Views {
 		}
 	}
 	
-	public void user_list(ArrayList<User> users, LinearLayout llUserList) {
-		this.user_list(users, llUserList, false);
+	public void userList(ArrayList<User> users, LinearLayout llUserList) {
+		this.userList(users, llUserList, false);
 	}
 	
-	public void user_list(ArrayList<User> users, LinearLayout llUserList, boolean showCheck) {
+	public void userList(ArrayList<User> users, LinearLayout llUserList, boolean showCheck) {
 //		TextView tv = (TextView) llUserList.findViewById(R.id.tv_no_users);
 		ListView list = (ListView) llUserList.findViewById(R.id.lv_user_list);
 		if(users.size() == 0){
@@ -114,8 +114,8 @@ public class Views {
 	 * GROUP
 	 ******************************************************/
 	
-	public void group_list(ArrayList<Group> groups, ListView lvGroupList) {
-		if(this.check_list_contents(groups, lvGroupList, Constants.GROUP)){
+	public void groupList(ArrayList<Group> groups, ListView lvGroupList) {
+		if(this.checkListContents(groups, lvGroupList, Constants.GROUP)){
 			int first = lvGroupList.getFirstVisiblePosition();
 			View top_child = lvGroupList.getChildAt(0);
 			int top;
@@ -132,7 +132,7 @@ public class Views {
 		}
 	}
 	
-	public void group_list(ArrayList<Group> groups, LinearLayout llGroupList) {
+	public void groupList(ArrayList<Group> groups, LinearLayout llGroupList) {
 //		TextView tv = (TextView) llGroupList.findViewById(R.id.tv_no_groups);
 		ListView list = (ListView) llGroupList.findViewById(R.id.lv_group_list);
 		if(groups.size() == 0){
@@ -162,7 +162,7 @@ public class Views {
 	 * PAYMENTS
 	 ******************************************************/
 	
-	public PaymentListAdapter payment_list(ArrayList<Payment> payments, ListView lvPaymentList) {
+	public PaymentListAdapter paymentList(ArrayList<Payment> payments, ListView lvPaymentList) {
 //		if(this.check_list_contents(payments, lvPaymentList, Constants.PAYMENT)){
 			int first = lvPaymentList.getFirstVisiblePosition();
 			View top_child = lvPaymentList.getChildAt(0);
@@ -183,8 +183,8 @@ public class Views {
 		return adapter;
 	}
 	
-	public void group_payment_list(ArrayList<GroupPayment> payments, ListView lvPaymentList) {
-		if(this.check_list_contents(payments, lvPaymentList, Constants.PAYMENT)){
+	public void groupPaymentList(ArrayList<GroupPayment> payments, ListView lvPaymentList) {
+		if(this.checkListContents(payments, lvPaymentList, Constants.PAYMENT)){
 			int first = lvPaymentList.getFirstVisiblePosition();
 			View top_child = lvPaymentList.getChildAt(0);
 			int top;
@@ -205,16 +205,16 @@ public class Views {
 	 * GENERAL
 	 *****************************************************/
 	
-	public void action_grid(ArrayList<User> users, GridView gvActionGrid) {
+	public void actionGrid(ArrayList<User> users, GridView gvActionGrid) {
 		ActionGridAdapter adapter = new ActionGridAdapter(this.context, users);
 		gvActionGrid.setAdapter(adapter);
 	}
 	
-	public TextView add_td(int content, int width) {
-		return this.add_td(Integer.toString(content), width);
+	public TextView addTd(int content, int width) {
+		return this.addTd(Integer.toString(content), width);
 	}
 	
-	public TextView add_td(String content, int width) {
+	public TextView addTd(String content, int width) {
 		TextView td = new TextView(this.context);
 		td.setText(content);
 		td.setWidth(width);
@@ -225,27 +225,27 @@ public class Views {
 		return td;
 	}
 	
-	public TextView add_field(int resId, int content) {
-		return this.add_field(this.context.getText(resId) + " " + Integer.toString(content));
+	public TextView addField(int resId, int content) {
+		return this.addField(this.context.getText(resId) + " " + Integer.toString(content));
 	}
 	
-	public TextView add_field(String title, int content) {
-		return this.add_field(title + " " + Integer.toString(content));
+	public TextView addField(String title, int content) {
+		return this.addField(title + " " + Integer.toString(content));
 	}
 	
-	public TextView add_field(int resId, String content) {
-		return this.add_field(Html.fromHtml("<u>" + this.context.getText(resId) + "</u> " + content));
+	public TextView addField(int resId, String content) {
+		return this.addField(Html.fromHtml("<u>" + this.context.getText(resId) + "</u> " + content));
 	}
 	
-	public TextView add_field(int resId) {
-		return this.add_field(Html.fromHtml("<u>" + this.context.getText(resId) + "</u>"));
+	public TextView addField(int resId) {
+		return this.addField(Html.fromHtml("<u>" + this.context.getText(resId) + "</u>"));
 	}
 	
-	public TextView add_field(String title, String content) {
-		return this.add_field(title + " " + content);
+	public TextView addField(String title, String content) {
+		return this.addField(title + " " + content);
 	}
 	
-	public TextView add_field(Spanned content) {
+	public TextView addField(Spanned content) {
 		TextView tv = new TextView(this.context);
 		
 		tv.setText(content);
@@ -253,7 +253,7 @@ public class Views {
 		return tv;
 	}
 	
-	public TextView add_field(String content) {
+	public TextView addField(String content) {
 		TextView tv = new TextView(this.context);
 		
 		tv.setText(content);
@@ -261,8 +261,8 @@ public class Views {
 		return tv;
 	}
 	
-	public TextView add_title(String content) {
-		TextView tv = this.add_field(content);
+	public TextView addTitle(String content) {
+		TextView tv = this.addField(content);
 		
 		tv.setTextColor(Color.parseColor("#FFFFFF"));
 		tv.setTextSize(20);
@@ -274,7 +274,7 @@ public class Views {
 	 * PRIVATE
 	 **********************************************************/
 	
-	private void empty_list(View List, int sectionId) {
+	private void emptyList(View List, int sectionId) {
 		
 		String message = new String();
 		
@@ -303,7 +303,7 @@ public class Views {
 		List.setVisibility(View.GONE);
 	}
 	
-	private void not_empty_list(View List, int sectionId) {
+	private void notEmptyList(View List, int sectionId) {
 		try{
 			ViewGroup parent = (ViewGroup) List.getParent();
 			TextView tv = (TextView) parent.findViewById(sectionId);
@@ -314,14 +314,14 @@ public class Views {
 		}
 	}
 	
-	private boolean check_list_contents(ArrayList<?> array, View list, int sectionId) {
+	private boolean checkListContents(ArrayList<?> array, View list, int sectionId) {
 		boolean isNotEmpty;
 		
 		if(array.size() == 0){
-			this.empty_list(list, sectionId);
+			this.emptyList(list, sectionId);
 			isNotEmpty = false;
 		}else{
-			this.not_empty_list(list, sectionId);
+			this.notEmptyList(list, sectionId);
 			isNotEmpty = true;
 		}
 		

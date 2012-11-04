@@ -16,15 +16,15 @@ public class GroupUserPayment {
 	 * SETTERS
 	 *********************************************/
 	
-	public void set_user(User user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 	
-	public void set_paid(float paid) {
+	public void setPaid(float paid) {
 		this.paid = paid;
 	}
 	
-	public void set_spent(float spent) {
+	public void setSpent(float spent) {
 		this.spent = spent;
 	}
 	
@@ -33,41 +33,41 @@ public class GroupUserPayment {
 	 *********************************************/
 	
 
-	public User get_user() {
+	public User getUser() {
 		return user;
 	}
 	
-	public float get_paid() {
-		return Gen.format_number(paid);
+	public float getPaid() {
+		return Gen.formatNumber(paid);
 	}
 	
-	public float get_spent() {
-		return Gen.format_number(spent);
+	public float getSpent() {
+		return Gen.formatNumber(spent);
 	}
 	
-	public float get_balance(){
-		float balance = this.get_paid() - this.get_spent();
+	public float getBalance(){
+		float balance = this.getPaid() - this.getSpent();
 		
-		return Gen.format_number(balance);
+		return Gen.formatNumber(balance);
 	}
 	
-	public String get_paid_text(){
-		return Gen.get_amount_text(this.get_paid());
+	public String getPaidText(){
+		return Gen.getAmountText(this.getPaid());
 	}
 	
-	public String get_spent_text(){
-		return Gen.get_amount_text(this.get_spent());
+	public String getSpentText(){
+		return Gen.getAmountText(this.getSpent());
 	}
 	
-	public String get_balance_text(){
-		return this.get_balance_text(true);
+	public String getBalanceText(){
+		return this.getBalanceText(true);
 	}
 	
-	public String get_balance_text(boolean showSign){
+	public String getBalanceText(boolean showSign){
 		if(showSign){
-			return Gen.get_amount_text(this.get_balance());
+			return Gen.getAmountText(this.getBalance());
 		} else {
-			return Gen.get_amount_text(Math.abs(this.get_balance()));
+			return Gen.getAmountText(Math.abs(this.getBalance()));
 		}
 		
 	}

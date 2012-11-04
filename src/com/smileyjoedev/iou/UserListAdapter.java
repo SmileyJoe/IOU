@@ -57,12 +57,12 @@ public class UserListAdapter extends BaseAdapter {
 		CheckBox cbUserSelected = (CheckBox) convertView.findViewById(R.id.cb_user_selected);
 		View vStateIndicator = (View) convertView.findViewById(R.id.v_state_indicator);
 		
-		tvUserName.setText(user.get_name());
+		tvUserName.setText(user.getName());
 		
-		Gen.set_user_image(this.context, ivUserImage, user);
+		Gen.setUserImage(this.context, ivUserImage, user);
 		
 		if(this.showCheck){
-			if(user.is_selected()){
+			if(user.isSelected()){
 				cbUserSelected.setChecked(true);
 			} else {
 				cbUserSelected.setChecked(false);
@@ -70,11 +70,11 @@ public class UserListAdapter extends BaseAdapter {
 			tvUserBalance.setVisibility(View.GONE);
 		} else {
 			cbUserSelected.setVisibility(View.GONE);
-			if(user.get_balance() > 0){
+			if(user.getBalance() > 0){
 				tvUserBalance.setTextColor(Color.GREEN);
 				vStateIndicator.setBackgroundColor(Color.GREEN);
 			} else {
-				if(user.get_balance() < 0){
+				if(user.getBalance() < 0){
 					tvUserBalance.setTextColor(Color.RED);
 					vStateIndicator.setBackgroundColor(Color.RED);
 				} else {
@@ -82,7 +82,7 @@ public class UserListAdapter extends BaseAdapter {
 				}
 			}
 			
-			tvUserBalance.setText(user.get_balance_text());
+			tvUserBalance.setText(user.getBalanceText());
 		}
 		
 		return convertView;

@@ -59,19 +59,19 @@ public class PaymentListAdapter extends BaseAdapter {
 		LinearLayout llPaymentDetails = (LinearLayout) convertView.findViewById(R.id.ll_payment_details);
 		View vStateIndicator = (View) convertView.findViewById(R.id.v_state_indicator);
 		
-		if(payment.get_title().equals("")){
+		if(payment.getTitle().equals("")){
 			tvPaymentTitle.setVisibility(View.GONE);
 		} else {
-			tvPaymentTitle.setText(payment.get_title());
+			tvPaymentTitle.setText(payment.getTitle());
 		}
 		
-		if(payment.get_description().equals("")){
+		if(payment.getDescription().equals("")){
 			tvPaymentDescription.setVisibility(View.GONE);
 		} else {
-			tvPaymentDescription.setText(payment.get_description());
+			tvPaymentDescription.setText(payment.getDescription());
 		}
 		
-		if(payment.is_to_user()){
+		if(payment.isToUser()){
 			tvPaymentAmount.setTextColor(Color.GREEN);
 			vStateIndicator.setBackgroundColor(Color.GREEN);
 		} else {
@@ -79,8 +79,8 @@ public class PaymentListAdapter extends BaseAdapter {
 			vStateIndicator.setBackgroundColor(Color.RED);
 		}
 		
-		tvPaymentDate.setText(payment.get_date_text(true));
-		tvPaymentAmount.setText(payment.get_amount_text(true));
+		tvPaymentDate.setText(payment.getDateText(true));
+		tvPaymentAmount.setText(payment.getAmountText(true));
 		
 		return convertView;
 	}

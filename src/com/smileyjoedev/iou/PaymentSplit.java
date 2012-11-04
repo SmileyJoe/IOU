@@ -26,27 +26,27 @@ public class PaymentSplit {
 	 * SETTERS
 	 ************************************************/
 	
-	public void set_id(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public void set_type(int type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 
-	public void set_user_Id(int userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
-	public void set_user(User user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
-	public void set_amount(float amount) {
+	public void setAmount(float amount) {
 		this.amount = amount;
 	}
 	
-	public void set_payment_id(int id){
+	public void setPaymentId(int id){
 		this.paymentId = id;
 	}
 
@@ -54,35 +54,35 @@ public class PaymentSplit {
 	 * GETTERS
 	 ************************************************/
 	
-	public int get_id() {
+	public int getId() {
 		return id;
 	}
 
-	public int get_type() {
+	public int getType() {
 		return type;
 	}
 
-	public int get_user_id() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public User get_user() {
+	public User getUser() {
 		return user;
 	}
 
-	public float get_amount() {
-		return Gen.format_number(amount);
+	public float getAmount() {
+		return Gen.formatNumber(amount);
 	}
 	
-	public int get_payment_id(){
+	public int getPaymentId(){
 		return this.paymentId;
 	}
 	
-	public String get_amount_text(boolean includeSymbol){
+	public String getAmountText(boolean includeSymbol){
 		if(includeSymbol){
-			return Gen.get_amount_text(this.get_amount());
+			return Gen.getAmountText(this.getAmount());
 		} else {
-			return Gen.get_formatted_amount(this.get_amount());
+			return Gen.getFormattedAmount(this.getAmount());
 		}
 		
 	}
@@ -91,7 +91,7 @@ public class PaymentSplit {
 	 * CHECKS
 	 ************************************************/
 
-	public boolean is_paying(){
+	public boolean isPaying(){
 		if(this.type == 0){
 			return true;
 		} else {
@@ -99,7 +99,7 @@ public class PaymentSplit {
 		}
 	}
 
-	public boolean is_paid_for(){
+	public boolean isPaidFor(){
 		if(this.type == 1){
 			return true;
 		} else {

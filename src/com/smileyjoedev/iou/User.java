@@ -36,52 +36,52 @@ public class User {
 	 * SETTERS
 	 ****************************************************/
 	
-	public void set_id(int id){
+	public void setId(int id){
 		this.id = id;
 	}
 	
-	public void set_name(String name){
+	public void setName(String name){
 		this.name = name;
 	}
 	
-	public void set_online_id(int id){
+	public void setOnlineId(int id){
 		this.onlineId = id;
 	}
 	
-	public void set_status(int status){
+	public void setStatus(int status){
 		this.status = status;
 	}
 	
-	public void set_payments(ArrayList<Payment> payments){
+	public void setPayments(ArrayList<Payment> payments){
 		this.payments = payments;
-		this.set_balance();
+		this.setBalance();
 	}
 	
-	public void set_balance(){
-		for(int i = 0; i < this.get_payments().size(); i++){
-			if(this.get_payments().get(i).is_from_user()){
-				this.balance = this.balance - this.get_payments().get(i).get_amount();
+	public void setBalance(){
+		for(int i = 0; i < this.getPayments().size(); i++){
+			if(this.getPayments().get(i).isFromUser()){
+				this.balance = this.balance - this.getPayments().get(i).getAmount();
 			} else {
-				this.balance = this.balance + this.get_payments().get(i).get_amount();
+				this.balance = this.balance + this.getPayments().get(i).getAmount();
 			}
 		}
 		
 		this.balance = (float) (Math.round(this.balance*100.0)/100.0);
 	}
 	
-	public void set_variable_name(String name){
+	public void setVariableName(String name){
 		this.variableName = name;
 	}
 	
-	public void set_minimalistic_text_flag(int flag){
+	public void setMinimalisticTextFlag(int flag){
 		this.minimalisticTextFlag = flag;
 	}
 	
-	public void set_contact_id(long id){
+	public void setContactId(long id){
 		this.contactId = id;
 	}
 	
-	public void set_selected(boolean selected){
+	public void setSelected(boolean selected){
 		this.selected = selected;
 	}
 	
@@ -89,31 +89,31 @@ public class User {
 	 * GETTERS
 	 *****************************************************/
 	
-	public int get_id(){
+	public int getId(){
 		return this.id;
 	}
 	
-	public String get_name(){
+	public String getName(){
 		return this.name;
 	}
 	
-	public int get_online_id(){
+	public int getOnlineId(){
 		return this.onlineId;
 	}
 	
-	public int get_status(){
+	public int getStatus(){
 		return this.status;
 	}
 	
-	public ArrayList<Payment> get_payments(){
+	public ArrayList<Payment> getPayments(){
 		return this.payments;
 	}
 	
-	public float get_balance(){
+	public float getBalance(){
 		return this.balance;
 	}
 	
-	public String get_status_text(){
+	public String getStatusText(){
 		String status = "";
 		switch(this.status){
 			case 0:
@@ -136,33 +136,33 @@ public class User {
 		return status;
 	}
 	
-	public String get_balance_text(){
-		return Gen.get_amount_text(Math.abs(this.balance));
+	public String getBalanceText(){
+		return Gen.getAmountText(Math.abs(this.balance));
 	}
 	
-	public String get_variable_name(){
+	public String getVariableName(){
 		return this.variableName;
 	}
 	
-	public int get_minimalistic_text_flag(){
+	public int getMinimalisticTextFlag(){
 		return this.minimalisticTextFlag;
 	}
 	
-	public long get_contact_id(){
+	public long getContactId(){
 		return this.contactId;
 	}
 	
-	public boolean get_selected(){
+	public boolean getSelected(){
 		return this.selected;
 	}
 	
-	public String get_state_text(){
+	public String getStateText(){
 		String state = "";
-		
-		if(this.get_balance() > 0){
+		// TODO: Use Strings from strings.xml //
+		if(this.getBalance() > 0){
 			state = "Owes You";
 		} else {
-			if(this.get_balance() < 0){
+			if(this.getBalance() < 0){
 				state = "You Owe";
 			} else {
 				state = "All Square";
@@ -172,13 +172,13 @@ public class User {
 		return state;
 	}
 	
-	public String get_first_name(){
+	public String getFirstName(){
 		String first = "";
 		
-		if(this.get_name().contains(" ")){
-			first = this.get_name().substring(0, this.get_name().indexOf(" "));
+		if(this.getName().contains(" ")){
+			first = this.getName().substring(0, this.getName().indexOf(" "));
 		} else {
-			first = this.get_name();
+			first = this.getName();
 		}
 		
 		return first;
@@ -188,39 +188,39 @@ public class User {
 	 * CHECKS
 	 ******************************************************/
 
-	public boolean is_inactive(){
-		if(this.get_status() == 0){
+	public boolean isInactive(){
+		if(this.getStatus() == 0){
 			return true;
 		} else {
 			return false;
 		}
 	}
 	
-	public boolean is_active(){
-		if(this.get_status() == 1){
+	public boolean isActive(){
+		if(this.getStatus() == 1){
 			return true;
 		} else {
 			return false;
 		}
 	}
 	
-	public boolean is_current(){
-		if(this.get_status() == 2){
+	public boolean isCurrent(){
+		if(this.getStatus() == 2){
 			return true;
 		} else {
 			return false;
 		}
 	}
 	
-	public boolean is_favourite(){
-		if(this.get_status() == 3){
+	public boolean isFavourite(){
+		if(this.getStatus() == 3){
 			return true;
 		} else {
 			return false;
 		}
 	}
 	
-	public boolean is_using_minimalistic_text(){
+	public boolean isUsingMinimalisticText(){
 		if(this.minimalisticTextFlag == 1){
 			return true;
 		} else {
@@ -228,7 +228,7 @@ public class User {
 		}
 	}
 	
-	public boolean is_not_using_minimalistic_text(){
+	public boolean isNotUsingMinimalisticText(){
 		if(this.minimalisticTextFlag == 0){
 			return true;
 		} else {
@@ -236,7 +236,7 @@ public class User {
 		}
 	}
 
-	public boolean is_in_contact_dir(){
+	public boolean isInContactDir(){
 		if(this.contactId != 0){
 			return true;
 		} else {
@@ -244,7 +244,7 @@ public class User {
 		}
 	}
 
-	public boolean is_selected(){
+	public boolean isSelected(){
 		return this.selected;
 	}
 	

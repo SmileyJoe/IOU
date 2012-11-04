@@ -54,29 +54,29 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 			int groupId = extras.getInt("group_id");
 			int j = 0;
 			boolean found = false;
-			this.group = this.groupAdapter.get_details(groupId);
+			this.group = this.groupAdapter.getDetails(groupId);
 			this.users = this.userAdapter.get();
 			
-			for(int i = 0; i < this.group.get_users().size(); i++){
+			for(int i = 0; i < this.group.getUsers().size(); i++){
 				j = 0;
 				found = false;
 				while (j < this.users.size() && !found){
-					if(this.group.get_user(i).get_id() == this.users.get(j).get_id()){
-						this.users.get(j).set_selected(true);
+					if(this.group.getUser(i).getId() == this.users.get(j).getId()){
+						this.users.get(j).setSelected(true);
 						found = true;
 					}
 					j++;
 				}
 			}
 			
-			this.group.set_users(this.users);
+			this.group.setUsers(this.users);
 			
 			this.edit = true;
 		} catch(NullPointerException e){
 			this.edit = false;
 		}
         
-        this.populate_view();
+        this.populateView();
     }
     
     @Override
@@ -89,7 +89,7 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 			case R.id.menu_add_user:
-				startActivityForResult(Intents.new_user(this), Constants.ACTIVITY_NEW_USER);
+				startActivityForResult(Intents.newUser(this), Constants.ACTIVITY_NEW_USER);
 				return true;
 			case android.R.id.home:
 				finish();
@@ -119,16 +119,16 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 //    	this.btAddUser.setOnClickListener(this);
     }
     
-    private void populate_view(){
+    private void populateView(){
     	if(!this.edit){
     		this.users = this.userAdapter.get();
     	} else {
-    		this.users = this.group.get_users();
-    		this.etGroupTitle.setText(this.group.get_title());
-    		this.etGroupDescription.setText(this.group.get_description());
+    		this.users = this.group.getUsers();
+    		this.etGroupTitle.setText(this.group.getTitle());
+    		this.etGroupDescription.setText(this.group.getDescription());
     	}
     	
-    	this.views.user_list(this.users, this.lvUserList, true);
+    	this.views.userList(this.users, this.lvUserList, true);
     }
 
 	@Override
@@ -137,9 +137,9 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 			case R.id.bt_save:
 				String groupTitle = this.etGroupTitle.getText().toString().trim();
 				
-				this.group.set_title(groupTitle);
-				this.group.set_description(this.etGroupDescription.getText().toString().trim());
-				this.group.set_users(this.users);
+				this.group.setTitle(groupTitle);
+				this.group.setDescription(this.etGroupDescription.getText().toString().trim());
+				this.group.setUsers(this.users);
 				
 				if(!this.edit){
 					long dbId = this.groupAdapter.save(this.group);
@@ -174,10 +174,10 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 				CheckBox clickedBox = (CheckBox) row.findViewById(R.id.cb_user_selected);
 				if(clickedBox.isChecked()){
 					clickedBox.setChecked(false);
-					this.users.get(position).set_selected(false);
+					this.users.get(position).setSelected(false);
 				}else{
 					clickedBox.setChecked(true);
-					this.users.get(position).set_selected(true);
+					this.users.get(position).setSelected(true);
 				}
 				
 				break;
@@ -188,7 +188,7 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch(requestCode){
 			case Constants.ACTIVITY_NEW_USER:
-				this.populate_view();
+				this.populateView();
 				break;
 		}
 	}

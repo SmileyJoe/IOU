@@ -43,9 +43,9 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
         Bundle extras = getIntent().getExtras();
 		
 		int groupId = extras.getInt("group_id");
-		this.group = this.groupAdapter.get_details(groupId);
+		this.group = this.groupAdapter.getDetails(groupId);
 		
-        this.populate_view();
+        this.populateView();
         
     }
     
@@ -59,13 +59,13 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 	        case R.id.menu_add_payment:
-				startActivityForResult(Intents.group_payment_new(this, group.get_id()), Constants.ACTIVITY_GROUP_PAYMENT_NEW);
+				startActivityForResult(Intents.groupPaymentNew(this, group.getId()), Constants.ACTIVITY_GROUP_PAYMENT_NEW);
 				return true;
 			case R.id.menu_repayment:
-				startActivityForResult(Intents.group_repayment(this, this.group.get_id()), Constants.ACTIVITY_GROUP_REPAYMENT);
+				startActivityForResult(Intents.groupRepayment(this, this.group.getId()), Constants.ACTIVITY_GROUP_REPAYMENT);
 				return true;
 			case R.id.menu_user_details:
-				startActivityForResult(Intents.group_user_payment_details(this, this.group.get_id()), Constants.ACTIVITY_GROUP_USER_PAYMENT_DETAILS);
+				startActivityForResult(Intents.groupUserPaymentDetails(this, this.group.getId()), Constants.ACTIVITY_GROUP_USER_PAYMENT_DETAILS);
 				return true;
 			case android.R.id.home:
 				finish();
@@ -88,9 +88,9 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
     	this.selectedPayment = 0;
     }
     
-    private void populate_view(){
-    	this.payments = this.groupPaymentAdapter.get_by_group(this.group.get_id());
-    	this.views.group_payment_list(this.payments, this.lvPaymentList);
+    private void populateView(){
+    	this.payments = this.groupPaymentAdapter.getByGroup(this.group.getId());
+    	this.views.groupPaymentList(this.payments, this.lvPaymentList);
     }
 
 	@Override
@@ -106,21 +106,21 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch(requestCode){
 			case Constants.ACTIVITY_GROUP_PAYMENT_NEW:
-				this.populate_view();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_GROUP_REPAYMENT:
-				this.populate_view();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_POPUP_DELETE:
 				if(resultCode == Activity.RESULT_OK){
 					if(data.getBooleanExtra("result", false)){
 						this.groupPaymentAdapter.delete(this.payments.get(this.selectedPayment));
-						this.populate_view();
+						this.populateView();
 					}
 				}
 				break;
 			case Constants.ACTIVITY_GROUP_PAYMENT_EDIT:
-				this.populate_view();
+				this.populateView();
 				break;
 		}
 	}
@@ -144,10 +144,10 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
 		int menuItemIndex = item.getItemId();
 		switch(menuItemIndex){
 			case Constants.CONTEXT_EDIT:
-				startActivityForResult(Intents.group_payment_edit(this,this.group.get_id(), this.payments.get(this.selectedPayment).get_id()), Constants.ACTIVITY_GROUP_PAYMENT_EDIT);
+				startActivityForResult(Intents.groupPaymentEdit(this,this.group.getId(), this.payments.get(this.selectedPayment).getId()), Constants.ACTIVITY_GROUP_PAYMENT_EDIT);
 				break;
 			case Constants.CONTEXT_DELETE:
-				startActivityForResult(Intents.popup_delete(this, Constants.PAYMENT), Constants.ACTIVITY_POPUP_DELETE);
+				startActivityForResult(Intents.popupDelete(this, Constants.PAYMENT), Constants.ACTIVITY_POPUP_DELETE);
 				break;
 			default:
 				break;

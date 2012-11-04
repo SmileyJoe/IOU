@@ -43,9 +43,9 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
         Bundle extras = getIntent().getExtras();
 		
 		int groupId = extras.getInt("group_id");
-		this.group = this.groupAdapter.get_details(groupId);
+		this.group = this.groupAdapter.getDetails(groupId);
 		
-        this.populate_view();
+        this.populateView();
         
     }
     
@@ -64,34 +64,34 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
     	this.selectedCount = 0;
     }
     
-    private void populate_view(){
-    	this.payments = this.groupPaymentAdapter.get_by_group(this.group.get_id());
-    	this.get_repayments();
+    private void populateView(){
+    	this.payments = this.groupPaymentAdapter.getByGroup(this.group.getId());
+    	this.getRepayments();
     	
     	if(this.repayments.size() > 0){
         	for(int i = 0; i < this.repayments.size(); i++){
-        		this.populate_details(this.repayments.get(i), i);
+        		this.populateDetails(this.repayments.get(i), i);
         	}    		
     	} else {
-    		this.populate_empty_details();
-    		this.disable_button(this.btRepaySelected);
+    		this.populateEmptyDetails();
+    		this.disableButton(this.btRepaySelected);
     	}
     	
     	if(this.selectedCount > 0){
-			this.enable_button(this.btRepaySelected);
+			this.enableButton(this.btRepaySelected);
 		} else {
-			this.disable_button(this.btRepaySelected);
+			this.disableButton(this.btRepaySelected);
 		}
     }
     
-    private void disable_button(Button button){
+    private void disableButton(Button button){
     	// TODO: Change button appearence to show disabled
 //    	Debug.v("Disable");
     	button.setClickable(false);
 //    	button.setTextColor(R.color.button_disabled_text);
     }
     
-    private void enable_button(Button button){
+    private void enableButton(Button button){
 //    	Debug.v("Enable");
     	button.setClickable(true);
 //    	button.setTextColor(R.color.button_text);
@@ -99,13 +99,13 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
 //    	button.refreshDrawableState();
     }
     
-    private void populate_empty_details(){
+    private void populateEmptyDetails(){
     	TextView tv = new TextView(this);
     	tv.setText(this.getString(R.string.tv_no_repayments));
     	this.llRepaymentDetails.addView(tv);
     }
     
-    private void populate_details(GroupRepayment repayment, int position){
+    private void populateDetails(GroupRepayment repayment, int position){
     	LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View view = inflater.inflate(R.xml.group_payback_user, null);
 		
@@ -121,42 +121,42 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
 		this.llRepaymentDetails.addView(view);
     }
     
-    private void get_repayments(){
-    	ArrayList<Payment> userPayments = Gen.get_user_payments(this.group, this.payments);
+    private void getRepayments(){
+    	ArrayList<Payment> userPayments = Gen.getUserPayments(this.group, this.payments);
         
     	if(userPayments.size() > 0){
-    		this.repayments = Gen.sort_group_repayments(userPayments);
+    		this.repayments = Gen.sortGroupRepayments(userPayments);
     	}
         
     }
 
-    private void repay_user(GroupRepayment repayment){
+    private void repayUser(GroupRepayment repayment){
     	GroupPayment payment = new GroupPayment();
     	ArrayList<PaymentSplit> splits = new ArrayList<PaymentSplit>();
     	PaymentSplit split = new PaymentSplit();
     	
-    	payment.set_amount(repayment.get_amount());
-    	payment.set_description(this.getString(R.string.repayment_description));
-    	payment.set_group_id(this.group.get_id());
-    	payment.set_pdt(Gen.get_pdt());
+    	payment.setAmount(repayment.getAmount());
+    	payment.setDescription(this.getString(R.string.repayment_description));
+    	payment.setGroupId(this.group.getId());
+    	payment.setPdt(Gen.getPdt());
     	
-    	split.set_amount(repayment.get_amount());
-    	split.set_type(0);
-    	split.set_user(repayment.get_owing_user());
-    	split.set_user_Id(repayment.get_owing_user().get_id());
+    	split.setAmount(repayment.getAmount());
+    	split.setType(0);
+    	split.setUser(repayment.getOwingUser());
+    	split.setUserId(repayment.getOwingUser().getId());
     	
     	splits.add(split);
     	
     	split = new PaymentSplit();
     	
-    	split.set_amount(repayment.get_amount());
-    	split.set_type(1);
-    	split.set_user(repayment.get_owed_user());
-    	split.set_user_Id(repayment.get_owed_user().get_id());
+    	split.setAmount(repayment.getAmount());
+    	split.setType(1);
+    	split.setUser(repayment.getOwedUser());
+    	split.setUserId(repayment.getOwedUser().getId());
     	
     	splits.add(split);
     	
-		payment.set_splits(splits);
+		payment.setSplits(splits);
 		
 		this.groupPaymentAdapter.save(payment);
     }
@@ -169,8 +169,8 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
 				break;
 			case R.id.bt_repay_selected:
 				for(int i = 0; i < this.repayments.size(); i++){
-					if(this.repayments.get(i).get_selected()){
-						this.repay_user(this.repayments.get(i));
+					if(this.repayments.get(i).getSelected()){
+						this.repayUser(this.repayments.get(i));
 					}
 				}
 				finish();
@@ -188,18 +188,18 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
 		switch(buttonView.getId()){
 			case R.id.cb_repayment_selected:
 				if(isChecked){
-					this.repayments.get(Integer.parseInt(buttonView.getTag().toString())).set_selected(true);
+					this.repayments.get(Integer.parseInt(buttonView.getTag().toString())).setSelected(true);
 					this.selectedCount++;
 				} else {
-					this.repayments.get(Integer.parseInt(buttonView.getTag().toString())).set_selected(false);
+					this.repayments.get(Integer.parseInt(buttonView.getTag().toString())).setSelected(false);
 					this.selectedCount--;
 				}
 				
 				
 				if(this.selectedCount > 0){
-					this.enable_button(this.btRepaySelected);
+					this.enableButton(this.btRepaySelected);
 				} else {
-					this.disable_button(this.btRepaySelected);
+					this.disableButton(this.btRepaySelected);
 				}
 				break;
 		}

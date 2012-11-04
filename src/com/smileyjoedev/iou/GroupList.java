@@ -40,7 +40,7 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
         
         this.initialize();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        this.populate_view();
+        this.populateView();
     }
     
     @Override
@@ -54,7 +54,7 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 
         switch (item.getItemId()) {
 			case R.id.menu_add_group:
-				startActivityForResult(Intents.group_new(this), Constants.ACTIVITY_GROUP_NEW);
+				startActivityForResult(Intents.groupNew(this), Constants.ACTIVITY_GROUP_NEW);
 				return true;
 			case android.R.id.home:
 				finish();
@@ -77,13 +77,13 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
     	
     }
     
-    public void populate_view(boolean getAll){
+    public void populateView(boolean getAll){
     	this.groups = this.groupAdapter.get();
-    	this.views.group_list(this.groups, this.lvGroupList);
+    	this.views.groupList(this.groups, this.lvGroupList);
     }
     
-    private void populate_view(){
-    	this.populate_view(true);
+    private void populateView(){
+    	this.populateView(true);
     }
     
 	@Override
@@ -91,7 +91,7 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 		switch(view.getId()){
 		}
 		
-		this.populate_view(false);
+		this.populateView(false);
 		
 	}
 	
@@ -99,7 +99,7 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 	public void onItemClick(AdapterView<?> view, View arg1, int position, long arg3) {
 		switch(view.getId()){
 			case R.id.lv_group_list:
-				startActivityForResult(Intents.group_view(this, this.groups.get(position).get_id()), Constants.ACTIVITY_GROUP_VIEW);
+				startActivityForResult(Intents.groupView(this, this.groups.get(position).getId()), Constants.ACTIVITY_GROUP_VIEW);
 				break;
 		}
 		
@@ -117,18 +117,18 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 				if(resultCode == Activity.RESULT_OK){
 					if(data.getBooleanExtra("result", false)){
 						this.groupAdapter.delete(this.groups.get(this.selectedGroup));
-						this.populate_view();
+						this.populateView();
 					}
 				}
 				break;
 			case Constants.ACTIVITY_GROUP_NEW:
-				this.populate_view();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_GROUP_EDIT:
-				this.populate_view();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_GROUP_VIEW:
-				this.populate_view();
+				this.populateView();
 				break;
 		}
 	}
@@ -151,10 +151,10 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 		int menuItemIndex = item.getItemId();
 		switch(menuItemIndex){
 			case Constants.CONTEXT_EDIT:
-				startActivityForResult(Intents.group_edit(this, this.groups.get(this.selectedGroup).get_id()), Constants.ACTIVITY_GROUP_EDIT);
+				startActivityForResult(Intents.groupEdit(this, this.groups.get(this.selectedGroup).getId()), Constants.ACTIVITY_GROUP_EDIT);
 				break;
 			case Constants.CONTEXT_DELETE:
-				startActivityForResult(Intents.popup_delete(this, Constants.GROUP), Constants.ACTIVITY_POPUP_DELETE);
+				startActivityForResult(Intents.popupDelete(this, Constants.GROUP), Constants.ACTIVITY_POPUP_DELETE);
 				break;
 		}
 		return true;

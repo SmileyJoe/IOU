@@ -28,23 +28,23 @@ public class Group {
 	 * VARIABLES
 	 ***********************************/
 	
-	public void set_id(int id){
+	public void setId(int id){
 		this.id = id;
 	}
 	
-	public void set_title(String title){
+	public void setTitle(String title){
 		this.title = title;
 	}
 	
-	public void set_description(String description){
+	public void setDescription(String description){
 		this.description = description;
 	}
 	
-	public void set_users(ArrayList<User> users){
+	public void setUsers(ArrayList<User> users){
 		this.users = users;
 	}
 	
-	public void add_user(User user){
+	public void addUser(User user){
 		this.users.add(user);
 	}
 	
@@ -52,23 +52,23 @@ public class Group {
 	 * GETTERS
 	 ***********************************/
 	
-	public int get_id(){
+	public int getId(){
 		return this.id;
 	}
 	
-	public String get_title(){
+	public String getTitle(){
 		return this.title;
 	}
 	
-	public String get_description(){
+	public String getDescription(){
 		return this.description;
 	}
 	
-	public ArrayList<User> get_users(){
+	public ArrayList<User> getUsers(){
 		return this.users;
 	}
 	
-	public User get_user(int id){
+	public User getUser(int id){
 		return this.users.get(id);
 	}
 	

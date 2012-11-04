@@ -46,14 +46,14 @@ public class DbGroupPaymentAdapter {
 	 * GET
 	 ********************************************************/
 
-	public GroupPayment get_details(int paymentId){
-		this.set_cursor("WHERE pay._id = '" + paymentId + "' ");
-		return this.sort_cursor();
+	public GroupPayment getDetails(int paymentId){
+		this.setCursor("WHERE pay._id = '" + paymentId + "' ");
+		return this.sortCursor();
 	}
 	
-	public ArrayList<GroupPayment> get_by_group(int groupId){
-		this.set_cursor(" WHERE grouprel.group_id = '" + groupId + "'");
-		return this.sort_cursor_array_list();
+	public ArrayList<GroupPayment> getByGroup(int groupId){
+		this.setCursor(" WHERE grouprel.group_id = '" + groupId + "'");
+		return this.sortCursorArrayList();
 	}
 	
 	/*********************************************************
@@ -62,45 +62,45 @@ public class DbGroupPaymentAdapter {
 	
 	public long save(GroupPayment payment) {
 		long dbId = 0;
-		ContentValues values = create_content_values(payment);
+		ContentValues values = createContentValues(payment);
 		dbId = db.insert("payment", null, values);
 		if(dbId > 0){
 			long relDbId = 0;
-			relDbId = this.save_rel(payment.get_group_id(), (int) dbId);
+			relDbId = this.saveRel(payment.getGroupId(), (int) dbId);
 			if(relDbId > 0){
-				this.save_splits(payment.get_splits(), (int) dbId);
-				Notify.toast(this.context, R.string.toast_payment_saved, payment.get_description());
+				this.saveSplits(payment.getSplits(), (int) dbId);
+				Notify.toast(this.context, R.string.toast_payment_saved, payment.getDescription());
 			} else {
-				payment.set_id((int) dbId);
+				payment.setId((int) dbId);
 				this.delete(payment, false);
-				Notify.toast(this.context, R.string.toast_payment_saved_error, payment.get_description());
+				Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getDescription());
 			}
 		} else {
-			Notify.toast(this.context, R.string.toast_payment_saved_error, payment.get_description());
+			Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getDescription());
 		}
 		
 		return dbId;
 	}
 	
-	public long save_rel(int groupId, int paymentId){
+	public long saveRel(int groupId, int paymentId){
 		long dbId = 0;
-		ContentValues values = create_content_values_rel(groupId, paymentId);
+		ContentValues values = createContentValuesRel(groupId, paymentId);
 		dbId = db.insert("group_rel_payment", null, values);
 		
 		return dbId;
 	}
 	
-	public void save_splits(ArrayList<PaymentSplit> splits, int paymentId){
+	public void saveSplits(ArrayList<PaymentSplit> splits, int paymentId){
 		
 		for(int i = 0; i < splits.size(); i++){
-			splits.get(i).set_payment_id(paymentId);
-			this.save_split(splits.get(i));
+			splits.get(i).setPaymentId(paymentId);
+			this.saveSplit(splits.get(i));
 		}
 	}
 	
-	public long save_split(PaymentSplit split){
+	public long saveSplit(PaymentSplit split){
 		long dbId = 0;
-		ContentValues values = create_content_values_split(split);
+		ContentValues values = createContentValuesSplit(split);
 		dbId = db.insert("payment_split", null, values);
 		
 		return dbId;
@@ -111,15 +111,15 @@ public class DbGroupPaymentAdapter {
 	 ********************************************************/
 	
 	public void update(GroupPayment payment) {
-		ContentValues values = create_content_values(payment);
-		db.update("payment", values, " _id = '" + payment.get_id() + "' ", null);
-		this.update_splits(payment.get_splits(), payment.get_id());
-		Notify.toast(this.context, R.string.toast_payment_updated, payment.get_description());
+		ContentValues values = createContentValues(payment);
+		db.update("payment", values, " _id = '" + payment.getId() + "' ", null);
+		this.updateSplits(payment.getSplits(), payment.getId());
+		Notify.toast(this.context, R.string.toast_payment_updated, payment.getDescription());
 	}
 	
-	public void update_splits(ArrayList<PaymentSplit> splits, int paymentId){
-		this.delete_splits(paymentId);
-		this.save_splits(splits, paymentId);
+	public void updateSplits(ArrayList<PaymentSplit> splits, int paymentId){
+		this.deleteSplits(paymentId);
+		this.saveSplits(splits, paymentId);
 	}
 	
 	/*********************************************************
@@ -131,15 +131,15 @@ public class DbGroupPaymentAdapter {
 	}
 	
 	public void delete(GroupPayment payment, boolean showToast){
-		db.delete("payment", " _id='" + payment.get_id() + "' ", null);
-		this.delete_rel(payment.get_id());
-		this.delete_splits(payment.get_id());
+		db.delete("payment", " _id='" + payment.getId() + "' ", null);
+		this.deleteRel(payment.getId());
+		this.deleteSplits(payment.getId());
 		if(showToast){
-			Notify.toast(this.context, R.string.toast_payment_deleted, payment.get_description());
+			Notify.toast(this.context, R.string.toast_payment_deleted, payment.getDescription());
 		}
 	}
 	
-	public void delete_by_group(int groupId){
+	public void deleteByGroup(int groupId){
 		ArrayList<Integer> paymentIds = new ArrayList<Integer>();
 		
 		Cursor cursor = this.db.rawQuery("SELECT payment_id FROM group_rel_payment WHERE group_id = '" + groupId + "'", null);
@@ -158,16 +158,16 @@ public class DbGroupPaymentAdapter {
 		
 		for(int i = 0; i < paymentIds.size(); i++){
 			db.delete("payment", " _id='" + paymentIds.get(i) + "' ", null);
-			this.delete_rel(paymentIds.get(i));
-			this.delete_splits(paymentIds.get(i));
+			this.deleteRel(paymentIds.get(i));
+			this.deleteSplits(paymentIds.get(i));
 		}
 	}
 	
-	public void delete_rel(int paymentId){
+	public void deleteRel(int paymentId){
 		db.delete("group_rel_payment", " payment_id='" + paymentId + "' ", null);
 	}
 	
-	public void delete_splits(int paymentId){
+	public void deleteSplits(int paymentId){
 		db.delete("payment_split", " payment_id='" + paymentId + "' ", null);
 	}
 	
@@ -175,7 +175,7 @@ public class DbGroupPaymentAdapter {
 	 * GENERAL
 	 ********************************************************/
 	
-	private void set_cursor(String where){
+	private void setCursor(String where){
 		this.cursor = this.db.rawQuery(
 				"SELECT pay._id, grouprel.group_id, pay.payment_amount, pay.payment_title, pay.payment_description, pay.payment_date "
 				+ "FROM payment pay "
@@ -184,7 +184,7 @@ public class DbGroupPaymentAdapter {
 				+ "ORDER BY payment_date DESC", null);
 	}
 	
-	private void set_coloumns(){
+	private void setColoumns(){
 		this.idCol = this.cursor.getColumnIndex("_id");
 		this.groupIdCol = this.cursor.getColumnIndex("group_id");
 		this.amountCol = this.cursor.getColumnIndex("payment_amount");
@@ -193,7 +193,7 @@ public class DbGroupPaymentAdapter {
 		this.dateCol = this.cursor.getColumnIndex("payment_date");
 	}
 	
-	private ArrayList<PaymentSplit> get_split(int id){
+	private ArrayList<PaymentSplit> getSplit(int id){
 		ArrayList<PaymentSplit> splits = new ArrayList<PaymentSplit>();
 		PaymentSplit split = new PaymentSplit();
 		Cursor cursor = this.db.rawQuery(
@@ -205,12 +205,12 @@ public class DbGroupPaymentAdapter {
 			cursor.moveToFirst();
 			do{
 				split = new PaymentSplit();
-				split.set_id(cursor.getInt(cursor.getColumnIndex("_id")));
-				split.set_amount(cursor.getFloat(cursor.getColumnIndex("payment_amount")));
-				split.set_type(cursor.getInt(cursor.getColumnIndex("split_type")));
-				split.set_user_Id(cursor.getInt(cursor.getColumnIndex("user_id")));
-				split.set_payment_id(cursor.getInt(cursor.getColumnIndex("payment_id")));
-				split.set_user(this.userAdapter.get_details(split.get_user_id()));
+				split.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+				split.setAmount(cursor.getFloat(cursor.getColumnIndex("payment_amount")));
+				split.setType(cursor.getInt(cursor.getColumnIndex("split_type")));
+				split.setUserId(cursor.getInt(cursor.getColumnIndex("user_id")));
+				split.setPaymentId(cursor.getInt(cursor.getColumnIndex("payment_id")));
+				split.setUser(this.userAdapter.getDetails(split.getUserId()));
 				splits.add(split);
 			}while(cursor.moveToNext());
 		}
@@ -218,29 +218,29 @@ public class DbGroupPaymentAdapter {
 		return splits;
 	}
 	
-	private GroupPayment get_payment_data(){
+	private GroupPayment getPaymentData(){
 		GroupPayment payment = new GroupPayment();
 		
-		payment.set_id(this.cursor.getInt(this.idCol));
-		payment.set_amount(this.cursor.getFloat(this.amountCol));
-		payment.set_title(this.cursor.getString(this.titleCol));
-		payment.set_description(this.cursor.getString(this.descriptionCol));
-		payment.set_pdt(this.cursor.getLong(this.dateCol));
-		payment.set_splits(this.get_split(payment.get_id()));
+		payment.setId(this.cursor.getInt(this.idCol));
+		payment.setAmount(this.cursor.getFloat(this.amountCol));
+		payment.setTitle(this.cursor.getString(this.titleCol));
+		payment.setDescription(this.cursor.getString(this.descriptionCol));
+		payment.setPdt(this.cursor.getLong(this.dateCol));
+		payment.setSplits(this.getSplit(payment.getId()));
 		
 		return payment;
 	}
 	
-	private ArrayList<GroupPayment> sort_cursor_array_list(){
+	private ArrayList<GroupPayment> sortCursorArrayList(){
 		ArrayList<GroupPayment> payments = new ArrayList<GroupPayment>();
 		
-		this.set_coloumns();
+		this.setColoumns();
 		
 		if(this.cursor != null){
 			this.cursor.moveToFirst();
 			if(this.cursor.getCount() > 0){
 				do{
-					payments.add(this.get_payment_data());
+					payments.add(this.getPaymentData());
 				}while(this.cursor.moveToNext());
 			}
 		}
@@ -248,45 +248,45 @@ public class DbGroupPaymentAdapter {
 		return payments;
 	}
 	
-	private GroupPayment sort_cursor(){
+	private GroupPayment sortCursor(){
 		GroupPayment payment = new GroupPayment();
 		
-		this.set_coloumns();
+		this.setColoumns();
 		
 		if(this.cursor != null){
 			this.cursor.moveToFirst();
 			if(this.cursor.getCount() > 0){
-				payment = this.get_payment_data();
+				payment = this.getPaymentData();
 			}
 		}
 		this.cursor.close();
 		return payment;
 	}
 	
-	private ContentValues create_content_values(GroupPayment payment) {
+	private ContentValues createContentValues(GroupPayment payment) {
 		ContentValues values = new ContentValues();
 		
-		values.put("payment_amount", payment.get_amount());
-		values.put("payment_type", payment.get_type());
-		values.put("payment_title", payment.get_title());
-		values.put("payment_description", payment.get_description());
-		values.put("payment_date", payment.get_pdt());
+		values.put("payment_amount", payment.getAmount());
+		values.put("payment_type", payment.getType());
+		values.put("payment_title", payment.getTitle());
+		values.put("payment_description", payment.getDescription());
+		values.put("payment_date", payment.getPdt());
 		
 		return values;
 	}
 	
-	private ContentValues create_content_values_split(PaymentSplit paymentSplit) {
+	private ContentValues createContentValuesSplit(PaymentSplit paymentSplit) {
 		ContentValues values = new ContentValues();
 		
-		values.put("payment_id", paymentSplit.get_payment_id());
-		values.put("user_id", paymentSplit.get_user_id());
-		values.put("payment_amount", paymentSplit.get_amount());
-		values.put("split_type", paymentSplit.get_type());
+		values.put("payment_id", paymentSplit.getPaymentId());
+		values.put("user_id", paymentSplit.getUserId());
+		values.put("payment_amount", paymentSplit.getAmount());
+		values.put("split_type", paymentSplit.getType());
 		
 		return values;
 	}
 	
-	private ContentValues create_content_values_rel(int groupId, int paymentId) {
+	private ContentValues createContentValuesRel(int groupId, int paymentId) {
 		ContentValues values = new ContentValues();
 		
 		values.put("group_id", groupId);

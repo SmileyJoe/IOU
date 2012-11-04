@@ -7,7 +7,7 @@ import android.provider.MediaStore;
 
 public class Intents {
 	
-	public static Intent take_picture(int width, int height){
+	public static Intent takePicture(int width, int height){
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString());
 //		intent.putExtra("crop", "true");
@@ -21,7 +21,7 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent popup_delete(Context context, int sectionId){
+	public static Intent popupDelete(Context context, int sectionId){
 		Intent intent = new Intent(context, com.smileyjoedev.genLibrary.PopupDelete.class);
 		String message = "";
 		String positiveText = "";
@@ -59,22 +59,22 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent new_user(Context context){
+	public static Intent newUser(Context context){
 		Intent intent = new Intent(context, UserNew.class);
 		return intent;
 	}
 	
-	public static Intent user_list(Context context){
+	public static Intent userList(Context context){
 		Intent intent = new Intent(context, UserList.class);
 		return intent;
 	}
 	
-	public static Intent group_list(Context context){
+	public static Intent groupList(Context context){
 		Intent intent = new Intent(context, GroupList.class);
 		return intent;
 	}
 	
-	public static Intent edit_user(Context context, int userId){
+	public static Intent editUser(Context context, int userId){
 		Intent intent = new Intent(context, UserNew.class);
 		
 		Bundle extras = new Bundle();
@@ -84,7 +84,7 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent user_view(Context context, int userId){
+	public static Intent userView(Context context, int userId){
 		Intent intent = new Intent(context, UserView.class);
 		
 		Bundle extras = new Bundle();
@@ -94,7 +94,7 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent new_payment(Context context, int userId){
+	public static Intent newPayment(Context context, int userId){
 		Intent intent = new Intent(context, PaymentNew.class);
 		
 		Bundle extras = new Bundle();
@@ -109,7 +109,7 @@ public class Intents {
 		return intent;
 	}
 
-	public static Intent repay_payment(Context context, int paymentId){
+	public static Intent repayPayment(Context context, int paymentId){
 		Intent intent = new Intent(context, PaymentNew.class);
 		
 		Bundle extras = new Bundle();
@@ -122,7 +122,7 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent repay_payment_user(Context context, int userId){
+	public static Intent repayPaymentUser(Context context, int userId){
 		Intent intent = new Intent(context, PaymentNew.class);
 		
 		Bundle extras = new Bundle();
@@ -135,7 +135,7 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent edit_payment(Context context, int paymentId){
+	public static Intent editPayment(Context context, int paymentId){
 		Intent intent = new Intent(context, PaymentNew.class);
 		
 		Bundle extras = new Bundle();
@@ -148,19 +148,19 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent widget_quick_add(Context context){
+	public static Intent widgetQuickAdd(Context context){
 		Intent intent = new Intent(context, PaymentNew.class);
 		intent.setAction(Constants.ACTION_WIDGET_QUICK_ADD);
 		
 		return intent;
 	}
 
-	public static Intent group_new(Context context){
+	public static Intent groupNew(Context context){
 		Intent intent = new Intent(context, GroupNew.class);
 		return intent;
 	}
 
-	public static Intent group_edit(Context context, int groupId){
+	public static Intent groupEdit(Context context, int groupId){
 		Intent intent = new Intent(context, GroupNew.class);
 		
 		Bundle extras = new Bundle();
@@ -170,7 +170,7 @@ public class Intents {
 		return intent;
 	}
 
-	public static Intent group_view(Context context, int groupId){
+	public static Intent groupView(Context context, int groupId){
 		Intent intent = new Intent(context, GroupView.class);
 		
 		Bundle extras = new Bundle();
@@ -180,7 +180,7 @@ public class Intents {
 		return intent;
 	}
 
-	public static Intent group_payment_new(Context context, int groupId){
+	public static Intent groupPaymentNew(Context context, int groupId){
 		Intent intent = new Intent(context, GroupPaymentNew.class);
 		
 		Bundle extras = new Bundle();
@@ -190,7 +190,7 @@ public class Intents {
 		return intent;
 	}
 
-	public static Intent group_payment_edit(Context context, int groupId, int paymentId){
+	public static Intent groupPaymentEdit(Context context, int groupId, int paymentId){
 		Intent intent = new Intent(context, GroupPaymentNew.class);
 		
 		Bundle extras = new Bundle();
@@ -201,7 +201,7 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent group_repayment(Context context, int groupId){
+	public static Intent groupRepayment(Context context, int groupId){
 		Intent intent = new Intent(context, GroupPayback.class);
 		
 		Bundle extras = new Bundle();
@@ -211,7 +211,7 @@ public class Intents {
 		return intent;
 	}
 
-	public static Intent group_user_payment_details(Context context, int groupId){
+	public static Intent groupUserPaymentDetails(Context context, int groupId){
 		Intent intent = new Intent(context, GroupUserPaymentDetails.class);
 		
 		Bundle extras = new Bundle();

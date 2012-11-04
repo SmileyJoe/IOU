@@ -20,17 +20,17 @@ public class SortUser implements Comparator<User> {
 		
 		switch(this.sort){
 			case 0:
-				returnValue = user1.get_name().compareToIgnoreCase(user2.get_name());
+				returnValue = user1.getName().compareToIgnoreCase(user2.getName());
 				break;
 			case 1:
-				if(user1.get_balance() > user2.get_balance()){
+				if(user1.getBalance() > user2.getBalance()){
 					returnValue = -1;
 				} else {
 					returnValue = 1;
 				}
 				break;
 			case 2:
-				if(user1.get_balance() < user2.get_balance()){
+				if(user1.getBalance() < user2.getBalance()){
 					returnValue = -1;
 				} else {
 					returnValue = 1;

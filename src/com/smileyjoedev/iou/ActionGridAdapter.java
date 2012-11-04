@@ -53,10 +53,10 @@ public class ActionGridAdapter extends BaseAdapter {
 		TextView tvAction = (TextView) convertView.findViewById(R.id.tv_action);
 		ImageView ivUserImage = (ImageView) convertView.findViewById(R.id.iv_user_image);
 		
-		tvUserName.setText(user.get_name());
+		tvUserName.setText(user.getName());
 		tvAction.setText("View");
 		
-		Gen.set_action_image(this.context, ivUserImage, user);
+		Gen.setActionImage(this.context, ivUserImage, user);
 		
 		return convertView;
 	}

@@ -23,7 +23,7 @@ public class GroupPayment {
 		this.type = 0;
 		this.title = "";
 		this.description = "";
-		this.pdt = Gen.get_pdt();
+		this.pdt = Gen.getPdt();
 		this.splits = new ArrayList<PaymentSplit>();
 		this.groupId = 0;
 	}
@@ -32,48 +32,48 @@ public class GroupPayment {
 	 * SETTERS
 	 *************************************************/
 
-	public void set_id(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
-	public void set_amount(float amount) {
+	public void setAmount(float amount) {
 		this.amount = amount;
 	}
 	
-	public void set_type(int type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 	
-	public void set_title(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 	
-	public void set_description(String description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	
-	public void set_pdt(long pdt) {
+	public void setPdt(long pdt) {
 		this.pdt = pdt;
 	}
 	
-	public void set_splits(ArrayList<PaymentSplit> splits) {
+	public void setSplits(ArrayList<PaymentSplit> splits) {
 		this.splits = splits;
 		
 		for(int i = 0; i < splits.size(); i++){
-			if(this.splits.get(i).is_paying()){
-				this.amount += splits.get(i).get_amount();
+			if(this.splits.get(i).isPaying()){
+				this.amount += splits.get(i).getAmount();
 			}
 		}
 	}
 	
-	public void set_group_id(int id){
+	public void setGroupId(int id){
 		this.groupId = id;
 	}
 	
-	public void add_split(PaymentSplit split){
+	public void addSplit(PaymentSplit split){
 		this.splits.add(split);
-		if(split.is_paying()){
-			this.amount += split.get_amount();
+		if(split.isPaying()){
+			this.amount += split.getAmount();
 		}
 		
 	}
@@ -82,53 +82,53 @@ public class GroupPayment {
 	 * GETTERS
 	 *************************************************/
 
-	public int get_id() {
+	public int getId() {
 		return id;
 	}
 
-	public float get_amount() {
-		return Gen.format_number(amount);
+	public float getAmount() {
+		return Gen.formatNumber(amount);
 	}
 	
-	public int get_type() {
+	public int getType() {
 		return type;
 	}
 	
-	public String get_title() {
+	public String getTitle() {
 		return title;
 	}
 	
-	public String get_description() {
+	public String getDescription() {
 		return description;
 	}
 	
-	public long get_pdt() {
+	public long getPdt() {
 		return pdt;
 	}
 	
-	public ArrayList<PaymentSplit> get_splits() {
+	public ArrayList<PaymentSplit> getSplits() {
 		return splits;
 	}
 	
-	public int get_group_id(){
+	public int getGroupId(){
 		return this.groupId;
 	}
 	
-	public PaymentSplit get_split(int id){
+	public PaymentSplit getSplit(int id){
 		return this.splits.get(id);
 	}
 	
-	public String get_amount_text(){
-		return Gen.get_amount_text(this.amount);
+	public String getAmountText(){
+		return Gen.getAmountText(this.amount);
 	}
 	
-	public String get_paying_csv(){
+	public String getPayingCsv(){
 		String result = "";
 		boolean first = true;
 		
-		for(int i = 0; i < this.get_splits().size(); i++){
-			if(this.get_split(i).is_paying()){
-				String temp = this.get_split(i).get_user().get_name() + "(" + this.get_split(i).get_amount_text(true) + ")";
+		for(int i = 0; i < this.getSplits().size(); i++){
+			if(this.getSplit(i).isPaying()){
+				String temp = this.getSplit(i).getUser().getName() + "(" + this.getSplit(i).getAmountText(true) + ")";
 				if(first){
 					result += temp;
 					first = false;
@@ -141,13 +141,13 @@ public class GroupPayment {
 		return result;
 	}
 	
-	public String get_paid_for_csv(){
+	public String getPaidForCsv(){
 		String result = "";
 		boolean first = true;
 		
-		for(int i = 0; i < this.get_splits().size(); i++){
-			if(this.get_split(i).is_paid_for()){
-				String temp = this.get_split(i).get_user().get_name() + "(" + this.get_split(i).get_amount_text(true) + ")";
+		for(int i = 0; i < this.getSplits().size(); i++){
+			if(this.getSplit(i).isPaidFor()){
+				String temp = this.getSplit(i).getUser().getName() + "(" + this.getSplit(i).getAmountText(true) + ")";
 				if(first){
 					result += temp;
 					first = false;

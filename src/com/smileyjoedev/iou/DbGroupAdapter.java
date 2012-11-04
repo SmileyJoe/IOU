@@ -43,14 +43,14 @@ public class DbGroupAdapter {
 	 * GET
 	 *****************************************/
 	
-	public Group get_details(int groupId){
-		this.set_cursor("WHERE _id = '" + groupId + "' ");
-		return this.sort_cursor();
+	public Group getDetails(int groupId){
+		this.setCursor("WHERE _id = '" + groupId + "' ");
+		return this.sortCursor();
 	}
 	
 	public ArrayList<Group> get(){
-		this.set_cursor("");
-		return this.sort_cursor_array_list();
+		this.setCursor("");
+		return this.sortCursorArrayList();
 	}
 	
 	/******************************************
@@ -59,45 +59,45 @@ public class DbGroupAdapter {
 
 	public long save(Group group) {
 		long dbId = 0;
-		if(this.check_group_exists(group.get_title())){
-			Notify.toast(this.context, R.string.toast_group_exists, group.get_title());
+		if(this.checkGroupExists(group.getTitle())){
+			Notify.toast(this.context, R.string.toast_group_exists, group.getTitle());
 		} else {
-			ContentValues values = create_content_values(group);
+			ContentValues values = createContentValues(group);
 			dbId = db.insert("group_detail", null, values);
 			if(dbId > 0){
 				boolean usersSaved= false;
-				usersSaved = this.save_users_rel(group.get_users(), (int) dbId);
+				usersSaved = this.saveUsersRel(group.getUsers(), (int) dbId);
 				if(usersSaved){
-					Notify.toast(this.context, R.string.toast_group_saved, group.get_title());
+					Notify.toast(this.context, R.string.toast_group_saved, group.getTitle());
 				} else {
-					group.set_id((int) dbId);
+					group.setId((int) dbId);
 					this.delete(group, false);
-					Notify.toast(this.context, R.string.toast_group_saved_error, group.get_title());
+					Notify.toast(this.context, R.string.toast_group_saved_error, group.getTitle());
 				}
 			} else {
-				Notify.toast(this.context, R.string.toast_group_saved_error, group.get_title());
+				Notify.toast(this.context, R.string.toast_group_saved_error, group.getTitle());
 			}
 		}
 		
 		return dbId;
 	}
 	
-	public boolean save_users_rel(ArrayList<User> users, int groupId){
+	public boolean saveUsersRel(ArrayList<User> users, int groupId){
 		boolean success = true;
 		
 		for(int i = 0; i < users.size(); i++){
-			if(users.get(i).is_selected()){
-				this.save_user_rel(users.get(i).get_id(), groupId);
+			if(users.get(i).isSelected()){
+				this.saveUserRel(users.get(i).getId(), groupId);
 			}
 		}
 		
 		return success;
 	}
 	
-	public long save_user_rel(int userId, int groupId){
+	public long saveUserRel(int userId, int groupId){
 		long dbId = 0;
 		
-		ContentValues values = create_content_values_user_rel(userId, groupId);
+		ContentValues values = createContentValuesUserRel(userId, groupId);
 		dbId = db.insert("user_rel_group", null, values);
 		
 		return dbId;
@@ -109,14 +109,14 @@ public class DbGroupAdapter {
 	
 	public int update(Group group) {
 		int numRows = 0;
-		if(this.check_group_exists(group.get_title(), group.get_id())){
-			Notify.toast(this.context, R.string.toast_group_exists, group.get_title());
+		if(this.checkGroupExists(group.getTitle(), group.getId())){
+			Notify.toast(this.context, R.string.toast_group_exists, group.getTitle());
 		} else {
-			ContentValues values = create_content_values(group);
-			numRows = this.db.update("group_detail", values, " _id = '" + group.get_id() + "' ", null);
-			this.delete_users_rel(group.get_id());
-			this.save_users_rel(group.get_users(), group.get_id());
-			Notify.toast(this.context, R.string.toast_group_updated, group.get_title());
+			ContentValues values = createContentValues(group);
+			numRows = this.db.update("group_detail", values, " _id = '" + group.getId() + "' ", null);
+			this.deleteUsersRel(group.getId());
+			this.saveUsersRel(group.getUsers(), group.getId());
+			Notify.toast(this.context, R.string.toast_group_updated, group.getTitle());
 		}
 		return numRows;
 	}
@@ -130,20 +130,20 @@ public class DbGroupAdapter {
 	}
 	
 	public void delete(Group group, boolean showToast){
-		db.delete("group_detail", " _id='" + group.get_id() + "' ", null);
-		this.delete_users_rel(group.get_id());
-		this.groupPaymentAdapter.delete_by_group(group.get_id());
+		db.delete("group_detail", " _id='" + group.getId() + "' ", null);
+		this.deleteUsersRel(group.getId());
+		this.groupPaymentAdapter.deleteByGroup(group.getId());
 //		this.delete_rel(group);
 		if(showToast){
-			Notify.toast(this.context, R.string.toast_group_deleted, group.get_title());
+			Notify.toast(this.context, R.string.toast_group_deleted, group.getTitle());
 		}
 	}
 	
-	public void delete_user_rel(int userId, int groupId){
+	public void deleteUserRel(int userId, int groupId){
 		db.delete("group_rel_user", " user_id = '" + userId + "' AND group_id = '" + groupId + "' ", null);
 	}
 	
-	public void delete_users_rel(int groupId){
+	public void deleteUsersRel(int groupId){
 		db.delete("user_rel_group", " group_id = '" + groupId + "' ", null);
 	}
 	
@@ -151,7 +151,7 @@ public class DbGroupAdapter {
 	 * GENERAL
 	 *****************************************/
 	
-	private void set_cursor(String where){
+	private void setCursor(String where){
 		this.cursor = this.db.rawQuery(
 				"SELECT _id, group_title, group_description "
 				+ "FROM group_detail "
@@ -159,33 +159,33 @@ public class DbGroupAdapter {
 				+ "ORDER BY group_title DESC", null);
 	}
 	
-	private void set_coloumns(){
+	private void setColoumns(){
 		this.idCol = this.cursor.getColumnIndex("_id");
 		this.titleCol = this.cursor.getColumnIndex("group_title");
 		this.descriptionCol = this.cursor.getColumnIndex("group_description");
 	}
 	
-	private Group get_group_data(){
+	private Group getGroupData(){
 		Group group = new Group();
 		
-		group.set_id(this.cursor.getInt(this.idCol));
-		group.set_title(this.cursor.getString(this.titleCol));
-		group.set_description(this.cursor.getString(this.descriptionCol));
-		group.set_users(this.userAdapter.get_by_group(group.get_id()));
+		group.setId(this.cursor.getInt(this.idCol));
+		group.setTitle(this.cursor.getString(this.titleCol));
+		group.setDescription(this.cursor.getString(this.descriptionCol));
+		group.setUsers(this.userAdapter.getByGroup(group.getId()));
 		
 		return group;
 	}
 	
-	private ArrayList<Group> sort_cursor_array_list(){
+	private ArrayList<Group> sortCursorArrayList(){
 		ArrayList<Group> groups = new ArrayList<Group>();
 		
-		this.set_coloumns();
+		this.setColoumns();
 		
 		if(this.cursor != null){
 			this.cursor.moveToFirst();
 			if(this.cursor.getCount() > 0){
 				do{
-					groups.add(this.get_group_data());
+					groups.add(this.getGroupData());
 				}while(this.cursor.moveToNext());
 			}
 		}
@@ -193,31 +193,31 @@ public class DbGroupAdapter {
 		return groups;
 	}
 	
-	private Group sort_cursor(){
+	private Group sortCursor(){
 		Group group = new Group();
 		
-		this.set_coloumns();
+		this.setColoumns();
 		
 		if(this.cursor != null){
 			this.cursor.moveToFirst();
 			if(this.cursor.getCount() > 0){
-				group = this.get_group_data();
+				group = this.getGroupData();
 			}
 		}
 		this.cursor.close();
 		return group;
 	}
 	
-	private ContentValues create_content_values(Group group) {
+	private ContentValues createContentValues(Group group) {
 		ContentValues values = new ContentValues();
 		
-		values.put("group_title", group.get_title());
-		values.put("group_description", group.get_description());
+		values.put("group_title", group.getTitle());
+		values.put("group_description", group.getDescription());
 		
 		return values;
 	}
 	
-	private ContentValues create_content_values_user_rel(int userId, int groupId) {
+	private ContentValues createContentValuesUserRel(int userId, int groupId) {
 		ContentValues values = new ContentValues();
 		
 		values.put("user_id", userId);
@@ -234,7 +234,7 @@ public class DbGroupAdapter {
 	 * CHECK
 	 **********************************************/
 	
-	public boolean check_group_exists(String groupTitle, int groupId) {
+	public boolean checkGroupExists(String groupTitle, int groupId) {
 		boolean groupExists = false;
 		
 		Cursor cursor = this.db.rawQuery("SELECT _id FROM group_detail WHERE group_title = '" + groupTitle + "' AND _id != '" + groupId + "' ", null);
@@ -249,7 +249,7 @@ public class DbGroupAdapter {
 		return groupExists;
 	}
 	
-	public boolean check_group_exists(String groupTitle) {
+	public boolean checkGroupExists(String groupTitle) {
 		boolean groupExists = false;
 		
 		Cursor cursor = this.db.rawQuery("SELECT _id FROM group_detail WHERE group_title = '" + groupTitle + "' ", null);

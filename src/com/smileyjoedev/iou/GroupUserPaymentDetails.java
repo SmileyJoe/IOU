@@ -34,9 +34,9 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		Bundle extras = getIntent().getExtras();
 		
 		int groupId = extras.getInt("group_id");
-		this.group = this.groupAdapter.get_details(groupId);
+		this.group = this.groupAdapter.getDetails(groupId);
 		
-		this.populate_view();
+		this.populateView();
 		
 	}
 	
@@ -51,15 +51,15 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		this.tvGroupTotalAmount = (TextView) findViewById(R.id.tv_group_total_amount);
 	}
 	
-	private void populate_view() {
-		ArrayList<GroupPayment> payments = this.groupPaymentAdapter.get_by_group(this.group.get_id());
+	private void populateView() {
+		ArrayList<GroupPayment> payments = this.groupPaymentAdapter.getByGroup(this.group.getId());
 		
 		ArrayList<GroupUserPayment> userPayments = new ArrayList<GroupUserPayment>();
 		
-		for(int i = 0; i < this.group.get_users().size(); i++){
+		for(int i = 0; i < this.group.getUsers().size(); i++){
 			GroupUserPayment userPayment = new GroupUserPayment();
 			
-			userPayment.set_user(this.group.get_user(i));
+			userPayment.setUser(this.group.getUser(i));
 			
 			userPayments.add(userPayment);
 		}
@@ -67,13 +67,13 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		for(int i = 0; i < payments.size(); i++){
 			GroupPayment payment = payments.get(i);
 			
-			for(int j = 0; j < payment.get_splits().size(); j++){
+			for(int j = 0; j < payment.getSplits().size(); j++){
 				for(int k = 0; k < userPayments.size(); k++){
-					if(payment.get_split(j).get_user_id() == userPayments.get(k).get_user().get_id()){
-						if(payment.get_split(j).is_paying()){
-							userPayments.get(k).set_paid(userPayments.get(k).get_paid() + payment.get_split(j).get_amount());
+					if(payment.getSplit(j).getUserId() == userPayments.get(k).getUser().getId()){
+						if(payment.getSplit(j).isPaying()){
+							userPayments.get(k).setPaid(userPayments.get(k).getPaid() + payment.getSplit(j).getAmount());
 						}else{
-							userPayments.get(k).set_spent(userPayments.get(k).get_spent() + payment.get_split(j).get_amount());
+							userPayments.get(k).setSpent(userPayments.get(k).getSpent() + payment.getSplit(j).getAmount());
 						}
 					}
 				}
@@ -83,16 +83,16 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		float total = 0;
 		
 		for(int i = 0; i < userPayments.size(); i++){
-			this.populate_details(userPayments.get(i));
-			total += userPayments.get(i).get_spent();
+			this.populateDetails(userPayments.get(i));
+			total += userPayments.get(i).getSpent();
 		}
 		
 		this.tvGroupTotal.setText("Total spent by group:");
-		this.tvGroupTotalAmount.setText(Gen.get_amount_text(total));
+		this.tvGroupTotalAmount.setText(Gen.getAmountText(total));
 		
 	}
 	
-	private void populate_details(GroupUserPayment userPayments) {
+	private void populateDetails(GroupUserPayment userPayments) {
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View view = inflater.inflate(R.xml.group_user_payment_details, null);
 		
@@ -100,14 +100,14 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		TextView name = (TextView) view.findViewById(R.id.tv_user_name);
 		TextView balance = (TextView) view.findViewById(R.id.tv_user_balance);
 		
-		details.setText("Paid " + userPayments.get_paid_text() + ", Spent " + userPayments.get_spent_text());
-		name.setText(userPayments.get_user().get_name());
-		balance.setText(userPayments.get_balance_text());
+		details.setText("Paid " + userPayments.getPaidText() + ", Spent " + userPayments.getSpentText());
+		name.setText(userPayments.getUser().getName());
+		balance.setText(userPayments.getBalanceText());
 		
-		if(userPayments.get_balance() > 0){
+		if(userPayments.getBalance() > 0){
 			balance.setTextColor(Color.GREEN);
 		} else {
-			if(userPayments.get_balance() < 0){
+			if(userPayments.getBalance() < 0){
 				balance.setTextColor(Color.RED);
 			}
 		}

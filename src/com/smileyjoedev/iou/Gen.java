@@ -33,7 +33,7 @@ import android.widget.TextView;
 public class Gen {
 	
 	//TODO: instead of include time send a constant through of the format //
-	public static String convert_pdt(long pdt, boolean includeTime){
+	public static String convertPdt(long pdt, boolean includeTime){
 		String format = "dd MMM yyyy HH:mm";
 		
 		if(includeTime){
@@ -48,18 +48,18 @@ public class Gen {
 		return text;
 	}
 	
-	public static long get_pdt(){
+	public static long getPdt(){
 		Calendar c = Calendar.getInstance();
 		Date pdt = c.getTime();
 		
 		return pdt.getTime();
 	}
 
-    public static void fill_window(Window window){
+    public static void fillWindow(Window window){
     	window.setLayout(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
     }
 	
-	public static void hide_empty_view(ArrayList<?> array, View view){
+	public static void hideEmptyView(ArrayList<?> array, View view){
 		if(array.isEmpty()){
 			view.setVisibility(View.GONE);
 		}
@@ -92,18 +92,18 @@ public class Gen {
 //		}
 	}
 
-	public static boolean set_user_image(Context context, ImageView ivUserImage, User user){
+	public static boolean setUserImage(Context context, ImageView ivUserImage, User user){
 		boolean imageFound = false;
-		String userName = user.get_name();
+		String userName = user.getName();
 //		java.io.File file = new java.io.File(Constants.IMAGE_PATH + userName + Constants.IMAGE_EXTENSION);
 //		if(file.exists()){
 //			Bitmap bm = BitmapFactory.decodeFile(Constants.IMAGE_PATH + userName + Constants.IMAGE_EXTENSION);
 //			ivUserImage.setImageBitmap(bm);
 //			imageFound = true;
 //		}else{
-			if(user.is_in_contact_dir()){
+			if(user.isInContactDir()){
 				Contacts cont = new Contacts(context);
-				Bitmap image = cont.getPhoto(user.get_contact_id());
+				Bitmap image = cont.getPhoto(user.getContactId());
 				
 				try{
 					image.equals(null);
@@ -123,12 +123,12 @@ public class Gen {
 		return imageFound;
 	}
 	
-	public static boolean set_action_image(Context context, ImageView ivUserImage, User user){
+	public static boolean setActionImage(Context context, ImageView ivUserImage, User user){
 		boolean imageFound = false;
-		String userName = user.get_name();
-		if(user.is_in_contact_dir()){
+		String userName = user.getName();
+		if(user.isInContactDir()){
 			Contacts cont = new Contacts(context);
-			Bitmap image = cont.getPhoto(user.get_contact_id());
+			Bitmap image = cont.getPhoto(user.getContactId());
 			
 			try{
 				image.equals(null);
@@ -147,7 +147,7 @@ public class Gen {
 		return imageFound;
 	}
 	
-	public static String get_amount_text(float amount){
+	public static String getAmountText(float amount){
 		boolean positive;
 		
 		if(amount < 0){
@@ -156,7 +156,7 @@ public class Gen {
 			positive = true;
 		}
 		
-		String number = Gen.get_formatted_amount(Math.abs(amount));
+		String number = Gen.getFormattedAmount(Math.abs(amount));
 		
 		Locale locale=Locale.getDefault();
         Currency currency=Currency.getInstance(locale);
@@ -171,7 +171,7 @@ public class Gen {
 		return number;
 	}
 	
-	public static String get_formatted_amount(float amount){
+	public static String getFormattedAmount(float amount){
 		String number = Float.toString(amount);
 		int decPos = number.indexOf(".");
 		String dec = number.substring(decPos + 1);
@@ -191,30 +191,30 @@ public class Gen {
 		return number;
 	}
 	
-	public static void display_minimalistic_text(Context context, User user, Payment payment){
+	public static void displayMinimalisticText(Context context, User user, Payment payment){
 		
-		if(user.is_using_minimalistic_text()){
-			float newBalance = user.get_balance();
-			if(payment.is_to_user()){
-				newBalance = newBalance + payment.get_amount();
+		if(user.isUsingMinimalisticText()){
+			float newBalance = user.getBalance();
+			if(payment.isToUser()){
+				newBalance = newBalance + payment.getAmount();
 			} else {
-				newBalance = newBalance - payment.get_amount();
+				newBalance = newBalance - payment.getAmount();
 			}
 			
-			Gen.display_minimalistic_text(context, user, newBalance);
+			Gen.displayMinimalisticText(context, user, newBalance);
 		}
 	}
 	
-	public static void display_minimalistic_text(Context context, User user, float amount){
-		Gen.display_minimalistic_text(context, user.get_variable_name(), amount);
+	public static void displayMinimalisticText(Context context, User user, float amount){
+		Gen.displayMinimalisticText(context, user.getVariableName(), amount);
 	}
 	
-	public static void display_minimalistic_text(Context context, String variableName, float amount){
+	public static void displayMinimalisticText(Context context, String variableName, float amount){
 		
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		
 		if(prefs.getBoolean("allow_minimalistic_text", true)){
-			MinimalisticText.SendTo(context, variableName, Gen.get_amount_text(amount));
+			MinimalisticText.SendTo(context, variableName, Gen.getAmountText(amount));
 			if(amount == 0){
 				MinimalisticText.SendTo(context, variableName + "SIGN", "0");
 			} else {
@@ -228,15 +228,15 @@ public class Gen {
 		
 	}
 
-    public static void sort_user(ArrayList<User> tempArray, int sort){
+    public static void sortUser(ArrayList<User> tempArray, int sort){
     	Collections.sort(tempArray, new SortUser(sort));
     }
     
-    public static String create_email_body(Context context, User user){
+    public static String createEmailBody(Context context, User user){
     	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
     	String msg = prefs.getString("default_email_reminder_body", context.getString(R.string.default_email_reminder_body));
-		String username = user.get_name();
-		String balance = prefs.getString("default_currency", context.getString(R.string.default_currency)) + user.get_balance_text();
+		String username = user.getName();
+		String balance = prefs.getString("default_currency", context.getString(R.string.default_currency)) + user.getBalanceText();
 		
 		msg = msg.replace("%USERNAME", username);
 		msg = msg.replace("%BALANCE", balance);
@@ -244,30 +244,30 @@ public class Gen {
     	return msg;
     }
 
-    public static String get_user_csv(ArrayList<User> users){
+    public static String getUserCsv(ArrayList<User> users){
     	String csv = "";
     	boolean first = true;
     	
     	for(int i = 0; i < users.size(); i++){
     		if(first){
-    			csv += users.get(i).get_name();
+    			csv += users.get(i).getName();
     			first = false;
     		} else {
-    			csv += ", " + users.get(i).get_name();
+    			csv += ", " + users.get(i).getName();
     		}
     	}
     	
     	return csv;
     }
     
-    public static ArrayList<Payment> get_user_payments(Group group, ArrayList<GroupPayment> payments){
+    public static ArrayList<Payment> getUserPayments(Group group, ArrayList<GroupPayment> payments){
     	 ArrayList<Payment> tempPayments = new ArrayList<Payment>();
          
-         for(int i = 0; i < group.get_users().size(); i++){
+         for(int i = 0; i < group.getUsers().size(); i++){
          	Payment payment = new Payment();
          	
-         	payment.set_user(group.get_user(i));
-         	payment.set_user_id(group.get_user(i).get_id());
+         	payment.setUser(group.getUser(i));
+         	payment.setUserId(group.getUser(i).getId());
          	
          	tempPayments.add(payment);
          }
@@ -275,13 +275,13 @@ public class Gen {
          for(int i = 0; i < payments.size(); i++){
          	GroupPayment payment = payments.get(i);
          	
-         	for(int j = 0; j < payment.get_splits().size(); j++){
+         	for(int j = 0; j < payment.getSplits().size(); j++){
          		for(int k = 0; k < tempPayments.size(); k++){
- 	        		if(payment.get_split(j).get_user_id() == tempPayments.get(k).get_user_id()){
- 	        			if(payment.get_split(j).is_paying()){
- 	        				tempPayments.get(k).set_amount(tempPayments.get(k).get_amount() +  payment.get_split(j).get_amount());
+ 	        		if(payment.getSplit(j).getUserId() == tempPayments.get(k).getUserId()){
+ 	        			if(payment.getSplit(j).isPaying()){
+ 	        				tempPayments.get(k).setAmount(tempPayments.get(k).getAmount() +  payment.getSplit(j).getAmount());
  	        			} else {
- 	        				tempPayments.get(k).set_amount(tempPayments.get(k).get_amount() -  payment.get_split(j).get_amount());
+ 	        				tempPayments.get(k).setAmount(tempPayments.get(k).getAmount() -  payment.getSplit(j).getAmount());
  	        			}
  	        		}
          		}
@@ -291,48 +291,48 @@ public class Gen {
          return tempPayments;
     }
     
-    public static ArrayList<GroupRepayment> sort_group_repayments(ArrayList<Payment> userPayments){
+    public static ArrayList<GroupRepayment> sortGroupRepayments(ArrayList<Payment> userPayments){
     	ArrayList<GroupRepayment> repayments = new ArrayList<GroupRepayment>();
     	
     	ArrayList<Payment> owedPayments = new ArrayList<Payment>();
         ArrayList<Payment> owingPayments = new ArrayList<Payment>();
         
         for(int i = 0; i < userPayments.size(); i++){
-        	if(userPayments.get(i).get_amount() != 0){
-        		if(userPayments.get(i).get_amount() > 0){
+        	if(userPayments.get(i).getAmount() != 0){
+        		if(userPayments.get(i).getAmount() > 0){
             		owedPayments.add(userPayments.get(i));
             	} else {
-            		userPayments.get(i).set_amount(Math.abs(userPayments.get(i).get_amount()));
+            		userPayments.get(i).setAmount(Math.abs(userPayments.get(i).getAmount()));
             		owingPayments.add(userPayments.get(i));
             	}           		
         	}
         }
         
         for(int i = 0; i < owingPayments.size(); i++){
-        	while(owingPayments.get(i).get_amount() > 0){
-        		if(owingPayments.get(i).get_amount() >= owedPayments.get(0).get_amount()){
+        	while(owingPayments.get(i).getAmount() > 0){
+        		if(owingPayments.get(i).getAmount() >= owedPayments.get(0).getAmount()){
         			GroupRepayment repayment = new GroupRepayment();
         			
-        			repayment.set_amount(owedPayments.get(0).get_amount());
-        			repayment.set_owed_user(owedPayments.get(0).get_user());
-        			repayment.set_owing_user(owingPayments.get(i).get_user());
+        			repayment.setAmount(owedPayments.get(0).getAmount());
+        			repayment.setOwedUser(owedPayments.get(0).getUser());
+        			repayment.setOwingUser(owingPayments.get(i).getUser());
         			
         			repayments.add(repayment);
         			
-        			owingPayments.get(i).set_amount(owingPayments.get(i).get_amount() - owedPayments.get(0).get_amount());
+        			owingPayments.get(i).setAmount(owingPayments.get(i).getAmount() - owedPayments.get(0).getAmount());
         			owedPayments.remove(0);
         		} else {
         			
         			GroupRepayment repayment = new GroupRepayment();
         			
-        			repayment.set_amount(owingPayments.get(i).get_amount());
-        			repayment.set_owed_user(owedPayments.get(0).get_user());
-        			repayment.set_owing_user(owingPayments.get(i).get_user());
+        			repayment.setAmount(owingPayments.get(i).getAmount());
+        			repayment.setOwedUser(owedPayments.get(0).getUser());
+        			repayment.setOwingUser(owingPayments.get(i).getUser());
         			
         			repayments.add(repayment);
         			
-        			owedPayments.get(0).set_amount(owedPayments.get(0).get_amount() - owingPayments.get(i).get_amount());
-        			owingPayments.get(i).set_amount(0);
+        			owedPayments.get(0).setAmount(owedPayments.get(0).getAmount() - owingPayments.get(i).getAmount());
+        			owingPayments.get(i).setAmount(0);
         		}
         	}
         }
@@ -340,7 +340,7 @@ public class Gen {
     	return repayments;
     }
     
-    public static float format_number(float number){
+    public static float formatNumber(float number){
     	DecimalFormat df = new DecimalFormat("###.##");
     	
     	try{

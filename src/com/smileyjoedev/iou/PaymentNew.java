@@ -61,7 +61,7 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
     		
             if(extras.containsKey("user_id")){
             	int userId = extras.getInt("user_id");
-        		this.user = this.userAdapter.get_details(userId);
+        		this.user = this.userAdapter.getDetails(userId);
             }
             
             if(extras.containsKey("payment_id")){
@@ -69,18 +69,18 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
             	this.isEdit = extras.getBoolean("is_edit");
             	this.isRepayment = extras.getBoolean("is_repayment");
             	this.isUser = extras.getBoolean("is_user");
-            	this.payment = this.userPaymentAdapter.get_details(extras.getInt("payment_id"));
-            	this.user = this.userAdapter.get_details(this.payment.get_user_id());
+            	this.payment = this.userPaymentAdapter.getDetails(extras.getInt("payment_id"));
+            	this.user = this.userAdapter.getDetails(this.payment.getUserId());
             }
         } catch(NullPointerException e){
         	this.isQuickAdd = true;
         	this.users = this.userAdapter.get();
-        	this.populate_sp_user();
+        	this.populateSpUser();
         	this.llUserSpinner.setVisibility(View.VISIBLE);
         }
 		
         
-        this.populate_view();
+        this.populateView();
     }
     
     @Override
@@ -94,7 +94,7 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
 
         switch (item.getItemId()) {
 			case android.R.id.home:
-				this.hide_keyboard();
+				this.hideKeyboard();
 				finish();
 				return true;
 			default:
@@ -103,12 +103,12 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
 
     }
     
-    private void populate_sp_user(){
+    private void populateSpUser(){
     	ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		
 		for(int i = 0; i < this.users.size(); i++){
-			adapter.add(this.users.get(i).get_name());
+			adapter.add(this.users.get(i).getName());
 		}
 		
 		this.spUserSpinner.setAdapter(adapter);
@@ -144,10 +144,10 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
     	this.spUserSpinner.setOnItemSelectedListener(this);
     }
     
-    private void populate_view(){
-    	this.rbPaymentFrom.setText("From " + this.user.get_first_name());
+    private void populateView(){
+    	this.rbPaymentFrom.setText("From " + this.user.getFirstName());
     	this.rbPaymentFrom.setTextColor(Color.RED);
-    	this.rbPaymentTo.setText("To " + this.user.get_first_name());
+    	this.rbPaymentTo.setText("To " + this.user.getFirstName());
     	this.rbPaymentTo.setTextColor(Color.GREEN);
     	
 //    	switch(this.payment.get_type()){
@@ -169,7 +169,7 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
 //    			break;
 //    	}
     	
-    	switch(this.payment.get_direction()){
+    	switch(this.payment.getDirection()){
     		case 0:
     			this.rbPaymentTo.setChecked(true);
     			break;
@@ -181,7 +181,7 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
     			break;
     	}
     	
-    	switch(this.payment.get_type()){
+    	switch(this.payment.getType()){
     		case 0:
     			this.rbLoan.setChecked(true);
     			break;
@@ -194,42 +194,42 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
     	}
     	
     	if(this.isEdit){
-    		this.etAmount.setText(this.payment.get_amount_text(false));
-    		this.etDescription.setText(this.payment.get_description());
-    		this.etTitle.setText(this.payment.get_title());
+    		this.etAmount.setText(this.payment.getAmountText(false));
+    		this.etDescription.setText(this.payment.getDescription());
+    		this.etTitle.setText(this.payment.getTitle());
     	}
     	
     	if(this.isRepayment){
     		if(this.isUser){
-    			this.etAmount.setHint(Float.toString(Math.abs(this.user.get_balance())));
+    			this.etAmount.setHint(Float.toString(Math.abs(this.user.getBalance())));
     			this.etDescription.setText("Part repayment: All");
     			this.etTitle.setText("Part repayment");
-    			if(this.user.get_balance() > 0){
-    				this.payment.set_direction(1);
+    			if(this.user.getBalance() > 0){
+    				this.payment.setDirection(1);
         			this.rbPaymentFrom.setChecked(true);
         		} else {
-        			this.payment.set_direction(0);
+        			this.payment.setDirection(0);
         			this.rbPaymentTo.setChecked(true);
         		}
     		} else {
-    			this.etAmount.setHint(Float.toString(this.payment.get_amount()));
-    			this.etDescription.setText("Part repayment: " + this.payment.get_description());
+    			this.etAmount.setHint(Float.toString(this.payment.getAmount()));
+    			this.etDescription.setText("Part repayment: " + this.payment.getDescription());
     			this.etTitle.setText("Part repayment");
-    			if(this.payment.is_to_user()){
+    			if(this.payment.isToUser()){
         			this.rbPaymentFrom.setChecked(true);
-        			this.payment.set_direction(1);
+        			this.payment.setDirection(1);
         		} else {
         			this.rbPaymentTo.setChecked(true);
-        			this.payment.set_direction(0);
+        			this.payment.setDirection(0);
         		}
     		}
-    		this.payment.set_type(1);
+    		this.payment.setType(1);
     		this.rbRepayment.setChecked(true);
     	}
     	
     }
 
-    private void hide_keyboard(){
+    private void hideKeyboard(){
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(this.etDescription.getWindowToken(), 0);
 		imm.hideSoftInputFromWindow(this.etAmount.getWindowToken(), 0);
@@ -240,12 +240,12 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
 		switch(v.getId()){
 			case R.id.bt_save:
 				if(!this.etAmount.getText().toString().trim().equals("")){
-					this.payment.set_user_id(this.user.get_id());
-					this.payment.set_description(this.etDescription.getText().toString().trim());
-					this.payment.set_title(this.etTitle.getText().toString().trim());
-					this.payment.set_amount(Float.parseFloat(this.etAmount.getText().toString().trim()));
-					this.payment.set_date(Gen.get_pdt());
-					this.payment.set_type_db();
+					this.payment.setUserId(this.user.getId());
+					this.payment.setDescription(this.etDescription.getText().toString().trim());
+					this.payment.setTitle(this.etTitle.getText().toString().trim());
+					this.payment.setAmount(Float.parseFloat(this.etAmount.getText().toString().trim()));
+					this.payment.setDate(Gen.getPdt());
+					this.payment.setTypeDb();
 					
 					if(this.isEdit){
 						this.userPaymentAdapter.update(this.payment);
@@ -253,10 +253,10 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
 						this.userPaymentAdapter.save(this.payment);
 					}
 					
-					Gen.display_minimalistic_text(this, this.user, this.payment);
+					Gen.displayMinimalisticText(this, this.user, this.payment);
 					
 
-					this.hide_keyboard();
+					this.hideKeyboard();
 					finish();
 				} else {
 					Notify.toast(this, R.string.toast_no_amount);
@@ -264,20 +264,20 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
 				
 				break;
 			case R.id.bt_cancel:
-				this.hide_keyboard();
+				this.hideKeyboard();
 				finish();
 				break;
 			case R.id.rb_payment_from:
-				this.payment.set_direction(1);
+				this.payment.setDirection(1);
 				break;
 			case R.id.rb_payment_to:
-				this.payment.set_direction(0);
+				this.payment.setDirection(0);
 				break;
 			case R.id.rb_loan:
-				this.payment.set_type(0);
+				this.payment.setType(0);
 				break;
 			case R.id.rb_repayment:
-				this.payment.set_type(1);
+				this.payment.setType(1);
 				break;
 		}
 	}
@@ -285,8 +285,8 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
 		this.user = this.users.get(position);
-    	this.rbPaymentFrom.setText("From " + this.user.get_name());
-    	this.rbPaymentTo.setText("To " + this.user.get_name());
+    	this.rbPaymentFrom.setText("From " + this.user.getName());
+    	this.rbPaymentTo.setText("To " + this.user.getName());
 	}
 
 	@Override

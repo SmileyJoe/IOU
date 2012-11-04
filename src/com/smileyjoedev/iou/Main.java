@@ -33,7 +33,7 @@ public class Main extends SherlockActivity implements OnClickListener {
 //        BugSenseHandler.setup(this, "04b74a70");
         
         this.initialize();
-        this.populate_view();
+        this.populateView();
         
     }
     
@@ -73,47 +73,47 @@ public class Main extends SherlockActivity implements OnClickListener {
     	
     }
     
-    private void populate_view(){
+    private void populateView(){
     	GridView gvActions = (GridView) findViewById(R.id.gv_actions);
     	DbUserAdapter userAdapter = new DbUserAdapter(this);
     	ArrayList<User> users = new ArrayList<User>();
     	users = userAdapter.get();
     	
-    	this.views.action_grid(users, gvActions);
+    	this.views.actionGrid(users, gvActions);
     	
     	TextView tvTotalOwedUser = (TextView) findViewById(R.id.tv_total_owed_user);
-    	tvTotalOwedUser.setText(this.get_owed_text(users));
+    	tvTotalOwedUser.setText(this.getOwedText(users));
     	
     	TextView tvTotalUserOwed = (TextView) findViewById(R.id.tv_total_user_owed);
-    	tvTotalUserOwed.setText(this.get_owe_text(users));
+    	tvTotalUserOwed.setText(this.getOweText(users));
     }
     
-    private String get_owed_text(ArrayList<User> users){
+    private String getOwedText(ArrayList<User> users){
     	String totalText = "";
     	float total = 0;
     	
     	for(int i = 0; i < users.size(); i++){
-    		if(users.get(i).get_balance() > 0){
-    			total = total + users.get(i).get_balance(); 
+    		if(users.get(i).getBalance() > 0){
+    			total = total + users.get(i).getBalance(); 
     		}
     	}
     	
-    	totalText = Gen.get_amount_text(total);
+    	totalText = Gen.getAmountText(total);
     	
     	return totalText;
     }
     
-    private String get_owe_text(ArrayList<User> users){
+    private String getOweText(ArrayList<User> users){
     	String totalText = "";
     	float total = 0;
     	
     	for(int i = 0; i < users.size(); i++){
-    		if(users.get(i).get_balance() < 0){
-    			total = total - users.get(i).get_balance(); 
+    		if(users.get(i).getBalance() < 0){
+    			total = total - users.get(i).getBalance(); 
     		}
     	}
     	
-    	totalText = Gen.get_amount_text(total);
+    	totalText = Gen.getAmountText(total);
     	
     	return totalText;
     }
@@ -123,11 +123,11 @@ public class Main extends SherlockActivity implements OnClickListener {
 		switch(view.getId()){
 			case R.id.ll_user_list_wrapper:
 //			case R.id.bt_user_list:
-				startActivityForResult(Intents.user_list(this), Constants.ACTIVITY_USER_LIST);
+				startActivityForResult(Intents.userList(this), Constants.ACTIVITY_USER_LIST);
 				break;
 			case R.id.ll_group_list_wrapper:
 //			case R.id.bt_group_list:
-				startActivityForResult(Intents.group_list(this), Constants.ACTIVITY_GROUP_LIST);
+				startActivityForResult(Intents.groupList(this), Constants.ACTIVITY_GROUP_LIST);
 				break;
 		}
 	}
@@ -136,11 +136,11 @@ public class Main extends SherlockActivity implements OnClickListener {
 		switch(requestCode){
 			case Constants.ACTIVITY_USER_LIST:
 //				this.get_all_users();
-				this.populate_view();
+				this.populateView();
 				break;
 			case Constants.ACTIVITY_GROUP_LIST:
 //				this.get_all_users();
-				this.populate_view();
+				this.populateView();
 				break;
 		}
 	}

@@ -6,7 +6,7 @@ import android.os.Environment;
 
 public class Constants {
 	public static final String TAG = "IOU";
-	public static final String IMAGE_PATH = Environment.getExternalStorageDirectory() + File.separator + "com.joedev" + File.separator + "IOU" + File.separator;
+	public static final String IMAGE_PATH = Environment.getExternalStorageDirectory() + File.separator + "com.smileyjoedev" + File.separator + "IOU" + File.separator;
 	public static final String IMAGE_EXTENSION = ".jpg";
 	public static final String TEMP_IMAGE_NAME = "temp";
 	

@@ -22,19 +22,19 @@ public class GroupRepayment {
 	 * SETTERS
 	 ****************************************************/
 	
-	public void set_owed_user(User owedUser) {
+	public void setOwedUser(User owedUser) {
 		this.owedUser = owedUser;
 	}
 	
-	public void set_owing_user(User owingUser) {
+	public void setOwingUser(User owingUser) {
 		this.owingUser = owingUser;
 	}
 	
-	public void set_amount(float amount) {
+	public void setAmount(float amount) {
 		this.amount = amount;
 	}
 
-	public void set_selected(boolean selected){
+	public void setSelected(boolean selected){
 		this.selected = selected;
 	}
 	
@@ -42,29 +42,29 @@ public class GroupRepayment {
 	 * GETTERS
 	 ****************************************************/
 	
-	public User get_owed_user() {
+	public User getOwedUser() {
 		return owedUser;
 	}
 
-	public User get_owing_user() {
+	public User getOwingUser() {
 		return owingUser;
 	}
 
-	public float get_amount() {
+	public float getAmount() {
 		return amount;
 	}
 	
-	public boolean get_selected(){
+	public boolean getSelected(){
 		return this.selected;
 	}
 	
-	public String get_amount_text(){
-		return Gen.get_amount_text(this.amount);
+	public String getAmountText(){
+		return Gen.getAmountText(this.amount);
 	}
 
 	@Override
 	public String toString() {
-		return this.get_owing_user().get_name() + " owes " + this.get_owed_user().get_name() + " " + this.get_amount_text();
+		return this.getOwingUser().getName() + " owes " + this.getOwedUser().getName() + " " + this.getAmountText();
 	}
 	
 	

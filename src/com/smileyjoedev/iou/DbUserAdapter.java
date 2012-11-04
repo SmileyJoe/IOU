@@ -55,19 +55,19 @@ public class DbUserAdapter {
 	 * GET
 	 *****************************************/
 	
-	public User get_details(int userId){
-		this.set_cursor("WHERE _id = '" + userId + "' ");
-		return this.sort_cursor();
+	public User getDetails(int userId){
+		this.setCursor("WHERE _id = '" + userId + "' ");
+		return this.sortCursor();
 	}
 	
 	public ArrayList<User> get(){
-		this.set_cursor("");
-		return this.sort_cursor_array_list();
+		this.setCursor("");
+		return this.sortCursorArrayList();
 	}
 	
-	public ArrayList<User> get_by_group(int groupId){
-		this.set_cursor_rel_group(" WHERE group_id = '" + groupId + "'");
-		return this.sort_cursor_array_list();
+	public ArrayList<User> getByGroup(int groupId){
+		this.setCursorRelGroup(" WHERE group_id = '" + groupId + "'");
+		return this.sortCursorArrayList();
 	}
 
 	
@@ -78,18 +78,18 @@ public class DbUserAdapter {
 	public long save(User user) {
 		long dbId = 0;
 		
-		if(user.get_id() > 0){
+		if(user.getId() > 0){
 			this.update(user);
 		} else {
-			if(this.check_user_exists(user.get_name())){
-				Notify.toast(this.context, R.string.toast_user_exists, user.get_name());
+			if(this.checkUserExists(user.getName())){
+				Notify.toast(this.context, R.string.toast_user_exists, user.getName());
 			} else {
-				ContentValues values = create_content_values(user);
+				ContentValues values = createContentValues(user);
 				dbId = db.insert("user", null, values);
 				if(dbId > 0){
-					Notify.toast(this.context, R.string.toast_user_saved, user.get_name());
+					Notify.toast(this.context, R.string.toast_user_saved, user.getName());
 				} else {
-					Notify.toast(this.context, R.string.toast_user_saved_error, user.get_name());
+					Notify.toast(this.context, R.string.toast_user_saved_error, user.getName());
 				}
 				
 			}
@@ -103,9 +103,9 @@ public class DbUserAdapter {
 	 *****************************************/
 	
 	public void update(User user) {
-		ContentValues values = create_content_values(user);
-		db.update("user", values, " _id = '" + user.get_id() + "' ", null);
-		Notify.toast(this.context, R.string.toast_user_updated, user.get_name());
+		ContentValues values = createContentValues(user);
+		db.update("user", values, " _id = '" + user.getId() + "' ", null);
+		Notify.toast(this.context, R.string.toast_user_updated, user.getName());
 	}
 	
 	/******************************************
@@ -113,15 +113,15 @@ public class DbUserAdapter {
 	 *****************************************/
 	
 	public void delete(User user){
-		db.delete("user", " _id='" + user.get_id() + "' ", null);
-		Notify.toast(this.context, R.string.toast_user_deleted, user.get_name());
+		db.delete("user", " _id='" + user.getId() + "' ", null);
+		Notify.toast(this.context, R.string.toast_user_deleted, user.getName());
 	}
 	
 	/******************************************
 	 * GENERAL
 	 *****************************************/
 	
-	private void set_cursor(String where){
+	private void setCursor(String where){
 		this.cursor = this.db.rawQuery(
 				"SELECT _id, user_name, user_id_online, user_status, user_minimalistic_text_flag, user_variable_name, user_contact_id "
 				+ "FROM user " 
@@ -129,7 +129,7 @@ public class DbUserAdapter {
 				+ "ORDER BY user_name ASC", null);
 	}
 	
-	private void set_cursor_rel_group(String where){
+	private void setCursorRelGroup(String where){
 		this.cursor = this.db.rawQuery(
 				"SELECT user._id, user.user_name, user.user_id_online, user.user_status, user.user_minimalistic_text_flag, user.user_variable_name, user.user_contact_id "
 				+ " FROM user user "
@@ -138,7 +138,7 @@ public class DbUserAdapter {
 				+ " ORDER BY user_name ASC ", null);
 	}
 	
-	private void set_coloumns(){
+	private void setColoumns(){
 		this.idCol = this.cursor.getColumnIndex("_id");
 		this.nameCol = this.cursor.getColumnIndex("user_name");
 		this.onlineIdCol = this.cursor.getColumnIndex("user_id_online");
@@ -148,28 +148,28 @@ public class DbUserAdapter {
 		this.contactIdCol = this.cursor.getColumnIndex("user_contact_id");
 	}
 	
-	private User get_user_data(){
+	private User getUserData(){
 		User user = new User();
 		
-		user.set_id(this.cursor.getInt(this.idCol));
-		user.set_name(this.cursor.getString(this.nameCol));
-		user.set_online_id(this.cursor.getInt(this.onlineIdCol));
-		user.set_status(this.cursor.getInt(this.statusCol));
-		user.set_minimalistic_text_flag(this.cursor.getInt(this.minimalisticTextFlagCol));
-		user.set_variable_name(this.cursor.getString(this.variableNameCol));
-		user.set_contact_id(this.cursor.getLong(this.contactIdCol));
+		user.setId(this.cursor.getInt(this.idCol));
+		user.setName(this.cursor.getString(this.nameCol));
+		user.setOnlineId(this.cursor.getInt(this.onlineIdCol));
+		user.setStatus(this.cursor.getInt(this.statusCol));
+		user.setMinimalisticTextFlag(this.cursor.getInt(this.minimalisticTextFlagCol));
+		user.setVariableName(this.cursor.getString(this.variableNameCol));
+		user.setContactId(this.cursor.getLong(this.contactIdCol));
 		
 		if(this.withPayments){
-			user.set_payments(this.userPaymentAdapter.get_by_user(user.get_id()));
+			user.setPayments(this.userPaymentAdapter.getByUser(user.getId()));
 		}
 		
 		
 		return user;
 	}
 	
-	private ArrayList<User> sort_cursor_array_list(){
+	private ArrayList<User> sortCursorArrayList(){
 		ArrayList<User> users = new ArrayList<User>();
-		this.set_coloumns();
+		this.setColoumns();
 		
 		if(this.cursor != null){
 			this.cursor.moveToFirst();
@@ -177,7 +177,7 @@ public class DbUserAdapter {
 				
 				int i = 0;
 				do{
-					users.add(this.get_user_data());
+					users.add(this.getUserData());
 				}while(this.cursor.moveToNext());
 			}
 		}
@@ -185,30 +185,30 @@ public class DbUserAdapter {
 		return users;
 	}
 	
-	private User sort_cursor(){
+	private User sortCursor(){
 		User user = new User();
 		
-		this.set_coloumns();
+		this.setColoumns();
 		
 		if(this.cursor != null){
 			this.cursor.moveToFirst();
 			if(this.cursor.getCount() > 0){
-				user = this.get_user_data();
+				user = this.getUserData();
 			}
 		}
 		this.cursor.close();
 		return user;
 	}
 	
-	private ContentValues create_content_values(User user) {
+	private ContentValues createContentValues(User user) {
 		ContentValues values = new ContentValues();
 		
-		values.put("user_name", user.get_name());
-		values.put("user_id_online", user.get_online_id());
-		values.put("user_status", user.get_status());
-		values.put("user_minimalistic_text_flag", user.get_minimalistic_text_flag());
-		values.put("user_variable_name", user.get_variable_name());
-		values.put("user_contact_id", user.get_contact_id());
+		values.put("user_name", user.getName());
+		values.put("user_id_online", user.getOnlineId());
+		values.put("user_status", user.getStatus());
+		values.put("user_minimalistic_text_flag", user.getMinimalisticTextFlag());
+		values.put("user_variable_name", user.getVariableName());
+		values.put("user_contact_id", user.getContactId());
 		
 		return values;
 	}
@@ -221,7 +221,7 @@ public class DbUserAdapter {
 	 * CHECK
 	 *****************************************/
 	
-	public boolean check_user_exists(String userName) {
+	public boolean checkUserExists(String userName) {
 		boolean playerExists = false;
 		
 		Cursor cursor = this.db.rawQuery("SELECT _id FROM user WHERE user_name = '" + userName + "'", null);
