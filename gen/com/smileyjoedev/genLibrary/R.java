@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.WazaBe.HoloEverywhere;
+package com.smileyjoedev.genLibrary;
 
 public final class R {
     public static final class anim {

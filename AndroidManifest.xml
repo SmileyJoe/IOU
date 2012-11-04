@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.joedev.iou"
+    package="com.smileyjoedev.iou"
     android:versionCode="1"
     android:versionName="1.0" >
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
@@ -64,7 +64,7 @@
 		</intent-filter>
   	   	<activity android:name=".Settings" 
 			android:label="@string/bar_title_settings"/>
-  	   	<activity android:name=".PopupDelete" 
+  	   	<activity android:name="com.smileyjoedev.genLibrary.PopupDelete" 
 			android:label="@string/bar_title_delete"
 			android:theme="@style/Holo.Theme.Dialog"/>
   	   	<activity android:name=".GroupNew" 

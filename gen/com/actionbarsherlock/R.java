@@ -1607,13 +1607,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int yesNoPreferenceStyle=0x7f010068;
     }
     public static final class bool {
-        public static final int abs__action_bar_embed_tabs=0x7f090000;
-        public static final int abs__action_bar_expanded_action_views_exclusive=0x7f090002;
+        public static final int abs__action_bar_embed_tabs=0x7f0b0000;
+        public static final int abs__action_bar_expanded_action_views_exclusive=0x7f0b0002;
         /**  Whether action menu items should be displayed in ALLCAPS or not.
          Defaults to true. If this is not appropriate for specific locales
          it should be disabled in that locale's resources. 
          */
-        public static final int abs__config_actionMenuItemAllCaps=0x7f090004;
+        public static final int abs__config_actionMenuItemAllCaps=0x7f0b0004;
         /**  Whether action menu items should obey the "withText" showAsAction
          flag. This may be set to false for situations where space is
          extremely limited. 
@@ -1621,193 +1621,193 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          flag. This may be set to false for situations where space is
          extremely limited. 
          */
-        public static final int abs__config_allowActionMenuItemTextWithIcon=0x7f090005;
+        public static final int abs__config_allowActionMenuItemTextWithIcon=0x7f0b0005;
         /**  Sets whether menu shortcuts should be displayed on panel menus when
          a keyboard is present. 
          */
-        public static final int abs__config_showMenuShortcutsWhenKeyboardPresent=0x7f090003;
-        public static final int abs__split_action_bar_is_narrow=0x7f090001;
-        public static final int preferences_prefer_dual_pane=0x7f090006;
+        public static final int abs__config_showMenuShortcutsWhenKeyboardPresent=0x7f0b0003;
+        public static final int abs__split_action_bar_is_narrow=0x7f0b0001;
+        public static final int preferences_prefer_dual_pane=0x7f0b0006;
     }
     public static final class color {
-        public static final int abs__background_holo_dark=0x7f0a0000;
-        public static final int abs__background_holo_light=0x7f0a0001;
-        public static final int abs__bright_foreground_disabled_holo_dark=0x7f0a0004;
-        public static final int abs__bright_foreground_disabled_holo_light=0x7f0a0005;
-        public static final int abs__bright_foreground_holo_dark=0x7f0a0002;
-        public static final int abs__bright_foreground_holo_light=0x7f0a0003;
-        public static final int abs__bright_foreground_inverse_holo_dark=0x7f0a0006;
-        public static final int abs__bright_foreground_inverse_holo_light=0x7f0a0007;
-        public static final int abs__holo_blue_light=0x7f0a0008;
-        public static final int abs__primary_text_disable_only_holo_dark=0x7f0a008a;
-        public static final int abs__primary_text_disable_only_holo_light=0x7f0a008b;
-        public static final int abs__primary_text_holo_dark=0x7f0a008c;
-        public static final int abs__primary_text_holo_light=0x7f0a008d;
-        public static final int app_background=0x7f0a0047;
-        public static final int app_background_dark=0x7f0a005f;
-        public static final int app_background_light=0x7f0a0076;
-        public static final int app_font=0x7f0a0048;
-        public static final int app_font_dark=0x7f0a0060;
-        public static final int app_font_light=0x7f0a0077;
-        public static final int background_dark=0x7f0a0014;
-        public static final int background_holo_dark=0x7f0a001e;
-        public static final int background_holo_light=0x7f0a001f;
-        public static final int background_light=0x7f0a0015;
-        public static final int black=0x7f0a0035;
-        public static final int blue=0x7f0a0034;
-        public static final int bright_foreground_dark=0x7f0a0016;
-        public static final int bright_foreground_dark_disabled=0x7f0a0018;
-        public static final int bright_foreground_dark_inverse=0x7f0a001a;
-        public static final int bright_foreground_disabled_holo_dark=0x7f0a0022;
-        public static final int bright_foreground_disabled_holo_light=0x7f0a0023;
-        public static final int bright_foreground_holo_dark=0x7f0a0020;
-        public static final int bright_foreground_holo_light=0x7f0a0021;
-        public static final int bright_foreground_inverse_holo_dark=0x7f0a0024;
-        public static final int bright_foreground_inverse_holo_light=0x7f0a0025;
-        public static final int bright_foreground_light=0x7f0a0017;
-        public static final int bright_foreground_light_disabled=0x7f0a0019;
-        public static final int bright_foreground_light_inverse=0x7f0a001b;
-        public static final int button_background=0x7f0a0057;
-        public static final int button_background_dark=0x7f0a006e;
-        public static final int button_background_light=0x7f0a0085;
-        public static final int button_border=0x7f0a0056;
-        public static final int button_border_dark=0x7f0a006d;
-        public static final int button_border_light=0x7f0a0084;
-        public static final int button_disabled_text=0x7f0a0055;
-        public static final int button_end=0x7f0a005a;
-        public static final int button_end_dark=0x7f0a0071;
-        public static final int button_end_light=0x7f0a0088;
-        public static final int button_pressed=0x7f0a005b;
-        public static final int button_pressed_dark=0x7f0a0072;
-        public static final int button_pressed_light=0x7f0a0089;
-        public static final int button_start=0x7f0a0059;
-        public static final int button_start_dark=0x7f0a0070;
-        public static final int button_start_light=0x7f0a0087;
-        public static final int button_stroke=0x7f0a0058;
-        public static final int button_stroke_dark=0x7f0a006f;
-        public static final int button_stroke_light=0x7f0a0086;
-        public static final int button_text=0x7f0a0054;
-        public static final int button_text_dark=0x7f0a006c;
-        public static final int button_text_light=0x7f0a0083;
-        public static final int dark_grey=0x7f0a003a;
-        public static final int dialog_content_background=0x7f0a0046;
-        public static final int dialog_content_background_dark=0x7f0a005e;
-        public static final int dialog_content_background_light=0x7f0a0075;
-        public static final int dim_foreground_dark=0x7f0a001c;
-        public static final int dim_foreground_dark_inverse=0x7f0a001d;
-        public static final int dim_foreground_disabled_holo_dark=0x7f0a0027;
-        public static final int dim_foreground_disabled_holo_light=0x7f0a002b;
-        public static final int dim_foreground_holo_dark=0x7f0a0026;
-        public static final int dim_foreground_holo_light=0x7f0a002a;
-        public static final int dim_foreground_inverse_disabled_holo_dark=0x7f0a0029;
-        public static final int dim_foreground_inverse_disabled_holo_light=0x7f0a002d;
-        public static final int dim_foreground_inverse_holo_dark=0x7f0a0028;
-        public static final int dim_foreground_inverse_holo_light=0x7f0a002c;
-        public static final int green=0x7f0a003c;
-        public static final int grey=0x7f0a0036;
-        public static final int header_border=0x7f0a003e;
-        public static final int header_button_stroke=0x7f0a003f;
-        public static final int heading=0x7f0a0043;
-        public static final int highlighted_text_holo_dark=0x7f0a0030;
-        public static final int highlighted_text_holo_light=0x7f0a0031;
-        public static final int hint_foreground_holo_dark=0x7f0a002e;
-        public static final int hint_foreground_holo_light=0x7f0a002f;
+        public static final int abs__background_holo_dark=0x7f0c0000;
+        public static final int abs__background_holo_light=0x7f0c0001;
+        public static final int abs__bright_foreground_disabled_holo_dark=0x7f0c0004;
+        public static final int abs__bright_foreground_disabled_holo_light=0x7f0c0005;
+        public static final int abs__bright_foreground_holo_dark=0x7f0c0002;
+        public static final int abs__bright_foreground_holo_light=0x7f0c0003;
+        public static final int abs__bright_foreground_inverse_holo_dark=0x7f0c0006;
+        public static final int abs__bright_foreground_inverse_holo_light=0x7f0c0007;
+        public static final int abs__holo_blue_light=0x7f0c0008;
+        public static final int abs__primary_text_disable_only_holo_dark=0x7f0c008a;
+        public static final int abs__primary_text_disable_only_holo_light=0x7f0c008b;
+        public static final int abs__primary_text_holo_dark=0x7f0c008c;
+        public static final int abs__primary_text_holo_light=0x7f0c008d;
+        public static final int app_background=0x7f0c0047;
+        public static final int app_background_dark=0x7f0c005f;
+        public static final int app_background_light=0x7f0c0076;
+        public static final int app_font=0x7f0c0048;
+        public static final int app_font_dark=0x7f0c0060;
+        public static final int app_font_light=0x7f0c0077;
+        public static final int background_dark=0x7f0c0014;
+        public static final int background_holo_dark=0x7f0c001e;
+        public static final int background_holo_light=0x7f0c001f;
+        public static final int background_light=0x7f0c0015;
+        public static final int black=0x7f0c0035;
+        public static final int blue=0x7f0c0034;
+        public static final int bright_foreground_dark=0x7f0c0016;
+        public static final int bright_foreground_dark_disabled=0x7f0c0018;
+        public static final int bright_foreground_dark_inverse=0x7f0c001a;
+        public static final int bright_foreground_disabled_holo_dark=0x7f0c0022;
+        public static final int bright_foreground_disabled_holo_light=0x7f0c0023;
+        public static final int bright_foreground_holo_dark=0x7f0c0020;
+        public static final int bright_foreground_holo_light=0x7f0c0021;
+        public static final int bright_foreground_inverse_holo_dark=0x7f0c0024;
+        public static final int bright_foreground_inverse_holo_light=0x7f0c0025;
+        public static final int bright_foreground_light=0x7f0c0017;
+        public static final int bright_foreground_light_disabled=0x7f0c0019;
+        public static final int bright_foreground_light_inverse=0x7f0c001b;
+        public static final int button_background=0x7f0c0057;
+        public static final int button_background_dark=0x7f0c006e;
+        public static final int button_background_light=0x7f0c0085;
+        public static final int button_border=0x7f0c0056;
+        public static final int button_border_dark=0x7f0c006d;
+        public static final int button_border_light=0x7f0c0084;
+        public static final int button_disabled_text=0x7f0c0055;
+        public static final int button_end=0x7f0c005a;
+        public static final int button_end_dark=0x7f0c0071;
+        public static final int button_end_light=0x7f0c0088;
+        public static final int button_pressed=0x7f0c005b;
+        public static final int button_pressed_dark=0x7f0c0072;
+        public static final int button_pressed_light=0x7f0c0089;
+        public static final int button_start=0x7f0c0059;
+        public static final int button_start_dark=0x7f0c0070;
+        public static final int button_start_light=0x7f0c0087;
+        public static final int button_stroke=0x7f0c0058;
+        public static final int button_stroke_dark=0x7f0c006f;
+        public static final int button_stroke_light=0x7f0c0086;
+        public static final int button_text=0x7f0c0054;
+        public static final int button_text_dark=0x7f0c006c;
+        public static final int button_text_light=0x7f0c0083;
+        public static final int dark_grey=0x7f0c003a;
+        public static final int dialog_content_background=0x7f0c0046;
+        public static final int dialog_content_background_dark=0x7f0c005e;
+        public static final int dialog_content_background_light=0x7f0c0075;
+        public static final int dim_foreground_dark=0x7f0c001c;
+        public static final int dim_foreground_dark_inverse=0x7f0c001d;
+        public static final int dim_foreground_disabled_holo_dark=0x7f0c0027;
+        public static final int dim_foreground_disabled_holo_light=0x7f0c002b;
+        public static final int dim_foreground_holo_dark=0x7f0c0026;
+        public static final int dim_foreground_holo_light=0x7f0c002a;
+        public static final int dim_foreground_inverse_disabled_holo_dark=0x7f0c0029;
+        public static final int dim_foreground_inverse_disabled_holo_light=0x7f0c002d;
+        public static final int dim_foreground_inverse_holo_dark=0x7f0c0028;
+        public static final int dim_foreground_inverse_holo_light=0x7f0c002c;
+        public static final int green=0x7f0c003c;
+        public static final int grey=0x7f0c0036;
+        public static final int header_border=0x7f0c003e;
+        public static final int header_button_stroke=0x7f0c003f;
+        public static final int heading=0x7f0c0043;
+        public static final int highlighted_text_holo_dark=0x7f0c0030;
+        public static final int highlighted_text_holo_light=0x7f0c0031;
+        public static final int hint_foreground_holo_dark=0x7f0c002e;
+        public static final int hint_foreground_holo_light=0x7f0c002f;
         /**  A really bright Holo shade of blue 
          */
-        public static final int holo_blue_bright=0x7f0a0012;
+        public static final int holo_blue_bright=0x7f0c0012;
         /**  A dark Holo shade of blue 
          */
-        public static final int holo_blue_dark=0x7f0a000c;
+        public static final int holo_blue_dark=0x7f0c000c;
         /**  A light Holo shade of blue 
          */
-        public static final int holo_blue_light=0x7f0a0009;
+        public static final int holo_blue_light=0x7f0c0009;
         /**  A dark Holo shade of green 
          */
-        public static final int holo_green_dark=0x7f0a000d;
+        public static final int holo_green_dark=0x7f0c000d;
         /**  A light Holo shade of green 
          */
-        public static final int holo_green_light=0x7f0a000a;
+        public static final int holo_green_light=0x7f0c000a;
         /**  A dark Holo shade of orange 
          */
-        public static final int holo_orange_dark=0x7f0a0011;
+        public static final int holo_orange_dark=0x7f0c0011;
         /**  A light Holo shade of orange 
          */
-        public static final int holo_orange_light=0x7f0a0010;
+        public static final int holo_orange_light=0x7f0c0010;
         /**  A Holo shade of purple 
          */
-        public static final int holo_purple=0x7f0a000f;
+        public static final int holo_purple=0x7f0c000f;
         /**  A dark Holo shade of red 
          */
-        public static final int holo_red_dark=0x7f0a000e;
+        public static final int holo_red_dark=0x7f0c000e;
         /**  A light Holo shade of red 
          */
-        public static final int holo_red_light=0x7f0a000b;
-        public static final int image_grid_background=0x7f0a004c;
-        public static final int image_grid_background_dark=0x7f0a0064;
-        public static final int image_grid_background_light=0x7f0a007b;
-        public static final int image_grid_text=0x7f0a004d;
-        public static final int image_grid_text_dark=0x7f0a0065;
-        public static final int image_grid_text_light=0x7f0a007c;
-        public static final int input_background=0x7f0a0044;
+        public static final int holo_red_light=0x7f0c000b;
+        public static final int image_grid_background=0x7f0c004c;
+        public static final int image_grid_background_dark=0x7f0c0064;
+        public static final int image_grid_background_light=0x7f0c007b;
+        public static final int image_grid_text=0x7f0c004d;
+        public static final int image_grid_text_dark=0x7f0c0065;
+        public static final int image_grid_text_light=0x7f0c007c;
+        public static final int input_background=0x7f0c0044;
         /**  Dark theme  
          */
-        public static final int input_background_dark=0x7f0a005c;
+        public static final int input_background_dark=0x7f0c005c;
         /**  Light theme  
          */
-        public static final int input_background_light=0x7f0a0073;
-        public static final int input_border=0x7f0a0045;
-        public static final int input_border_dark=0x7f0a005d;
-        public static final int input_border_light=0x7f0a0074;
-        public static final int light_grey=0x7f0a0039;
-        public static final int linear_layout=0x7f0a0042;
-        public static final int link_text_holo_dark=0x7f0a0032;
-        public static final int link_text_holo_light=0x7f0a0033;
-        public static final int medium_grey=0x7f0a003b;
-        public static final int negative_amount=0x7f0a0041;
-        public static final int pager_indicator_background_dark=0x7f0a0067;
-        public static final int pager_indicator_background_light=0x7f0a007e;
-        public static final int pager_indicator_backgroundk=0x7f0a004f;
-        public static final int pager_indicator_footer=0x7f0a0050;
-        public static final int pager_indicator_footer_dark=0x7f0a0068;
-        public static final int pager_indicator_footer_light=0x7f0a007f;
-        public static final int pager_indicator_selected=0x7f0a004e;
-        public static final int pager_indicator_selected_dark=0x7f0a0066;
-        public static final int pager_indicator_selected_light=0x7f0a007d;
-        public static final int pager_indicator_text=0x7f0a0051;
-        public static final int pager_indicator_text_dark=0x7f0a0069;
-        public static final int pager_indicator_text_light=0x7f0a0080;
-        public static final int positive_amount=0x7f0a0040;
-        public static final int primary_text_disable_only_holo_dark=0x7f0a008e;
-        public static final int primary_text_disable_only_holo_light=0x7f0a008f;
-        public static final int primary_text_holo_dark=0x7f0a0090;
-        public static final int primary_text_holo_light=0x7f0a0091;
-        public static final int primary_text_nodisable_holo_dark=0x7f0a0092;
-        public static final int primary_text_nodisable_holo_light=0x7f0a0093;
-        public static final int red=0x7f0a003d;
-        public static final int secondary_text_holo_dark=0x7f0a0094;
-        public static final int secondary_text_holo_light=0x7f0a0095;
-        public static final int secondary_text_nodisable_holo_dark=0x7f0a0096;
-        public static final int secondary_text_nodisable_holo_light=0x7f0a0097;
-        public static final int spinner_dialog_background=0x7f0a0053;
-        public static final int spinner_dialog_background_dark=0x7f0a006b;
-        public static final int spinner_dialog_background_light=0x7f0a0082;
-        public static final int spinner_dialog_text=0x7f0a0052;
-        public static final int spinner_dialog_text_dark=0x7f0a006a;
-        public static final int spinner_dialog_text_light=0x7f0a0081;
-        public static final int tertiary_text_holo_dark=0x7f0a0098;
-        public static final int tertiary_text_holo_light=0x7f0a0099;
-        public static final int toast_background=0x7f0a004a;
-        public static final int toast_background_dark=0x7f0a0062;
-        public static final int toast_background_light=0x7f0a0079;
-        public static final int toast_border=0x7f0a004b;
-        public static final int toast_border_dark=0x7f0a0063;
-        public static final int toast_border_light=0x7f0a007a;
-        public static final int toast_text=0x7f0a0049;
-        public static final int toast_text_dark=0x7f0a0061;
-        public static final int toast_text_light=0x7f0a0078;
-        public static final int transparent=0x7f0a0013;
-        public static final int transparent_color=0x7f0a0038;
-        public static final int white=0x7f0a0037;
+        public static final int input_background_light=0x7f0c0073;
+        public static final int input_border=0x7f0c0045;
+        public static final int input_border_dark=0x7f0c005d;
+        public static final int input_border_light=0x7f0c0074;
+        public static final int light_grey=0x7f0c0039;
+        public static final int linear_layout=0x7f0c0042;
+        public static final int link_text_holo_dark=0x7f0c0032;
+        public static final int link_text_holo_light=0x7f0c0033;
+        public static final int medium_grey=0x7f0c003b;
+        public static final int negative_amount=0x7f0c0041;
+        public static final int pager_indicator_background_dark=0x7f0c0067;
+        public static final int pager_indicator_background_light=0x7f0c007e;
+        public static final int pager_indicator_backgroundk=0x7f0c004f;
+        public static final int pager_indicator_footer=0x7f0c0050;
+        public static final int pager_indicator_footer_dark=0x7f0c0068;
+        public static final int pager_indicator_footer_light=0x7f0c007f;
+        public static final int pager_indicator_selected=0x7f0c004e;
+        public static final int pager_indicator_selected_dark=0x7f0c0066;
+        public static final int pager_indicator_selected_light=0x7f0c007d;
+        public static final int pager_indicator_text=0x7f0c0051;
+        public static final int pager_indicator_text_dark=0x7f0c0069;
+        public static final int pager_indicator_text_light=0x7f0c0080;
+        public static final int positive_amount=0x7f0c0040;
+        public static final int primary_text_disable_only_holo_dark=0x7f0c008e;
+        public static final int primary_text_disable_only_holo_light=0x7f0c008f;
+        public static final int primary_text_holo_dark=0x7f0c0090;
+        public static final int primary_text_holo_light=0x7f0c0091;
+        public static final int primary_text_nodisable_holo_dark=0x7f0c0092;
+        public static final int primary_text_nodisable_holo_light=0x7f0c0093;
+        public static final int red=0x7f0c003d;
+        public static final int secondary_text_holo_dark=0x7f0c0094;
+        public static final int secondary_text_holo_light=0x7f0c0095;
+        public static final int secondary_text_nodisable_holo_dark=0x7f0c0096;
+        public static final int secondary_text_nodisable_holo_light=0x7f0c0097;
+        public static final int spinner_dialog_background=0x7f0c0053;
+        public static final int spinner_dialog_background_dark=0x7f0c006b;
+        public static final int spinner_dialog_background_light=0x7f0c0082;
+        public static final int spinner_dialog_text=0x7f0c0052;
+        public static final int spinner_dialog_text_dark=0x7f0c006a;
+        public static final int spinner_dialog_text_light=0x7f0c0081;
+        public static final int tertiary_text_holo_dark=0x7f0c0098;
+        public static final int tertiary_text_holo_light=0x7f0c0099;
+        public static final int toast_background=0x7f0c004a;
+        public static final int toast_background_dark=0x7f0c0062;
+        public static final int toast_background_light=0x7f0c0079;
+        public static final int toast_border=0x7f0c004b;
+        public static final int toast_border_dark=0x7f0c0063;
+        public static final int toast_border_light=0x7f0c007a;
+        public static final int toast_text=0x7f0c0049;
+        public static final int toast_text_dark=0x7f0c0061;
+        public static final int toast_text_light=0x7f0c0078;
+        public static final int transparent=0x7f0c0013;
+        public static final int transparent_color=0x7f0c0038;
+        public static final int white=0x7f0c0037;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1819,7 +1819,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  Default height of an action bar. 
  Default height of an action bar. 
          */
-        public static final int abs__action_bar_default_height=0x7f0b0001;
+        public static final int abs__action_bar_default_height=0x7f0d0001;
         /**  Vertical padding around action bar icons. 
  Vertical padding around action bar icons. 
  Vertical padding around action bar icons. 
@@ -1829,7 +1829,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  Vertical padding around action bar icons. 
  Vertical padding around action bar icons. 
          */
-        public static final int abs__action_bar_icon_vertical_padding=0x7f0b0002;
+        public static final int abs__action_bar_icon_vertical_padding=0x7f0d0002;
         /**  Bottom margin for action bar subtitles 
  Bottom margin for action bar subtitles 
  Bottom margin for action bar subtitles 
@@ -1839,7 +1839,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  Bottom margin for action bar subtitles 
  Bottom margin for action bar subtitles 
          */
-        public static final int abs__action_bar_subtitle_bottom_margin=0x7f0b0006;
+        public static final int abs__action_bar_subtitle_bottom_margin=0x7f0d0006;
         /**  Text size for action bar subtitles 
  Text size for action bar subtitles 
  Text size for action bar subtitles 
@@ -1849,7 +1849,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  Text size for action bar subtitles 
  Text size for action bar subtitles 
          */
-        public static final int abs__action_bar_subtitle_text_size=0x7f0b0004;
+        public static final int abs__action_bar_subtitle_text_size=0x7f0d0004;
         /**  Top margin for action bar subtitles 
  Top margin for action bar subtitles 
  Top margin for action bar subtitles 
@@ -1859,7 +1859,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  Top margin for action bar subtitles 
  Top margin for action bar subtitles 
          */
-        public static final int abs__action_bar_subtitle_top_margin=0x7f0b0005;
+        public static final int abs__action_bar_subtitle_top_margin=0x7f0d0005;
         /**  Text size for action bar titles 
  Text size for action bar titles 
  Text size for action bar titles 
@@ -1869,19 +1869,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  Text size for action bar titles 
  Text size for action bar titles 
          */
-        public static final int abs__action_bar_title_text_size=0x7f0b0003;
+        public static final int abs__action_bar_title_text_size=0x7f0d0003;
         /**  Minimum width for an action button in the menu area of an action bar 
  Minimum width for an action button in the menu area of an action bar 
          */
-        public static final int abs__action_button_min_width=0x7f0b0007;
+        public static final int abs__action_button_min_width=0x7f0d0007;
         /**  Dialog title height 
          */
-        public static final int abs__alert_dialog_title_height=0x7f0b0008;
+        public static final int abs__alert_dialog_title_height=0x7f0d0008;
         /**  The maximum width we would prefer dialogs to be.  0 if there is no
          maximum (let them grow as large as the screen).  Actual values are
          specified for -large and -xlarge configurations. 
          */
-        public static final int abs__config_prefDialogWidth=0x7f0b0000;
+        public static final int abs__config_prefDialogWidth=0x7f0d0000;
         /**  The platform's desired minimum size for a dialog's width when it
          is along the major axis (that is the screen is landscape).  This may
          be either a fraction or a dimension. 
@@ -1892,7 +1892,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          is along the major axis (that is the screen is landscape).  This may
          be either a fraction or a dimension. 
          */
-        public static final int abs__dialog_min_width_major=0x7f0b0009;
+        public static final int abs__dialog_min_width_major=0x7f0d0009;
         /**  The platform's desired minimum size for a dialog's width when it
          is along the minor axis (that is the screen is portrait).  This may
          be either a fraction or a dimension. 
@@ -1903,50 +1903,50 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          is along the minor axis (that is the screen is portrait).  This may
          be either a fraction or a dimension. 
          */
-        public static final int abs__dialog_min_width_minor=0x7f0b000a;
+        public static final int abs__dialog_min_width_minor=0x7f0d000a;
         /**  Width of the icon in a dropdown list 
          */
-        public static final int abs__dropdownitem_icon_width=0x7f0b000d;
+        public static final int abs__dropdownitem_icon_width=0x7f0d000d;
         /**  Text padding for dropdown items 
          */
-        public static final int abs__dropdownitem_text_padding_left=0x7f0b000b;
+        public static final int abs__dropdownitem_text_padding_left=0x7f0d000b;
         /**  Text padding for dropdown items 
          */
-        public static final int abs__dropdownitem_text_padding_right=0x7f0b000c;
+        public static final int abs__dropdownitem_text_padding_right=0x7f0d000c;
         /**  Preferred width of the search view. 
          */
-        public static final int abs__search_view_preferred_width=0x7f0b000f;
+        public static final int abs__search_view_preferred_width=0x7f0d000f;
         /**  Minimum width of the search view text entry area. 
          */
-        public static final int abs__search_view_text_min_width=0x7f0b000e;
+        public static final int abs__search_view_text_min_width=0x7f0d000e;
         /**  Minimum width for an action button in the menu area of an action bar 
  Minimum width for an action button in the menu area of an action bar 
          */
-        public static final int action_button_min_width=0x7f0b0010;
-        public static final int alert_dialog_button_bar_height=0x7f0b0021;
-        public static final int alert_dialog_title_height=0x7f0b0020;
-        public static final int dialog_min_width_major=0x7f0b0022;
-        public static final int dialog_min_width_minor=0x7f0b0023;
-        public static final int fastscroll_overlay_size=0x7f0b0026;
-        public static final int fastscroll_thumb_height=0x7f0b0025;
-        public static final int fastscroll_thumb_width=0x7f0b0024;
-        public static final int preference_breadcrumb_paddingLeft=0x7f0b001e;
-        public static final int preference_breadcrumb_paddingRight=0x7f0b001f;
-        public static final int preference_child_padding_side=0x7f0b0015;
-        public static final int preference_fragment_padding_bottom=0x7f0b001c;
-        public static final int preference_fragment_padding_side=0x7f0b001d;
-        public static final int preference_icon_minWidth=0x7f0b0016;
-        public static final int preference_item_padding_inner=0x7f0b0014;
+        public static final int action_button_min_width=0x7f0d0010;
+        public static final int alert_dialog_button_bar_height=0x7f0d0021;
+        public static final int alert_dialog_title_height=0x7f0d0020;
+        public static final int dialog_min_width_major=0x7f0d0022;
+        public static final int dialog_min_width_minor=0x7f0d0023;
+        public static final int fastscroll_overlay_size=0x7f0d0026;
+        public static final int fastscroll_thumb_height=0x7f0d0025;
+        public static final int fastscroll_thumb_width=0x7f0d0024;
+        public static final int preference_breadcrumb_paddingLeft=0x7f0d001e;
+        public static final int preference_breadcrumb_paddingRight=0x7f0d001f;
+        public static final int preference_child_padding_side=0x7f0d0015;
+        public static final int preference_fragment_padding_bottom=0x7f0d001c;
+        public static final int preference_fragment_padding_side=0x7f0d001d;
+        public static final int preference_icon_minWidth=0x7f0d0016;
+        public static final int preference_item_padding_inner=0x7f0d0014;
         /**  outsideOverlay 
          */
-        public static final int preference_item_padding_side=0x7f0b0013;
-        public static final int preference_screen_bottom_margin=0x7f0b001a;
-        public static final int preference_screen_header_padding_side=0x7f0b0012;
-        public static final int preference_screen_header_vertical_padding=0x7f0b0011;
-        public static final int preference_screen_side_margin=0x7f0b0017;
-        public static final int preference_screen_side_margin_negative=0x7f0b0018;
-        public static final int preference_screen_top_margin=0x7f0b0019;
-        public static final int preference_widget_width=0x7f0b001b;
+        public static final int preference_item_padding_side=0x7f0d0013;
+        public static final int preference_screen_bottom_margin=0x7f0d001a;
+        public static final int preference_screen_header_padding_side=0x7f0d0012;
+        public static final int preference_screen_header_vertical_padding=0x7f0d0011;
+        public static final int preference_screen_side_margin=0x7f0d0017;
+        public static final int preference_screen_side_margin_negative=0x7f0d0018;
+        public static final int preference_screen_top_margin=0x7f0d0019;
+        public static final int preference_widget_width=0x7f0d001b;
     }
     public static final class drawable {
         public static final int abs__ab_bottom_solid_dark_holo=0x7f020000;
@@ -2403,257 +2403,257 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int widget_quick_add=0x7f0201c3;
     }
     public static final class id {
-        public static final int abs__action_bar=0x7f080045;
-        public static final int abs__action_bar_container=0x7f080044;
-        public static final int abs__action_bar_subtitle=0x7f080034;
-        public static final int abs__action_bar_title=0x7f080033;
-        public static final int abs__action_context_bar=0x7f080046;
-        public static final int abs__action_menu_divider=0x7f08000c;
-        public static final int abs__action_menu_presenter=0x7f08000d;
-        public static final int abs__action_mode_bar=0x7f080049;
-        public static final int abs__action_mode_bar_stub=0x7f080048;
-        public static final int abs__action_mode_close_button=0x7f080037;
-        public static final int abs__activity_chooser_view_content=0x7f080038;
-        public static final int abs__checkbox=0x7f080041;
-        public static final int abs__content=0x7f080040;
-        public static final int abs__default_activity_button=0x7f08003b;
-        public static final int abs__expand_activities_button=0x7f080039;
-        public static final int abs__home=0x7f08000a;
-        public static final int abs__icon=0x7f08003d;
-        public static final int abs__image=0x7f08003a;
-        public static final int abs__imageButton=0x7f080035;
-        public static final int abs__list_item=0x7f08003c;
-        public static final int abs__progress_circular=0x7f08000e;
-        public static final int abs__progress_horizontal=0x7f08000f;
-        public static final int abs__radio=0x7f080043;
-        public static final int abs__search_badge=0x7f08004c;
-        public static final int abs__search_bar=0x7f08004b;
-        public static final int abs__search_button=0x7f08004d;
-        public static final int abs__search_close_btn=0x7f080052;
-        public static final int abs__search_edit_frame=0x7f08004e;
-        public static final int abs__search_go_btn=0x7f080054;
-        public static final int abs__search_mag_icon=0x7f08004f;
-        public static final int abs__search_plate=0x7f080050;
-        public static final int abs__search_src_text=0x7f080051;
-        public static final int abs__search_voice_btn=0x7f080055;
-        public static final int abs__shortcut=0x7f080042;
-        public static final int abs__split_action_bar=0x7f080047;
-        public static final int abs__submit_area=0x7f080053;
-        public static final int abs__textButton=0x7f080036;
-        public static final int abs__title=0x7f08003e;
-        public static final int abs__titleDivider=0x7f08003f;
-        public static final int abs__up=0x7f08000b;
-        public static final int alarm=0x7f080020;
-        public static final int alertTitle=0x7f08005b;
-        public static final int all=0x7f080021;
-        public static final int amPm=0x7f0800ba;
-        public static final int back_button=0x7f0800ae;
-        public static final int beginning=0x7f080027;
-        public static final int bottom=0x7f080011;
-        public static final int bt_cancel=0x7f08007c;
-        public static final int bt_negative=0x7f0800a4;
-        public static final int bt_ok=0x7f080080;
-        public static final int bt_positive=0x7f0800a3;
-        public static final int bt_repay_selected=0x7f08007f;
-        public static final int bt_save=0x7f08007b;
-        public static final int button1=0x7f080066;
-        public static final int button2=0x7f080064;
-        public static final int button3=0x7f080065;
-        public static final int buttonPanel=0x7f080062;
-        public static final int buttonPanelTopDivivder=0x7f080063;
-        public static final int button_bar=0x7f0800ad;
-        public static final int calendar_view=0x7f080073;
-        public static final int cb_repayment_selected=0x7f0800e2;
-        public static final int cb_user_selected=0x7f0800de;
-        public static final int center=0x7f080018;
-        public static final int center_horizontal=0x7f080016;
-        public static final int center_vertical=0x7f080014;
-        public static final int checkbox=0x7f0800b2;
-        public static final int clip_horizontal=0x7f08001b;
-        public static final int clip_vertical=0x7f08001a;
-        public static final int contentPanel=0x7f08005d;
-        public static final int custom=0x7f080061;
-        public static final int customPanel=0x7f080060;
-        public static final int datePicker=0x7f08006e;
-        public static final int day=0x7f080071;
-        public static final int day_names=0x7f08006c;
-        public static final int decrement=0x7f080032;
-        public static final int dialog=0x7f080029;
-        public static final int disableHome=0x7f080009;
-        public static final int divider=0x7f0800b8;
-        public static final int dropdown=0x7f08002a;
-        public static final int edit=0x7f08002d;
-        public static final int edit_query=0x7f08004a;
-        public static final int edittext_container=0x7f0800a7;
-        public static final int empty=0x7f0800b1;
-        public static final int end=0x7f08001d;
-        public static final int et_amount=0x7f0800e4;
-        public static final int et_group_description=0x7f080078;
-        public static final int et_group_title=0x7f080077;
-        public static final int et_payment_amount=0x7f08009d;
-        public static final int et_payment_description=0x7f080082;
-        public static final int et_payment_title=0x7f080081;
-        public static final int et_user_name=0x7f0800c2;
-        public static final int et_variable_name=0x7f0800c6;
-        public static final int fill=0x7f080019;
-        public static final int fill_horizontal=0x7f080017;
-        public static final int fill_vertical=0x7f080015;
-        public static final int gv_actions=0x7f080099;
-        public static final int headers=0x7f0800a9;
-        public static final int homeAsUp=0x7f080006;
-        public static final int hour=0x7f0800b7;
-        public static final int ibt_add_payment=0x7f0800ce;
-        public static final int icon=0x7f08005a;
-        public static final int increment=0x7f080031;
-        public static final int internalEmpty=0x7f080093;
-        public static final int iv_quick_add=0x7f0800cf;
-        public static final int iv_user_image=0x7f0800c1;
-        public static final int left=0x7f080012;
-        public static final int leftSpacer=0x7f08002e;
-        public static final int left_icon=0x7f080075;
-        public static final int list=0x7f08006d;
-        public static final int listContainer=0x7f080092;
-        public static final int listMode=0x7f080002;
-        public static final int list_footer=0x7f0800aa;
-        public static final int ll_controls=0x7f08007a;
-        public static final int ll_details_wrapper=0x7f0800e5;
-        public static final int ll_filter_wrapper=0x7f0800bb;
-        public static final int ll_group_details=0x7f0800d5;
-        public static final int ll_group_list_wrapper=0x7f080098;
-        public static final int ll_paid_for_section_wrapper=0x7f080086;
-        public static final int ll_paid_for_wrapper=0x7f080087;
-        public static final int ll_paying_wrapper=0x7f080083;
-        public static final int ll_payment_details=0x7f0800d2;
-        public static final int ll_repayment_details=0x7f08007e;
-        public static final int ll_toast_wrapper=0x7f0800db;
-        public static final int ll_user_details=0x7f08008c;
-        public static final int ll_user_list_wrapper=0x7f080097;
-        public static final int ll_user_spinner=0x7f08009b;
-        public static final int ll_variable_name=0x7f0800c5;
-        public static final int lv_group_list=0x7f080076;
-        public static final int lv_payment_list=0x7f080090;
-        public static final int lv_user_list=0x7f08007d;
-        public static final int menu_add_group=0x7f0800e6;
-        public static final int menu_add_payment=0x7f0800e8;
-        public static final int menu_add_user=0x7f0800e7;
-        public static final int menu_filter=0x7f0800ec;
-        public static final int menu_repayment=0x7f0800e9;
-        public static final int menu_settings=0x7f0800eb;
-        public static final int menu_user_details=0x7f0800ea;
-        public static final int message=0x7f08005f;
-        public static final int middle=0x7f080028;
-        public static final int minute=0x7f0800b9;
-        public static final int month=0x7f080070;
-        public static final int month_name=0x7f08006b;
-        public static final int music=0x7f080025;
-        public static final int next_button=0x7f0800b0;
-        public static final int none=0x7f080026;
-        public static final int normal=0x7f080001;
-        public static final int notification=0x7f08001f;
-        public static final int numberpicker_input=0x7f08009a;
-        public static final int parentPanel=0x7f080056;
-        public static final int pickers=0x7f08006f;
-        public static final int prefs=0x7f0800ac;
-        public static final int prefs_frame=0x7f0800ab;
-        public static final int progress=0x7f08002b;
-        public static final int progressContainer=0x7f080091;
-        public static final int progress_number=0x7f080068;
-        public static final int progress_percent=0x7f080067;
-        public static final int rb_loan=0x7f0800a0;
-        public static final int rb_payment_from=0x7f08009e;
-        public static final int rb_payment_to=0x7f08009f;
-        public static final int rb_repayment=0x7f0800a1;
-        public static final int right=0x7f080013;
-        public static final int rightSpacer=0x7f08002f;
-        public static final int ring=0x7f080024;
-        public static final int ringtone=0x7f08001e;
-        public static final int rl_heading_wrapper=0x7f0800cb;
-        public static final int rl_main_wrapper=0x7f08008f;
-        public static final int rl_minimalistic_text_wrapper=0x7f0800c3;
-        public static final int rl_repayment_wrapper=0x7f0800e1;
-        public static final int rl_total_wrapper=0x7f0800c8;
-        public static final int rv_block=0x7f0800df;
-        public static final int scrollView=0x7f08005e;
-        public static final int secondaryProgress=0x7f08002c;
-        public static final int seekbar=0x7f0800a8;
-        public static final int select_dialog_listview=0x7f0800b4;
-        public static final int showCustom=0x7f080008;
-        public static final int showHome=0x7f080005;
-        public static final int showTitle=0x7f080007;
-        public static final int skip_button=0x7f0800af;
-        public static final int sp_email_list=0x7f0800be;
-        public static final int sp_filter=0x7f0800bc;
-        public static final int sp_phone_number_list=0x7f0800bf;
-        public static final int sp_sort=0x7f0800bd;
-        public static final int sp_user_spinner=0x7f08009c;
-        public static final int start=0x7f08001c;
-        public static final int summary=0x7f0800a5;
-        public static final int sv_view=0x7f0800c0;
-        public static final int switchWidget=0x7f0800b3;
-        public static final int system=0x7f080023;
-        public static final int tabMode=0x7f080003;
-        public static final int tabsLayout=0x7f0800d9;
-        public static final int tabsText=0x7f0800da;
-        public static final int tb_equal_payment=0x7f080085;
-        public static final int tb_minimalistic_text_flag=0x7f0800c4;
-        public static final int text1=0x7f0800b5;
-        public static final int timePicker=0x7f0800b6;
-        public static final int title=0x7f08006a;
-        public static final int titleDivider=0x7f08005c;
-        public static final int titleDividerTop=0x7f080058;
-        public static final int title_container=0x7f080069;
-        public static final int title_template=0x7f080059;
-        public static final int top=0x7f080010;
-        public static final int topPanel=0x7f080057;
-        public static final int tv_action=0x7f0800e0;
-        public static final int tv_details=0x7f0800e3;
-        public static final int tv_dialog_heading=0x7f080074;
-        public static final int tv_difference_amount=0x7f08008a;
-        public static final int tv_difference_amount_title=0x7f08008b;
-        public static final int tv_group_description=0x7f0800d4;
-        public static final int tv_group_title=0x7f0800d3;
-        public static final int tv_group_total=0x7f08008e;
-        public static final int tv_group_total_amount=0x7f08008d;
-        public static final int tv_last_payment_date=0x7f0800cd;
-        public static final int tv_paid_for_total=0x7f080088;
-        public static final int tv_paid_for_total_title=0x7f080089;
-        public static final int tv_paying_total=0x7f080084;
-        public static final int tv_payment_amount=0x7f0800d7;
-        public static final int tv_payment_date=0x7f0800d8;
-        public static final int tv_payment_description=0x7f0800d1;
-        public static final int tv_payment_title=0x7f0800d0;
-        public static final int tv_popup_delete_message=0x7f0800a2;
-        public static final int tv_text=0x7f0800dc;
-        public static final int tv_total_amount=0x7f0800c9;
-        public static final int tv_total_owed_user=0x7f080094;
-        public static final int tv_total_state_text=0x7f080095;
-        public static final int tv_total_user_owed=0x7f080096;
-        public static final int tv_user_balance=0x7f0800dd;
-        public static final int tv_user_list_title=0x7f080079;
-        public static final int tv_user_name=0x7f0800cc;
-        public static final int tv_variable_name_info=0x7f0800c7;
-        public static final int typeface=0x7f080030;
-        public static final int useLogo=0x7f080004;
-        public static final int v_header_seperater=0x7f0800ca;
-        public static final int v_state_indicator=0x7f0800d6;
-        public static final int voice=0x7f080022;
-        public static final int widget_frame=0x7f0800a6;
-        public static final int wrap_content=0x7f080000;
-        public static final int year=0x7f080072;
+        public static final int abs__action_bar=0x7f0a0045;
+        public static final int abs__action_bar_container=0x7f0a0044;
+        public static final int abs__action_bar_subtitle=0x7f0a0034;
+        public static final int abs__action_bar_title=0x7f0a0033;
+        public static final int abs__action_context_bar=0x7f0a0046;
+        public static final int abs__action_menu_divider=0x7f0a000c;
+        public static final int abs__action_menu_presenter=0x7f0a000d;
+        public static final int abs__action_mode_bar=0x7f0a0049;
+        public static final int abs__action_mode_bar_stub=0x7f0a0048;
+        public static final int abs__action_mode_close_button=0x7f0a0037;
+        public static final int abs__activity_chooser_view_content=0x7f0a0038;
+        public static final int abs__checkbox=0x7f0a0041;
+        public static final int abs__content=0x7f0a0040;
+        public static final int abs__default_activity_button=0x7f0a003b;
+        public static final int abs__expand_activities_button=0x7f0a0039;
+        public static final int abs__home=0x7f0a000a;
+        public static final int abs__icon=0x7f0a003d;
+        public static final int abs__image=0x7f0a003a;
+        public static final int abs__imageButton=0x7f0a0035;
+        public static final int abs__list_item=0x7f0a003c;
+        public static final int abs__progress_circular=0x7f0a000e;
+        public static final int abs__progress_horizontal=0x7f0a000f;
+        public static final int abs__radio=0x7f0a0043;
+        public static final int abs__search_badge=0x7f0a004c;
+        public static final int abs__search_bar=0x7f0a004b;
+        public static final int abs__search_button=0x7f0a004d;
+        public static final int abs__search_close_btn=0x7f0a0052;
+        public static final int abs__search_edit_frame=0x7f0a004e;
+        public static final int abs__search_go_btn=0x7f0a0054;
+        public static final int abs__search_mag_icon=0x7f0a004f;
+        public static final int abs__search_plate=0x7f0a0050;
+        public static final int abs__search_src_text=0x7f0a0051;
+        public static final int abs__search_voice_btn=0x7f0a0055;
+        public static final int abs__shortcut=0x7f0a0042;
+        public static final int abs__split_action_bar=0x7f0a0047;
+        public static final int abs__submit_area=0x7f0a0053;
+        public static final int abs__textButton=0x7f0a0036;
+        public static final int abs__title=0x7f0a003e;
+        public static final int abs__titleDivider=0x7f0a003f;
+        public static final int abs__up=0x7f0a000b;
+        public static final int alarm=0x7f0a0020;
+        public static final int alertTitle=0x7f0a005b;
+        public static final int all=0x7f0a0021;
+        public static final int amPm=0x7f0a00ba;
+        public static final int back_button=0x7f0a00ae;
+        public static final int beginning=0x7f0a0027;
+        public static final int bottom=0x7f0a0011;
+        public static final int bt_cancel=0x7f0a007c;
+        public static final int bt_negative=0x7f0a00a4;
+        public static final int bt_ok=0x7f0a0080;
+        public static final int bt_positive=0x7f0a00a3;
+        public static final int bt_repay_selected=0x7f0a007f;
+        public static final int bt_save=0x7f0a007b;
+        public static final int button1=0x7f0a0066;
+        public static final int button2=0x7f0a0064;
+        public static final int button3=0x7f0a0065;
+        public static final int buttonPanel=0x7f0a0062;
+        public static final int buttonPanelTopDivivder=0x7f0a0063;
+        public static final int button_bar=0x7f0a00ad;
+        public static final int calendar_view=0x7f0a0073;
+        public static final int cb_repayment_selected=0x7f0a00e2;
+        public static final int cb_user_selected=0x7f0a00de;
+        public static final int center=0x7f0a0018;
+        public static final int center_horizontal=0x7f0a0016;
+        public static final int center_vertical=0x7f0a0014;
+        public static final int checkbox=0x7f0a00b2;
+        public static final int clip_horizontal=0x7f0a001b;
+        public static final int clip_vertical=0x7f0a001a;
+        public static final int contentPanel=0x7f0a005d;
+        public static final int custom=0x7f0a0061;
+        public static final int customPanel=0x7f0a0060;
+        public static final int datePicker=0x7f0a006e;
+        public static final int day=0x7f0a0071;
+        public static final int day_names=0x7f0a006c;
+        public static final int decrement=0x7f0a0032;
+        public static final int dialog=0x7f0a0029;
+        public static final int disableHome=0x7f0a0009;
+        public static final int divider=0x7f0a00b8;
+        public static final int dropdown=0x7f0a002a;
+        public static final int edit=0x7f0a002d;
+        public static final int edit_query=0x7f0a004a;
+        public static final int edittext_container=0x7f0a00a7;
+        public static final int empty=0x7f0a00b1;
+        public static final int end=0x7f0a001d;
+        public static final int et_amount=0x7f0a00e4;
+        public static final int et_group_description=0x7f0a0078;
+        public static final int et_group_title=0x7f0a0077;
+        public static final int et_payment_amount=0x7f0a009d;
+        public static final int et_payment_description=0x7f0a0082;
+        public static final int et_payment_title=0x7f0a0081;
+        public static final int et_user_name=0x7f0a00c2;
+        public static final int et_variable_name=0x7f0a00c6;
+        public static final int fill=0x7f0a0019;
+        public static final int fill_horizontal=0x7f0a0017;
+        public static final int fill_vertical=0x7f0a0015;
+        public static final int gv_actions=0x7f0a0099;
+        public static final int headers=0x7f0a00a9;
+        public static final int homeAsUp=0x7f0a0006;
+        public static final int hour=0x7f0a00b7;
+        public static final int ibt_add_payment=0x7f0a00ce;
+        public static final int icon=0x7f0a005a;
+        public static final int increment=0x7f0a0031;
+        public static final int internalEmpty=0x7f0a0093;
+        public static final int iv_quick_add=0x7f0a00cf;
+        public static final int iv_user_image=0x7f0a00c1;
+        public static final int left=0x7f0a0012;
+        public static final int leftSpacer=0x7f0a002e;
+        public static final int left_icon=0x7f0a0075;
+        public static final int list=0x7f0a006d;
+        public static final int listContainer=0x7f0a0092;
+        public static final int listMode=0x7f0a0002;
+        public static final int list_footer=0x7f0a00aa;
+        public static final int ll_controls=0x7f0a007a;
+        public static final int ll_details_wrapper=0x7f0a00e5;
+        public static final int ll_filter_wrapper=0x7f0a00bb;
+        public static final int ll_group_details=0x7f0a00d5;
+        public static final int ll_group_list_wrapper=0x7f0a0098;
+        public static final int ll_paid_for_section_wrapper=0x7f0a0086;
+        public static final int ll_paid_for_wrapper=0x7f0a0087;
+        public static final int ll_paying_wrapper=0x7f0a0083;
+        public static final int ll_payment_details=0x7f0a00d2;
+        public static final int ll_repayment_details=0x7f0a007e;
+        public static final int ll_toast_wrapper=0x7f0a00db;
+        public static final int ll_user_details=0x7f0a008c;
+        public static final int ll_user_list_wrapper=0x7f0a0097;
+        public static final int ll_user_spinner=0x7f0a009b;
+        public static final int ll_variable_name=0x7f0a00c5;
+        public static final int lv_group_list=0x7f0a0076;
+        public static final int lv_payment_list=0x7f0a0090;
+        public static final int lv_user_list=0x7f0a007d;
+        public static final int menu_add_group=0x7f0a00e6;
+        public static final int menu_add_payment=0x7f0a00e8;
+        public static final int menu_add_user=0x7f0a00e7;
+        public static final int menu_filter=0x7f0a00ec;
+        public static final int menu_repayment=0x7f0a00e9;
+        public static final int menu_settings=0x7f0a00eb;
+        public static final int menu_user_details=0x7f0a00ea;
+        public static final int message=0x7f0a005f;
+        public static final int middle=0x7f0a0028;
+        public static final int minute=0x7f0a00b9;
+        public static final int month=0x7f0a0070;
+        public static final int month_name=0x7f0a006b;
+        public static final int music=0x7f0a0025;
+        public static final int next_button=0x7f0a00b0;
+        public static final int none=0x7f0a0026;
+        public static final int normal=0x7f0a0001;
+        public static final int notification=0x7f0a001f;
+        public static final int numberpicker_input=0x7f0a009a;
+        public static final int parentPanel=0x7f0a0056;
+        public static final int pickers=0x7f0a006f;
+        public static final int prefs=0x7f0a00ac;
+        public static final int prefs_frame=0x7f0a00ab;
+        public static final int progress=0x7f0a002b;
+        public static final int progressContainer=0x7f0a0091;
+        public static final int progress_number=0x7f0a0068;
+        public static final int progress_percent=0x7f0a0067;
+        public static final int rb_loan=0x7f0a00a0;
+        public static final int rb_payment_from=0x7f0a009e;
+        public static final int rb_payment_to=0x7f0a009f;
+        public static final int rb_repayment=0x7f0a00a1;
+        public static final int right=0x7f0a0013;
+        public static final int rightSpacer=0x7f0a002f;
+        public static final int ring=0x7f0a0024;
+        public static final int ringtone=0x7f0a001e;
+        public static final int rl_heading_wrapper=0x7f0a00cb;
+        public static final int rl_main_wrapper=0x7f0a008f;
+        public static final int rl_minimalistic_text_wrapper=0x7f0a00c3;
+        public static final int rl_repayment_wrapper=0x7f0a00e1;
+        public static final int rl_total_wrapper=0x7f0a00c8;
+        public static final int rv_block=0x7f0a00df;
+        public static final int scrollView=0x7f0a005e;
+        public static final int secondaryProgress=0x7f0a002c;
+        public static final int seekbar=0x7f0a00a8;
+        public static final int select_dialog_listview=0x7f0a00b4;
+        public static final int showCustom=0x7f0a0008;
+        public static final int showHome=0x7f0a0005;
+        public static final int showTitle=0x7f0a0007;
+        public static final int skip_button=0x7f0a00af;
+        public static final int sp_email_list=0x7f0a00be;
+        public static final int sp_filter=0x7f0a00bc;
+        public static final int sp_phone_number_list=0x7f0a00bf;
+        public static final int sp_sort=0x7f0a00bd;
+        public static final int sp_user_spinner=0x7f0a009c;
+        public static final int start=0x7f0a001c;
+        public static final int summary=0x7f0a00a5;
+        public static final int sv_view=0x7f0a00c0;
+        public static final int switchWidget=0x7f0a00b3;
+        public static final int system=0x7f0a0023;
+        public static final int tabMode=0x7f0a0003;
+        public static final int tabsLayout=0x7f0a00d9;
+        public static final int tabsText=0x7f0a00da;
+        public static final int tb_equal_payment=0x7f0a0085;
+        public static final int tb_minimalistic_text_flag=0x7f0a00c4;
+        public static final int text1=0x7f0a00b5;
+        public static final int timePicker=0x7f0a00b6;
+        public static final int title=0x7f0a006a;
+        public static final int titleDivider=0x7f0a005c;
+        public static final int titleDividerTop=0x7f0a0058;
+        public static final int title_container=0x7f0a0069;
+        public static final int title_template=0x7f0a0059;
+        public static final int top=0x7f0a0010;
+        public static final int topPanel=0x7f0a0057;
+        public static final int tv_action=0x7f0a00e0;
+        public static final int tv_details=0x7f0a00e3;
+        public static final int tv_dialog_heading=0x7f0a0074;
+        public static final int tv_difference_amount=0x7f0a008a;
+        public static final int tv_difference_amount_title=0x7f0a008b;
+        public static final int tv_group_description=0x7f0a00d4;
+        public static final int tv_group_title=0x7f0a00d3;
+        public static final int tv_group_total=0x7f0a008e;
+        public static final int tv_group_total_amount=0x7f0a008d;
+        public static final int tv_last_payment_date=0x7f0a00cd;
+        public static final int tv_paid_for_total=0x7f0a0088;
+        public static final int tv_paid_for_total_title=0x7f0a0089;
+        public static final int tv_paying_total=0x7f0a0084;
+        public static final int tv_payment_amount=0x7f0a00d7;
+        public static final int tv_payment_date=0x7f0a00d8;
+        public static final int tv_payment_description=0x7f0a00d1;
+        public static final int tv_payment_title=0x7f0a00d0;
+        public static final int tv_popup_delete_message=0x7f0a00a2;
+        public static final int tv_text=0x7f0a00dc;
+        public static final int tv_total_amount=0x7f0a00c9;
+        public static final int tv_total_owed_user=0x7f0a0094;
+        public static final int tv_total_state_text=0x7f0a0095;
+        public static final int tv_total_user_owed=0x7f0a0096;
+        public static final int tv_user_balance=0x7f0a00dd;
+        public static final int tv_user_list_title=0x7f0a0079;
+        public static final int tv_user_name=0x7f0a00cc;
+        public static final int tv_variable_name_info=0x7f0a00c7;
+        public static final int typeface=0x7f0a0030;
+        public static final int useLogo=0x7f0a0004;
+        public static final int v_header_seperater=0x7f0a00ca;
+        public static final int v_state_indicator=0x7f0a00d6;
+        public static final int voice=0x7f0a0022;
+        public static final int widget_frame=0x7f0a00a6;
+        public static final int wrap_content=0x7f0a0000;
+        public static final int year=0x7f0a0072;
     }
     public static final class integer {
-        public static final int abs__max_action_buttons=0x7f0c0000;
-        public static final int config_activityDefaultDur=0x7f0c0002;
-        public static final int config_activityShortDur=0x7f0c0001;
-        public static final int config_longAnimTime=0x7f0c0005;
-        public static final int config_mediumAnimTime=0x7f0c0004;
-        public static final int config_shortAnimTime=0x7f0c0003;
+        public static final int abs__max_action_buttons=0x7f0e0000;
+        public static final int config_activityDefaultDur=0x7f0e0002;
+        public static final int config_activityShortDur=0x7f0e0001;
+        public static final int config_longAnimTime=0x7f0e0005;
+        public static final int config_mediumAnimTime=0x7f0e0004;
+        public static final int config_shortAnimTime=0x7f0e0003;
         /**  outsideOverlay 
          */
-        public static final int preference_fragment_scrollbarStyle=0x7f0c0007;
-        public static final int preference_screen_header_scrollbarStyle=0x7f0c0006;
-        public static final int preferences_left_pane_weight=0x7f0c0008;
-        public static final int preferences_right_pane_weight=0x7f0c0009;
+        public static final int preference_fragment_scrollbarStyle=0x7f0e0007;
+        public static final int preference_screen_header_scrollbarStyle=0x7f0e0006;
+        public static final int preferences_left_pane_weight=0x7f0e0008;
+        public static final int preferences_right_pane_weight=0x7f0e0009;
     }
     public static final class interpolator {
         public static final int accelerate_quad=0x7f050000;
@@ -2774,523 +2774,523 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
-        public static final int abs__action_bar_home_description=0x7f0d0000;
+        public static final int abs__action_bar_home_description=0x7f080002;
         /**  Content description for the action bar "up" affordance. [CHAR LIMIT=NONE] 
          */
-        public static final int abs__action_bar_up_description=0x7f0d0001;
+        public static final int abs__action_bar_up_description=0x7f080003;
         /**  Content description for the action menu overflow button. [CHAR LIMIT=NONE] 
          */
-        public static final int abs__action_menu_overflow_description=0x7f0d0002;
+        public static final int abs__action_menu_overflow_description=0x7f080004;
         /**  Label for the "Done" button on the far left of action mode toolbars. 
          */
-        public static final int abs__action_mode_done=0x7f0d0003;
+        public static final int abs__action_mode_done=0x7f080005;
         /**  Title default for a dialog showing possible activities in ActivityChooserView [CHAR LIMIT=25] 
          */
-        public static final int abs__activity_chooser_view_dialog_title_default=0x7f0d0005;
+        public static final int abs__activity_chooser_view_dialog_title_default=0x7f080007;
         /**  Title for a button to expand the list of activities in ActivityChooserView [CHAR LIMIT=25] 
          */
-        public static final int abs__activity_chooser_view_see_all=0x7f0d0004;
+        public static final int abs__activity_chooser_view_see_all=0x7f080006;
         /**  Description of the shwoing of a popup window with activities to choose from. [CHAR LIMIT=NONE] 
          */
-        public static final int abs__activitychooserview_choose_application=0x7f0d0007;
+        public static final int abs__activitychooserview_choose_application=0x7f080009;
         /**  SearchView accessibility description for clear button [CHAR LIMIT=NONE] 
          */
-        public static final int abs__searchview_description_clear=0x7f0d000c;
+        public static final int abs__searchview_description_clear=0x7f08000e;
         /**  SearchView accessibility description for search text field [CHAR LIMIT=NONE] 
          */
-        public static final int abs__searchview_description_query=0x7f0d000b;
+        public static final int abs__searchview_description_query=0x7f08000d;
         /**  SearchView accessibility description for search button [CHAR LIMIT=NONE] 
          */
-        public static final int abs__searchview_description_search=0x7f0d000a;
+        public static final int abs__searchview_description_search=0x7f08000c;
         /**  SearchView accessibility description for submit button [CHAR LIMIT=NONE] 
          */
-        public static final int abs__searchview_description_submit=0x7f0d000d;
+        public static final int abs__searchview_description_submit=0x7f08000f;
         /**  SearchView accessibility description for voice button [CHAR LIMIT=NONE] 
          */
-        public static final int abs__searchview_description_voice=0x7f0d000e;
+        public static final int abs__searchview_description_voice=0x7f080010;
         /**  Title for a dialog showing possible activities for sharing in ShareActionProvider [CHAR LIMIT=25] 
          */
-        public static final int abs__share_action_provider_share_with=0x7f0d0006;
+        public static final int abs__share_action_provider_share_with=0x7f080008;
         /**  Description of the choose target button in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
-        public static final int abs__shareactionprovider_share_with=0x7f0d0008;
+        public static final int abs__shareactionprovider_share_with=0x7f08000a;
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
-        public static final int abs__shareactionprovider_share_with_application=0x7f0d0009;
-        public static final int app_name=0x7f0d0031;
-        public static final int back_button_label=0x7f0d000f;
-        public static final int bar_title_delete=0x7f0d008e;
-        public static final int bar_title_group_list=0x7f0d008a;
-        public static final int bar_title_group_new=0x7f0d008c;
-        public static final int bar_title_group_payback=0x7f0d0090;
-        public static final int bar_title_group_payment_new=0x7f0d008f;
-        public static final int bar_title_group_user_details=0x7f0d0091;
-        public static final int bar_title_group_view=0x7f0d008b;
-        public static final int bar_title_payment_edit=0x7f0d0089;
-        public static final int bar_title_payment_new=0x7f0d0088;
-        public static final int bar_title_settings=0x7f0d008d;
-        public static final int bar_title_user_edit=0x7f0d0085;
-        public static final int bar_title_user_list=0x7f0d0087;
+        public static final int abs__shareactionprovider_share_with_application=0x7f08000b;
+        public static final int app_name=0x7f080001;
+        public static final int back_button_label=0x7f080011;
+        public static final int bar_title_delete=0x7f08008e;
+        public static final int bar_title_group_list=0x7f08008a;
+        public static final int bar_title_group_new=0x7f08008c;
+        public static final int bar_title_group_payback=0x7f080090;
+        public static final int bar_title_group_payment_new=0x7f08008f;
+        public static final int bar_title_group_user_details=0x7f080091;
+        public static final int bar_title_group_view=0x7f08008b;
+        public static final int bar_title_payment_edit=0x7f080089;
+        public static final int bar_title_payment_new=0x7f080088;
+        public static final int bar_title_settings=0x7f08008d;
+        public static final int bar_title_user_edit=0x7f080085;
+        public static final int bar_title_user_list=0x7f080087;
         /**  MENU BAR 
          */
-        public static final int bar_title_user_new=0x7f0d0084;
-        public static final int bar_title_user_view=0x7f0d0086;
-        public static final int bt_cancel=0x7f0d0039;
-        public static final int bt_choose_photo=0x7f0d003b;
-        public static final int bt_ok=0x7f0d003c;
-        public static final int bt_popup_delete_negative=0x7f0d0038;
-        public static final int bt_popup_delete_positive=0x7f0d0037;
-        public static final int bt_repay_selected=0x7f0d003d;
-        public static final int bt_save=0x7f0d003a;
-        public static final int bt_widget_quick_add=0x7f0d006d;
-        public static final int candidates_style=0x7f0d0015;
-        public static final int capital_off=0x7f0d0014;
-        public static final int capital_on=0x7f0d0013;
-        public static final int category_title_about=0x7f0d00a6;
-        public static final int category_title_general=0x7f0d00a8;
+        public static final int bar_title_user_new=0x7f080084;
+        public static final int bar_title_user_view=0x7f080086;
+        public static final int bt_cancel=0x7f080039;
+        public static final int bt_choose_photo=0x7f08003b;
+        public static final int bt_ok=0x7f08003c;
+        public static final int bt_popup_delete_negative=0x7f080038;
+        public static final int bt_popup_delete_positive=0x7f080037;
+        public static final int bt_repay_selected=0x7f08003d;
+        public static final int bt_save=0x7f08003a;
+        public static final int bt_widget_quick_add=0x7f08006d;
+        public static final int candidates_style=0x7f080017;
+        public static final int capital_off=0x7f080016;
+        public static final int capital_on=0x7f080015;
+        public static final int category_title_about=0x7f0800a6;
+        public static final int category_title_general=0x7f0800a8;
         /**  PREFERENCES 
          */
-        public static final int category_title_integration=0x7f0d00a5;
-        public static final int category_title_reminders=0x7f0d00a7;
-        public static final int context_delete=0x7f0d0066;
-        public static final int context_edit=0x7f0d0065;
-        public static final int context_heading=0x7f0d0062;
-        public static final int context_payment_delete=0x7f0d0061;
-        public static final int context_payment_edit=0x7f0d0060;
-        public static final int context_payment_heading=0x7f0d005d;
-        public static final int context_payment_repay_all=0x7f0d005e;
-        public static final int context_payment_repay_some=0x7f0d005f;
-        public static final int context_user_open_contact_card=0x7f0d0067;
-        public static final int context_user_reminder_email=0x7f0d0071;
-        public static final int context_user_reminder_sms=0x7f0d0072;
-        public static final int context_user_repay_all=0x7f0d0063;
-        public static final int context_user_repay_some=0x7f0d0064;
-        public static final int dash_summary_total_owed_user=0x7f0d0082;
-        public static final int dash_summary_total_user_owed=0x7f0d0081;
-        public static final int date_picker_decrement_day_button=0x7f0d0024;
-        public static final int date_picker_decrement_month_button=0x7f0d0026;
-        public static final int date_picker_decrement_year_button=0x7f0d0028;
-        public static final int date_picker_dialog_title=0x7f0d0022;
-        public static final int date_picker_increment_day_button=0x7f0d0023;
-        public static final int date_picker_increment_month_button=0x7f0d0025;
-        public static final int date_picker_increment_year_button=0x7f0d0027;
-        public static final int date_time_done=0x7f0d0029;
-        public static final int date_time_set=0x7f0d002a;
-        public static final int date_title=0x7f0d0068;
-        public static final int default_currency=0x7f0d00c4;
-        public static final int default_email_reminder_body=0x7f0d00c1;
-        public static final int default_email_reminder_subject=0x7f0d00c2;
-        public static final int default_sms_reminder_body=0x7f0d00c3;
-        public static final int description_title=0x7f0d0069;
-        public static final int dialog_heading_delete=0x7f0d009f;
-        public static final int dialog_heading_exit=0x7f0d00a0;
-        public static final int dialog_heading_group_new=0x7f0d00a1;
-        public static final int dialog_heading_group_payback=0x7f0d00a2;
-        public static final int dialog_heading_group_payment_new=0x7f0d00a3;
-        public static final int dialog_heading_payment_new=0x7f0d00a4;
+        public static final int category_title_integration=0x7f0800a5;
+        public static final int category_title_reminders=0x7f0800a7;
+        public static final int context_delete=0x7f080066;
+        public static final int context_edit=0x7f080065;
+        public static final int context_heading=0x7f080062;
+        public static final int context_payment_delete=0x7f080061;
+        public static final int context_payment_edit=0x7f080060;
+        public static final int context_payment_heading=0x7f08005d;
+        public static final int context_payment_repay_all=0x7f08005e;
+        public static final int context_payment_repay_some=0x7f08005f;
+        public static final int context_user_open_contact_card=0x7f080067;
+        public static final int context_user_reminder_email=0x7f080071;
+        public static final int context_user_reminder_sms=0x7f080072;
+        public static final int context_user_repay_all=0x7f080063;
+        public static final int context_user_repay_some=0x7f080064;
+        public static final int dash_summary_total_owed_user=0x7f080082;
+        public static final int dash_summary_total_user_owed=0x7f080081;
+        public static final int date_picker_decrement_day_button=0x7f080026;
+        public static final int date_picker_decrement_month_button=0x7f080028;
+        public static final int date_picker_decrement_year_button=0x7f08002a;
+        public static final int date_picker_dialog_title=0x7f080024;
+        public static final int date_picker_increment_day_button=0x7f080025;
+        public static final int date_picker_increment_month_button=0x7f080027;
+        public static final int date_picker_increment_year_button=0x7f080029;
+        public static final int date_time_done=0x7f08002b;
+        public static final int date_time_set=0x7f08002c;
+        public static final int date_title=0x7f080068;
+        public static final int default_currency=0x7f0800c4;
+        public static final int default_email_reminder_body=0x7f0800c1;
+        public static final int default_email_reminder_subject=0x7f0800c2;
+        public static final int default_sms_reminder_body=0x7f0800c3;
+        public static final int description_title=0x7f080069;
+        public static final int dialog_heading_delete=0x7f08009f;
+        public static final int dialog_heading_exit=0x7f0800a0;
+        public static final int dialog_heading_group_new=0x7f0800a1;
+        public static final int dialog_heading_group_payback=0x7f0800a2;
+        public static final int dialog_heading_group_payment_new=0x7f0800a3;
+        public static final int dialog_heading_payment_new=0x7f0800a4;
         /**  DIALOG HEADINGS 
          */
-        public static final int dialog_heading_user_new=0x7f0d009e;
-        public static final int et_group_description_hint=0x7f0d0083;
-        public static final int et_group_title_hint=0x7f0d0075;
-        public static final int et_payment_amount_hint=0x7f0d0057;
-        public static final int et_payment_description_hint=0x7f0d0055;
-        public static final int et_payment_title_hint=0x7f0d005a;
-        public static final int et_user_name_hint=0x7f0d0053;
-        public static final int et_variable_name_hint=0x7f0d006c;
-        public static final int hello=0x7f0d0030;
-        public static final int loading=0x7f0d0012;
-        public static final int menu_add_group=0x7f0d009c;
-        public static final int menu_add_payment=0x7f0d009b;
-        public static final int menu_add_user=0x7f0d0099;
-        public static final int menu_filter=0x7f0d0096;
-        public static final int menu_group=0x7f0d0094;
+        public static final int dialog_heading_user_new=0x7f08009e;
+        public static final int et_group_description_hint=0x7f080083;
+        public static final int et_group_title_hint=0x7f080075;
+        public static final int et_payment_amount_hint=0x7f080057;
+        public static final int et_payment_description_hint=0x7f080055;
+        public static final int et_payment_title_hint=0x7f08005a;
+        public static final int et_user_name_hint=0x7f080053;
+        public static final int et_variable_name_hint=0x7f08006c;
+        public static final int hello=0x7f080000;
+        public static final int loading=0x7f080014;
+        public static final int menu_add_group=0x7f08009c;
+        public static final int menu_add_payment=0x7f08009b;
+        public static final int menu_add_user=0x7f080099;
+        public static final int menu_filter=0x7f080096;
+        public static final int menu_group=0x7f080094;
         /**  DROPDOWN MENUS 
          */
-        public static final int menu_group_payback=0x7f0d0092;
-        public static final int menu_individual=0x7f0d0095;
-        public static final int menu_overflow=0x7f0d009a;
-        public static final int menu_repayment=0x7f0d009d;
-        public static final int menu_settings=0x7f0d0093;
-        public static final int menu_sort=0x7f0d0097;
-        public static final int menu_user_details=0x7f0d0098;
-        public static final int next_button_label=0x7f0d0011;
-        public static final int number_picker_decrement_button=0x7f0d0019;
-        public static final int number_picker_increment_button=0x7f0d0018;
-        public static final int number_picker_increment_scroll_action=0x7f0d0017;
-        public static final int number_picker_increment_scroll_mode=0x7f0d0016;
-        public static final int pref_name_currency=0x7f0d00c0;
-        public static final int pref_name_def_email_rem_body=0x7f0d00bd;
-        public static final int pref_name_def_email_rem_sub=0x7f0d00be;
-        public static final int pref_name_def_sms_rem_body=0x7f0d00bf;
-        public static final int pref_summary_about_min_text=0x7f0d00b4;
-        public static final int pref_summary_allow_min_text=0x7f0d00b3;
-        public static final int pref_summary_contact=0x7f0d00b5;
-        public static final int pref_summary_currency=0x7f0d00bb;
-        public static final int pref_summary_default_start_page=0x7f0d00bc;
-        public static final int pref_summary_email_body=0x7f0d00b8;
-        public static final int pref_summary_email_reminders=0x7f0d00b6;
-        public static final int pref_summary_email_subject=0x7f0d00b7;
-        public static final int pref_summary_sms_body=0x7f0d00ba;
-        public static final int pref_summary_sms_reminders=0x7f0d00b9;
-        public static final int pref_title_about_min_text=0x7f0d00aa;
-        public static final int pref_title_allow_min_text=0x7f0d00a9;
-        public static final int pref_title_contact=0x7f0d00ab;
-        public static final int pref_title_currency=0x7f0d00b1;
-        public static final int pref_title_default_start_page=0x7f0d00b2;
-        public static final int pref_title_email_body=0x7f0d00ae;
-        public static final int pref_title_email_reminders=0x7f0d00ac;
-        public static final int pref_title_email_subject=0x7f0d00ad;
-        public static final int pref_title_sms_body=0x7f0d00b0;
-        public static final int pref_title_sms_reminders=0x7f0d00af;
-        public static final int repayment_description=0x7f0d007d;
-        public static final int ringtone_default=0x7f0d002c;
-        public static final int ringtone_picker_title=0x7f0d002b;
-        public static final int ringtone_silent=0x7f0d002d;
-        public static final int skip_button_label=0x7f0d0010;
-        public static final int switch_off=0x7f0d002f;
-        public static final int switch_on=0x7f0d002e;
-        public static final int time_picker_decrement_hour_button=0x7f0d001e;
-        public static final int time_picker_decrement_minute_button=0x7f0d001c;
-        public static final int time_picker_decrement_set_am_button=0x7f0d0020;
-        public static final int time_picker_dialog_title=0x7f0d001a;
-        public static final int time_picker_increment_hour_button=0x7f0d001d;
-        public static final int time_picker_increment_minute_button=0x7f0d001b;
-        public static final int time_picker_increment_set_pm_button=0x7f0d001f;
-        public static final int time_picker_separator=0x7f0d0021;
-        public static final int title_main=0x7f0d0032;
-        public static final int toast_group_deleted=0x7f0d004c;
-        public static final int toast_group_exists=0x7f0d0049;
-        public static final int toast_group_saved=0x7f0d004a;
-        public static final int toast_group_saved_error=0x7f0d004d;
-        public static final int toast_group_updated=0x7f0d004b;
-        public static final int toast_no_amount=0x7f0d0047;
-        public static final int toast_no_group_title=0x7f0d004e;
-        public static final int toast_no_user_name=0x7f0d0046;
-        public static final int toast_payment_deleted=0x7f0d0045;
-        public static final int toast_payment_saved=0x7f0d0043;
-        public static final int toast_payment_saved_error=0x7f0d0048;
-        public static final int toast_payment_updated=0x7f0d0044;
-        public static final int toast_user_deleted=0x7f0d0041;
-        public static final int toast_user_exists=0x7f0d003e;
-        public static final int toast_user_saved=0x7f0d003f;
-        public static final int toast_user_saved_error=0x7f0d0042;
-        public static final int toast_user_updated=0x7f0d0040;
-        public static final int tv_display_with_minimalistic_text_title=0x7f0d006a;
-        public static final int tv_equal_payment_text=0x7f0d007a;
-        public static final int tv_group_title=0x7f0d0073;
-        public static final int tv_need_more_paid_for_title=0x7f0d007b;
-        public static final int tv_need_more_paid_title=0x7f0d007c;
-        public static final int tv_no_description=0x7f0d005b;
-        public static final int tv_no_groups=0x7f0d0051;
-        public static final int tv_no_payments=0x7f0d0050;
-        public static final int tv_no_repayments=0x7f0d007e;
-        public static final int tv_no_title=0x7f0d005c;
-        public static final int tv_no_users=0x7f0d004f;
-        public static final int tv_payed_for_title=0x7f0d0077;
-        public static final int tv_paying_title=0x7f0d0076;
-        public static final int tv_payment_amount=0x7f0d0056;
-        public static final int tv_payment_description=0x7f0d0054;
-        public static final int tv_payment_direction=0x7f0d0058;
-        public static final int tv_payment_type=0x7f0d0059;
-        public static final int tv_popup_delete_exit=0x7f0d0035;
-        public static final int tv_popup_delete_group=0x7f0d0036;
-        public static final int tv_popup_delete_payment=0x7f0d0033;
-        public static final int tv_popup_delete_user=0x7f0d0034;
-        public static final int tv_sp_filter_title=0x7f0d007f;
-        public static final int tv_sp_sort_title=0x7f0d0080;
-        public static final int tv_total_title=0x7f0d0078;
-        public static final int tv_total_title_per_user=0x7f0d0079;
-        public static final int tv_user_list_title=0x7f0d0074;
-        public static final int tv_user_name=0x7f0d0052;
-        public static final int tv_user_spinner=0x7f0d006e;
-        public static final int tv_variable_name=0x7f0d006b;
-        public static final int widget_balance_title=0x7f0d0070;
-        public static final int widget_quick_add_title=0x7f0d006f;
+        public static final int menu_group_payback=0x7f080092;
+        public static final int menu_individual=0x7f080095;
+        public static final int menu_overflow=0x7f08009a;
+        public static final int menu_repayment=0x7f08009d;
+        public static final int menu_settings=0x7f080093;
+        public static final int menu_sort=0x7f080097;
+        public static final int menu_user_details=0x7f080098;
+        public static final int next_button_label=0x7f080013;
+        public static final int number_picker_decrement_button=0x7f08001b;
+        public static final int number_picker_increment_button=0x7f08001a;
+        public static final int number_picker_increment_scroll_action=0x7f080019;
+        public static final int number_picker_increment_scroll_mode=0x7f080018;
+        public static final int pref_name_currency=0x7f0800c0;
+        public static final int pref_name_def_email_rem_body=0x7f0800bd;
+        public static final int pref_name_def_email_rem_sub=0x7f0800be;
+        public static final int pref_name_def_sms_rem_body=0x7f0800bf;
+        public static final int pref_summary_about_min_text=0x7f0800b4;
+        public static final int pref_summary_allow_min_text=0x7f0800b3;
+        public static final int pref_summary_contact=0x7f0800b5;
+        public static final int pref_summary_currency=0x7f0800bb;
+        public static final int pref_summary_default_start_page=0x7f0800bc;
+        public static final int pref_summary_email_body=0x7f0800b8;
+        public static final int pref_summary_email_reminders=0x7f0800b6;
+        public static final int pref_summary_email_subject=0x7f0800b7;
+        public static final int pref_summary_sms_body=0x7f0800ba;
+        public static final int pref_summary_sms_reminders=0x7f0800b9;
+        public static final int pref_title_about_min_text=0x7f0800aa;
+        public static final int pref_title_allow_min_text=0x7f0800a9;
+        public static final int pref_title_contact=0x7f0800ab;
+        public static final int pref_title_currency=0x7f0800b1;
+        public static final int pref_title_default_start_page=0x7f0800b2;
+        public static final int pref_title_email_body=0x7f0800ae;
+        public static final int pref_title_email_reminders=0x7f0800ac;
+        public static final int pref_title_email_subject=0x7f0800ad;
+        public static final int pref_title_sms_body=0x7f0800b0;
+        public static final int pref_title_sms_reminders=0x7f0800af;
+        public static final int repayment_description=0x7f08007d;
+        public static final int ringtone_default=0x7f08002e;
+        public static final int ringtone_picker_title=0x7f08002d;
+        public static final int ringtone_silent=0x7f08002f;
+        public static final int skip_button_label=0x7f080012;
+        public static final int switch_off=0x7f080031;
+        public static final int switch_on=0x7f080030;
+        public static final int time_picker_decrement_hour_button=0x7f080020;
+        public static final int time_picker_decrement_minute_button=0x7f08001e;
+        public static final int time_picker_decrement_set_am_button=0x7f080022;
+        public static final int time_picker_dialog_title=0x7f08001c;
+        public static final int time_picker_increment_hour_button=0x7f08001f;
+        public static final int time_picker_increment_minute_button=0x7f08001d;
+        public static final int time_picker_increment_set_pm_button=0x7f080021;
+        public static final int time_picker_separator=0x7f080023;
+        public static final int title_main=0x7f080032;
+        public static final int toast_group_deleted=0x7f08004c;
+        public static final int toast_group_exists=0x7f080049;
+        public static final int toast_group_saved=0x7f08004a;
+        public static final int toast_group_saved_error=0x7f08004d;
+        public static final int toast_group_updated=0x7f08004b;
+        public static final int toast_no_amount=0x7f080047;
+        public static final int toast_no_group_title=0x7f08004e;
+        public static final int toast_no_user_name=0x7f080046;
+        public static final int toast_payment_deleted=0x7f080045;
+        public static final int toast_payment_saved=0x7f080043;
+        public static final int toast_payment_saved_error=0x7f080048;
+        public static final int toast_payment_updated=0x7f080044;
+        public static final int toast_user_deleted=0x7f080041;
+        public static final int toast_user_exists=0x7f08003e;
+        public static final int toast_user_saved=0x7f08003f;
+        public static final int toast_user_saved_error=0x7f080042;
+        public static final int toast_user_updated=0x7f080040;
+        public static final int tv_display_with_minimalistic_text_title=0x7f08006a;
+        public static final int tv_equal_payment_text=0x7f08007a;
+        public static final int tv_group_title=0x7f080073;
+        public static final int tv_need_more_paid_for_title=0x7f08007b;
+        public static final int tv_need_more_paid_title=0x7f08007c;
+        public static final int tv_no_description=0x7f08005b;
+        public static final int tv_no_groups=0x7f080051;
+        public static final int tv_no_payments=0x7f080050;
+        public static final int tv_no_repayments=0x7f08007e;
+        public static final int tv_no_title=0x7f08005c;
+        public static final int tv_no_users=0x7f08004f;
+        public static final int tv_payed_for_title=0x7f080077;
+        public static final int tv_paying_title=0x7f080076;
+        public static final int tv_payment_amount=0x7f080056;
+        public static final int tv_payment_description=0x7f080054;
+        public static final int tv_payment_direction=0x7f080058;
+        public static final int tv_payment_type=0x7f080059;
+        public static final int tv_popup_delete_exit=0x7f080035;
+        public static final int tv_popup_delete_group=0x7f080036;
+        public static final int tv_popup_delete_payment=0x7f080033;
+        public static final int tv_popup_delete_user=0x7f080034;
+        public static final int tv_sp_filter_title=0x7f08007f;
+        public static final int tv_sp_sort_title=0x7f080080;
+        public static final int tv_total_title=0x7f080078;
+        public static final int tv_total_title_per_user=0x7f080079;
+        public static final int tv_user_list_title=0x7f080074;
+        public static final int tv_user_name=0x7f080052;
+        public static final int tv_user_spinner=0x7f08006e;
+        public static final int tv_variable_name=0x7f08006b;
+        public static final int widget_balance_title=0x7f080070;
+        public static final int widget_quick_add_title=0x7f08006f;
     }
     public static final class style {
-        public static final int DialogWindowTitle_Sherlock=0x7f0e0036;
-        public static final int DialogWindowTitle_Sherlock_Light=0x7f0e0037;
-        public static final int Holo=0x7f0e005c;
-        public static final int Holo_AlertDialog=0x7f0e0063;
-        public static final int Holo_AlertDialog_Light=0x7f0e0064;
-        public static final int Holo_Animation=0x7f0e00a0;
-        public static final int Holo_Animation_Dialog=0x7f0e00a1;
-        public static final int Holo_Animation_DropDownDown=0x7f0e00aa;
-        public static final int Holo_Animation_DropDownUp=0x7f0e00ab;
-        public static final int Holo_Animation_PopupWindow=0x7f0e00be;
-        public static final int Holo_AutoCompleteTextView=0x7f0e00b4;
-        public static final int Holo_AutoCompleteTextView_Light=0x7f0e00b5;
-        public static final int Holo_Button=0x7f0e0065;
-        public static final int Holo_Button_Borderless=0x7f0e0069;
-        public static final int Holo_Button_Borderless_Light=0x7f0e006a;
-        public static final int Holo_Button_Borderless_Small=0x7f0e006b;
-        public static final int Holo_Button_Borderless_Small_Light=0x7f0e006c;
-        public static final int Holo_Button_Light=0x7f0e0066;
-        public static final int Holo_Button_Small=0x7f0e006d;
-        public static final int Holo_Button_Small_Light=0x7f0e006e;
-        public static final int Holo_Button_Toggle=0x7f0e0067;
-        public static final int Holo_Button_Toggle_Light=0x7f0e0068;
-        public static final int Holo_ButtonBar=0x7f0e009c;
-        public static final int Holo_ButtonBar_AlertDialog=0x7f0e009d;
-        public static final int Holo_CalendarView=0x7f0e0059;
-        public static final int Holo_CalendarView_Light=0x7f0e005a;
-        public static final int Holo_CalendarViewTextAppearanceWeekDayView=0x7f0e005b;
-        public static final int Holo_CompoundButton=0x7f0e0073;
-        public static final int Holo_CompoundButton_CheckBox=0x7f0e0076;
-        public static final int Holo_CompoundButton_CheckBox_Light=0x7f0e0077;
-        public static final int Holo_CompoundButton_RadioButton=0x7f0e0074;
-        public static final int Holo_CompoundButton_RadioButton_Light=0x7f0e0075;
-        public static final int Holo_DatePicker=0x7f0e00ae;
-        public static final int Holo_DialogWindowTitle=0x7f0e00a2;
-        public static final int Holo_DialogWindowTitle_Light=0x7f0e00a3;
-        public static final int Holo_DropDownItem=0x7f0e00b6;
-        public static final int Holo_EditText=0x7f0e0071;
-        public static final int Holo_EditText_Light=0x7f0e0072;
-        public static final int Holo_EditText_NumberPickerInputText=0x7f0e00ad;
-        public static final int Holo_ExpandableListView=0x7f0e0061;
-        public static final int Holo_ExpandableListView_Light=0x7f0e0062;
-        public static final int Holo_ImageButton=0x7f0e006f;
-        public static final int Holo_ImageButton_Light=0x7f0e0070;
-        public static final int Holo_ListPopupWindow=0x7f0e00b2;
-        public static final int Holo_ListPopupWindow_Light=0x7f0e00b3;
-        public static final int Holo_ListView=0x7f0e005d;
-        public static final int Holo_ListView_DropDown=0x7f0e005f;
-        public static final int Holo_ListView_DropDown_Light=0x7f0e0060;
-        public static final int Holo_ListView_Light=0x7f0e005e;
-        public static final int Holo_NumberPicker=0x7f0e00ac;
-        public static final int Holo_PopupWindow=0x7f0e00b0;
-        public static final int Holo_PopupWindow_Light=0x7f0e00b1;
-        public static final int Holo_Preference=0x7f0e008c;
-        public static final int Holo_PreferenceCategory=0x7f0e0090;
-        public static final int Holo_PreferenceCheckBox=0x7f0e0092;
-        public static final int Holo_PreferenceDialog=0x7f0e0093;
-        public static final int Holo_PreferenceDialog_EditTextPreference=0x7f0e0095;
-        public static final int Holo_PreferenceDialog_NumberPickerPreference=0x7f0e0097;
-        public static final int Holo_PreferenceDialog_SeekBarDialogPreference=0x7f0e0096;
-        public static final int Holo_PreferenceDialog_YesNoPreference=0x7f0e0094;
-        public static final int Holo_PreferenceFragment=0x7f0e008f;
-        public static final int Holo_PreferenceFrameLayout=0x7f0e008d;
-        public static final int Holo_PreferenceInformation=0x7f0e0091;
-        public static final int Holo_PreferencePanel=0x7f0e0099;
-        public static final int Holo_PreferenceRingtone=0x7f0e0098;
-        public static final int Holo_PreferenceScreen=0x7f0e008e;
-        public static final int Holo_PreferenceSeekBar=0x7f0e009b;
-        public static final int Holo_PreferenceSwitch=0x7f0e009a;
-        public static final int Holo_ProgressBar=0x7f0e007a;
-        public static final int Holo_ProgressBar_Horizontal=0x7f0e007b;
-        public static final int Holo_ProgressBar_Horizontal_Light=0x7f0e007c;
-        public static final int Holo_ProgressBar_Large=0x7f0e007e;
-        public static final int Holo_ProgressBar_Small=0x7f0e007d;
-        public static final int Holo_RatingBar=0x7f0e0086;
-        public static final int Holo_RatingBar_Indicator=0x7f0e008a;
-        public static final int Holo_RatingBar_Indicator_Light=0x7f0e008b;
-        public static final int Holo_RatingBar_Light=0x7f0e0087;
-        public static final int Holo_RatingBar_Small=0x7f0e0088;
-        public static final int Holo_RatingBar_Small_Light=0x7f0e0089;
-        public static final int Holo_SeekBar=0x7f0e0078;
-        public static final int Holo_SeekBar_Light=0x7f0e0079;
-        public static final int Holo_SegmentedButton=0x7f0e009e;
-        public static final int Holo_SegmentedButton_Light=0x7f0e009f;
-        public static final int Holo_Spinner=0x7f0e007f;
-        public static final int Holo_Spinner_Light=0x7f0e0080;
-        public static final int Holo_Switch=0x7f0e00ee;
-        public static final int Holo_Switch_Light=0x7f0e00ef;
-        public static final int Holo_Switch_Light_Old=0x7f0e00f1;
-        public static final int Holo_Switch_Old=0x7f0e00f0;
-        public static final int Holo_Switch_TextAppearance=0x7f0e00ec;
-        public static final int Holo_Switch_TextAppearance_Light=0x7f0e00ed;
+        public static final int DialogWindowTitle_Sherlock=0x7f090037;
+        public static final int DialogWindowTitle_Sherlock_Light=0x7f090038;
+        public static final int Holo=0x7f09005d;
+        public static final int Holo_AlertDialog=0x7f090064;
+        public static final int Holo_AlertDialog_Light=0x7f090065;
+        public static final int Holo_Animation=0x7f0900a1;
+        public static final int Holo_Animation_Dialog=0x7f0900a2;
+        public static final int Holo_Animation_DropDownDown=0x7f0900ab;
+        public static final int Holo_Animation_DropDownUp=0x7f0900ac;
+        public static final int Holo_Animation_PopupWindow=0x7f0900bf;
+        public static final int Holo_AutoCompleteTextView=0x7f0900b5;
+        public static final int Holo_AutoCompleteTextView_Light=0x7f0900b6;
+        public static final int Holo_Button=0x7f090066;
+        public static final int Holo_Button_Borderless=0x7f09006a;
+        public static final int Holo_Button_Borderless_Light=0x7f09006b;
+        public static final int Holo_Button_Borderless_Small=0x7f09006c;
+        public static final int Holo_Button_Borderless_Small_Light=0x7f09006d;
+        public static final int Holo_Button_Light=0x7f090067;
+        public static final int Holo_Button_Small=0x7f09006e;
+        public static final int Holo_Button_Small_Light=0x7f09006f;
+        public static final int Holo_Button_Toggle=0x7f090068;
+        public static final int Holo_Button_Toggle_Light=0x7f090069;
+        public static final int Holo_ButtonBar=0x7f09009d;
+        public static final int Holo_ButtonBar_AlertDialog=0x7f09009e;
+        public static final int Holo_CalendarView=0x7f09005a;
+        public static final int Holo_CalendarView_Light=0x7f09005b;
+        public static final int Holo_CalendarViewTextAppearanceWeekDayView=0x7f09005c;
+        public static final int Holo_CompoundButton=0x7f090074;
+        public static final int Holo_CompoundButton_CheckBox=0x7f090077;
+        public static final int Holo_CompoundButton_CheckBox_Light=0x7f090078;
+        public static final int Holo_CompoundButton_RadioButton=0x7f090075;
+        public static final int Holo_CompoundButton_RadioButton_Light=0x7f090076;
+        public static final int Holo_DatePicker=0x7f0900af;
+        public static final int Holo_DialogWindowTitle=0x7f0900a3;
+        public static final int Holo_DialogWindowTitle_Light=0x7f0900a4;
+        public static final int Holo_DropDownItem=0x7f0900b7;
+        public static final int Holo_EditText=0x7f090072;
+        public static final int Holo_EditText_Light=0x7f090073;
+        public static final int Holo_EditText_NumberPickerInputText=0x7f0900ae;
+        public static final int Holo_ExpandableListView=0x7f090062;
+        public static final int Holo_ExpandableListView_Light=0x7f090063;
+        public static final int Holo_ImageButton=0x7f090070;
+        public static final int Holo_ImageButton_Light=0x7f090071;
+        public static final int Holo_ListPopupWindow=0x7f0900b3;
+        public static final int Holo_ListPopupWindow_Light=0x7f0900b4;
+        public static final int Holo_ListView=0x7f09005e;
+        public static final int Holo_ListView_DropDown=0x7f090060;
+        public static final int Holo_ListView_DropDown_Light=0x7f090061;
+        public static final int Holo_ListView_Light=0x7f09005f;
+        public static final int Holo_NumberPicker=0x7f0900ad;
+        public static final int Holo_PopupWindow=0x7f0900b1;
+        public static final int Holo_PopupWindow_Light=0x7f0900b2;
+        public static final int Holo_Preference=0x7f09008d;
+        public static final int Holo_PreferenceCategory=0x7f090091;
+        public static final int Holo_PreferenceCheckBox=0x7f090093;
+        public static final int Holo_PreferenceDialog=0x7f090094;
+        public static final int Holo_PreferenceDialog_EditTextPreference=0x7f090096;
+        public static final int Holo_PreferenceDialog_NumberPickerPreference=0x7f090098;
+        public static final int Holo_PreferenceDialog_SeekBarDialogPreference=0x7f090097;
+        public static final int Holo_PreferenceDialog_YesNoPreference=0x7f090095;
+        public static final int Holo_PreferenceFragment=0x7f090090;
+        public static final int Holo_PreferenceFrameLayout=0x7f09008e;
+        public static final int Holo_PreferenceInformation=0x7f090092;
+        public static final int Holo_PreferencePanel=0x7f09009a;
+        public static final int Holo_PreferenceRingtone=0x7f090099;
+        public static final int Holo_PreferenceScreen=0x7f09008f;
+        public static final int Holo_PreferenceSeekBar=0x7f09009c;
+        public static final int Holo_PreferenceSwitch=0x7f09009b;
+        public static final int Holo_ProgressBar=0x7f09007b;
+        public static final int Holo_ProgressBar_Horizontal=0x7f09007c;
+        public static final int Holo_ProgressBar_Horizontal_Light=0x7f09007d;
+        public static final int Holo_ProgressBar_Large=0x7f09007f;
+        public static final int Holo_ProgressBar_Small=0x7f09007e;
+        public static final int Holo_RatingBar=0x7f090087;
+        public static final int Holo_RatingBar_Indicator=0x7f09008b;
+        public static final int Holo_RatingBar_Indicator_Light=0x7f09008c;
+        public static final int Holo_RatingBar_Light=0x7f090088;
+        public static final int Holo_RatingBar_Small=0x7f090089;
+        public static final int Holo_RatingBar_Small_Light=0x7f09008a;
+        public static final int Holo_SeekBar=0x7f090079;
+        public static final int Holo_SeekBar_Light=0x7f09007a;
+        public static final int Holo_SegmentedButton=0x7f09009f;
+        public static final int Holo_SegmentedButton_Light=0x7f0900a0;
+        public static final int Holo_Spinner=0x7f090080;
+        public static final int Holo_Spinner_Light=0x7f090081;
+        public static final int Holo_Switch=0x7f0900ef;
+        public static final int Holo_Switch_Light=0x7f0900f0;
+        public static final int Holo_Switch_Light_Old=0x7f0900f2;
+        public static final int Holo_Switch_Old=0x7f0900f1;
+        public static final int Holo_Switch_TextAppearance=0x7f0900ed;
+        public static final int Holo_Switch_TextAppearance_Light=0x7f0900ee;
         /**  Text colors 
          */
-        public static final int Holo_TextAppearance=0x7f0e00d7;
-        public static final int Holo_TextAppearance_DialogWindowTitle=0x7f0e00e7;
-        public static final int Holo_TextAppearance_DialogWindowTitle_Light=0x7f0e00e8;
-        public static final int Holo_TextAppearance_DropDownItem=0x7f0e00b7;
-        public static final int Holo_TextAppearance_Inverse=0x7f0e00d9;
-        public static final int Holo_TextAppearance_Inverse_Light=0x7f0e00da;
-        public static final int Holo_TextAppearance_Large=0x7f0e00db;
-        public static final int Holo_TextAppearance_Large_Inverse=0x7f0e00dd;
-        public static final int Holo_TextAppearance_Large_Inverse_Light=0x7f0e00de;
-        public static final int Holo_TextAppearance_Large_Light=0x7f0e00dc;
-        public static final int Holo_TextAppearance_Light=0x7f0e00d8;
-        public static final int Holo_TextAppearance_Medium=0x7f0e00df;
-        public static final int Holo_TextAppearance_Medium_Inverse=0x7f0e00e1;
-        public static final int Holo_TextAppearance_Medium_Inverse_Light=0x7f0e00e2;
-        public static final int Holo_TextAppearance_Medium_Light=0x7f0e00e0;
-        public static final int Holo_TextAppearance_PopupMenu=0x7f0e00b8;
-        public static final int Holo_TextAppearance_PopupMenu_Large=0x7f0e00b9;
-        public static final int Holo_TextAppearance_PopupMenu_Light=0x7f0e00bb;
-        public static final int Holo_TextAppearance_PopupMenu_Light_Large=0x7f0e00bc;
-        public static final int Holo_TextAppearance_PopupMenu_Light_Small=0x7f0e00bd;
-        public static final int Holo_TextAppearance_PopupMenu_Small=0x7f0e00ba;
-        public static final int Holo_TextAppearance_Small=0x7f0e00e3;
-        public static final int Holo_TextAppearance_Small_Inverse=0x7f0e00e5;
-        public static final int Holo_TextAppearance_Small_Inverse_Light=0x7f0e00e6;
-        public static final int Holo_TextAppearance_Small_Light=0x7f0e00e4;
-        public static final int Holo_TextAppearance_TextView=0x7f0e00e9;
-        public static final int Holo_TextAppearance_TextView_SpinnerItem=0x7f0e00ea;
-        public static final int Holo_TextAppearance_TextView_SpinnerItem_Light=0x7f0e00eb;
-        public static final int Holo_TextView=0x7f0e0081;
-        public static final int Holo_TextView_ListSeparator=0x7f0e00a8;
-        public static final int Holo_TextView_ListSeparator_Light=0x7f0e00a9;
-        public static final int Holo_TextView_SpinnerItem=0x7f0e0082;
-        public static final int Holo_TextView_SpinnerItem_DropDown=0x7f0e0084;
-        public static final int Holo_TextView_SpinnerItem_DropDown_Light=0x7f0e0085;
-        public static final int Holo_TextView_SpinnerItem_Light=0x7f0e0083;
+        public static final int Holo_TextAppearance=0x7f0900d8;
+        public static final int Holo_TextAppearance_DialogWindowTitle=0x7f0900e8;
+        public static final int Holo_TextAppearance_DialogWindowTitle_Light=0x7f0900e9;
+        public static final int Holo_TextAppearance_DropDownItem=0x7f0900b8;
+        public static final int Holo_TextAppearance_Inverse=0x7f0900da;
+        public static final int Holo_TextAppearance_Inverse_Light=0x7f0900db;
+        public static final int Holo_TextAppearance_Large=0x7f0900dc;
+        public static final int Holo_TextAppearance_Large_Inverse=0x7f0900de;
+        public static final int Holo_TextAppearance_Large_Inverse_Light=0x7f0900df;
+        public static final int Holo_TextAppearance_Large_Light=0x7f0900dd;
+        public static final int Holo_TextAppearance_Light=0x7f0900d9;
+        public static final int Holo_TextAppearance_Medium=0x7f0900e0;
+        public static final int Holo_TextAppearance_Medium_Inverse=0x7f0900e2;
+        public static final int Holo_TextAppearance_Medium_Inverse_Light=0x7f0900e3;
+        public static final int Holo_TextAppearance_Medium_Light=0x7f0900e1;
+        public static final int Holo_TextAppearance_PopupMenu=0x7f0900b9;
+        public static final int Holo_TextAppearance_PopupMenu_Large=0x7f0900ba;
+        public static final int Holo_TextAppearance_PopupMenu_Light=0x7f0900bc;
+        public static final int Holo_TextAppearance_PopupMenu_Light_Large=0x7f0900bd;
+        public static final int Holo_TextAppearance_PopupMenu_Light_Small=0x7f0900be;
+        public static final int Holo_TextAppearance_PopupMenu_Small=0x7f0900bb;
+        public static final int Holo_TextAppearance_Small=0x7f0900e4;
+        public static final int Holo_TextAppearance_Small_Inverse=0x7f0900e6;
+        public static final int Holo_TextAppearance_Small_Inverse_Light=0x7f0900e7;
+        public static final int Holo_TextAppearance_Small_Light=0x7f0900e5;
+        public static final int Holo_TextAppearance_TextView=0x7f0900ea;
+        public static final int Holo_TextAppearance_TextView_SpinnerItem=0x7f0900eb;
+        public static final int Holo_TextAppearance_TextView_SpinnerItem_Light=0x7f0900ec;
+        public static final int Holo_TextView=0x7f090082;
+        public static final int Holo_TextView_ListSeparator=0x7f0900a9;
+        public static final int Holo_TextView_ListSeparator_Light=0x7f0900aa;
+        public static final int Holo_TextView_SpinnerItem=0x7f090083;
+        public static final int Holo_TextView_SpinnerItem_DropDown=0x7f090085;
+        public static final int Holo_TextView_SpinnerItem_DropDown_Light=0x7f090086;
+        public static final int Holo_TextView_SpinnerItem_Light=0x7f090084;
         /**  Standart themes 
  Dark themes 
          */
-        public static final int Holo_Theme=0x7f0e00cb;
-        public static final int Holo_Theme_Dialog=0x7f0e00a4;
-        public static final int Holo_Theme_Dialog_Alert=0x7f0e00a6;
-        public static final int Holo_Theme_Dialog_Alert_Light=0x7f0e00a7;
-        public static final int Holo_Theme_Dialog_Light=0x7f0e00a5;
-        public static final int Holo_Theme_Fullscreen=0x7f0e00ce;
+        public static final int Holo_Theme=0x7f0900cc;
+        public static final int Holo_Theme_Dialog=0x7f0900a5;
+        public static final int Holo_Theme_Dialog_Alert=0x7f0900a7;
+        public static final int Holo_Theme_Dialog_Alert_Light=0x7f0900a8;
+        public static final int Holo_Theme_Dialog_Light=0x7f0900a6;
+        public static final int Holo_Theme_Fullscreen=0x7f0900cf;
         /**  Light themes 
          */
-        public static final int Holo_Theme_Light=0x7f0e00cf;
-        public static final int Holo_Theme_Light_DarkActionBar=0x7f0e00d3;
-        public static final int Holo_Theme_Light_DarkActionBar_Fullscreen=0x7f0e00d6;
-        public static final int Holo_Theme_Light_DarkActionBar_NoActionBar=0x7f0e00d4;
-        public static final int Holo_Theme_Light_DarkActionBar_NoActionBar_Fullscreen=0x7f0e00d5;
-        public static final int Holo_Theme_Light_Fullscreen=0x7f0e00d2;
-        public static final int Holo_Theme_Light_NoActionBar=0x7f0e00d0;
-        public static final int Holo_Theme_Light_NoActionBar_Fullscreen=0x7f0e00d1;
-        public static final int Holo_Theme_NoActionBar=0x7f0e00cc;
-        public static final int Holo_Theme_NoActionBar_Fullscreen=0x7f0e00cd;
+        public static final int Holo_Theme_Light=0x7f0900d0;
+        public static final int Holo_Theme_Light_DarkActionBar=0x7f0900d4;
+        public static final int Holo_Theme_Light_DarkActionBar_Fullscreen=0x7f0900d7;
+        public static final int Holo_Theme_Light_DarkActionBar_NoActionBar=0x7f0900d5;
+        public static final int Holo_Theme_Light_DarkActionBar_NoActionBar_Fullscreen=0x7f0900d6;
+        public static final int Holo_Theme_Light_Fullscreen=0x7f0900d3;
+        public static final int Holo_Theme_Light_NoActionBar=0x7f0900d1;
+        public static final int Holo_Theme_Light_NoActionBar_Fullscreen=0x7f0900d2;
+        public static final int Holo_Theme_NoActionBar=0x7f0900cd;
+        public static final int Holo_Theme_NoActionBar_Fullscreen=0x7f0900ce;
         /**  Sherlock themes 
          */
-        public static final int Holo_Theme_Sherlock=0x7f0e00bf;
-        public static final int Holo_Theme_Sherlock_Fullscreen=0x7f0e00c2;
-        public static final int Holo_Theme_Sherlock_Light=0x7f0e00c3;
-        public static final int Holo_Theme_Sherlock_Light_DarkActionBar=0x7f0e00c7;
-        public static final int Holo_Theme_Sherlock_Light_DarkActionBar_Fullscreen=0x7f0e00ca;
-        public static final int Holo_Theme_Sherlock_Light_DarkActionBar_NoActionBar=0x7f0e00c8;
-        public static final int Holo_Theme_Sherlock_Light_DarkActionBar_NoActionBar_Fullscreen=0x7f0e00c9;
-        public static final int Holo_Theme_Sherlock_Light_Fullscreen=0x7f0e00c6;
-        public static final int Holo_Theme_Sherlock_Light_NoActionBar=0x7f0e00c4;
-        public static final int Holo_Theme_Sherlock_Light_NoActionBar_Fullscreen=0x7f0e00c5;
-        public static final int Holo_Theme_Sherlock_NoActionBar=0x7f0e00c0;
-        public static final int Holo_Theme_Sherlock_NoActionBar_Fullscreen=0x7f0e00c1;
-        public static final int Holo_TimePicker=0x7f0e00af;
-        public static final int Sherlock___TextAppearance_Small=0x7f0e004a;
-        public static final int Sherlock___Theme=0x7f0e004e;
-        public static final int Sherlock___Theme_DarkActionBar=0x7f0e0050;
-        public static final int Sherlock___Theme_Dialog=0x7f0e0051;
-        public static final int Sherlock___Theme_Light=0x7f0e004f;
-        public static final int Sherlock___Widget_ActionBar=0x7f0e0001;
-        public static final int Sherlock___Widget_ActionMode=0x7f0e0016;
-        public static final int Sherlock___Widget_ActivityChooserView=0x7f0e001e;
-        public static final int Sherlock___Widget_Holo_DropDownItem=0x7f0e0029;
-        public static final int Sherlock___Widget_Holo_ListView=0x7f0e0026;
-        public static final int Sherlock___Widget_Holo_Spinner=0x7f0e0023;
-        public static final int Sherlock___Widget_SearchAutoCompleteTextView=0x7f0e0033;
-        public static final int TextAppearance_Sherlock_DialogWindowTitle=0x7f0e0048;
-        public static final int TextAppearance_Sherlock_Light_DialogWindowTitle=0x7f0e0049;
-        public static final int TextAppearance_Sherlock_Light_Small=0x7f0e004c;
-        public static final int TextAppearance_Sherlock_Light_Widget_PopupMenu_Large=0x7f0e0043;
-        public static final int TextAppearance_Sherlock_Light_Widget_PopupMenu_Small=0x7f0e0045;
-        public static final int TextAppearance_Sherlock_Small=0x7f0e004b;
-        public static final int TextAppearance_Sherlock_Widget_ActionBar_Menu=0x7f0e0038;
-        public static final int TextAppearance_Sherlock_Widget_ActionBar_Subtitle=0x7f0e003b;
-        public static final int TextAppearance_Sherlock_Widget_ActionBar_Subtitle_Inverse=0x7f0e003c;
-        public static final int TextAppearance_Sherlock_Widget_ActionBar_Title=0x7f0e0039;
-        public static final int TextAppearance_Sherlock_Widget_ActionBar_Title_Inverse=0x7f0e003a;
-        public static final int TextAppearance_Sherlock_Widget_ActionMode_Subtitle=0x7f0e003f;
-        public static final int TextAppearance_Sherlock_Widget_ActionMode_Subtitle_Inverse=0x7f0e0040;
-        public static final int TextAppearance_Sherlock_Widget_ActionMode_Title=0x7f0e003d;
-        public static final int TextAppearance_Sherlock_Widget_ActionMode_Title_Inverse=0x7f0e003e;
-        public static final int TextAppearance_Sherlock_Widget_DropDownHint=0x7f0e004d;
-        public static final int TextAppearance_Sherlock_Widget_DropDownItem=0x7f0e0047;
-        public static final int TextAppearance_Sherlock_Widget_PopupMenu=0x7f0e0041;
-        public static final int TextAppearance_Sherlock_Widget_PopupMenu_Large=0x7f0e0042;
-        public static final int TextAppearance_Sherlock_Widget_PopupMenu_Small=0x7f0e0044;
-        public static final int TextAppearance_Sherlock_Widget_TextView_SpinnerItem=0x7f0e0046;
-        public static final int Theme_Main_Dark=0x7f0e0102;
-        public static final int Theme_Sherlock=0x7f0e0052;
-        public static final int Theme_Sherlock_Dialog=0x7f0e0057;
-        public static final int Theme_Sherlock_Light=0x7f0e0053;
-        public static final int Theme_Sherlock_Light_DarkActionBar=0x7f0e0054;
-        public static final int Theme_Sherlock_Light_Dialog=0x7f0e0058;
-        public static final int Theme_Sherlock_Light_NoActionBar=0x7f0e0056;
-        public static final int Theme_Sherlock_NoActionBar=0x7f0e0055;
-        public static final int Widget=0x7f0e0000;
-        public static final int Widget_Sherlock_ActionBar=0x7f0e0002;
-        public static final int Widget_Sherlock_ActionBar_Solid=0x7f0e0003;
-        public static final int Widget_Sherlock_ActionBar_TabBar=0x7f0e000a;
-        public static final int Widget_Sherlock_ActionBar_TabText=0x7f0e000d;
-        public static final int Widget_Sherlock_ActionBar_TabView=0x7f0e0007;
-        public static final int Widget_Sherlock_ActionButton=0x7f0e0010;
-        public static final int Widget_Sherlock_ActionButton_CloseMode=0x7f0e0012;
-        public static final int Widget_Sherlock_ActionButton_Overflow=0x7f0e0014;
-        public static final int Widget_Sherlock_ActionMode=0x7f0e0017;
-        public static final int Widget_Sherlock_ActivityChooserView=0x7f0e001f;
-        public static final int Widget_Sherlock_Button_Small=0x7f0e0021;
-        public static final int Widget_Sherlock_DropDownItem_Spinner=0x7f0e002a;
-        public static final int Widget_Sherlock_Light_ActionBar=0x7f0e0004;
-        public static final int Widget_Sherlock_Light_ActionBar_Solid=0x7f0e0005;
-        public static final int Widget_Sherlock_Light_ActionBar_Solid_Inverse=0x7f0e0006;
-        public static final int Widget_Sherlock_Light_ActionBar_TabBar=0x7f0e000b;
-        public static final int Widget_Sherlock_Light_ActionBar_TabBar_Inverse=0x7f0e000c;
-        public static final int Widget_Sherlock_Light_ActionBar_TabText=0x7f0e000e;
-        public static final int Widget_Sherlock_Light_ActionBar_TabText_Inverse=0x7f0e000f;
-        public static final int Widget_Sherlock_Light_ActionBar_TabView=0x7f0e0008;
-        public static final int Widget_Sherlock_Light_ActionBar_TabView_Inverse=0x7f0e0009;
-        public static final int Widget_Sherlock_Light_ActionButton=0x7f0e0011;
-        public static final int Widget_Sherlock_Light_ActionButton_CloseMode=0x7f0e0013;
-        public static final int Widget_Sherlock_Light_ActionButton_Overflow=0x7f0e0015;
-        public static final int Widget_Sherlock_Light_ActionMode=0x7f0e0018;
-        public static final int Widget_Sherlock_Light_ActionMode_Inverse=0x7f0e0019;
-        public static final int Widget_Sherlock_Light_ActivityChooserView=0x7f0e0020;
-        public static final int Widget_Sherlock_Light_Button_Small=0x7f0e0022;
-        public static final int Widget_Sherlock_Light_DropDownItem_Spinner=0x7f0e002b;
-        public static final int Widget_Sherlock_Light_ListPopupWindow=0x7f0e001b;
-        public static final int Widget_Sherlock_Light_ListView_DropDown=0x7f0e0028;
-        public static final int Widget_Sherlock_Light_PopupMenu=0x7f0e001d;
-        public static final int Widget_Sherlock_Light_PopupWindow_ActionMode=0x7f0e002d;
-        public static final int Widget_Sherlock_Light_ProgressBar=0x7f0e002f;
-        public static final int Widget_Sherlock_Light_ProgressBar_Horizontal=0x7f0e0031;
-        public static final int Widget_Sherlock_Light_SearchAutoCompleteTextView=0x7f0e0035;
-        public static final int Widget_Sherlock_Light_Spinner_DropDown_ActionBar=0x7f0e0025;
-        public static final int Widget_Sherlock_ListPopupWindow=0x7f0e001a;
-        public static final int Widget_Sherlock_ListView_DropDown=0x7f0e0027;
-        public static final int Widget_Sherlock_PopupMenu=0x7f0e001c;
-        public static final int Widget_Sherlock_PopupWindow_ActionMode=0x7f0e002c;
-        public static final int Widget_Sherlock_ProgressBar=0x7f0e002e;
-        public static final int Widget_Sherlock_ProgressBar_Horizontal=0x7f0e0030;
-        public static final int Widget_Sherlock_SearchAutoCompleteTextView=0x7f0e0034;
-        public static final int Widget_Sherlock_Spinner_DropDown_ActionBar=0x7f0e0024;
-        public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f0e0032;
-        public static final int actionbar=0x7f0e0103;
-        public static final int autocomplete_text_dark=0x7f0e0105;
-        public static final int button_dark=0x7f0e010a;
-        public static final int button_light=0x7f0e010e;
-        public static final int dialog_content=0x7f0e0100;
-        public static final int dialog_content_dark=0x7f0e0106;
-        public static final int drop_menu_item_image=0x7f0e00f5;
-        public static final int drop_menu_item_text=0x7f0e00f6;
-        public static final int drop_menu_item_wrapper=0x7f0e00f7;
+        public static final int Holo_Theme_Sherlock=0x7f0900c0;
+        public static final int Holo_Theme_Sherlock_Fullscreen=0x7f0900c3;
+        public static final int Holo_Theme_Sherlock_Light=0x7f0900c4;
+        public static final int Holo_Theme_Sherlock_Light_DarkActionBar=0x7f0900c8;
+        public static final int Holo_Theme_Sherlock_Light_DarkActionBar_Fullscreen=0x7f0900cb;
+        public static final int Holo_Theme_Sherlock_Light_DarkActionBar_NoActionBar=0x7f0900c9;
+        public static final int Holo_Theme_Sherlock_Light_DarkActionBar_NoActionBar_Fullscreen=0x7f0900ca;
+        public static final int Holo_Theme_Sherlock_Light_Fullscreen=0x7f0900c7;
+        public static final int Holo_Theme_Sherlock_Light_NoActionBar=0x7f0900c5;
+        public static final int Holo_Theme_Sherlock_Light_NoActionBar_Fullscreen=0x7f0900c6;
+        public static final int Holo_Theme_Sherlock_NoActionBar=0x7f0900c1;
+        public static final int Holo_Theme_Sherlock_NoActionBar_Fullscreen=0x7f0900c2;
+        public static final int Holo_TimePicker=0x7f0900b0;
+        public static final int Sherlock___TextAppearance_Small=0x7f09004b;
+        public static final int Sherlock___Theme=0x7f09004f;
+        public static final int Sherlock___Theme_DarkActionBar=0x7f090051;
+        public static final int Sherlock___Theme_Dialog=0x7f090052;
+        public static final int Sherlock___Theme_Light=0x7f090050;
+        public static final int Sherlock___Widget_ActionBar=0x7f090002;
+        public static final int Sherlock___Widget_ActionMode=0x7f090017;
+        public static final int Sherlock___Widget_ActivityChooserView=0x7f09001f;
+        public static final int Sherlock___Widget_Holo_DropDownItem=0x7f09002a;
+        public static final int Sherlock___Widget_Holo_ListView=0x7f090027;
+        public static final int Sherlock___Widget_Holo_Spinner=0x7f090024;
+        public static final int Sherlock___Widget_SearchAutoCompleteTextView=0x7f090034;
+        public static final int TextAppearance_Sherlock_DialogWindowTitle=0x7f090049;
+        public static final int TextAppearance_Sherlock_Light_DialogWindowTitle=0x7f09004a;
+        public static final int TextAppearance_Sherlock_Light_Small=0x7f09004d;
+        public static final int TextAppearance_Sherlock_Light_Widget_PopupMenu_Large=0x7f090044;
+        public static final int TextAppearance_Sherlock_Light_Widget_PopupMenu_Small=0x7f090046;
+        public static final int TextAppearance_Sherlock_Small=0x7f09004c;
+        public static final int TextAppearance_Sherlock_Widget_ActionBar_Menu=0x7f090039;
+        public static final int TextAppearance_Sherlock_Widget_ActionBar_Subtitle=0x7f09003c;
+        public static final int TextAppearance_Sherlock_Widget_ActionBar_Subtitle_Inverse=0x7f09003d;
+        public static final int TextAppearance_Sherlock_Widget_ActionBar_Title=0x7f09003a;
+        public static final int TextAppearance_Sherlock_Widget_ActionBar_Title_Inverse=0x7f09003b;
+        public static final int TextAppearance_Sherlock_Widget_ActionMode_Subtitle=0x7f090040;
+        public static final int TextAppearance_Sherlock_Widget_ActionMode_Subtitle_Inverse=0x7f090041;
+        public static final int TextAppearance_Sherlock_Widget_ActionMode_Title=0x7f09003e;
+        public static final int TextAppearance_Sherlock_Widget_ActionMode_Title_Inverse=0x7f09003f;
+        public static final int TextAppearance_Sherlock_Widget_DropDownHint=0x7f09004e;
+        public static final int TextAppearance_Sherlock_Widget_DropDownItem=0x7f090048;
+        public static final int TextAppearance_Sherlock_Widget_PopupMenu=0x7f090042;
+        public static final int TextAppearance_Sherlock_Widget_PopupMenu_Large=0x7f090043;
+        public static final int TextAppearance_Sherlock_Widget_PopupMenu_Small=0x7f090045;
+        public static final int TextAppearance_Sherlock_Widget_TextView_SpinnerItem=0x7f090047;
+        public static final int Theme_Main_Dark=0x7f090102;
+        public static final int Theme_Sherlock=0x7f090053;
+        public static final int Theme_Sherlock_Dialog=0x7f090058;
+        public static final int Theme_Sherlock_Light=0x7f090054;
+        public static final int Theme_Sherlock_Light_DarkActionBar=0x7f090055;
+        public static final int Theme_Sherlock_Light_Dialog=0x7f090059;
+        public static final int Theme_Sherlock_Light_NoActionBar=0x7f090057;
+        public static final int Theme_Sherlock_NoActionBar=0x7f090056;
+        public static final int Widget=0x7f090001;
+        public static final int Widget_Sherlock_ActionBar=0x7f090003;
+        public static final int Widget_Sherlock_ActionBar_Solid=0x7f090004;
+        public static final int Widget_Sherlock_ActionBar_TabBar=0x7f09000b;
+        public static final int Widget_Sherlock_ActionBar_TabText=0x7f09000e;
+        public static final int Widget_Sherlock_ActionBar_TabView=0x7f090008;
+        public static final int Widget_Sherlock_ActionButton=0x7f090011;
+        public static final int Widget_Sherlock_ActionButton_CloseMode=0x7f090013;
+        public static final int Widget_Sherlock_ActionButton_Overflow=0x7f090015;
+        public static final int Widget_Sherlock_ActionMode=0x7f090018;
+        public static final int Widget_Sherlock_ActivityChooserView=0x7f090020;
+        public static final int Widget_Sherlock_Button_Small=0x7f090022;
+        public static final int Widget_Sherlock_DropDownItem_Spinner=0x7f09002b;
+        public static final int Widget_Sherlock_Light_ActionBar=0x7f090005;
+        public static final int Widget_Sherlock_Light_ActionBar_Solid=0x7f090006;
+        public static final int Widget_Sherlock_Light_ActionBar_Solid_Inverse=0x7f090007;
+        public static final int Widget_Sherlock_Light_ActionBar_TabBar=0x7f09000c;
+        public static final int Widget_Sherlock_Light_ActionBar_TabBar_Inverse=0x7f09000d;
+        public static final int Widget_Sherlock_Light_ActionBar_TabText=0x7f09000f;
+        public static final int Widget_Sherlock_Light_ActionBar_TabText_Inverse=0x7f090010;
+        public static final int Widget_Sherlock_Light_ActionBar_TabView=0x7f090009;
+        public static final int Widget_Sherlock_Light_ActionBar_TabView_Inverse=0x7f09000a;
+        public static final int Widget_Sherlock_Light_ActionButton=0x7f090012;
+        public static final int Widget_Sherlock_Light_ActionButton_CloseMode=0x7f090014;
+        public static final int Widget_Sherlock_Light_ActionButton_Overflow=0x7f090016;
+        public static final int Widget_Sherlock_Light_ActionMode=0x7f090019;
+        public static final int Widget_Sherlock_Light_ActionMode_Inverse=0x7f09001a;
+        public static final int Widget_Sherlock_Light_ActivityChooserView=0x7f090021;
+        public static final int Widget_Sherlock_Light_Button_Small=0x7f090023;
+        public static final int Widget_Sherlock_Light_DropDownItem_Spinner=0x7f09002c;
+        public static final int Widget_Sherlock_Light_ListPopupWindow=0x7f09001c;
+        public static final int Widget_Sherlock_Light_ListView_DropDown=0x7f090029;
+        public static final int Widget_Sherlock_Light_PopupMenu=0x7f09001e;
+        public static final int Widget_Sherlock_Light_PopupWindow_ActionMode=0x7f09002e;
+        public static final int Widget_Sherlock_Light_ProgressBar=0x7f090030;
+        public static final int Widget_Sherlock_Light_ProgressBar_Horizontal=0x7f090032;
+        public static final int Widget_Sherlock_Light_SearchAutoCompleteTextView=0x7f090036;
+        public static final int Widget_Sherlock_Light_Spinner_DropDown_ActionBar=0x7f090026;
+        public static final int Widget_Sherlock_ListPopupWindow=0x7f09001b;
+        public static final int Widget_Sherlock_ListView_DropDown=0x7f090028;
+        public static final int Widget_Sherlock_PopupMenu=0x7f09001d;
+        public static final int Widget_Sherlock_PopupWindow_ActionMode=0x7f09002d;
+        public static final int Widget_Sherlock_ProgressBar=0x7f09002f;
+        public static final int Widget_Sherlock_ProgressBar_Horizontal=0x7f090031;
+        public static final int Widget_Sherlock_SearchAutoCompleteTextView=0x7f090035;
+        public static final int Widget_Sherlock_Spinner_DropDown_ActionBar=0x7f090025;
+        public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f090033;
+        public static final int actionbar=0x7f090103;
+        public static final int autocomplete_text_dark=0x7f090105;
+        public static final int button_dark=0x7f09010a;
+        public static final int button_light=0x7f09010e;
+        public static final int dialog_content=0x7f090000;
+        public static final int dialog_content_dark=0x7f090106;
+        public static final int drop_menu_item_image=0x7f0900f6;
+        public static final int drop_menu_item_text=0x7f0900f7;
+        public static final int drop_menu_item_wrapper=0x7f0900f8;
         /**  DARK 
          */
-        public static final int edit_text_dark=0x7f0e0104;
+        public static final int edit_text_dark=0x7f090104;
         /**  LIGHT 
          */
-        public static final int edit_text_light=0x7f0e010b;
-        public static final int grid_view_dark=0x7f0e0109;
-        public static final int grid_view_light=0x7f0e010d;
-        public static final int header_button=0x7f0e00f4;
-        public static final int header_button_add_group=0x7f0e00fc;
-        public static final int header_button_add_payment=0x7f0e00fe;
-        public static final int header_button_add_user=0x7f0e00fb;
-        public static final int header_filter=0x7f0e00f9;
-        public static final int header_overflow=0x7f0e00fd;
-        public static final int header_settings=0x7f0e00f8;
-        public static final int header_sort=0x7f0e00fa;
-        public static final int header_title=0x7f0e00f2;
-        public static final int header_wrapper=0x7f0e00f3;
-        public static final int heading=0x7f0e0101;
-        public static final int nothing_to_show=0x7f0e00ff;
-        public static final int popup_window=0x7f0e0108;
+        public static final int edit_text_light=0x7f09010b;
+        public static final int grid_view_dark=0x7f090109;
+        public static final int grid_view_light=0x7f09010d;
+        public static final int header_button=0x7f0900f5;
+        public static final int header_button_add_group=0x7f0900fd;
+        public static final int header_button_add_payment=0x7f0900ff;
+        public static final int header_button_add_user=0x7f0900fc;
+        public static final int header_filter=0x7f0900fa;
+        public static final int header_overflow=0x7f0900fe;
+        public static final int header_settings=0x7f0900f9;
+        public static final int header_sort=0x7f0900fb;
+        public static final int header_title=0x7f0900f3;
+        public static final int header_wrapper=0x7f0900f4;
+        public static final int heading=0x7f090101;
+        public static final int nothing_to_show=0x7f090100;
+        public static final int popup_window=0x7f090108;
         /**      <style name="spinner_dark" parent="@android:style/Widget.Spinner">
     	<item name="android:background">@drawable/spinner_background</item>
     	<item name="android:paddingLeft">5dip</item>
@@ -3306,7 +3306,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         <item name="selectedBold">true</item>
     </style>  
          */
-        public static final int spinner_dialog_dark=0x7f0e0107;
+        public static final int spinner_dialog_dark=0x7f090107;
         /**      <style name="spinner_light" parent="@android:style/Widget.Spinner">
     	<item name="android:background">@drawable/spinner_background</item>
     	<item name="android:paddingLeft">5dip</item>
@@ -3323,7 +3323,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     </style>  
  <item name="android:checkMark">@drawable/radio_button</item>  
          */
-        public static final int spinner_dialog_light=0x7f0e010c;
+        public static final int spinner_dialog_light=0x7f09010c;
     }
     public static final class xml {
         public static final int action_grid_item=0x7f060000;
@@ -3341,7 +3341,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AbsSpinner_android_entries com.joedev.iou:android_entries}</code></td><td></td></tr>
+           <tr><td><code>{@link #AbsSpinner_android_entries com.smileyjoedev.iou:android_entries}</code></td><td></td></tr>
            </table>
            @see #AbsSpinner_android_entries
          */
@@ -3349,7 +3349,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x010100b2
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_entries}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_entries}
           attribute's value can be found in the {@link #AbsSpinner} array.
           @attr name android:android_entries
         */
@@ -3360,27 +3360,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AlertDialog_alpha com.joedev.iou:alpha}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_bottomBright com.joedev.iou:bottomBright}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_bottomDark com.joedev.iou:bottomDark}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_bottomMedium com.joedev.iou:bottomMedium}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_centerBright com.joedev.iou:centerBright}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_centerDark com.joedev.iou:centerDark}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_centerMedium com.joedev.iou:centerMedium}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_dimEnable com.joedev.iou:dimEnable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_dimFraction com.joedev.iou:dimFraction}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_fullBright com.joedev.iou:fullBright}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_fullDark com.joedev.iou:fullDark}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_gravity com.joedev.iou:gravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_horizontalProgressLayout com.joedev.iou:horizontalProgressLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_layout com.joedev.iou:layout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_listItemLayout com.joedev.iou:listItemLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_listLayout com.joedev.iou:listLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_multiChoiceItemLayout com.joedev.iou:multiChoiceItemLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_progressLayout com.joedev.iou:progressLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_singleChoiceItemLayout com.joedev.iou:singleChoiceItemLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_topBright com.joedev.iou:topBright}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_topDark com.joedev.iou:topDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_alpha com.smileyjoedev.iou:alpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_bottomBright com.smileyjoedev.iou:bottomBright}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_bottomDark com.smileyjoedev.iou:bottomDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_bottomMedium com.smileyjoedev.iou:bottomMedium}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_centerBright com.smileyjoedev.iou:centerBright}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_centerDark com.smileyjoedev.iou:centerDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_centerMedium com.smileyjoedev.iou:centerMedium}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_dimEnable com.smileyjoedev.iou:dimEnable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_dimFraction com.smileyjoedev.iou:dimFraction}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_fullBright com.smileyjoedev.iou:fullBright}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_fullDark com.smileyjoedev.iou:fullDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_gravity com.smileyjoedev.iou:gravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_horizontalProgressLayout com.smileyjoedev.iou:horizontalProgressLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_layout com.smileyjoedev.iou:layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_listItemLayout com.smileyjoedev.iou:listItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_listLayout com.smileyjoedev.iou:listLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_multiChoiceItemLayout com.smileyjoedev.iou:multiChoiceItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_progressLayout com.smileyjoedev.iou:progressLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_singleChoiceItemLayout com.smileyjoedev.iou:singleChoiceItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_topBright com.smileyjoedev.iou:topBright}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_topDark com.smileyjoedev.iou:topDark}</code></td><td></td></tr>
            </table>
            @see #AlertDialog_alpha
            @see #AlertDialog_bottomBright
@@ -3413,7 +3413,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01009c
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#alpha}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#alpha}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3429,7 +3429,7 @@ containing a value of this type.
         */
         public static final int AlertDialog_alpha = 19;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#bottomBright}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#bottomBright}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3441,7 +3441,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_bottomBright = 8;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#bottomDark}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#bottomDark}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3453,7 +3453,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_bottomDark = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#bottomMedium}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#bottomMedium}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3465,7 +3465,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_bottomMedium = 9;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#centerBright}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#centerBright}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3477,7 +3477,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_centerBright = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#centerDark}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#centerDark}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3489,7 +3489,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_centerDark = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#centerMedium}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#centerMedium}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3501,7 +3501,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_centerMedium = 10;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dimEnable}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dimEnable}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3515,7 +3515,7 @@ containing a value of this type.
         */
         public static final int AlertDialog_dimEnable = 17;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dimFraction}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dimFraction}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3531,7 +3531,7 @@ containing a value of this type.
         */
         public static final int AlertDialog_dimFraction = 18;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#fullBright}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#fullBright}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3543,7 +3543,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_fullBright = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#fullDark}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#fullDark}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3555,7 +3555,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_fullDark = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#gravity}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#gravity}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3584,7 +3584,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_gravity = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#horizontalProgressLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#horizontalProgressLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3594,7 +3594,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_horizontalProgressLayout = 16;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#layout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#layout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3604,7 +3604,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_layout = 20;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#listItemLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#listItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3614,7 +3614,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_listItemLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#listLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#listLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3624,7 +3624,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_listLayout = 11;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#multiChoiceItemLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#multiChoiceItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3634,7 +3634,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_multiChoiceItemLayout = 12;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#progressLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#progressLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3644,7 +3644,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_progressLayout = 15;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#singleChoiceItemLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#singleChoiceItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3654,7 +3654,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_singleChoiceItemLayout = 13;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#topBright}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#topBright}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3666,7 +3666,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_topBright = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#topDark}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#topDark}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -3683,17 +3683,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_completionHint com.joedev.iou:android_completionHint}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_completionHintView com.joedev.iou:android_completionHintView}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_completionThreshold com.joedev.iou:android_completionThreshold}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_dropDownAnchor com.joedev.iou:android_dropDownAnchor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_dropDownHeight com.joedev.iou:android_dropDownHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_dropDownSelector com.joedev.iou:android_dropDownSelector}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_dropDownWidth com.joedev.iou:android_dropDownWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_entries com.joedev.iou:android_entries}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_android_inputType com.joedev.iou:android_inputType}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_dropDownHorizontalOffset com.joedev.iou:dropDownHorizontalOffset}</code></td><td></td></tr>
-           <tr><td><code>{@link #AutoCompleteTextView_dropDownVerticalOffset com.joedev.iou:dropDownVerticalOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_completionHint com.smileyjoedev.iou:android_completionHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_completionHintView com.smileyjoedev.iou:android_completionHintView}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_completionThreshold com.smileyjoedev.iou:android_completionThreshold}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_dropDownAnchor com.smileyjoedev.iou:android_dropDownAnchor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_dropDownHeight com.smileyjoedev.iou:android_dropDownHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_dropDownSelector com.smileyjoedev.iou:android_dropDownSelector}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_dropDownWidth com.smileyjoedev.iou:android_dropDownWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_entries com.smileyjoedev.iou:android_entries}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_android_inputType com.smileyjoedev.iou:android_inputType}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_dropDownHorizontalOffset com.smileyjoedev.iou:dropDownHorizontalOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #AutoCompleteTextView_dropDownVerticalOffset com.smileyjoedev.iou:dropDownVerticalOffset}</code></td><td></td></tr>
            </table>
            @see #AutoCompleteTextView_android_completionHint
            @see #AutoCompleteTextView_android_completionHintView
@@ -3713,61 +3713,61 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x01010283, 0x7f0100c7, 0x7f0100c8
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_completionHint}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_completionHint}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_completionHint
         */
         public static final int AutoCompleteTextView_android_completionHint = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_completionHintView}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_completionHintView}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_completionHintView
         */
         public static final int AutoCompleteTextView_android_completionHintView = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_completionThreshold}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_completionThreshold}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_completionThreshold
         */
         public static final int AutoCompleteTextView_android_completionThreshold = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_dropDownAnchor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_dropDownAnchor}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_dropDownAnchor
         */
         public static final int AutoCompleteTextView_android_dropDownAnchor = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_dropDownHeight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_dropDownHeight}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_dropDownHeight
         */
         public static final int AutoCompleteTextView_android_dropDownHeight = 8;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_dropDownSelector}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_dropDownSelector}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_dropDownSelector
         */
         public static final int AutoCompleteTextView_android_dropDownSelector = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_dropDownWidth}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_dropDownWidth}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_dropDownWidth
         */
         public static final int AutoCompleteTextView_android_dropDownWidth = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_entries}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_entries}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_entries
         */
         public static final int AutoCompleteTextView_android_entries = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_inputType}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_inputType}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
           @attr name android:android_inputType
         */
         public static final int AutoCompleteTextView_android_inputType = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dropDownHorizontalOffset}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dropDownHorizontalOffset}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
 
 
@@ -3783,7 +3783,7 @@ containing a value of this type.
         */
         public static final int AutoCompleteTextView_dropDownHorizontalOffset = 10;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dropDownVerticalOffset}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dropDownVerticalOffset}
           attribute's value can be found in the {@link #AutoCompleteTextView} array.
 
 
@@ -3804,19 +3804,19 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CalendarView_dateTextAppearance com.joedev.iou:dateTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_firstDayOfWeek com.joedev.iou:firstDayOfWeek}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_focusedMonthDateColor com.joedev.iou:focusedMonthDateColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_maxDate com.joedev.iou:maxDate}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_minDate com.joedev.iou:minDate}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_selectedDateVerticalBar com.joedev.iou:selectedDateVerticalBar}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_selectedWeekBackgroundColor com.joedev.iou:selectedWeekBackgroundColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_showWeekNumber com.joedev.iou:showWeekNumber}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_shownWeekCount com.joedev.iou:shownWeekCount}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_unfocusedMonthDateColor com.joedev.iou:unfocusedMonthDateColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_weekDayTextAppearance com.joedev.iou:weekDayTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_weekNumberColor com.joedev.iou:weekNumberColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #CalendarView_weekSeparatorLineColor com.joedev.iou:weekSeparatorLineColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_dateTextAppearance com.smileyjoedev.iou:dateTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_firstDayOfWeek com.smileyjoedev.iou:firstDayOfWeek}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_focusedMonthDateColor com.smileyjoedev.iou:focusedMonthDateColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_maxDate com.smileyjoedev.iou:maxDate}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_minDate com.smileyjoedev.iou:minDate}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_selectedDateVerticalBar com.smileyjoedev.iou:selectedDateVerticalBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_selectedWeekBackgroundColor com.smileyjoedev.iou:selectedWeekBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_showWeekNumber com.smileyjoedev.iou:showWeekNumber}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_shownWeekCount com.smileyjoedev.iou:shownWeekCount}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_unfocusedMonthDateColor com.smileyjoedev.iou:unfocusedMonthDateColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_weekDayTextAppearance com.smileyjoedev.iou:weekDayTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_weekNumberColor com.smileyjoedev.iou:weekNumberColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CalendarView_weekSeparatorLineColor com.smileyjoedev.iou:weekSeparatorLineColor}</code></td><td></td></tr>
            </table>
            @see #CalendarView_dateTextAppearance
            @see #CalendarView_firstDayOfWeek
@@ -3839,7 +3839,7 @@ containing a value of this type.
             0x7f0100e4
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dateTextAppearance}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dateTextAppearance}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3849,7 +3849,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_dateTextAppearance = 12;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#firstDayOfWeek}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#firstDayOfWeek}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3863,7 +3863,7 @@ containing a value of this type.
         */
         public static final int CalendarView_firstDayOfWeek = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#focusedMonthDateColor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#focusedMonthDateColor}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3875,7 +3875,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_focusedMonthDateColor = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#maxDate}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#maxDate}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3886,7 +3886,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_maxDate = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#minDate}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#minDate}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3897,7 +3897,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_minDate = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#selectedDateVerticalBar}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#selectedDateVerticalBar}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3907,7 +3907,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_selectedDateVerticalBar = 10;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#selectedWeekBackgroundColor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#selectedWeekBackgroundColor}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3919,7 +3919,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_selectedWeekBackgroundColor = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#showWeekNumber}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#showWeekNumber}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3933,7 +3933,7 @@ containing a value of this type.
         */
         public static final int CalendarView_showWeekNumber = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#shownWeekCount}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#shownWeekCount}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3947,7 +3947,7 @@ containing a value of this type.
         */
         public static final int CalendarView_shownWeekCount = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#unfocusedMonthDateColor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#unfocusedMonthDateColor}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3959,7 +3959,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_unfocusedMonthDateColor = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#weekDayTextAppearance}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#weekDayTextAppearance}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3969,7 +3969,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_weekDayTextAppearance = 11;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#weekNumberColor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#weekNumberColor}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3981,7 +3981,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CalendarView_weekNumberColor = 8;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#weekSeparatorLineColor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#weekSeparatorLineColor}
           attribute's value can be found in the {@link #CalendarView} array.
 
 
@@ -3998,9 +3998,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CheckBoxPreference_disableDependentsState com.joedev.iou:disableDependentsState}</code></td><td></td></tr>
-           <tr><td><code>{@link #CheckBoxPreference_summaryOff com.joedev.iou:summaryOff}</code></td><td></td></tr>
-           <tr><td><code>{@link #CheckBoxPreference_summaryOn com.joedev.iou:summaryOn}</code></td><td></td></tr>
+           <tr><td><code>{@link #CheckBoxPreference_disableDependentsState com.smileyjoedev.iou:disableDependentsState}</code></td><td></td></tr>
+           <tr><td><code>{@link #CheckBoxPreference_summaryOff com.smileyjoedev.iou:summaryOff}</code></td><td></td></tr>
+           <tr><td><code>{@link #CheckBoxPreference_summaryOn com.smileyjoedev.iou:summaryOn}</code></td><td></td></tr>
            </table>
            @see #CheckBoxPreference_disableDependentsState
            @see #CheckBoxPreference_summaryOff
@@ -4010,7 +4010,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100af, 0x7f0100b0, 0x7f0100b1
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#disableDependentsState}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#disableDependentsState}
           attribute's value can be found in the {@link #CheckBoxPreference} array.
 
 
@@ -4024,7 +4024,7 @@ containing a value of this type.
         */
         public static final int CheckBoxPreference_disableDependentsState = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#summaryOff}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#summaryOff}
           attribute's value can be found in the {@link #CheckBoxPreference} array.
 
 
@@ -4038,7 +4038,7 @@ containing a value of this type.
         */
         public static final int CheckBoxPreference_summaryOff = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#summaryOn}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#summaryOn}
           attribute's value can be found in the {@link #CheckBoxPreference} array.
 
 
@@ -4057,14 +4057,14 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #DatePicker_calendarViewShown com.joedev.iou:calendarViewShown}</code></td><td></td></tr>
-           <tr><td><code>{@link #DatePicker_endYear com.joedev.iou:endYear}</code></td><td></td></tr>
-           <tr><td><code>{@link #DatePicker_forceShownState com.joedev.iou:forceShownState}</code></td><td></td></tr>
-           <tr><td><code>{@link #DatePicker_internalLayout com.joedev.iou:internalLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #DatePicker_maxDate com.joedev.iou:maxDate}</code></td><td></td></tr>
-           <tr><td><code>{@link #DatePicker_minDate com.joedev.iou:minDate}</code></td><td></td></tr>
-           <tr><td><code>{@link #DatePicker_spinnersShown com.joedev.iou:spinnersShown}</code></td><td></td></tr>
-           <tr><td><code>{@link #DatePicker_startYear com.joedev.iou:startYear}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_calendarViewShown com.smileyjoedev.iou:calendarViewShown}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_endYear com.smileyjoedev.iou:endYear}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_forceShownState com.smileyjoedev.iou:forceShownState}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_internalLayout com.smileyjoedev.iou:internalLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_maxDate com.smileyjoedev.iou:maxDate}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_minDate com.smileyjoedev.iou:minDate}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_spinnersShown com.smileyjoedev.iou:spinnersShown}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_startYear com.smileyjoedev.iou:startYear}</code></td><td></td></tr>
            </table>
            @see #DatePicker_calendarViewShown
            @see #DatePicker_endYear
@@ -4080,7 +4080,7 @@ containing a value of this type.
             0x7f0100d5, 0x7f0100d6, 0x7f0100da, 0x7f0100db
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#calendarViewShown}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#calendarViewShown}
           attribute's value can be found in the {@link #DatePicker} array.
 
 
@@ -4094,7 +4094,7 @@ containing a value of this type.
         */
         public static final int DatePicker_calendarViewShown = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#endYear}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#endYear}
           attribute's value can be found in the {@link #DatePicker} array.
 
 
@@ -4108,7 +4108,7 @@ containing a value of this type.
         */
         public static final int DatePicker_endYear = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#forceShownState}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#forceShownState}
           attribute's value can be found in the {@link #DatePicker} array.
 
 
@@ -4122,7 +4122,7 @@ containing a value of this type.
         */
         public static final int DatePicker_forceShownState = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#internalLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#internalLayout}
           attribute's value can be found in the {@link #DatePicker} array.
 
 
@@ -4132,7 +4132,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int DatePicker_internalLayout = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#maxDate}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#maxDate}
           attribute's value can be found in the {@link #DatePicker} array.
 
 
@@ -4143,7 +4143,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int DatePicker_maxDate = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#minDate}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#minDate}
           attribute's value can be found in the {@link #DatePicker} array.
 
 
@@ -4154,7 +4154,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int DatePicker_minDate = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#spinnersShown}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#spinnersShown}
           attribute's value can be found in the {@link #DatePicker} array.
 
 
@@ -4168,7 +4168,7 @@ containing a value of this type.
         */
         public static final int DatePicker_spinnersShown = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#startYear}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#startYear}
           attribute's value can be found in the {@link #DatePicker} array.
 
 
@@ -4187,7 +4187,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #DialogButtonBar_LayoutParams_android_hint com.joedev.iou:android_hint}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogButtonBar_LayoutParams_android_hint com.smileyjoedev.iou:android_hint}</code></td><td></td></tr>
            </table>
            @see #DialogButtonBar_LayoutParams_android_hint
          */
@@ -4195,7 +4195,7 @@ containing a value of this type.
             0x01010150
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_hint}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_hint}
           attribute's value can be found in the {@link #DialogButtonBar_LayoutParams} array.
           @attr name android:android_hint
         */
@@ -4206,12 +4206,12 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #DialogPreference_dialogIcon com.joedev.iou:dialogIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #DialogPreference_dialogLayout com.joedev.iou:dialogLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #DialogPreference_dialogMessage com.joedev.iou:dialogMessage}</code></td><td></td></tr>
-           <tr><td><code>{@link #DialogPreference_dialogTitle com.joedev.iou:dialogTitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #DialogPreference_negativeButtonText com.joedev.iou:negativeButtonText}</code></td><td></td></tr>
-           <tr><td><code>{@link #DialogPreference_positiveButtonText com.joedev.iou:positiveButtonText}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_dialogIcon com.smileyjoedev.iou:dialogIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_dialogLayout com.smileyjoedev.iou:dialogLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_dialogMessage com.smileyjoedev.iou:dialogMessage}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_dialogTitle com.smileyjoedev.iou:dialogTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_negativeButtonText com.smileyjoedev.iou:negativeButtonText}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_positiveButtonText com.smileyjoedev.iou:positiveButtonText}</code></td><td></td></tr>
            </table>
            @see #DialogPreference_dialogIcon
            @see #DialogPreference_dialogLayout
@@ -4225,7 +4225,7 @@ containing a value of this type.
             0x7f0100b6, 0x7f0100b7
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dialogIcon}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dialogIcon}
           attribute's value can be found in the {@link #DialogPreference} array.
 
 
@@ -4235,7 +4235,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int DialogPreference_dialogIcon = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dialogLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dialogLayout}
           attribute's value can be found in the {@link #DialogPreference} array.
 
 
@@ -4245,7 +4245,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int DialogPreference_dialogLayout = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dialogMessage}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dialogMessage}
           attribute's value can be found in the {@link #DialogPreference} array.
 
 
@@ -4259,7 +4259,7 @@ containing a value of this type.
         */
         public static final int DialogPreference_dialogMessage = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dialogTitle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dialogTitle}
           attribute's value can be found in the {@link #DialogPreference} array.
 
 
@@ -4273,7 +4273,7 @@ containing a value of this type.
         */
         public static final int DialogPreference_dialogTitle = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#negativeButtonText}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#negativeButtonText}
           attribute's value can be found in the {@link #DialogPreference} array.
 
 
@@ -4287,7 +4287,7 @@ containing a value of this type.
         */
         public static final int DialogPreference_negativeButtonText = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#positiveButtonText}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#positiveButtonText}
           attribute's value can be found in the {@link #DialogPreference} array.
 
 
@@ -4306,7 +4306,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Divider_android_orientation com.joedev.iou:android_orientation}</code></td><td></td></tr>
+           <tr><td><code>{@link #Divider_android_orientation com.smileyjoedev.iou:android_orientation}</code></td><td></td></tr>
            </table>
            @see #Divider_android_orientation
          */
@@ -4314,7 +4314,7 @@ containing a value of this type.
             0x010100c4
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_orientation}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_orientation}
           attribute's value can be found in the {@link #Divider} array.
           @attr name android:android_orientation
         */
@@ -4325,11 +4325,11 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #LinearLayout_android_divider com.joedev.iou:android_divider}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayout_android_dividerPadding com.joedev.iou:android_dividerPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayout_android_showDividers com.joedev.iou:android_showDividers}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayout_dividerPadding com.joedev.iou:dividerPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayout_showDividers com.joedev.iou:showDividers}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayout_android_divider com.smileyjoedev.iou:android_divider}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayout_android_dividerPadding com.smileyjoedev.iou:android_dividerPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayout_android_showDividers com.smileyjoedev.iou:android_showDividers}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayout_dividerPadding com.smileyjoedev.iou:dividerPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayout_showDividers com.smileyjoedev.iou:showDividers}</code></td><td></td></tr>
            </table>
            @see #LinearLayout_android_divider
            @see #LinearLayout_android_dividerPadding
@@ -4342,25 +4342,25 @@ containing a value of this type.
             0x7f0100c4
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_divider}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_divider}
           attribute's value can be found in the {@link #LinearLayout} array.
           @attr name android:android_divider
         */
         public static final int LinearLayout_android_divider = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_dividerPadding}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_dividerPadding}
           attribute's value can be found in the {@link #LinearLayout} array.
           @attr name android:android_dividerPadding
         */
         public static final int LinearLayout_android_dividerPadding = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_showDividers}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_showDividers}
           attribute's value can be found in the {@link #LinearLayout} array.
           @attr name android:android_showDividers
         */
         public static final int LinearLayout_android_showDividers = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dividerPadding}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dividerPadding}
           attribute's value can be found in the {@link #LinearLayout} array.
 
 
@@ -4376,7 +4376,7 @@ containing a value of this type.
         */
         public static final int LinearLayout_dividerPadding = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#showDividers}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#showDividers}
           attribute's value can be found in the {@link #LinearLayout} array.
 
 
@@ -4401,8 +4401,8 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ListPreference_entries com.joedev.iou:entries}</code></td><td></td></tr>
-           <tr><td><code>{@link #ListPreference_entryValues com.joedev.iou:entryValues}</code></td><td></td></tr>
+           <tr><td><code>{@link #ListPreference_entries com.smileyjoedev.iou:entries}</code></td><td></td></tr>
+           <tr><td><code>{@link #ListPreference_entryValues com.smileyjoedev.iou:entryValues}</code></td><td></td></tr>
            </table>
            @see #ListPreference_entries
            @see #ListPreference_entryValues
@@ -4411,7 +4411,7 @@ containing a value of this type.
             0x7f0100ba, 0x7f0100bb
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#entries}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#entries}
           attribute's value can be found in the {@link #ListPreference} array.
 
 
@@ -4421,7 +4421,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ListPreference_entries = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#entryValues}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#entryValues}
           attribute's value can be found in the {@link #ListPreference} array.
 
 
@@ -4436,19 +4436,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #NumberPicker_android_fadingEdgeLength com.joedev.iou:android_fadingEdgeLength}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_android_layout com.joedev.iou:android_layout}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_android_maxHeight com.joedev.iou:android_maxHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_android_maxWidth com.joedev.iou:android_maxWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_android_minHeight com.joedev.iou:android_minHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_android_minWidth com.joedev.iou:android_minWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_android_orientation com.joedev.iou:android_orientation}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_flingable com.joedev.iou:flingable}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_selectionDivider com.joedev.iou:selectionDivider}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_selectionDividerHeight com.joedev.iou:selectionDividerHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_selectionDividersDistance com.joedev.iou:selectionDividersDistance}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_solidColor com.joedev.iou:solidColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPicker_virtualButtonPressedDrawable com.joedev.iou:virtualButtonPressedDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_android_fadingEdgeLength com.smileyjoedev.iou:android_fadingEdgeLength}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_android_layout com.smileyjoedev.iou:android_layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_android_maxHeight com.smileyjoedev.iou:android_maxHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_android_maxWidth com.smileyjoedev.iou:android_maxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_android_minHeight com.smileyjoedev.iou:android_minHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_android_minWidth com.smileyjoedev.iou:android_minWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_android_orientation com.smileyjoedev.iou:android_orientation}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_flingable com.smileyjoedev.iou:flingable}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_selectionDivider com.smileyjoedev.iou:selectionDivider}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_selectionDividerHeight com.smileyjoedev.iou:selectionDividerHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_selectionDividersDistance com.smileyjoedev.iou:selectionDividersDistance}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_solidColor com.smileyjoedev.iou:solidColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_virtualButtonPressedDrawable com.smileyjoedev.iou:virtualButtonPressedDrawable}</code></td><td></td></tr>
            </table>
            @see #NumberPicker_android_fadingEdgeLength
            @see #NumberPicker_android_layout
@@ -4471,49 +4471,49 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100d0
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_fadingEdgeLength}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_fadingEdgeLength}
           attribute's value can be found in the {@link #NumberPicker} array.
           @attr name android:android_fadingEdgeLength
         */
         public static final int NumberPicker_android_fadingEdgeLength = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_layout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_layout}
           attribute's value can be found in the {@link #NumberPicker} array.
           @attr name android:android_layout
         */
         public static final int NumberPicker_android_layout = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_maxHeight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_maxHeight}
           attribute's value can be found in the {@link #NumberPicker} array.
           @attr name android:android_maxHeight
         */
         public static final int NumberPicker_android_maxHeight = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_maxWidth}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_maxWidth}
           attribute's value can be found in the {@link #NumberPicker} array.
           @attr name android:android_maxWidth
         */
         public static final int NumberPicker_android_maxWidth = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_minHeight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_minHeight}
           attribute's value can be found in the {@link #NumberPicker} array.
           @attr name android:android_minHeight
         */
         public static final int NumberPicker_android_minHeight = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_minWidth}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_minWidth}
           attribute's value can be found in the {@link #NumberPicker} array.
           @attr name android:android_minWidth
         */
         public static final int NumberPicker_android_minWidth = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_orientation}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_orientation}
           attribute's value can be found in the {@link #NumberPicker} array.
           @attr name android:android_orientation
         */
         public static final int NumberPicker_android_orientation = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#flingable}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#flingable}
           attribute's value can be found in the {@link #NumberPicker} array.
 
 
@@ -4527,7 +4527,7 @@ containing a value of this type.
         */
         public static final int NumberPicker_flingable = 8;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#selectionDivider}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#selectionDivider}
           attribute's value can be found in the {@link #NumberPicker} array.
 
 
@@ -4537,7 +4537,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int NumberPicker_selectionDivider = 10;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#selectionDividerHeight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#selectionDividerHeight}
           attribute's value can be found in the {@link #NumberPicker} array.
 
 
@@ -4553,7 +4553,7 @@ containing a value of this type.
         */
         public static final int NumberPicker_selectionDividerHeight = 11;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#selectionDividersDistance}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#selectionDividersDistance}
           attribute's value can be found in the {@link #NumberPicker} array.
 
 
@@ -4569,7 +4569,7 @@ containing a value of this type.
         */
         public static final int NumberPicker_selectionDividersDistance = 12;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#solidColor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#solidColor}
           attribute's value can be found in the {@link #NumberPicker} array.
 
 
@@ -4581,7 +4581,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int NumberPicker_solidColor = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#virtualButtonPressedDrawable}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#virtualButtonPressedDrawable}
           attribute's value can be found in the {@link #NumberPicker} array.
 
 
@@ -4596,9 +4596,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #NumberPickerPreference_max com.joedev.iou:max}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPickerPreference_min com.joedev.iou:min}</code></td><td></td></tr>
-           <tr><td><code>{@link #NumberPickerPreference_wrapSelectorWheel com.joedev.iou:wrapSelectorWheel}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPickerPreference_max com.smileyjoedev.iou:max}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPickerPreference_min com.smileyjoedev.iou:min}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPickerPreference_wrapSelectorWheel com.smileyjoedev.iou:wrapSelectorWheel}</code></td><td></td></tr>
            </table>
            @see #NumberPickerPreference_max
            @see #NumberPickerPreference_min
@@ -4608,7 +4608,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100c0, 0x7f0100c1, 0x7f0100c2
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#max}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#max}
           attribute's value can be found in the {@link #NumberPickerPreference} array.
 
 
@@ -4622,7 +4622,7 @@ containing a value of this type.
         */
         public static final int NumberPickerPreference_max = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#min}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#min}
           attribute's value can be found in the {@link #NumberPickerPreference} array.
 
 
@@ -4636,7 +4636,7 @@ containing a value of this type.
         */
         public static final int NumberPickerPreference_min = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#wrapSelectorWheel}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#wrapSelectorWheel}
           attribute's value can be found in the {@link #NumberPickerPreference} array.
 
 
@@ -4655,24 +4655,24 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Preference_defaultValue com.joedev.iou:defaultValue}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_dependency com.joedev.iou:dependency}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_enabled com.joedev.iou:enabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_fragment com.joedev.iou:fragment}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_icon com.joedev.iou:icon}</code></td><td>
+           <tr><td><code>{@link #Preference_defaultValue com.smileyjoedev.iou:defaultValue}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_dependency com.smileyjoedev.iou:dependency}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_enabled com.smileyjoedev.iou:enabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_fragment com.smileyjoedev.iou:fragment}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_icon com.smileyjoedev.iou:icon}</code></td><td>
 		Already defined in ABS
 		<attr name="icon" format="reference" />
 		<attr name="title" format="string" />
 		</td></tr>
-           <tr><td><code>{@link #Preference_key com.joedev.iou:key}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_layout com.joedev.iou:layout}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_order com.joedev.iou:order}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_persistent com.joedev.iou:persistent}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_selectable com.joedev.iou:selectable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_shouldDisableView com.joedev.iou:shouldDisableView}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_summary com.joedev.iou:summary}</code></td><td></td></tr>
-           <tr><td><code>{@link #Preference_title com.joedev.iou:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #Preference_widgetLayout com.joedev.iou:widgetLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_key com.smileyjoedev.iou:key}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_layout com.smileyjoedev.iou:layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_order com.smileyjoedev.iou:order}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_persistent com.smileyjoedev.iou:persistent}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_selectable com.smileyjoedev.iou:selectable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_shouldDisableView com.smileyjoedev.iou:shouldDisableView}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_summary com.smileyjoedev.iou:summary}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_title com.smileyjoedev.iou:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #Preference_widgetLayout com.smileyjoedev.iou:widgetLayout}</code></td><td></td></tr>
            </table>
            @see #Preference_defaultValue
            @see #Preference_dependency
@@ -4696,7 +4696,7 @@ containing a value of this type.
             0x7f0100a6, 0x7f0100a9
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#defaultValue}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#defaultValue}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4710,7 +4710,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Preference_defaultValue = 10;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dependency}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dependency}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4724,7 +4724,7 @@ containing a value of this type.
         */
         public static final int Preference_dependency = 8;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#enabled}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#enabled}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4738,7 +4738,7 @@ containing a value of this type.
         */
         public static final int Preference_enabled = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#fragment}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#fragment}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4768,7 +4768,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Preference_icon = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#key}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#key}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4782,7 +4782,7 @@ containing a value of this type.
         */
         public static final int Preference_key = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#layout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#layout}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4792,7 +4792,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Preference_layout = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#order}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#order}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4806,7 +4806,7 @@ containing a value of this type.
         */
         public static final int Preference_order = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#persistent}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#persistent}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4820,7 +4820,7 @@ containing a value of this type.
         */
         public static final int Preference_persistent = 9;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#selectable}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#selectable}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4834,7 +4834,7 @@ containing a value of this type.
         */
         public static final int Preference_selectable = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#shouldDisableView}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#shouldDisableView}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4848,7 +4848,7 @@ containing a value of this type.
         */
         public static final int Preference_shouldDisableView = 11;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#summary}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#summary}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4878,7 +4878,7 @@ containing a value of this type.
         */
         public static final int Preference_title = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#widgetLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#widgetLayout}
           attribute's value can be found in the {@link #Preference} array.
 
 
@@ -4893,10 +4893,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PreferenceFrameLayout_borderBottom com.joedev.iou:borderBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #PreferenceFrameLayout_borderLeft com.joedev.iou:borderLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #PreferenceFrameLayout_borderRight com.joedev.iou:borderRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #PreferenceFrameLayout_borderTop com.joedev.iou:borderTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_borderBottom com.smileyjoedev.iou:borderBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_borderLeft com.smileyjoedev.iou:borderLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_borderRight com.smileyjoedev.iou:borderRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_borderTop com.smileyjoedev.iou:borderTop}</code></td><td></td></tr>
            </table>
            @see #PreferenceFrameLayout_borderBottom
            @see #PreferenceFrameLayout_borderLeft
@@ -4907,7 +4907,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100aa, 0x7f0100ab, 0x7f0100ac, 0x7f0100ad
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#borderBottom}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#borderBottom}
           attribute's value can be found in the {@link #PreferenceFrameLayout} array.
 
 
@@ -4923,7 +4923,7 @@ containing a value of this type.
         */
         public static final int PreferenceFrameLayout_borderBottom = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#borderLeft}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#borderLeft}
           attribute's value can be found in the {@link #PreferenceFrameLayout} array.
 
 
@@ -4939,7 +4939,7 @@ containing a value of this type.
         */
         public static final int PreferenceFrameLayout_borderLeft = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#borderRight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#borderRight}
           attribute's value can be found in the {@link #PreferenceFrameLayout} array.
 
 
@@ -4955,7 +4955,7 @@ containing a value of this type.
         */
         public static final int PreferenceFrameLayout_borderRight = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#borderTop}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#borderTop}
           attribute's value can be found in the {@link #PreferenceFrameLayout} array.
 
 
@@ -4976,7 +4976,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PreferenceFrameLayout_Layout_layout_removeBorders com.joedev.iou:layout_removeBorders}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_Layout_layout_removeBorders com.smileyjoedev.iou:layout_removeBorders}</code></td><td></td></tr>
            </table>
            @see #PreferenceFrameLayout_Layout_layout_removeBorders
          */
@@ -4984,7 +4984,7 @@ containing a value of this type.
             0x7f0100ae
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#layout_removeBorders}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#layout_removeBorders}
           attribute's value can be found in the {@link #PreferenceFrameLayout_Layout} array.
 
 
@@ -5003,7 +5003,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PreferenceGroup_orderingFromXml com.joedev.iou:orderingFromXml}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceGroup_orderingFromXml com.smileyjoedev.iou:orderingFromXml}</code></td><td></td></tr>
            </table>
            @see #PreferenceGroup_orderingFromXml
          */
@@ -5011,7 +5011,7 @@ containing a value of this type.
             0x7f0100a4
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#orderingFromXml}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#orderingFromXml}
           attribute's value can be found in the {@link #PreferenceGroup} array.
 
 
@@ -5030,13 +5030,13 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PreferenceHeader_breadCrumbShortTitle com.joedev.iou:breadCrumbShortTitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #PreferenceHeader_breadCrumbTitle com.joedev.iou:breadCrumbTitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #PreferenceHeader_fragment com.joedev.iou:fragment}</code></td><td></td></tr>
-           <tr><td><code>{@link #PreferenceHeader_icon com.joedev.iou:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
-           <tr><td><code>{@link #PreferenceHeader_id com.joedev.iou:id}</code></td><td></td></tr>
-           <tr><td><code>{@link #PreferenceHeader_summary com.joedev.iou:summary}</code></td><td></td></tr>
-           <tr><td><code>{@link #PreferenceHeader_title com.joedev.iou:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #PreferenceHeader_breadCrumbShortTitle com.smileyjoedev.iou:breadCrumbShortTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_breadCrumbTitle com.smileyjoedev.iou:breadCrumbTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_fragment com.smileyjoedev.iou:fragment}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_icon com.smileyjoedev.iou:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
+           <tr><td><code>{@link #PreferenceHeader_id com.smileyjoedev.iou:id}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_summary com.smileyjoedev.iou:summary}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_title com.smileyjoedev.iou:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
            </table>
            @see #PreferenceHeader_breadCrumbShortTitle
            @see #PreferenceHeader_breadCrumbTitle
@@ -5051,7 +5051,7 @@ containing a value of this type.
             0x7f0100a7, 0x7f0100a8, 0x7f0100a9
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#breadCrumbShortTitle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#breadCrumbShortTitle}
           attribute's value can be found in the {@link #PreferenceHeader} array.
 
 
@@ -5065,7 +5065,7 @@ containing a value of this type.
         */
         public static final int PreferenceHeader_breadCrumbShortTitle = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#breadCrumbTitle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#breadCrumbTitle}
           attribute's value can be found in the {@link #PreferenceHeader} array.
 
 
@@ -5079,7 +5079,7 @@ containing a value of this type.
         */
         public static final int PreferenceHeader_breadCrumbTitle = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#fragment}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#fragment}
           attribute's value can be found in the {@link #PreferenceHeader} array.
 
 
@@ -5105,7 +5105,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int PreferenceHeader_icon = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#id}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#id}
           attribute's value can be found in the {@link #PreferenceHeader} array.
 
 
@@ -5115,7 +5115,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int PreferenceHeader_id = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#summary}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#summary}
           attribute's value can be found in the {@link #PreferenceHeader} array.
 
 
@@ -5150,21 +5150,21 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ProgressBar_android_animationResolution com.joedev.iou:android_animationResolution}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_indeterminate com.joedev.iou:android_indeterminate}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_indeterminateBehavior com.joedev.iou:android_indeterminateBehavior}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_indeterminateDrawable com.joedev.iou:android_indeterminateDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_indeterminateDuration com.joedev.iou:android_indeterminateDuration}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_indeterminateOnly com.joedev.iou:android_indeterminateOnly}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_interpolator com.joedev.iou:android_interpolator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_max com.joedev.iou:android_max}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_maxHeight com.joedev.iou:android_maxHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_maxWidth com.joedev.iou:android_maxWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_minHeight com.joedev.iou:android_minHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_minWidth com.joedev.iou:android_minWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_progress com.joedev.iou:android_progress}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_progressDrawable com.joedev.iou:android_progressDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressBar_android_secondaryProgress com.joedev.iou:android_secondaryProgress}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_animationResolution com.smileyjoedev.iou:android_animationResolution}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_indeterminate com.smileyjoedev.iou:android_indeterminate}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_indeterminateBehavior com.smileyjoedev.iou:android_indeterminateBehavior}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_indeterminateDrawable com.smileyjoedev.iou:android_indeterminateDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_indeterminateDuration com.smileyjoedev.iou:android_indeterminateDuration}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_indeterminateOnly com.smileyjoedev.iou:android_indeterminateOnly}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_interpolator com.smileyjoedev.iou:android_interpolator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_max com.smileyjoedev.iou:android_max}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_maxHeight com.smileyjoedev.iou:android_maxHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_maxWidth com.smileyjoedev.iou:android_maxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_minHeight com.smileyjoedev.iou:android_minHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_minWidth com.smileyjoedev.iou:android_minWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_progress com.smileyjoedev.iou:android_progress}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_progressDrawable com.smileyjoedev.iou:android_progressDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressBar_android_secondaryProgress com.smileyjoedev.iou:android_secondaryProgress}</code></td><td></td></tr>
            </table>
            @see #ProgressBar_android_animationResolution
            @see #ProgressBar_android_indeterminate
@@ -5189,91 +5189,91 @@ containing a value of this type.
             0x01010140, 0x01010141, 0x0101031a
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_animationResolution}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_animationResolution}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_animationResolution
         */
         public static final int ProgressBar_android_animationResolution = 14;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_indeterminate}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_indeterminate}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_indeterminate
         */
         public static final int ProgressBar_android_indeterminate = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_indeterminateBehavior}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_indeterminateBehavior}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_indeterminateBehavior
         */
         public static final int ProgressBar_android_indeterminateBehavior = 10;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_indeterminateDrawable}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_indeterminateDrawable}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_indeterminateDrawable
         */
         public static final int ProgressBar_android_indeterminateDrawable = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_indeterminateDuration}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_indeterminateDuration}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_indeterminateDuration
         */
         public static final int ProgressBar_android_indeterminateDuration = 9;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_indeterminateOnly}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_indeterminateOnly}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_indeterminateOnly
         */
         public static final int ProgressBar_android_indeterminateOnly = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_interpolator}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_interpolator}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_interpolator
         */
         public static final int ProgressBar_android_interpolator = 13;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_max}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_max}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_max
         */
         public static final int ProgressBar_android_max = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_maxHeight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_maxHeight}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_maxHeight
         */
         public static final int ProgressBar_android_maxHeight = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_maxWidth}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_maxWidth}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_maxWidth
         */
         public static final int ProgressBar_android_maxWidth = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_minHeight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_minHeight}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_minHeight
         */
         public static final int ProgressBar_android_minHeight = 12;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_minWidth}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_minWidth}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_minWidth
         */
         public static final int ProgressBar_android_minWidth = 11;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_progress}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_progress}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_progress
         */
         public static final int ProgressBar_android_progress = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_progressDrawable}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_progressDrawable}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_progressDrawable
         */
         public static final int ProgressBar_android_progressDrawable = 8;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_secondaryProgress}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_secondaryProgress}
           attribute's value can be found in the {@link #ProgressBar} array.
           @attr name android:android_secondaryProgress
         */
@@ -5284,9 +5284,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #RingtonePreference_ringtoneType com.joedev.iou:ringtoneType}</code></td><td></td></tr>
-           <tr><td><code>{@link #RingtonePreference_showDefault com.joedev.iou:showDefault}</code></td><td></td></tr>
-           <tr><td><code>{@link #RingtonePreference_showSilent com.joedev.iou:showSilent}</code></td><td></td></tr>
+           <tr><td><code>{@link #RingtonePreference_ringtoneType com.smileyjoedev.iou:ringtoneType}</code></td><td></td></tr>
+           <tr><td><code>{@link #RingtonePreference_showDefault com.smileyjoedev.iou:showDefault}</code></td><td></td></tr>
+           <tr><td><code>{@link #RingtonePreference_showSilent com.smileyjoedev.iou:showSilent}</code></td><td></td></tr>
            </table>
            @see #RingtonePreference_ringtoneType
            @see #RingtonePreference_showDefault
@@ -5296,7 +5296,7 @@ containing a value of this type.
             0x7f0100bc, 0x7f0100bd, 0x7f0100be
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#ringtoneType}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#ringtoneType}
           attribute's value can be found in the {@link #RingtonePreference} array.
 
 
@@ -5315,7 +5315,7 @@ containing a value of this type.
         */
         public static final int RingtonePreference_ringtoneType = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#showDefault}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#showDefault}
           attribute's value can be found in the {@link #RingtonePreference} array.
 
 
@@ -5329,7 +5329,7 @@ containing a value of this type.
         */
         public static final int RingtonePreference_showDefault = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#showSilent}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#showSilent}
           attribute's value can be found in the {@link #RingtonePreference} array.
 
 
@@ -5348,12 +5348,12 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #RotateDrawable_android_drawable com.joedev.iou:android_drawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #RotateDrawable_android_fromDegrees com.joedev.iou:android_fromDegrees}</code></td><td></td></tr>
-           <tr><td><code>{@link #RotateDrawable_android_pivotX com.joedev.iou:android_pivotX}</code></td><td></td></tr>
-           <tr><td><code>{@link #RotateDrawable_android_pivotY com.joedev.iou:android_pivotY}</code></td><td></td></tr>
-           <tr><td><code>{@link #RotateDrawable_android_toDegrees com.joedev.iou:android_toDegrees}</code></td><td></td></tr>
-           <tr><td><code>{@link #RotateDrawable_android_visible com.joedev.iou:android_visible}</code></td><td></td></tr>
+           <tr><td><code>{@link #RotateDrawable_android_drawable com.smileyjoedev.iou:android_drawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #RotateDrawable_android_fromDegrees com.smileyjoedev.iou:android_fromDegrees}</code></td><td></td></tr>
+           <tr><td><code>{@link #RotateDrawable_android_pivotX com.smileyjoedev.iou:android_pivotX}</code></td><td></td></tr>
+           <tr><td><code>{@link #RotateDrawable_android_pivotY com.smileyjoedev.iou:android_pivotY}</code></td><td></td></tr>
+           <tr><td><code>{@link #RotateDrawable_android_toDegrees com.smileyjoedev.iou:android_toDegrees}</code></td><td></td></tr>
+           <tr><td><code>{@link #RotateDrawable_android_visible com.smileyjoedev.iou:android_visible}</code></td><td></td></tr>
            </table>
            @see #RotateDrawable_android_drawable
            @see #RotateDrawable_android_fromDegrees
@@ -5367,37 +5367,37 @@ containing a value of this type.
             0x010101b5, 0x010101b6
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_drawable}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_drawable}
           attribute's value can be found in the {@link #RotateDrawable} array.
           @attr name android:android_drawable
         */
         public static final int RotateDrawable_android_drawable = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_fromDegrees}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_fromDegrees}
           attribute's value can be found in the {@link #RotateDrawable} array.
           @attr name android:android_fromDegrees
         */
         public static final int RotateDrawable_android_fromDegrees = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_pivotX}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_pivotX}
           attribute's value can be found in the {@link #RotateDrawable} array.
           @attr name android:android_pivotX
         */
         public static final int RotateDrawable_android_pivotX = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_pivotY}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_pivotY}
           attribute's value can be found in the {@link #RotateDrawable} array.
           @attr name android:android_pivotY
         */
         public static final int RotateDrawable_android_pivotY = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_toDegrees}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_toDegrees}
           attribute's value can be found in the {@link #RotateDrawable} array.
           @attr name android:android_toDegrees
         */
         public static final int RotateDrawable_android_toDegrees = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_visible}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_visible}
           attribute's value can be found in the {@link #RotateDrawable} array.
           @attr name android:android_visible
         */
@@ -5408,9 +5408,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SeekBar_android_disabledAlpha com.joedev.iou:android_disabledAlpha}</code></td><td></td></tr>
-           <tr><td><code>{@link #SeekBar_android_thumb com.joedev.iou:android_thumb}</code></td><td></td></tr>
-           <tr><td><code>{@link #SeekBar_android_thumbOffset com.joedev.iou:android_thumbOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #SeekBar_android_disabledAlpha com.smileyjoedev.iou:android_disabledAlpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #SeekBar_android_thumb com.smileyjoedev.iou:android_thumb}</code></td><td></td></tr>
+           <tr><td><code>{@link #SeekBar_android_thumbOffset com.smileyjoedev.iou:android_thumbOffset}</code></td><td></td></tr>
            </table>
            @see #SeekBar_android_disabledAlpha
            @see #SeekBar_android_thumb
@@ -5420,19 +5420,19 @@ containing a value of this type.
             0x01010033, 0x01010142, 0x01010143
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_disabledAlpha}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_disabledAlpha}
           attribute's value can be found in the {@link #SeekBar} array.
           @attr name android:android_disabledAlpha
         */
         public static final int SeekBar_android_disabledAlpha = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_thumb}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_thumb}
           attribute's value can be found in the {@link #SeekBar} array.
           @attr name android:android_thumb
         */
         public static final int SeekBar_android_thumb = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_thumbOffset}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_thumbOffset}
           attribute's value can be found in the {@link #SeekBar} array.
           @attr name android:android_thumbOffset
         */
@@ -5443,7 +5443,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SeekBarDialogPreference_max com.joedev.iou:max}</code></td><td></td></tr>
+           <tr><td><code>{@link #SeekBarDialogPreference_max com.smileyjoedev.iou:max}</code></td><td></td></tr>
            </table>
            @see #SeekBarDialogPreference_max
          */
@@ -5451,7 +5451,7 @@ containing a value of this type.
             0x7f0100c1
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#max}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#max}
           attribute's value can be found in the {@link #SeekBarDialogPreference} array.
 
 
@@ -5470,7 +5470,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SeekBarPreference_max com.joedev.iou:max}</code></td><td></td></tr>
+           <tr><td><code>{@link #SeekBarPreference_max com.smileyjoedev.iou:max}</code></td><td></td></tr>
            </table>
            @see #SeekBarPreference_max
          */
@@ -5478,7 +5478,7 @@ containing a value of this type.
             0x7f0100c1
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#max}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#max}
           attribute's value can be found in the {@link #SeekBarPreference} array.
 
 
@@ -5497,26 +5497,26 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockActionBar_background com.joedev.iou:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_backgroundSplit com.joedev.iou:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_backgroundStacked com.joedev.iou:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_customNavigationLayout com.joedev.iou:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_displayOptions com.joedev.iou:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_divider com.joedev.iou:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_height com.joedev.iou:height}</code></td><td> Specifies a fixed height.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_homeLayout com.joedev.iou:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_icon com.joedev.iou:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_indeterminateProgressStyle com.joedev.iou:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_itemPadding com.joedev.iou:itemPadding}</code></td><td> Specifies padding that should be applied to the left and right sides of
+           <tr><td><code>{@link #SherlockActionBar_background com.smileyjoedev.iou:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_backgroundSplit com.smileyjoedev.iou:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_backgroundStacked com.smileyjoedev.iou:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_customNavigationLayout com.smileyjoedev.iou:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_displayOptions com.smileyjoedev.iou:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_divider com.smileyjoedev.iou:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_height com.smileyjoedev.iou:height}</code></td><td> Specifies a fixed height.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_homeLayout com.smileyjoedev.iou:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_icon com.smileyjoedev.iou:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_indeterminateProgressStyle com.smileyjoedev.iou:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_itemPadding com.smileyjoedev.iou:itemPadding}</code></td><td> Specifies padding that should be applied to the left and right sides of
              system-provided items in the bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_logo com.joedev.iou:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_navigationMode com.joedev.iou:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_progressBarPadding com.joedev.iou:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_progressBarStyle com.joedev.iou:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_subtitle com.joedev.iou:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #SherlockActionBar_subtitleTextStyle com.joedev.iou:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_title com.joedev.iou:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #SherlockActionBar_titleTextStyle com.joedev.iou:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_logo com.smileyjoedev.iou:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_navigationMode com.smileyjoedev.iou:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_progressBarPadding com.smileyjoedev.iou:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_progressBarStyle com.smileyjoedev.iou:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_subtitle com.smileyjoedev.iou:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #SherlockActionBar_subtitleTextStyle com.smileyjoedev.iou:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_title com.smileyjoedev.iou:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #SherlockActionBar_titleTextStyle com.smileyjoedev.iou:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
            </table>
            @see #SherlockActionBar_background
            @see #SherlockActionBar_backgroundSplit
@@ -5831,7 +5831,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockActionMenuItemView_android_minWidth com.joedev.iou:android_minWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockActionMenuItemView_android_minWidth com.smileyjoedev.iou:android_minWidth}</code></td><td></td></tr>
            </table>
            @see #SherlockActionMenuItemView_android_minWidth
          */
@@ -5839,7 +5839,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x0101013f
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_minWidth}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_minWidth}
           attribute's value can be found in the {@link #SherlockActionMenuItemView} array.
           @attr name android:android_minWidth
         */
@@ -5850,11 +5850,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockActionMode_background com.joedev.iou:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionMode_backgroundSplit com.joedev.iou:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionMode_height com.joedev.iou:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionMode_subtitleTextStyle com.joedev.iou:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #SherlockActionMode_titleTextStyle com.joedev.iou:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_background com.smileyjoedev.iou:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_backgroundSplit com.smileyjoedev.iou:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_height com.smileyjoedev.iou:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_subtitleTextStyle com.smileyjoedev.iou:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_titleTextStyle com.smileyjoedev.iou:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
            </table>
            @see #SherlockActionMode_background
            @see #SherlockActionMode_backgroundSplit
@@ -5942,9 +5942,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockActivityChooserView_android_background com.joedev.iou:android_background}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockActivityChooserView_expandActivityOverflowButtonDrawable com.joedev.iou:expandActivityOverflowButtonDrawable}</code></td><td> The drawable to show in the button for expanding the activities overflow popup.</td></tr>
-           <tr><td><code>{@link #SherlockActivityChooserView_initialActivityCount com.joedev.iou:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
+           <tr><td><code>{@link #SherlockActivityChooserView_android_background com.smileyjoedev.iou:android_background}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockActivityChooserView_expandActivityOverflowButtonDrawable com.smileyjoedev.iou:expandActivityOverflowButtonDrawable}</code></td><td> The drawable to show in the button for expanding the activities overflow popup.</td></tr>
+           <tr><td><code>{@link #SherlockActivityChooserView_initialActivityCount com.smileyjoedev.iou:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
            </table>
            @see #SherlockActivityChooserView_android_background
            @see #SherlockActivityChooserView_expandActivityOverflowButtonDrawable
@@ -5954,7 +5954,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x010100d4, 0x7f01005d, 0x7f01005e
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_background}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_background}
           attribute's value can be found in the {@link #SherlockActivityChooserView} array.
           @attr name android:android_background
         */
@@ -5998,12 +5998,12 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_checkableBehavior com.joedev.iou:android_checkableBehavior}</code></td><td> Whether the items are capable of displaying a check mark.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_enabled com.joedev.iou:android_enabled}</code></td><td> Whether the items are enabled.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_id com.joedev.iou:android_id}</code></td><td> The ID of the group.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_menuCategory com.joedev.iou:android_menuCategory}</code></td><td> The category applied to all items within this group.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_orderInCategory com.joedev.iou:android_orderInCategory}</code></td><td> The order within the category applied to all items within this group.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_visible com.joedev.iou:android_visible}</code></td><td> Whether the items are shown/visible.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_checkableBehavior com.smileyjoedev.iou:android_checkableBehavior}</code></td><td> Whether the items are capable of displaying a check mark.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_enabled com.smileyjoedev.iou:android_enabled}</code></td><td> Whether the items are enabled.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_id com.smileyjoedev.iou:android_id}</code></td><td> The ID of the group.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_menuCategory com.smileyjoedev.iou:android_menuCategory}</code></td><td> The category applied to all items within this group.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_orderInCategory com.smileyjoedev.iou:android_orderInCategory}</code></td><td> The order within the category applied to all items within this group.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_visible com.smileyjoedev.iou:android_visible}</code></td><td> Whether the items are shown/visible.</td></tr>
            </table>
            @see #SherlockMenuGroup_android_checkableBehavior
            @see #SherlockMenuGroup_android_enabled
@@ -6020,7 +6020,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the items are capable of displaying a check mark. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_checkableBehavior}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_checkableBehavior}.
           @attr name android:android_checkableBehavior
         */
         public static final int SherlockMenuGroup_android_checkableBehavior = 5;
@@ -6028,7 +6028,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the items are enabled. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_enabled}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_enabled}.
           @attr name android:android_enabled
         */
         public static final int SherlockMenuGroup_android_enabled = 0;
@@ -6036,7 +6036,7 @@ containing a value of this type.
           <p>
           @attr description
            The ID of the group. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_id}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_id}.
           @attr name android:android_id
         */
         public static final int SherlockMenuGroup_android_id = 1;
@@ -6045,7 +6045,7 @@ containing a value of this type.
           @attr description
            The category applied to all items within this group.
              (This will be or'ed with the orderInCategory attribute.) 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_menuCategory}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_menuCategory}.
           @attr name android:android_menuCategory
         */
         public static final int SherlockMenuGroup_android_menuCategory = 3;
@@ -6054,7 +6054,7 @@ containing a value of this type.
           @attr description
            The order within the category applied to all items within this group.
              (This will be or'ed with the category attribute.) 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_orderInCategory}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_orderInCategory}.
           @attr name android:android_orderInCategory
         */
         public static final int SherlockMenuGroup_android_orderInCategory = 4;
@@ -6062,7 +6062,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the items are shown/visible. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_visible}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_visible}.
           @attr name android:android_visible
         */
         public static final int SherlockMenuGroup_android_visible = 2;
@@ -6072,26 +6072,26 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_actionLayout com.joedev.iou:android_actionLayout}</code></td><td> An optional layout to be used as an action view.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_actionProviderClass com.joedev.iou:android_actionProviderClass}</code></td><td> The name of an optional ActionProvider class to instantiate an action view
+           <tr><td><code>{@link #SherlockMenuItem_android_actionLayout com.smileyjoedev.iou:android_actionLayout}</code></td><td> An optional layout to be used as an action view.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_actionProviderClass com.smileyjoedev.iou:android_actionProviderClass}</code></td><td> The name of an optional ActionProvider class to instantiate an action view
              and perform operations such as default action for that menu item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_actionViewClass com.joedev.iou:android_actionViewClass}</code></td><td> The name of an optional View class to instantiate and use as an
+           <tr><td><code>{@link #SherlockMenuItem_android_actionViewClass com.smileyjoedev.iou:android_actionViewClass}</code></td><td> The name of an optional View class to instantiate and use as an
              action view.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_alphabeticShortcut com.joedev.iou:android_alphabeticShortcut}</code></td><td> The alphabetic shortcut key.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_checkable com.joedev.iou:android_checkable}</code></td><td> Whether the item is capable of displaying a check mark.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_checked com.joedev.iou:android_checked}</code></td><td> Whether the item is checked.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_enabled com.joedev.iou:android_enabled}</code></td><td> Whether the item is enabled.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_icon com.joedev.iou:android_icon}</code></td><td> The icon associated with this item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_id com.joedev.iou:android_id}</code></td><td> The ID of the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_menuCategory com.joedev.iou:android_menuCategory}</code></td><td> The category applied to the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_numericShortcut com.joedev.iou:android_numericShortcut}</code></td><td> The numeric shortcut key.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_onClick com.joedev.iou:android_onClick}</code></td><td> Name of a method on the Context used to inflate the menu that will be
+           <tr><td><code>{@link #SherlockMenuItem_android_alphabeticShortcut com.smileyjoedev.iou:android_alphabeticShortcut}</code></td><td> The alphabetic shortcut key.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_checkable com.smileyjoedev.iou:android_checkable}</code></td><td> Whether the item is capable of displaying a check mark.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_checked com.smileyjoedev.iou:android_checked}</code></td><td> Whether the item is checked.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_enabled com.smileyjoedev.iou:android_enabled}</code></td><td> Whether the item is enabled.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_icon com.smileyjoedev.iou:android_icon}</code></td><td> The icon associated with this item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_id com.smileyjoedev.iou:android_id}</code></td><td> The ID of the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_menuCategory com.smileyjoedev.iou:android_menuCategory}</code></td><td> The category applied to the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_numericShortcut com.smileyjoedev.iou:android_numericShortcut}</code></td><td> The numeric shortcut key.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_onClick com.smileyjoedev.iou:android_onClick}</code></td><td> Name of a method on the Context used to inflate the menu that will be
              called when the item is clicked.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_orderInCategory com.joedev.iou:android_orderInCategory}</code></td><td> The order within the category applied to the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_showAsAction com.joedev.iou:android_showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_title com.joedev.iou:android_title}</code></td><td> The title associated with the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_titleCondensed com.joedev.iou:android_titleCondensed}</code></td><td> The condensed title associated with the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_visible com.joedev.iou:android_visible}</code></td><td> Whether the item is shown/visible.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_orderInCategory com.smileyjoedev.iou:android_orderInCategory}</code></td><td> The order within the category applied to the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_showAsAction com.smileyjoedev.iou:android_showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_title com.smileyjoedev.iou:android_title}</code></td><td> The title associated with the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_titleCondensed com.smileyjoedev.iou:android_titleCondensed}</code></td><td> The condensed title associated with the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_visible com.smileyjoedev.iou:android_visible}</code></td><td> Whether the item is shown/visible.</td></tr>
            </table>
            @see #SherlockMenuItem_android_actionLayout
            @see #SherlockMenuItem_android_actionProviderClass
@@ -6124,7 +6124,7 @@ containing a value of this type.
            An optional layout to be used as an action view.
              See {@link android.view.MenuItem#setActionView(android.view.View)}
              for more info. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_actionLayout}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_actionLayout}.
           @attr name android:android_actionLayout
         */
         public static final int SherlockMenuItem_android_actionLayout = 14;
@@ -6135,7 +6135,7 @@ containing a value of this type.
              and perform operations such as default action for that menu item.
              See {@link android.view.MenuItem#setActionProvider(android.view.ActionProvider)}
              for more info. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_actionProviderClass}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_actionProviderClass}.
           @attr name android:android_actionProviderClass
         */
         public static final int SherlockMenuItem_android_actionProviderClass = 16;
@@ -6145,7 +6145,7 @@ containing a value of this type.
            The name of an optional View class to instantiate and use as an
              action view. See {@link android.view.MenuItem#setActionView(android.view.View)}
              for more info. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_actionViewClass}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_actionViewClass}.
           @attr name android:android_actionViewClass
         */
         public static final int SherlockMenuItem_android_actionViewClass = 15;
@@ -6154,7 +6154,7 @@ containing a value of this type.
           @attr description
            The alphabetic shortcut key.  This is the shortcut when using a keyboard
              with alphabetic keys. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_alphabeticShortcut}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_alphabeticShortcut}.
           @attr name android:android_alphabeticShortcut
         */
         public static final int SherlockMenuItem_android_alphabeticShortcut = 9;
@@ -6162,7 +6162,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the item is capable of displaying a check mark. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_checkable}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_checkable}.
           @attr name android:android_checkable
         */
         public static final int SherlockMenuItem_android_checkable = 11;
@@ -6171,7 +6171,7 @@ containing a value of this type.
           @attr description
            Whether the item is checked.  Note that you must first have enabled checking with
              the checkable attribute or else the check mark will not appear. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_checked}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_checked}.
           @attr name android:android_checked
         */
         public static final int SherlockMenuItem_android_checked = 3;
@@ -6179,7 +6179,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the item is enabled. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_enabled}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_enabled}.
           @attr name android:android_enabled
         */
         public static final int SherlockMenuItem_android_enabled = 1;
@@ -6188,7 +6188,7 @@ containing a value of this type.
           @attr description
            The icon associated with this item.  This icon will not always be shown, so
              the title should be sufficient in describing this item. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_icon}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_icon}.
           @attr name android:android_icon
         */
         public static final int SherlockMenuItem_android_icon = 0;
@@ -6196,7 +6196,7 @@ containing a value of this type.
           <p>
           @attr description
            The ID of the item. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_id}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_id}.
           @attr name android:android_id
         */
         public static final int SherlockMenuItem_android_id = 2;
@@ -6205,7 +6205,7 @@ containing a value of this type.
           @attr description
            The category applied to the item.
              (This will be or'ed with the orderInCategory attribute.) 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_menuCategory}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_menuCategory}.
           @attr name android:android_menuCategory
         */
         public static final int SherlockMenuItem_android_menuCategory = 5;
@@ -6214,7 +6214,7 @@ containing a value of this type.
           @attr description
            The numeric shortcut key.  This is the shortcut when using a numeric (e.g., 12-key)
              keyboard. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_numericShortcut}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_numericShortcut}.
           @attr name android:android_numericShortcut
         */
         public static final int SherlockMenuItem_android_numericShortcut = 10;
@@ -6223,7 +6223,7 @@ containing a value of this type.
           @attr description
            Name of a method on the Context used to inflate the menu that will be
              called when the item is clicked. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_onClick}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_onClick}.
           @attr name android:android_onClick
         */
         public static final int SherlockMenuItem_android_onClick = 12;
@@ -6232,7 +6232,7 @@ containing a value of this type.
           @attr description
            The order within the category applied to the item.
              (This will be or'ed with the category attribute.) 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_orderInCategory}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_orderInCategory}.
           @attr name android:android_orderInCategory
         */
         public static final int SherlockMenuItem_android_orderInCategory = 6;
@@ -6240,7 +6240,7 @@ containing a value of this type.
           <p>
           @attr description
            How this item should display in the Action Bar, if present. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_showAsAction}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_showAsAction}.
           @attr name android:android_showAsAction
         */
         public static final int SherlockMenuItem_android_showAsAction = 13;
@@ -6248,7 +6248,7 @@ containing a value of this type.
           <p>
           @attr description
            The title associated with the item. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_title}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_title}.
           @attr name android:android_title
         */
         public static final int SherlockMenuItem_android_title = 7;
@@ -6257,7 +6257,7 @@ containing a value of this type.
           @attr description
            The condensed title associated with the item.  This is used in situations where the
              normal title may be too long to be displayed. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_titleCondensed}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_titleCondensed}.
           @attr name android:android_titleCondensed
         */
         public static final int SherlockMenuItem_android_titleCondensed = 8;
@@ -6265,7 +6265,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the item is shown/visible. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_visible}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_visible}.
           @attr name android:android_visible
         */
         public static final int SherlockMenuItem_android_visible = 4;
@@ -6275,14 +6275,14 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockMenuView_headerBackground com.joedev.iou:headerBackground}</code></td><td> Default background for the menu header.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_horizontalDivider com.joedev.iou:horizontalDivider}</code></td><td> Default horizontal divider between rows of menu items.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_itemBackground com.joedev.iou:itemBackground}</code></td><td> Default background for each menu item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_itemIconDisabledAlpha com.joedev.iou:itemIconDisabledAlpha}</code></td><td> Default disabled icon alpha for each menu item that shows an icon.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_itemTextAppearance com.joedev.iou:itemTextAppearance}</code></td><td> Default appearance of menu item text.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_preserveIconSpacing com.joedev.iou:preserveIconSpacing}</code></td><td> Whether space should be reserved in layout when an icon is missing.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_verticalDivider com.joedev.iou:verticalDivider}</code></td><td> Default vertical divider between menu items.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_windowAnimationStyle com.joedev.iou:windowAnimationStyle}</code></td><td> Default animations for the menu.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_headerBackground com.smileyjoedev.iou:headerBackground}</code></td><td> Default background for the menu header.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_horizontalDivider com.smileyjoedev.iou:horizontalDivider}</code></td><td> Default horizontal divider between rows of menu items.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_itemBackground com.smileyjoedev.iou:itemBackground}</code></td><td> Default background for each menu item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_itemIconDisabledAlpha com.smileyjoedev.iou:itemIconDisabledAlpha}</code></td><td> Default disabled icon alpha for each menu item that shows an icon.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_itemTextAppearance com.smileyjoedev.iou:itemTextAppearance}</code></td><td> Default appearance of menu item text.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_preserveIconSpacing com.smileyjoedev.iou:preserveIconSpacing}</code></td><td> Whether space should be reserved in layout when an icon is missing.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_verticalDivider com.smileyjoedev.iou:verticalDivider}</code></td><td> Default vertical divider between menu items.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_windowAnimationStyle com.smileyjoedev.iou:windowAnimationStyle}</code></td><td> Default animations for the menu.</td></tr>
            </table>
            @see #SherlockMenuView_headerBackground
            @see #SherlockMenuView_horizontalDivider
@@ -6411,11 +6411,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockSearchView_android_imeOptions com.joedev.iou:android_imeOptions}</code></td><td> The IME options to set on the query text field.</td></tr>
-           <tr><td><code>{@link #SherlockSearchView_android_inputType com.joedev.iou:android_inputType}</code></td><td> The input type to set on the query text field.</td></tr>
-           <tr><td><code>{@link #SherlockSearchView_android_maxWidth com.joedev.iou:android_maxWidth}</code></td><td> An optional maximum width of the SearchView.</td></tr>
-           <tr><td><code>{@link #SherlockSearchView_iconifiedByDefault com.joedev.iou:iconifiedByDefault}</code></td><td> The default state of the SearchView.</td></tr>
-           <tr><td><code>{@link #SherlockSearchView_queryHint com.joedev.iou:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
+           <tr><td><code>{@link #SherlockSearchView_android_imeOptions com.smileyjoedev.iou:android_imeOptions}</code></td><td> The IME options to set on the query text field.</td></tr>
+           <tr><td><code>{@link #SherlockSearchView_android_inputType com.smileyjoedev.iou:android_inputType}</code></td><td> The input type to set on the query text field.</td></tr>
+           <tr><td><code>{@link #SherlockSearchView_android_maxWidth com.smileyjoedev.iou:android_maxWidth}</code></td><td> An optional maximum width of the SearchView.</td></tr>
+           <tr><td><code>{@link #SherlockSearchView_iconifiedByDefault com.smileyjoedev.iou:iconifiedByDefault}</code></td><td> The default state of the SearchView.</td></tr>
+           <tr><td><code>{@link #SherlockSearchView_queryHint com.smileyjoedev.iou:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
            </table>
            @see #SherlockSearchView_android_imeOptions
            @see #SherlockSearchView_android_inputType
@@ -6431,7 +6431,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>
           @attr description
            The IME options to set on the query text field. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_imeOptions}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_imeOptions}.
           @attr name android:android_imeOptions
         */
         public static final int SherlockSearchView_android_imeOptions = 2;
@@ -6439,7 +6439,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>
           @attr description
            The input type to set on the query text field. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_inputType}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_inputType}.
           @attr name android:android_inputType
         */
         public static final int SherlockSearchView_android_inputType = 1;
@@ -6447,7 +6447,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>
           @attr description
            An optional maximum width of the SearchView. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_maxWidth}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_maxWidth}.
           @attr name android:android_maxWidth
         */
         public static final int SherlockSearchView_android_maxWidth = 0;
@@ -6490,17 +6490,17 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_dropDownHorizontalOffset com.joedev.iou:android_dropDownHorizontalOffset}</code></td><td> Horizontal offset from the spinner widget for positioning the dropdown
+           <tr><td><code>{@link #SherlockSpinner_android_dropDownHorizontalOffset com.smileyjoedev.iou:android_dropDownHorizontalOffset}</code></td><td> Horizontal offset from the spinner widget for positioning the dropdown
              in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_dropDownSelector com.joedev.iou:android_dropDownSelector}</code></td><td> List selector to use for spinnerMode="dropdown" display.</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_dropDownVerticalOffset com.joedev.iou:android_dropDownVerticalOffset}</code></td><td> Vertical offset from the spinner widget for positioning the dropdown in
+           <tr><td><code>{@link #SherlockSpinner_android_dropDownSelector com.smileyjoedev.iou:android_dropDownSelector}</code></td><td> List selector to use for spinnerMode="dropdown" display.</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_dropDownVerticalOffset com.smileyjoedev.iou:android_dropDownVerticalOffset}</code></td><td> Vertical offset from the spinner widget for positioning the dropdown in
              spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_dropDownWidth com.joedev.iou:android_dropDownWidth}</code></td><td> Width of the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_gravity com.joedev.iou:android_gravity}</code></td><td> Gravity setting for positioning the currently selected item.</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_popupBackground com.joedev.iou:android_popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_popupPromptView com.joedev.iou:android_popupPromptView}</code></td><td> Reference to a layout to use for displaying a prompt in the dropdown for
+           <tr><td><code>{@link #SherlockSpinner_android_dropDownWidth com.smileyjoedev.iou:android_dropDownWidth}</code></td><td> Width of the dropdown in spinnerMode="dropdown".</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_gravity com.smileyjoedev.iou:android_gravity}</code></td><td> Gravity setting for positioning the currently selected item.</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_popupBackground com.smileyjoedev.iou:android_popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_popupPromptView com.smileyjoedev.iou:android_popupPromptView}</code></td><td> Reference to a layout to use for displaying a prompt in the dropdown for
              spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_prompt com.joedev.iou:android_prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_prompt com.smileyjoedev.iou:android_prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
            </table>
            @see #SherlockSpinner_android_dropDownHorizontalOffset
            @see #SherlockSpinner_android_dropDownSelector
@@ -6520,7 +6520,7 @@ containing a value of this type.
           @attr description
            Horizontal offset from the spinner widget for positioning the dropdown
              in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_dropDownHorizontalOffset}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_dropDownHorizontalOffset}.
           @attr name android:android_dropDownHorizontalOffset
         */
         public static final int SherlockSpinner_android_dropDownHorizontalOffset = 5;
@@ -6528,7 +6528,7 @@ containing a value of this type.
           <p>
           @attr description
            List selector to use for spinnerMode="dropdown" display. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_dropDownSelector}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_dropDownSelector}.
           @attr name android:android_dropDownSelector
         */
         public static final int SherlockSpinner_android_dropDownSelector = 1;
@@ -6537,7 +6537,7 @@ containing a value of this type.
           @attr description
            Vertical offset from the spinner widget for positioning the dropdown in
              spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_dropDownVerticalOffset}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_dropDownVerticalOffset}.
           @attr name android:android_dropDownVerticalOffset
         */
         public static final int SherlockSpinner_android_dropDownVerticalOffset = 6;
@@ -6545,7 +6545,7 @@ containing a value of this type.
           <p>
           @attr description
            Width of the dropdown in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_dropDownWidth}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_dropDownWidth}.
           @attr name android:android_dropDownWidth
         */
         public static final int SherlockSpinner_android_dropDownWidth = 4;
@@ -6553,7 +6553,7 @@ containing a value of this type.
           <p>
           @attr description
            Gravity setting for positioning the currently selected item. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_gravity}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_gravity}.
           @attr name android:android_gravity
         */
         public static final int SherlockSpinner_android_gravity = 0;
@@ -6561,7 +6561,7 @@ containing a value of this type.
           <p>
           @attr description
            Background drawable to use for the dropdown in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_popupBackground}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_popupBackground}.
           @attr name android:android_popupBackground
         */
         public static final int SherlockSpinner_android_popupBackground = 2;
@@ -6579,7 +6579,7 @@ containing a value of this type.
           <p>
           @attr description
            The prompt to display when the spinner's dialog is shown. 
-          <p>This corresponds to the global attribute          resource symbol {@link com.joedev.iou.R.attr#android_prompt}.
+          <p>This corresponds to the global attribute          resource symbol {@link com.smileyjoedev.iou.R.attr#android_prompt}.
           @attr name android:android_prompt
         */
         public static final int SherlockSpinner_android_prompt = 3;
@@ -6589,77 +6589,77 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarDivider com.joedev.iou:actionBarDivider}</code></td><td> Custom divider drawable to use for elements in the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarItemBackground com.joedev.iou:actionBarItemBackground}</code></td><td> Custom item state list drawable background for action bar items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarSize com.joedev.iou:actionBarSize}</code></td><td> Size of the Action Bar, including the contextual
+           <tr><td><code>{@link #SherlockTheme_actionBarDivider com.smileyjoedev.iou:actionBarDivider}</code></td><td> Custom divider drawable to use for elements in the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarItemBackground com.smileyjoedev.iou:actionBarItemBackground}</code></td><td> Custom item state list drawable background for action bar items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarSize com.smileyjoedev.iou:actionBarSize}</code></td><td> Size of the Action Bar, including the contextual
              bar used to present Action Modes.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarSplitStyle com.joedev.iou:actionBarSplitStyle}</code></td><td> Reference to a style for the split Action Bar.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarStyle com.joedev.iou:actionBarStyle}</code></td><td> Reference to a style for the Action Bar </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarTabBarStyle com.joedev.iou:actionBarTabBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarTabStyle com.joedev.iou:actionBarTabStyle}</code></td><td> Default style for tabs within an action bar </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarTabTextStyle com.joedev.iou:actionBarTabTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarWidgetTheme com.joedev.iou:actionBarWidgetTheme}</code></td><td> Reference to a theme that should be used to inflate widgets
+           <tr><td><code>{@link #SherlockTheme_actionBarSplitStyle com.smileyjoedev.iou:actionBarSplitStyle}</code></td><td> Reference to a style for the split Action Bar.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarStyle com.smileyjoedev.iou:actionBarStyle}</code></td><td> Reference to a style for the Action Bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabBarStyle com.smileyjoedev.iou:actionBarTabBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabStyle com.smileyjoedev.iou:actionBarTabStyle}</code></td><td> Default style for tabs within an action bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabTextStyle com.smileyjoedev.iou:actionBarTabTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarWidgetTheme com.smileyjoedev.iou:actionBarWidgetTheme}</code></td><td> Reference to a theme that should be used to inflate widgets
              and layouts destined for the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionButtonStyle com.joedev.iou:actionButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionDropDownStyle com.joedev.iou:actionDropDownStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionMenuTextAppearance com.joedev.iou:actionMenuTextAppearance}</code></td><td> TextAppearance style that will be applied to text that
+           <tr><td><code>{@link #SherlockTheme_actionButtonStyle com.smileyjoedev.iou:actionButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionDropDownStyle com.smileyjoedev.iou:actionDropDownStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionMenuTextAppearance com.smileyjoedev.iou:actionMenuTextAppearance}</code></td><td> TextAppearance style that will be applied to text that
              appears within action menu items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionMenuTextColor com.joedev.iou:actionMenuTextColor}</code></td><td> Color for text that appears within action menu items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeBackground com.joedev.iou:actionModeBackground}</code></td><td> Background drawable to use for action mode UI </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeCloseButtonStyle com.joedev.iou:actionModeCloseButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeCloseDrawable com.joedev.iou:actionModeCloseDrawable}</code></td><td> Drawable to use for the close action mode button </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModePopupWindowStyle com.joedev.iou:actionModePopupWindowStyle}</code></td><td> PopupWindow style to use for action modes when showing as a window overlay.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeShareDrawable com.joedev.iou:actionModeShareDrawable}</code></td><td> Drawable to use for the Share action button in WebView selection action modes </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeSplitBackground com.joedev.iou:actionModeSplitBackground}</code></td><td> Background drawable to use for action mode UI in the lower split bar </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeStyle com.joedev.iou:actionModeStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionOverflowButtonStyle com.joedev.iou:actionOverflowButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionSpinnerItemStyle com.joedev.iou:actionSpinnerItemStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_activatedBackgroundIndicator com.joedev.iou:activatedBackgroundIndicator}</code></td><td> Drawable used as a background for activated items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_activityChooserViewStyle com.joedev.iou:activityChooserViewStyle}</code></td><td> Default ActivityChooserView style.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_android_windowIsFloating com.joedev.iou:android_windowIsFloating}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_buttonStyleSmall com.joedev.iou:buttonStyleSmall}</code></td><td> Small Button style.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_dividerVertical com.joedev.iou:dividerVertical}</code></td><td> Drawable to use for generic vertical dividers.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_dropDownListViewStyle com.joedev.iou:dropDownListViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_dropdownListPreferredItemHeight com.joedev.iou:dropdownListPreferredItemHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_homeAsUpIndicator com.joedev.iou:homeAsUpIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_listPopupWindowStyle com.joedev.iou:listPopupWindowStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_listPreferredItemHeightSmall com.joedev.iou:listPreferredItemHeightSmall}</code></td><td> A smaller, sleeker list item height.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingLeft com.joedev.iou:listPreferredItemPaddingLeft}</code></td><td> The preferred padding along the left edge of list items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingRight com.joedev.iou:listPreferredItemPaddingRight}</code></td><td> The preferred padding along the right edge of list items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_popupMenuStyle com.joedev.iou:popupMenuStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchAutoCompleteTextView com.joedev.iou:searchAutoCompleteTextView}</code></td><td> SearchView AutoCompleteTextView style </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchDropdownBackground com.joedev.iou:searchDropdownBackground}</code></td><td> SearchView dropdown background </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchResultListItemHeight com.joedev.iou:searchResultListItemHeight}</code></td><td> The list item height for search results.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewCloseIcon com.joedev.iou:searchViewCloseIcon}</code></td><td> SearchView close button icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewEditQuery com.joedev.iou:searchViewEditQuery}</code></td><td> SearchView query refinement icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewEditQueryBackground com.joedev.iou:searchViewEditQueryBackground}</code></td><td> SearchView query refinement icon background </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewGoIcon com.joedev.iou:searchViewGoIcon}</code></td><td> SearchView Go button icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewSearchIcon com.joedev.iou:searchViewSearchIcon}</code></td><td> SearchView Search icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewTextField com.joedev.iou:searchViewTextField}</code></td><td> SearchView text field background for the left section </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewTextFieldRight com.joedev.iou:searchViewTextFieldRight}</code></td><td> SearchView text field background for the right section </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewVoiceIcon com.joedev.iou:searchViewVoiceIcon}</code></td><td> SearchView Voice button icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_selectableItemBackground com.joedev.iou:selectableItemBackground}</code></td><td> Background drawable for standalone items that need focus/pressed states.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_spinnerDropDownItemStyle com.joedev.iou:spinnerDropDownItemStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_spinnerItemStyle com.joedev.iou:spinnerItemStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceLargePopupMenu com.joedev.iou:textAppearanceLargePopupMenu}</code></td><td> Text color, typeface, size, and style for the text inside of a popup menu.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceListItemSmall com.joedev.iou:textAppearanceListItemSmall}</code></td><td> The preferred TextAppearance for the primary text of small list items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultSubtitle com.joedev.iou:textAppearanceSearchResultSubtitle}</code></td><td> Text color, typeface, size, and style for system search result subtitle.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultTitle com.joedev.iou:textAppearanceSearchResultTitle}</code></td><td> Text color, typeface, size, and style for system search result title.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceSmall com.joedev.iou:textAppearanceSmall}</code></td><td> Text color, typeface, size, and style for "small" text.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceSmallPopupMenu com.joedev.iou:textAppearanceSmallPopupMenu}</code></td><td> Text color, typeface, size, and style for small text inside of a popup menu.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textColorPrimary com.joedev.iou:textColorPrimary}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_textColorPrimaryDisableOnly com.joedev.iou:textColorPrimaryDisableOnly}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_textColorPrimaryInverse com.joedev.iou:textColorPrimaryInverse}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_textColorSearchUrl com.joedev.iou:textColorSearchUrl}</code></td><td> Text color for urls in search suggestions, used by things like global search and the browser.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowActionBar com.joedev.iou:windowActionBar}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowActionBarOverlay com.joedev.iou:windowActionBarOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowActionModeOverlay com.joedev.iou:windowActionModeOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowContentOverlay com.joedev.iou:windowContentOverlay}</code></td><td> This Drawable is overlaid over the foreground of the Window's content area, usually
+           <tr><td><code>{@link #SherlockTheme_actionMenuTextColor com.smileyjoedev.iou:actionMenuTextColor}</code></td><td> Color for text that appears within action menu items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeBackground com.smileyjoedev.iou:actionModeBackground}</code></td><td> Background drawable to use for action mode UI </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeCloseButtonStyle com.smileyjoedev.iou:actionModeCloseButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeCloseDrawable com.smileyjoedev.iou:actionModeCloseDrawable}</code></td><td> Drawable to use for the close action mode button </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModePopupWindowStyle com.smileyjoedev.iou:actionModePopupWindowStyle}</code></td><td> PopupWindow style to use for action modes when showing as a window overlay.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeShareDrawable com.smileyjoedev.iou:actionModeShareDrawable}</code></td><td> Drawable to use for the Share action button in WebView selection action modes </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeSplitBackground com.smileyjoedev.iou:actionModeSplitBackground}</code></td><td> Background drawable to use for action mode UI in the lower split bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeStyle com.smileyjoedev.iou:actionModeStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionOverflowButtonStyle com.smileyjoedev.iou:actionOverflowButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionSpinnerItemStyle com.smileyjoedev.iou:actionSpinnerItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_activatedBackgroundIndicator com.smileyjoedev.iou:activatedBackgroundIndicator}</code></td><td> Drawable used as a background for activated items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_activityChooserViewStyle com.smileyjoedev.iou:activityChooserViewStyle}</code></td><td> Default ActivityChooserView style.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_android_windowIsFloating com.smileyjoedev.iou:android_windowIsFloating}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_buttonStyleSmall com.smileyjoedev.iou:buttonStyleSmall}</code></td><td> Small Button style.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_dividerVertical com.smileyjoedev.iou:dividerVertical}</code></td><td> Drawable to use for generic vertical dividers.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_dropDownListViewStyle com.smileyjoedev.iou:dropDownListViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_dropdownListPreferredItemHeight com.smileyjoedev.iou:dropdownListPreferredItemHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_homeAsUpIndicator com.smileyjoedev.iou:homeAsUpIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPopupWindowStyle com.smileyjoedev.iou:listPopupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemHeightSmall com.smileyjoedev.iou:listPreferredItemHeightSmall}</code></td><td> A smaller, sleeker list item height.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingLeft com.smileyjoedev.iou:listPreferredItemPaddingLeft}</code></td><td> The preferred padding along the left edge of list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingRight com.smileyjoedev.iou:listPreferredItemPaddingRight}</code></td><td> The preferred padding along the right edge of list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_popupMenuStyle com.smileyjoedev.iou:popupMenuStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchAutoCompleteTextView com.smileyjoedev.iou:searchAutoCompleteTextView}</code></td><td> SearchView AutoCompleteTextView style </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchDropdownBackground com.smileyjoedev.iou:searchDropdownBackground}</code></td><td> SearchView dropdown background </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchResultListItemHeight com.smileyjoedev.iou:searchResultListItemHeight}</code></td><td> The list item height for search results.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewCloseIcon com.smileyjoedev.iou:searchViewCloseIcon}</code></td><td> SearchView close button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewEditQuery com.smileyjoedev.iou:searchViewEditQuery}</code></td><td> SearchView query refinement icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewEditQueryBackground com.smileyjoedev.iou:searchViewEditQueryBackground}</code></td><td> SearchView query refinement icon background </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewGoIcon com.smileyjoedev.iou:searchViewGoIcon}</code></td><td> SearchView Go button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewSearchIcon com.smileyjoedev.iou:searchViewSearchIcon}</code></td><td> SearchView Search icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewTextField com.smileyjoedev.iou:searchViewTextField}</code></td><td> SearchView text field background for the left section </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewTextFieldRight com.smileyjoedev.iou:searchViewTextFieldRight}</code></td><td> SearchView text field background for the right section </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewVoiceIcon com.smileyjoedev.iou:searchViewVoiceIcon}</code></td><td> SearchView Voice button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_selectableItemBackground com.smileyjoedev.iou:selectableItemBackground}</code></td><td> Background drawable for standalone items that need focus/pressed states.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_spinnerDropDownItemStyle com.smileyjoedev.iou:spinnerDropDownItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_spinnerItemStyle com.smileyjoedev.iou:spinnerItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceLargePopupMenu com.smileyjoedev.iou:textAppearanceLargePopupMenu}</code></td><td> Text color, typeface, size, and style for the text inside of a popup menu.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceListItemSmall com.smileyjoedev.iou:textAppearanceListItemSmall}</code></td><td> The preferred TextAppearance for the primary text of small list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultSubtitle com.smileyjoedev.iou:textAppearanceSearchResultSubtitle}</code></td><td> Text color, typeface, size, and style for system search result subtitle.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultTitle com.smileyjoedev.iou:textAppearanceSearchResultTitle}</code></td><td> Text color, typeface, size, and style for system search result title.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSmall com.smileyjoedev.iou:textAppearanceSmall}</code></td><td> Text color, typeface, size, and style for "small" text.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSmallPopupMenu com.smileyjoedev.iou:textAppearanceSmallPopupMenu}</code></td><td> Text color, typeface, size, and style for small text inside of a popup menu.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimary com.smileyjoedev.iou:textColorPrimary}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimaryDisableOnly com.smileyjoedev.iou:textColorPrimaryDisableOnly}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimaryInverse com.smileyjoedev.iou:textColorPrimaryInverse}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorSearchUrl com.smileyjoedev.iou:textColorSearchUrl}</code></td><td> Text color for urls in search suggestions, used by things like global search and the browser.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionBar com.smileyjoedev.iou:windowActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionBarOverlay com.smileyjoedev.iou:windowActionBarOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionModeOverlay com.smileyjoedev.iou:windowActionModeOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowContentOverlay com.smileyjoedev.iou:windowContentOverlay}</code></td><td> This Drawable is overlaid over the foreground of the Window's content area, usually
              to place a shadow below the title.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowMinWidthMajor com.joedev.iou:windowMinWidthMajor}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowMinWidthMinor com.joedev.iou:windowMinWidthMinor}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowNoTitle com.joedev.iou:windowNoTitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowSplitActionBar com.joedev.iou:windowSplitActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowMinWidthMajor com.smileyjoedev.iou:windowMinWidthMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowMinWidthMinor com.smileyjoedev.iou:windowMinWidthMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowNoTitle com.smileyjoedev.iou:windowNoTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowSplitActionBar com.smileyjoedev.iou:windowSplitActionBar}</code></td><td></td></tr>
            </table>
            @see #SherlockTheme_actionBarDivider
            @see #SherlockTheme_actionBarItemBackground
@@ -6827,7 +6827,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_actionBarStyle = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#actionBarTabBarStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#actionBarTabBarStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -6849,7 +6849,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_actionBarTabStyle = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#actionBarTabTextStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#actionBarTabTextStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -6877,7 +6877,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_actionBarWidgetTheme = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#actionButtonStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#actionButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -6887,7 +6887,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_actionButtonStyle = 53;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#actionDropDownStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#actionDropDownStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -6936,7 +6936,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_actionModeBackground = 15;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#actionModeCloseButtonStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#actionModeCloseButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -6994,7 +6994,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_actionModeSplitBackground = 16;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#actionModeStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#actionModeStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7004,7 +7004,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_actionModeStyle = 13;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#actionOverflowButtonStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#actionOverflowButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7014,7 +7014,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_actionOverflowButtonStyle = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#actionSpinnerItemStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#actionSpinnerItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7048,7 +7048,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_activityChooserViewStyle = 65;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_windowIsFloating}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_windowIsFloating}
           attribute's value can be found in the {@link #SherlockTheme} array.
           @attr name android:android_windowIsFloating
         */
@@ -7078,7 +7078,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_dividerVertical = 51;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dropDownListViewStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dropDownListViewStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7088,7 +7088,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_dropDownListViewStyle = 55;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dropdownListPreferredItemHeight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dropdownListPreferredItemHeight}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7104,7 +7104,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_dropdownListPreferredItemHeight = 57;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#homeAsUpIndicator}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7114,7 +7114,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_homeAsUpIndicator = 54;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#listPopupWindowStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#listPopupWindowStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7178,7 +7178,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_listPreferredItemPaddingRight = 47;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#popupMenuStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#popupMenuStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7338,7 +7338,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_selectableItemBackground = 21;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#spinnerDropDownItemStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#spinnerDropDownItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7348,7 +7348,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_spinnerDropDownItemStyle = 30;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#spinnerItemStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#spinnerItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7430,7 +7430,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_textAppearanceSmallPopupMenu = 24;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#textColorPrimary}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#textColorPrimary}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7445,7 +7445,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_textColorPrimary = 26;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#textColorPrimaryDisableOnly}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#textColorPrimaryDisableOnly}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7460,7 +7460,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_textColorPrimaryDisableOnly = 27;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#textColorPrimaryInverse}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#textColorPrimaryInverse}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7489,7 +7489,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_textColorSearchUrl = 41;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#windowActionBar}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#windowActionBar}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7503,7 +7503,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_windowActionBar = 60;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#windowActionBarOverlay}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7517,7 +7517,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_windowActionBarOverlay = 61;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#windowActionModeOverlay}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#windowActionModeOverlay}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7544,7 +7544,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SherlockTheme_windowContentOverlay = 22;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#windowMinWidthMajor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#windowMinWidthMajor}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7560,7 +7560,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_windowMinWidthMajor = 49;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#windowMinWidthMinor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#windowMinWidthMinor}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7576,7 +7576,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_windowMinWidthMinor = 50;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#windowNoTitle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#windowNoTitle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7590,7 +7590,7 @@ containing a value of this type.
         */
         public static final int SherlockTheme_windowNoTitle = 59;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#windowSplitActionBar}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#windowSplitActionBar}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -7609,7 +7609,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockView_android_focusable com.joedev.iou:android_focusable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockView_android_focusable com.smileyjoedev.iou:android_focusable}</code></td><td></td></tr>
            </table>
            @see #SherlockView_android_focusable
          */
@@ -7617,7 +7617,7 @@ containing a value of this type.
             0x010100da
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_focusable}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_focusable}
           attribute's value can be found in the {@link #SherlockView} array.
           @attr name android:android_focusable
         */
@@ -7628,16 +7628,16 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownSelector com.joedev.iou:android_dropDownSelector}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownWidth com.joedev.iou:android_dropDownWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_android_gravity com.joedev.iou:android_gravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_android_popupBackground com.joedev.iou:android_popupBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_android_prompt com.joedev.iou:android_prompt}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled com.joedev.iou:disableChildrenWhenDisabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_dropDownHorizontalOffset com.joedev.iou:dropDownHorizontalOffset}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_dropDownVerticalOffset com.joedev.iou:dropDownVerticalOffset}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_popupPromptView com.joedev.iou:popupPromptView}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_spinnerMode com.joedev.iou:spinnerMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_dropDownSelector com.smileyjoedev.iou:android_dropDownSelector}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_dropDownWidth com.smileyjoedev.iou:android_dropDownWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_gravity com.smileyjoedev.iou:android_gravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_popupBackground com.smileyjoedev.iou:android_popupBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_prompt com.smileyjoedev.iou:android_prompt}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled com.smileyjoedev.iou:disableChildrenWhenDisabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_dropDownHorizontalOffset com.smileyjoedev.iou:dropDownHorizontalOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_dropDownVerticalOffset com.smileyjoedev.iou:dropDownVerticalOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_popupPromptView com.smileyjoedev.iou:popupPromptView}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_spinnerMode com.smileyjoedev.iou:spinnerMode}</code></td><td></td></tr>
            </table>
            @see #Spinner_android_dropDownSelector
            @see #Spinner_android_dropDownWidth
@@ -7656,37 +7656,37 @@ containing a value of this type.
             0x7f0100c9, 0x7f0100ca
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_dropDownSelector}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_dropDownSelector}
           attribute's value can be found in the {@link #Spinner} array.
           @attr name android:android_dropDownSelector
         */
         public static final int Spinner_android_dropDownSelector = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_dropDownWidth}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_dropDownWidth}
           attribute's value can be found in the {@link #Spinner} array.
           @attr name android:android_dropDownWidth
         */
         public static final int Spinner_android_dropDownWidth = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_gravity}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_gravity}
           attribute's value can be found in the {@link #Spinner} array.
           @attr name android:android_gravity
         */
         public static final int Spinner_android_gravity = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_popupBackground}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_popupBackground}
           attribute's value can be found in the {@link #Spinner} array.
           @attr name android:android_popupBackground
         */
         public static final int Spinner_android_popupBackground = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_prompt}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_prompt}
           attribute's value can be found in the {@link #Spinner} array.
           @attr name android:android_prompt
         */
         public static final int Spinner_android_prompt = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#disableChildrenWhenDisabled}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#disableChildrenWhenDisabled}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -7700,7 +7700,7 @@ containing a value of this type.
         */
         public static final int Spinner_disableChildrenWhenDisabled = 9;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dropDownHorizontalOffset}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dropDownHorizontalOffset}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -7716,7 +7716,7 @@ containing a value of this type.
         */
         public static final int Spinner_dropDownHorizontalOffset = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#dropDownVerticalOffset}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#dropDownVerticalOffset}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -7732,7 +7732,7 @@ containing a value of this type.
         */
         public static final int Spinner_dropDownVerticalOffset = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#popupPromptView}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#popupPromptView}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -7742,7 +7742,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Spinner_popupPromptView = 8;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#spinnerMode}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#spinnerMode}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -7764,14 +7764,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Switch_switchMinWidth com.joedev.iou:switchMinWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #Switch_switchPadding com.joedev.iou:switchPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #Switch_switchTextAppearance com.joedev.iou:switchTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #Switch_textOff com.joedev.iou:textOff}</code></td><td></td></tr>
-           <tr><td><code>{@link #Switch_textOn com.joedev.iou:textOn}</code></td><td></td></tr>
-           <tr><td><code>{@link #Switch_thumb com.joedev.iou:thumb}</code></td><td></td></tr>
-           <tr><td><code>{@link #Switch_thumbTextPadding com.joedev.iou:thumbTextPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #Switch_track com.joedev.iou:track}</code></td><td></td></tr>
+           <tr><td><code>{@link #Switch_switchMinWidth com.smileyjoedev.iou:switchMinWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #Switch_switchPadding com.smileyjoedev.iou:switchPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #Switch_switchTextAppearance com.smileyjoedev.iou:switchTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #Switch_textOff com.smileyjoedev.iou:textOff}</code></td><td></td></tr>
+           <tr><td><code>{@link #Switch_textOn com.smileyjoedev.iou:textOn}</code></td><td></td></tr>
+           <tr><td><code>{@link #Switch_thumb com.smileyjoedev.iou:thumb}</code></td><td></td></tr>
+           <tr><td><code>{@link #Switch_thumbTextPadding com.smileyjoedev.iou:thumbTextPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #Switch_track com.smileyjoedev.iou:track}</code></td><td></td></tr>
            </table>
            @see #Switch_switchMinWidth
            @see #Switch_switchPadding
@@ -7787,7 +7787,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100eb, 0x7f0100ec, 0x7f0100ed, 0x7f0100ee
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#switchMinWidth}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#switchMinWidth}
           attribute's value can be found in the {@link #Switch} array.
 
 
@@ -7803,7 +7803,7 @@ containing a value of this type.
         */
         public static final int Switch_switchMinWidth = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#switchPadding}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#switchPadding}
           attribute's value can be found in the {@link #Switch} array.
 
 
@@ -7819,7 +7819,7 @@ containing a value of this type.
         */
         public static final int Switch_switchPadding = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#switchTextAppearance}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#switchTextAppearance}
           attribute's value can be found in the {@link #Switch} array.
 
 
@@ -7829,7 +7829,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Switch_switchTextAppearance = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#textOff}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#textOff}
           attribute's value can be found in the {@link #Switch} array.
 
 
@@ -7840,7 +7840,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Switch_textOff = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#textOn}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#textOn}
           attribute's value can be found in the {@link #Switch} array.
 
 
@@ -7851,7 +7851,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Switch_textOn = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#thumb}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#thumb}
           attribute's value can be found in the {@link #Switch} array.
 
 
@@ -7861,7 +7861,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Switch_thumb = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#thumbTextPadding}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#thumbTextPadding}
           attribute's value can be found in the {@link #Switch} array.
 
 
@@ -7877,7 +7877,7 @@ containing a value of this type.
         */
         public static final int Switch_thumbTextPadding = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#track}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#track}
           attribute's value can be found in the {@link #Switch} array.
 
 
@@ -7892,11 +7892,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SwitchPreference_disableDependentsState com.joedev.iou:disableDependentsState}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchPreference_summaryOff com.joedev.iou:summaryOff}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchPreference_summaryOn com.joedev.iou:summaryOn}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchPreference_switchTextOff com.joedev.iou:switchTextOff}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchPreference_switchTextOn com.joedev.iou:switchTextOn}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_disableDependentsState com.smileyjoedev.iou:disableDependentsState}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_summaryOff com.smileyjoedev.iou:summaryOff}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_summaryOn com.smileyjoedev.iou:summaryOn}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_switchTextOff com.smileyjoedev.iou:switchTextOff}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_switchTextOn com.smileyjoedev.iou:switchTextOn}</code></td><td></td></tr>
            </table>
            @see #SwitchPreference_disableDependentsState
            @see #SwitchPreference_summaryOff
@@ -7909,7 +7909,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100b9
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#disableDependentsState}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#disableDependentsState}
           attribute's value can be found in the {@link #SwitchPreference} array.
 
 
@@ -7923,7 +7923,7 @@ containing a value of this type.
         */
         public static final int SwitchPreference_disableDependentsState = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#summaryOff}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#summaryOff}
           attribute's value can be found in the {@link #SwitchPreference} array.
 
 
@@ -7937,7 +7937,7 @@ containing a value of this type.
         */
         public static final int SwitchPreference_summaryOff = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#summaryOn}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#summaryOn}
           attribute's value can be found in the {@link #SwitchPreference} array.
 
 
@@ -7951,7 +7951,7 @@ containing a value of this type.
         */
         public static final int SwitchPreference_summaryOn = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#switchTextOff}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#switchTextOff}
           attribute's value can be found in the {@link #SwitchPreference} array.
 
 
@@ -7965,7 +7965,7 @@ containing a value of this type.
         */
         public static final int SwitchPreference_switchTextOff = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#switchTextOn}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#switchTextOn}
           attribute's value can be found in the {@link #SwitchPreference} array.
 
 
@@ -7984,14 +7984,14 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #TextAppearance_android_textAllCaps com.joedev.iou:android_textAllCaps}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextAppearance_android_textColor com.joedev.iou:android_textColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextAppearance_android_textColorHighlight com.joedev.iou:android_textColorHighlight}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextAppearance_android_textColorHint com.joedev.iou:android_textColorHint}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextAppearance_android_textColorLink com.joedev.iou:android_textColorLink}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextAppearance_android_textSize com.joedev.iou:android_textSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextAppearance_android_textStyle com.joedev.iou:android_textStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextAppearance_android_typeface com.joedev.iou:android_typeface}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textAllCaps com.smileyjoedev.iou:android_textAllCaps}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textColor com.smileyjoedev.iou:android_textColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textColorHighlight com.smileyjoedev.iou:android_textColorHighlight}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textColorHint com.smileyjoedev.iou:android_textColorHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textColorLink com.smileyjoedev.iou:android_textColorLink}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textSize com.smileyjoedev.iou:android_textSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textStyle com.smileyjoedev.iou:android_textStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_typeface com.smileyjoedev.iou:android_typeface}</code></td><td></td></tr>
            </table>
            @see #TextAppearance_android_textAllCaps
            @see #TextAppearance_android_textColor
@@ -8007,49 +8007,49 @@ containing a value of this type.
             0x01010099, 0x0101009a, 0x0101009b, 0x0101038c
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_textAllCaps}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_textAllCaps}
           attribute's value can be found in the {@link #TextAppearance} array.
           @attr name android:android_textAllCaps
         */
         public static final int TextAppearance_android_textAllCaps = 7;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_textColor}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_textColor}
           attribute's value can be found in the {@link #TextAppearance} array.
           @attr name android:android_textColor
         */
         public static final int TextAppearance_android_textColor = 3;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_textColorHighlight}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_textColorHighlight}
           attribute's value can be found in the {@link #TextAppearance} array.
           @attr name android:android_textColorHighlight
         */
         public static final int TextAppearance_android_textColorHighlight = 4;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_textColorHint}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_textColorHint}
           attribute's value can be found in the {@link #TextAppearance} array.
           @attr name android:android_textColorHint
         */
         public static final int TextAppearance_android_textColorHint = 5;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_textColorLink}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_textColorLink}
           attribute's value can be found in the {@link #TextAppearance} array.
           @attr name android:android_textColorLink
         */
         public static final int TextAppearance_android_textColorLink = 6;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_textSize}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_textSize}
           attribute's value can be found in the {@link #TextAppearance} array.
           @attr name android:android_textSize
         */
         public static final int TextAppearance_android_textSize = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_textStyle}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_textStyle}
           attribute's value can be found in the {@link #TextAppearance} array.
           @attr name android:android_textStyle
         */
         public static final int TextAppearance_android_textStyle = 2;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_typeface}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_typeface}
           attribute's value can be found in the {@link #TextAppearance} array.
           @attr name android:android_typeface
         */
@@ -8060,9 +8060,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #TextView_android_text com.joedev.iou:android_text}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextView_android_textAllCaps com.joedev.iou:android_textAllCaps}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextView_textAllCaps com.joedev.iou:textAllCaps}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextView_android_text com.smileyjoedev.iou:android_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextView_android_textAllCaps com.smileyjoedev.iou:android_textAllCaps}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextView_textAllCaps com.smileyjoedev.iou:textAllCaps}</code></td><td></td></tr>
            </table>
            @see #TextView_android_text
            @see #TextView_android_textAllCaps
@@ -8072,19 +8072,19 @@ containing a value of this type.
             0x0101014f, 0x0101038c, 0x7f0100c5
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_text}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_text}
           attribute's value can be found in the {@link #TextView} array.
           @attr name android:android_text
         */
         public static final int TextView_android_text = 0;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#android_textAllCaps}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#android_textAllCaps}
           attribute's value can be found in the {@link #TextView} array.
           @attr name android:android_textAllCaps
         */
         public static final int TextView_android_textAllCaps = 1;
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#textAllCaps}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#textAllCaps}
           attribute's value can be found in the {@link #TextView} array.
 
 
@@ -8103,7 +8103,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #TimePicker_internalLayout com.joedev.iou:internalLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_internalLayout com.smileyjoedev.iou:internalLayout}</code></td><td></td></tr>
            </table>
            @see #TimePicker_internalLayout
          */
@@ -8111,7 +8111,7 @@ containing a value of this type.
             0x7f0100d5
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#internalLayout}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#internalLayout}
           attribute's value can be found in the {@link #TimePicker} array.
 
 
@@ -8126,7 +8126,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #VolumePreference_streamType com.joedev.iou:streamType}</code></td><td></td></tr>
+           <tr><td><code>{@link #VolumePreference_streamType com.smileyjoedev.iou:streamType}</code></td><td></td></tr>
            </table>
            @see #VolumePreference_streamType
          */
@@ -8134,7 +8134,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100bf
         };
         /**
-          <p>This symbol is the offset where the {@link com.joedev.iou.R.attr#streamType}
+          <p>This symbol is the offset where the {@link com.smileyjoedev.iou.R.attr#streamType}
           attribute's value can be found in the {@link #VolumePreference} array.
 
 
