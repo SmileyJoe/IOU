@@ -2721,10 +2721,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int group_payment_new=0x7f100002;
         public static final int group_view=0x7f100003;
         public static final int main=0x7f100004;
-        public static final int new_user=0x7f100005;
-        public static final int payment_new=0x7f100006;
-        public static final int popup_delete=0x7f100007;
-        public static final int user_list=0x7f100008;
+        public static final int payment_new=0x7f100005;
+        public static final int popup_delete=0x7f100006;
+        public static final int user_list=0x7f100007;
+        public static final int user_new=0x7f100008;
         public static final int user_view=0x7f100009;
     }
     public static final class raw {

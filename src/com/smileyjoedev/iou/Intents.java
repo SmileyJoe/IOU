@@ -7,20 +7,6 @@ import android.provider.MediaStore;
 
 public class Intents {
 	
-	public static Intent takePicture(int width, int height){
-		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		intent.putExtra(MediaStore.EXTRA_OUTPUT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString());
-//		intent.putExtra("crop", "true");
-//		intent.putExtra("outputX", width);
-//		intent.putExtra("outputY", height);
-//		intent.putExtra("aspectX", width);
-//		intent.putExtra("aspectY", height);
-//		intent.putExtra("scale", true);
-//		intent.putExtra("return-data", true);
-		
-		return intent;
-	}
-	
 	public static Intent popupDelete(Context context, int sectionId){
 		Intent intent = new Intent(context, com.smileyjoedev.genLibrary.PopupDelete.class);
 		String message = "";
@@ -59,7 +45,7 @@ public class Intents {
 		return intent;
 	}
 	
-	public static Intent newUser(Context context){
+	public static Intent userNew(Context context){
 		Intent intent = new Intent(context, UserNew.class);
 		return intent;
 	}

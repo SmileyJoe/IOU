@@ -86,7 +86,7 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 			case R.id.menu_add_user:
-				startActivityForResult(Intents.newUser(this), Constants.ACTIVITY_NEW_USER);
+				startActivityForResult(Intents.userNew(this), Constants.ACTIVITY_NEW_USER);
 				return true;
 			case android.R.id.home:
 				finish();

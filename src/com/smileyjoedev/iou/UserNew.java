@@ -99,7 +99,7 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getSupportMenuInflater();
-        inflater.inflate(R.menu.new_user, menu);
+        inflater.inflate(R.menu.user_new, menu);
         return super.onCreateOptionsMenu(menu);
     }
 	
