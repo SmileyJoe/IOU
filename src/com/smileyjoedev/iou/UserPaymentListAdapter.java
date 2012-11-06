@@ -16,12 +16,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class PaymentListAdapter extends BaseAdapter {
+public class UserPaymentListAdapter extends BaseAdapter {
 
 	private ArrayList<Payment> payments;
 	private Context context;
 	
-	public PaymentListAdapter(Context context, ArrayList<Payment> payments){
+	public UserPaymentListAdapter(Context context, ArrayList<Payment> payments){
 		this.payments = payments;
 		this.context = context;
 	}
@@ -50,7 +50,7 @@ public class PaymentListAdapter extends BaseAdapter {
 		Views views = new Views(this.context);
 		Payment payment = this.payments.get(position);
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		convertView = inflater.inflate(R.layout.xml_payment_row, null);
+		convertView = inflater.inflate(R.xml.user_payment_row, null);
 		
 		TextView tvPaymentTitle = (TextView) convertView.findViewById(R.id.tv_payment_title);
 		TextView tvPaymentDate = (TextView) convertView.findViewById(R.id.tv_payment_date);

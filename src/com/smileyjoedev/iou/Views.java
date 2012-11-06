@@ -162,7 +162,7 @@ public class Views {
 	 * PAYMENTS
 	 ******************************************************/
 	
-	public PaymentListAdapter paymentList(ArrayList<Payment> payments, ListView lvPaymentList) {
+	public UserPaymentListAdapter paymentList(ArrayList<Payment> payments, ListView lvPaymentList) {
 //		if(this.check_list_contents(payments, lvPaymentList, Constants.PAYMENT)){
 			int first = lvPaymentList.getFirstVisiblePosition();
 			View top_child = lvPaymentList.getChildAt(0);
@@ -174,7 +174,7 @@ public class Views {
 				top = top_child.getTop();
 			}
 			
-			PaymentListAdapter adapter = new PaymentListAdapter(this.context, payments);
+			UserPaymentListAdapter adapter = new UserPaymentListAdapter(this.context, payments);
 			lvPaymentList.setAdapter(adapter);
 			lvPaymentList.setSelectionFromTop(first, top);
 			

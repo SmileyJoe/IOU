@@ -50,7 +50,7 @@ public class GroupPaymentListAdapter extends BaseAdapter {
 		Contacts cont = new Contacts(this.context);
 		Views views = new Views(this.context);
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		convertView = inflater.inflate(R.layout.xml_group_payment_row, null);
+		convertView = inflater.inflate(R.xml.group_payment_row, null);
 		
 		TextView tvPaymentTitle = (TextView) convertView.findViewById(R.id.tv_payment_title);
 		TextView tvPaymentDescription = (TextView) convertView.findViewById(R.id.tv_payment_description);

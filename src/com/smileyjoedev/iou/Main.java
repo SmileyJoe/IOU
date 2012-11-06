@@ -57,12 +57,6 @@ public class Main extends SherlockActivity implements OnClickListener {
     }
     
     public void initialize(){
-//    	Button btUserList = (Button) findViewById(R.id.bt_user_list);
-//    	btUserList.setOnClickListener(this);
-//    	
-//    	Button btGroupList = (Button) findViewById(R.id.bt_group_list);
-//    	btGroupList.setOnClickListener(this);
-    	
     	this.views = new Views(this, getWindowManager());
     	
     	LinearLayout llUserListWrapper = (LinearLayout) findViewById(R.id.ll_user_list_wrapper);
@@ -122,11 +116,9 @@ public class Main extends SherlockActivity implements OnClickListener {
 	public void onClick(View view) {
 		switch(view.getId()){
 			case R.id.ll_user_list_wrapper:
-//			case R.id.bt_user_list:
 				startActivityForResult(Intents.userList(this), Constants.ACTIVITY_USER_LIST);
 				break;
 			case R.id.ll_group_list_wrapper:
-//			case R.id.bt_group_list:
 				startActivityForResult(Intents.groupList(this), Constants.ACTIVITY_GROUP_LIST);
 				break;
 		}
@@ -135,11 +127,9 @@ public class Main extends SherlockActivity implements OnClickListener {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch(requestCode){
 			case Constants.ACTIVITY_USER_LIST:
-//				this.get_all_users();
 				this.populateView();
 				break;
 			case Constants.ACTIVITY_GROUP_LIST:
-//				this.get_all_users();
 				this.populateView();
 				break;
 		}

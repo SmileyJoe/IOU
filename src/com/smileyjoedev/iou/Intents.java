@@ -95,7 +95,7 @@ public class Intents {
 	}
 	
 	public static Intent newPayment(Context context, int userId){
-		Intent intent = new Intent(context, PaymentNew.class);
+		Intent intent = new Intent(context, UserPaymentNew.class);
 		
 		Bundle extras = new Bundle();
 		extras.putInt("user_id", userId);
@@ -110,7 +110,7 @@ public class Intents {
 	}
 
 	public static Intent repayPayment(Context context, int paymentId){
-		Intent intent = new Intent(context, PaymentNew.class);
+		Intent intent = new Intent(context, UserPaymentNew.class);
 		
 		Bundle extras = new Bundle();
 		extras.putInt("payment_id", paymentId);
@@ -123,7 +123,7 @@ public class Intents {
 	}
 	
 	public static Intent repayPaymentUser(Context context, int userId){
-		Intent intent = new Intent(context, PaymentNew.class);
+		Intent intent = new Intent(context, UserPaymentNew.class);
 		
 		Bundle extras = new Bundle();
 		extras.putInt("payment_id", userId);
@@ -136,7 +136,7 @@ public class Intents {
 	}
 	
 	public static Intent editPayment(Context context, int paymentId){
-		Intent intent = new Intent(context, PaymentNew.class);
+		Intent intent = new Intent(context, UserPaymentNew.class);
 		
 		Bundle extras = new Bundle();
 		extras.putInt("payment_id", paymentId);
@@ -149,7 +149,7 @@ public class Intents {
 	}
 	
 	public static Intent widgetQuickAdd(Context context){
-		Intent intent = new Intent(context, PaymentNew.class);
+		Intent intent = new Intent(context, UserPaymentNew.class);
 		intent.setAction(Constants.ACTION_WIDGET_QUICK_ADD);
 		
 		return intent;

@@ -33,16 +33,13 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 	private User user;
 	private DbUserAdapter userAdapter;
 	private DbUserPaymentAdapter userPaymentAdapter;
-//	private TextView tvHeaderText;
 	private ImageView ivUserImage;
-//	private Button btAddPayment;
 	private ListView lvPaymentList;
 	private Views views;
 	private ArrayList<Payment> payments;
 	private int selectedPayment;
-//	private Button btFilter;
 	private Spinner spFilter;
-	private PaymentListAdapter paymentlistAdapter;
+	private UserPaymentListAdapter paymentlistAdapter;
 	private int userId;
 	private ImageButton ibtAddPayment;
 	
@@ -89,18 +86,13 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
     
     private void initialize(){
     	this.userAdapter = new DbUserAdapter(this);
-//    	this.tvHeaderText = (TextView) findViewById(R.id.tv_header_text);
     	this.ivUserImage = (ImageView) findViewById(R.id.iv_user_image);
-//    	this.btAddPayment = (Button) findViewById(R.id.bt_add_payment);
-//    	this.btAddPayment.setOnClickListener(this);
     	this.userPaymentAdapter = new DbUserPaymentAdapter(this);
     	this.lvPaymentList = (ListView) findViewById(R.id.lv_payment_list);
     	registerForContextMenu(this.lvPaymentList);
     	this.views = new Views(this);
     	this.payments = new ArrayList<Payment>();
     	this.selectedPayment = 0;
-//    	this.btFilter = (Button) findViewById(R.id.bt_filter);
-//    	this.btFilter.setOnClickListener(this);
     	this.spFilter = (Spinner) findViewById(R.id.sp_filter);
     	this.spFilter.setOnItemSelectedListener(this);
     	this.ibtAddPayment = (ImageButton) findViewById(R.id.ibt_add_payment);
@@ -118,7 +110,6 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
     		this.payments = this.userPaymentAdapter.getByUser(this.user.getId());
     	}
     	
-//    	this.tvHeaderText.setText(this.user.get_name());
     	Gen.setUserImage(this, this.ivUserImage, this.user);
     	tvUserName.setText(this.user.getName());
     	
@@ -182,12 +173,6 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 			case R.id.ibt_add_payment:
 				startActivityForResult(Intents.newPayment(this, this.user.getId()), Constants.ACTIVITY_NEW_PAYMENT);
 				break;
-//			case R.id.bt_add_payment:
-//				startActivityForResult(Intents.new_payment(this, this.user.get_id()), Constants.ACTIVITY_NEW_PAYMENT);
-//				break;
-//			case R.id.bt_filter:
-//				this.spFilter.performClick();
-//				break;
 		}
 	}
 	
@@ -230,11 +215,9 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 	}
 	
 	public boolean onContextItemSelected(android.view.MenuItem item) {
-		//AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-			int menuItemIndex = item.getItemId();
+		int menuItemIndex = item.getItemId();
 		switch(menuItemIndex){
 			case Constants.CONTEXT_REPAY_ALL:
-				// repay all //
 				Payment payment = new Payment();
 				payment = this.payments.get(this.selectedPayment);
 				payment.setDescription("Repayment: " + payment.getDescription());
@@ -258,15 +241,12 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 				
 				break;
 			case Constants.CONTEXT_REPAY_SOME:
-				// repay some //
 				startActivityForResult(Intents.repayPayment(this, this.payments.get(this.selectedPayment).getId()), Constants.ACTIVITY_REPAY_PAYMENT);
 				break;
 			case Constants.CONTEXT_EDIT:
-				// edit //
 				startActivityForResult(Intents.editPayment(this, this.payments.get(this.selectedPayment).getId()), Constants.ACTIVITY_EDIT_PAYMENT);
 				break;
 			case Constants.CONTEXT_DELETE:
-				// delete //
 				startActivityForResult(Intents.popupDelete(this, Constants.PAYMENT), Constants.ACTIVITY_POPUP_DELETE);
 				break;
 		}

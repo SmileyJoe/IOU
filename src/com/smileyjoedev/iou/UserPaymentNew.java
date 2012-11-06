@@ -27,7 +27,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class PaymentNew extends SherlockActivity implements OnClickListener, OnItemSelectedListener {
+public class UserPaymentNew extends SherlockActivity implements OnClickListener, OnItemSelectedListener {
 	
 	private User user;
 	private DbUserAdapter userAdapter;
@@ -53,7 +53,7 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Gen.setTheme(this);
-        setContentView(R.layout.payment_new);
+        setContentView(R.layout.user_payment_new);
         this.initialize();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         try{
@@ -149,25 +149,6 @@ public class PaymentNew extends SherlockActivity implements OnClickListener, OnI
     	this.rbPaymentFrom.setTextColor(Color.RED);
     	this.rbPaymentTo.setText("To " + this.user.getFirstName());
     	this.rbPaymentTo.setTextColor(Color.GREEN);
-    	
-//    	switch(this.payment.get_type()){
-//    		case 0:
-//    			this.rbLoan.setChecked(true);
-//    			this.rbPaymentTo.setChecked(true);
-//    			break;
-//    		case 1:
-//    			this.rbLoan.setChecked(true);
-//    			this.rbPaymentFrom.setChecked(true);
-//    			break;
-//    		case 2:
-//    			this.rbRepayment.setChecked(true);
-//    			this.rbPaymentTo.setChecked(true);
-//    			break;
-//    		case 3:
-//    			this.rbRepayment.setChecked(true);
-//    			this.rbPaymentFrom.setChecked(true);
-//    			break;
-//    	}
     	
     	switch(this.payment.getDirection()){
     		case 0:

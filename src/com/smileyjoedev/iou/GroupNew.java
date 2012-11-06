@@ -35,7 +35,6 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 	private DbGroupAdapter groupAdapter;
 	private Group group;
 	private boolean edit;
-//	private Button btAddUser;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,8 +44,6 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
         
         this.initialize();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//		TextView tvDialogHeading = (TextView) findViewById(R.id.tv_dialog_heading);
-//		tvDialogHeading.setText(R.string.dialog_heading_group_new);
         
         try{
 			Bundle extras = getIntent().getExtras();
@@ -115,8 +112,6 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
     	this.groupAdapter = new DbGroupAdapter(this);
     	this.group = new Group();
     	this.edit = false;
-//    	this.btAddUser = (Button) findViewById(R.id.bt_add_user);
-//    	this.btAddUser.setOnClickListener(this);
     }
     
     private void populateView(){
@@ -159,9 +154,6 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 			case R.id.bt_cancel:
 				finish();
 				break;
-//			case R.id.bt_add_user:
-//				startActivityForResult(Intents.new_user(this), Constants.ACTIVITY_NEW_USER);
-//				break;
 		}
 		
 	}

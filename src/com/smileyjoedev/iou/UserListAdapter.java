@@ -49,7 +49,7 @@ public class UserListAdapter extends BaseAdapter {
 		User user = this.users.get(position);
 		Contacts cont = new Contacts(this.context);
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		convertView = inflater.inflate(R.layout.xml_user_row, null);
+		convertView = inflater.inflate(R.xml.user_row, null);
 		
 		TextView tvUserName = (TextView) convertView.findViewById(R.id.tv_user_name);
 		ImageView ivUserImage = (ImageView) convertView.findViewById(R.id.iv_user_image);

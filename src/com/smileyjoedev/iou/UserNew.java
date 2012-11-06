@@ -57,7 +57,6 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 	private boolean edit;
 	private String userName;
 	private String oldUserName;
-//	private Button btChoosePhoto;
 	private ImageView ivUserImage; 
 	private ToggleButton tbMinimalisticTextFlag;
 	private EditText etVariableName;
@@ -69,18 +68,12 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 	private ArrayList<Contact> contacts;
 	private Long contactId;
 	private Long oldContactId;
-//	private ImageView ivDeleteUserImage;
-//	private RelativeLayout rlUserImageWrapper;
-//	private boolean allowImageDelete;
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.user_new);
-//		Gen.fill_window(getWindow());
 		this.initialize();
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//		TextView tvDialogHeading = (TextView) findViewById(R.id.tv_dialog_heading);
-//		tvDialogHeading.setText(R.string.dialog_heading_user_new);
 		
 		try{
 			Bundle extras = getIntent().getExtras();
@@ -133,8 +126,6 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 		this.etName.setOnItemClickListener(this);
 		this.userAdapter = new DbUserAdapter(this);
 		this.userName = "";
-//		this.btChoosePhoto = (Button) findViewById(R.id.bt_choose_photo);
-//		this.btChoosePhoto.setOnClickListener(this);
 		this.ivUserImage = (ImageView) findViewById(R.id.iv_user_image);
 		this.ivUserImage.setOnClickListener(this);
 		this.tbMinimalisticTextFlag = (ToggleButton) findViewById(R.id.tb_minimalistic_text_flag);
@@ -148,10 +139,6 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 		this.contacts = new ArrayList<Contact>();
 		this.contactId = (long) 0;
 		this.oldContactId = (long) 0;
-//		this.ivDeleteUserImage = (ImageView) findViewById(R.id.iv_delete_user_image);
-//		this.ivDeleteUserImage.setOnClickListener(this);
-//		this.rlUserImageWrapper = (RelativeLayout) findViewById(R.id.rl_user_image_wrapper);
-//		this.allowImageDelete = false;
 	}
 	
 	public void populateView(){
@@ -161,16 +148,6 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 			
 			this.populateUserImage();
 
-//			java.io.File file = new java.io.File(Constants.IMAGE_PATH + fileName + Constants.IMAGE_EXTENSION);
-//			if(file.exists()){
-//				Bitmap bm = BitmapFactory.decodeFile(Constants.IMAGE_PATH + fileName + Constants.IMAGE_EXTENSION);
-//				
-//				this.ivUserImage.setImageBitmap(bm);
-//				this.ivUserImage.setVisibility(View.VISIBLE);
-//			}else{
-//				this.ivUserImage.setVisibility(View.GONE);
-//			}
-			
 			if(this.user.isUsingMinimalisticText()){
 				this.tbMinimalisticTextFlag.setChecked(true);
 				this.llVariableName.setVisibility(View.VISIBLE);
@@ -187,16 +164,6 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 	
 	private void populateUserImage(){
 		Gen.setUserImage(this, this.ivUserImage, this.user);
-//		if(Gen.set_user_image(this, this.ivUserImage, this.user)){
-//			this.ivUserImage.setVisibility(View.VISIBLE);
-//		} else {
-//			this.ivUserImage.setVisibility(View.GONE);
-//		}
-		
-//		java.io.File file = new java.io.File(Constants.IMAGE_PATH + this.user.get_name() + Constants.IMAGE_EXTENSION);
-//		if(file.exists()){
-//			this.allowImageDelete = true;
-//		}
 	}
 	
 	private void populateVariableNameInfo(String name){
@@ -252,12 +219,10 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 				if(this.edit){
 					if(oldName.equals(userName)){
 						this.updateUser();
-//						this.rename_image();
 						finish();
 					} else {
 						if(!this.userAdapter.checkUserExists(user.getName())){
 							this.updateUser();
-//							this.rename_image();
 							finish();
 						} else {
 							Notify.toast(this, R.string.toast_user_exists, user.getName());
@@ -266,8 +231,6 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 				} else {
 					if(!this.userAdapter.checkUserExists(user.getName())){
 						this.saveUser();
-//						this.rename_image();
-//						this.delete_image();
 						finish();
 					} else {
 						Notify.toast(this, R.string.toast_user_exists, user.getName());
@@ -281,19 +244,6 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 				this.hideKeyboard();
 				finish();
 				break;
-//			case R.id.bt_choose_photo:
-//
-//					this.userName = this.etName.getText().toString().trim();
-//					int width = get_screen_width();
-//					int height = get_screen_height();
-//					
-//					try{
-//						startActivityForResult(Intents.take_picture(width, height), Constants.ACTIVITY_TAKE_PHOTO);
-//					}catch(ActivityNotFoundException e){
-//						
-//					}
-//				
-//				break;
 			case R.id.tb_minimalistic_text_flag:
 				if(this.user.isUsingMinimalisticText()){
 					this.user.setMinimalisticTextFlag(0);
@@ -313,114 +263,15 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 					
 				}
 				break;
-//			case R.id.iv_user_image:
-//				if(this.allowImageDelete){
-//					if(this.ivDeleteUserImage.isShown()){
-//						this.ivDeleteUserImage.setVisibility(View.GONE);
-//					} else {
-//						this.ivDeleteUserImage.setVisibility(View.VISIBLE);
-//					}
-//				}
-//				
-//				
-//				break;
-//			case R.id.iv_delete_user_image:
-//				this.delete_image();
-//				this.populate_user_image();
-//				this.allowImageDelete = false;
-//				this.ivDeleteUserImage.setVisibility(View.GONE);
-////				this.ivUserImage.setVisibility(View.GONE);
-////				this.ivDeleteUserImage.setVisibility(View.GONE);
-////				this.rlUserImageWrapper.setVisibility(View.GONE);
-//				break;
 		}
 		
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		//super.onActivityResult(requestCode, resultCode, data);
 		switch(requestCode){
-//			case Constants.ACTIVITY_TAKE_PHOTO:
-//
-//				if(resultCode == Activity.RESULT_OK){
-//					final Bundle extras1 = data.getExtras();
-//					this.userName = this.etName.getText().toString().trim();
-//					
-//					if(extras1 != null){
-//						Bitmap photo = extras1.getParcelable("data");
-//						
-//						ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-//						photo.compress(Bitmap.CompressFormat.JPEG, 40, bytes);
-//						
-//						File fp = new File(Constants.IMAGE_PATH);
-//						
-//						fp.mkdirs();
-//						
-//						
-//						File f = new File(Constants.IMAGE_PATH + Constants.TEMP_IMAGE_NAME + Constants.IMAGE_EXTENSION);
-//						
-//						try{
-//							f.createNewFile();
-//							// write the bytes in file
-//							FileOutputStream fo = new FileOutputStream(f);
-//							fo.write(bytes.toByteArray());
-//						}catch(IOException e){
-//							e.printStackTrace();
-//						}
-//						
-////						this.populate_user_image();
-//						this.ivUserImage.setVisibility(View.VISIBLE);
-////						Gen.set_user_image(this, this.ivUserImage, this.user);
-//						this.ivUserImage.setImageBitmap(photo);
-//						this.allowImageDelete = true;
-//					}
-//					
-//					/*InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//					mgr.showSoftInput(this.ivPlayerImage, InputMethodManager.SHOW_IMPLICIT);*/
-//				}
-//				
-//				break;
 			
 		}
 	}
-	
-//	public void rename_image() {
-//		File tempFile = new File(Constants.IMAGE_PATH + Constants.TEMP_IMAGE_NAME + Constants.IMAGE_EXTENSION);
-//		if(!tempFile.exists()){
-//			tempFile = new File(Constants.IMAGE_PATH + this.oldUserName + Constants.IMAGE_EXTENSION);
-//		}
-//		File newFile = new File(Constants.IMAGE_PATH + this.userName + Constants.IMAGE_EXTENSION);
-//		
-//		tempFile.renameTo(newFile);
-//	}
-//	
-//	public void delete_image() {
-//		java.io.File file = new java.io.File(Constants.IMAGE_PATH + this.oldUserName + Constants.IMAGE_EXTENSION);
-//		if(file.exists()){
-//			file.delete();
-//		}
-//		
-//		file = new java.io.File(Constants.IMAGE_PATH + Constants.TEMP_IMAGE_NAME + Constants.IMAGE_EXTENSION);
-//		if(file.exists()){
-//			file.delete();
-//		}
-//	}
-	
-//	private int get_screen_width() {
-//		int width;
-//		DisplayMetrics displaymetrics = new DisplayMetrics();
-//		getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-//		width = displaymetrics.widthPixels;
-//		return width;
-//	}
-//	
-//	private int get_screen_height() {
-//		int height;
-//		DisplayMetrics displaymetrics = new DisplayMetrics();
-//		getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-//		height = displaymetrics.heightPixels;
-//		return height;
-//	}
 	
 	@Override
 	public void afterTextChanged(Editable arg0) {

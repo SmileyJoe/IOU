@@ -48,7 +48,7 @@ public class GroupListAdapter extends BaseAdapter {
 		Contacts cont = new Contacts(this.context);
 		Views views = new Views(this.context);
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		convertView = inflater.inflate(R.layout.xml_group_row, null);
+		convertView = inflater.inflate(R.xml.group_row, null);
 		
 		TextView tvGroupTitle = (TextView) convertView.findViewById(R.id.tv_group_title);
 		TextView tvGroupDescription = (TextView) convertView.findViewById(R.id.tv_group_description);

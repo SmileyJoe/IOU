@@ -85,18 +85,11 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
     }
     
     private void disableButton(Button button){
-    	// TODO: Change button appearence to show disabled
-//    	Debug.v("Disable");
     	button.setClickable(false);
-//    	button.setTextColor(R.color.button_disabled_text);
     }
     
     private void enableButton(Button button){
-//    	Debug.v("Enable");
     	button.setClickable(true);
-//    	button.setTextColor(R.color.button_text);
-//    	button.invalidate();
-//    	button.refreshDrawableState();
     }
     
     private void populateEmptyDetails(){

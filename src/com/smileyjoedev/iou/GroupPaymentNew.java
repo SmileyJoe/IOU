@@ -81,8 +81,6 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 			if(extras.containsKey("payment_id")){
 				this.isEdit = true;
 				this.payment = this.groupPaymentAdapter.getDetails(extras.getInt("payment_id"));
-				// this.group =
-				// this.groupAdapter.get_details(this.payment.get_group_id());
 			}
 		}catch(NullPointerException e){
 		}
@@ -303,11 +301,6 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 				this.payment.setSplits(new ArrayList<PaymentSplit>());
 				this.setSplit(this.payingFields, 0);
 				this.setSplit(this.paidForFields, 1);
-				
-//				for(int i = 0; i < this.payment.get_splits().size(); i++){
-//					Debug.v("ID", this.payment.get_split(i).get_user_id());
-//					Debug.v("Amount", this.payment.get_split(i).get_amount());
-//				}
 				
 				this.payment.setTitle(this.etTitle.getText().toString().trim());
 				this.payment.setDescription(this.etDescription.getText().toString().trim());
