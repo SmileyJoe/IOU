@@ -5,6 +5,7 @@ import com.smileyjoedev.genLibrary.GeneralDb;
 import android.database.sqlite.SQLiteDatabase;
 
 public class Db {
+	// Strings to create the DB titles //
 	private static final String CREATE_PAYMENT = "CREATE TABLE payment (_id integer primary key autoincrement, payment_amount float not null, payment_type int not null, payment_title text not null, payment_description text not null, payment_date long not null);";
 	private static final String CREATE_USER = "CREATE TABLE user (_id integer primary key autoincrement, user_name text not null, user_id_online int not null, user_status int not null, user_variable_name text, user_minimalistic_text_flag int not null, user_contact_id long not null);";
 	private static final String CREATE_USER_REL_PAYMENT = "CREATE TABLE user_rel_payment (_id integer primary key autoincrement, user_id int not null, payment_id int not null);";
@@ -12,9 +13,11 @@ public class Db {
 	private static final String CREATE_USER_REL_GROUP = "CREATE TABLE user_rel_group (_id integer primary key autoincrement, group_id int not null, user_id int not null);";
 	private static final String CREATE_GROUP_DETAIL = "CREATE TABLE group_detail (_id integer primary key autoincrement, group_title text, group_description text);";
 	private static final String CREATE_PAYMENT_SPLIT = "CREATE TABLE payment_split (_id integer primary key autoincrement, payment_id int not null, user_id int not null, payment_amount float not null, split_type int not null);";
+	private static final String CREATE_QUICK_ACTION = "CREATE TABLE quick_action (_id integer primary key autoincrement, quick_action_type int not null, quick_action_action int not null, quick_action_target_id int not null);";
 	
 	
  	public static void onCreate(SQLiteDatabase database) {
+ 		// Create all the tables the first time the app is run //
 		database.execSQL(CREATE_PAYMENT);
 		database.execSQL(CREATE_USER);
 		database.execSQL(CREATE_USER_REL_PAYMENT);
@@ -22,10 +25,19 @@ public class Db {
 		database.execSQL(CREATE_USER_REL_GROUP);
 		database.execSQL(CREATE_GROUP_DETAIL);
 		database.execSQL(CREATE_PAYMENT_SPLIT);
+		database.execSQL(CREATE_QUICK_ACTION);
 		
 	}
 	
+ 	/***********************************************************
+ 	 * If the database version is updated this is called
+ 	 * 
+ 	 * Instead of wiping and recreating the database as a user
+ 	 * would loose all their information, alter the tables
+ 	 * based on what is missing
+ 	 **********************************************************/
 	public static void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
+
 		if(!GeneralDb.isColumnExists(database, "user", "user_variable_name")){
 			database.execSQL("ALTER TABLE user ADD user_variable_name text");
 			database.execSQL("ALTER TABLE user ADD user_minimalistic_text_flag int DEFAULT 0 not null");
@@ -77,6 +89,10 @@ public class Db {
 		
 		if(!GeneralDb.isColumnExists(database, "group_detail", "group_description")){
 			database.execSQL("ALTER TABLE group_detail ADD group_description text DEFAULT '' not null");
+		}
+		
+		if(!GeneralDb.isTableExists(database, "quick_action")){
+			database.execSQL(CREATE_QUICK_ACTION);
 		}
 		
 	}

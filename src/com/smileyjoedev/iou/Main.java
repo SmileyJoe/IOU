@@ -8,12 +8,18 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.bugsense.trace.BugSenseHandler;
+import com.smileyjoedev.genLibrary.Contacts;
 import com.smileyjoedev.iou.R;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
@@ -21,9 +27,14 @@ import android.widget.TextView;
 
 // TODO: Add in a click background to the all users/groups LinearLayouts //
 
-public class Main extends SherlockActivity implements OnClickListener {
+public class Main extends SherlockActivity implements OnClickListener, OnItemClickListener {
 	
 	private Views views;
+	private ActionGridAdapter actionGridApater;
+	private GridView gvActions;
+	private ArrayList<QuickAction> quickActions;
+	private int selectedQuickAction;
+	private DbQuickActionAdapter quickActionAdapter;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +44,10 @@ public class Main extends SherlockActivity implements OnClickListener {
 //        BugSenseHandler.setup(this, "04b74a70");
         
         this.initialize();
+        
+        this.getQuickActions();
+        this.actionGridApater = this.views.actionGrid(this.quickActions, this.gvActions);
+        
         this.populateView();
         
     }
@@ -50,6 +65,9 @@ public class Main extends SherlockActivity implements OnClickListener {
 			case R.id.menu_settings:
 				startActivityForResult(Intents.settings(this), Constants.ACTIVITY_SETTINGS);
 				return true;
+			case R.id.menu_quick_action_new:
+				startActivityForResult(Intents.quickActionNew(this), Constants.ACTIVITY_QUICK_ACTION_NEW);
+				return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
         }
@@ -58,6 +76,13 @@ public class Main extends SherlockActivity implements OnClickListener {
     
     public void initialize(){
     	this.views = new Views(this, getWindowManager());
+    	this.gvActions = (GridView) findViewById(R.id.gv_actions);
+    	this.gvActions.setOnItemClickListener(this);
+    	registerForContextMenu(this.gvActions);
+    	
+    	this.selectedQuickAction = 0;
+    	
+    	this.quickActionAdapter = new DbQuickActionAdapter(this);
     	
     	LinearLayout llUserListWrapper = (LinearLayout) findViewById(R.id.ll_user_list_wrapper);
     	llUserListWrapper.setOnClickListener(this);
@@ -68,18 +93,19 @@ public class Main extends SherlockActivity implements OnClickListener {
     }
     
     private void populateView(){
-    	GridView gvActions = (GridView) findViewById(R.id.gv_actions);
     	DbUserAdapter userAdapter = new DbUserAdapter(this);
     	ArrayList<User> users = new ArrayList<User>();
     	users = userAdapter.get();
-    	
-    	this.views.actionGrid(users, gvActions);
     	
     	TextView tvTotalOwedUser = (TextView) findViewById(R.id.tv_total_owed_user);
     	tvTotalOwedUser.setText(this.getOwedText(users));
     	
     	TextView tvTotalUserOwed = (TextView) findViewById(R.id.tv_total_user_owed);
     	tvTotalUserOwed.setText(this.getOweText(users));
+    }
+    
+    private void getQuickActions(){
+    	this.quickActions = this.quickActionAdapter.get();
     }
     
     private String getOwedText(ArrayList<User> users){
@@ -132,7 +158,71 @@ public class Main extends SherlockActivity implements OnClickListener {
 			case Constants.ACTIVITY_GROUP_LIST:
 				this.populateView();
 				break;
+			case Constants.ACTIVITY_QUICK_ACTION_NEW:
+				this.updateQuickActions();
+				break;
+			case Constants.ACTIVITY_QUICK_ACTION_EXCECUTE:
+				this.populateView();
+				break;
+			case Constants.ACTIVITY_POPUP_DELETE:
+				if(resultCode == Activity.RESULT_OK){
+					if(data.getBooleanExtra("result", false)){
+						this.quickActionAdapter.delete(this.quickActions.get(this.selectedQuickAction));
+						this.updateQuickActions();
+					}
+				}
+				break;
+			case Constants.ACTIVITY_QUICK_ACTION_EDIT:
+				this.updateQuickActions();
+				break;
 		}
 	}
+	
+	private void updateQuickActions(){
+		this.getQuickActions();
+    	this.actionGridApater.setQuickActions(this.quickActions);
+    	this.actionGridApater.notifyDataSetChanged();
+		this.gvActions.refreshDrawableState();
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> v, View arg1, int position, long arg3) {
+		switch(v.getId()){
+			case R.id.gv_actions:
+				startActivityForResult(this.quickActions.get(position).getIntent(), Constants.ACTIVITY_QUICK_ACTION_EXCECUTE);
+				break;
+		}
+		
+	}
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+		switch(v.getId()){
+			case R.id.gv_actions:
+				this.selectedQuickAction = info.position;
+				
+				menu.setHeaderTitle(this.getString(R.string.context_heading));
+				
+				menu.add(Menu.NONE, Constants.CONTEXT_EDIT, Constants.CONTEXT_EDIT, this.getString(R.string.context_edit));
+				menu.add(Menu.NONE, Constants.CONTEXT_DELETE, Constants.CONTEXT_DELETE, this.getString(R.string.context_delete));
+				
+				break;
+		}
+	}
+	
+	public boolean onContextItemSelected(android.view.MenuItem item) {
+		int menuItemIndex = item.getItemId();
+		switch(menuItemIndex){
+			case Constants.CONTEXT_EDIT:
+				startActivityForResult(Intents.quickActionEdit(this, this.quickActions.get(this.selectedQuickAction).getId()), Constants.ACTIVITY_QUICK_ACTION_EDIT);
+				break;
+			case Constants.CONTEXT_DELETE:
+				startActivityForResult(Intents.popupDelete(this, Constants.QUICK_ACTION), Constants.ACTIVITY_POPUP_DELETE);
+				break;
+		}
+		return true;
+	}
+	
 	
 }

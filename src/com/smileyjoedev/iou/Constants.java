@@ -1,3 +1,7 @@
+/*************************************
+ * Constants for the application
+ ************************************/
+
 package com.smileyjoedev.iou;
 
 import java.io.File;
@@ -5,15 +9,18 @@ import java.io.File;
 import android.os.Environment;
 
 public class Constants {
-	public static final String TAG = "IOU";
-	public static final String IMAGE_PATH = Environment.getExternalStorageDirectory() + File.separator + "com.smileyjoedev" + File.separator + "IOU" + File.separator;
-	public static final String IMAGE_EXTENSION = ".jpg";
-	public static final String TEMP_IMAGE_NAME = "temp";
 	
 	public static final String DB_NAME = "iou";
-	public static final int DB_VERSION = 21;
+	public static final int DB_VERSION = 22;
 	
 	public static final String PREFERENCE_NAME = "iou";
+	
+	/*********************************************************
+	 * Give unique ids to the Activities
+	 * 
+	 * This is used for switch statements in functions like
+	 * onActivityResult()
+	 ********************************************************/
 	
 	public static final int ACTIVITY_NEW_USER = 1;
 	public static final int ACTIVITY_NEW_PAYMENT = 2;
@@ -34,11 +41,16 @@ public class Constants {
 	public static final int ACTIVITY_GROUP_USER_PAYMENT_DETAILS = 17;
 	public static final int ACTIVITY_USER_LIST = 18;
 	public static final int ACTIVITY_GROUP_LIST = 19;
+	public static final int ACTIVITY_QUICK_ACTION_NEW = 20;
+	public static final int ACTIVITY_QUICK_ACTION_TARGET_PICKER = 21;
+	public static final int ACTIVITY_QUICK_ACTION_EXCECUTE = 22;
+	public static final int ACTIVITY_QUICK_ACTION_EDIT = 23;
 	
 	public static final int PAYMENT = 101;
 	public static final int USER = 102;
 	public static final int EXIT_APP = 103;
 	public static final int GROUP = 104;
+	public static final int QUICK_ACTION = 105;
 	
 	public static final int THEME_DEFAULT = 0;
 	public static final int THEME_DARK = 1;

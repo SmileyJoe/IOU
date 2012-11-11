@@ -84,6 +84,12 @@
 			android:label="@string/bar_title_group_user_details" 
 			android:theme="@style/Holo.Theme.Dialog">
    		</activity>
+		<activity android:name=".QuickActionNew" 
+			android:label="@string/bar_title_quick_action_new">
+   		</activity>
+		<activity android:name=".QuickActionTargetPicker" 
+			android:label="@string/bar_title_quick_action_target_picker">
+   		</activity>
     </application>
 
 </manifest>

@@ -34,12 +34,42 @@ public class Intents {
 				positiveText = context.getString(R.string.bt_popup_delete_positive);
 				negativeText = context.getString(R.string.bt_popup_delete_negative);
 				break;
+			case Constants.QUICK_ACTION:
+				message = context.getString(R.string.tv_popup_delete_quick_action);
+				positiveText = context.getString(R.string.bt_popup_delete_positive);
+				negativeText = context.getString(R.string.bt_popup_delete_negative);
+				break;
 		}
 		
 		Bundle extras = new Bundle();
 		extras.putString("message", message);
 		extras.putString("positive_text", positiveText);
 		extras.putString("negative_text", negativeText);
+		intent.putExtras(extras);
+		
+		return intent;
+	}
+	
+	public static Intent quickActionNew(Context context){
+		Intent intent = new Intent(context, QuickActionNew.class);
+		return intent;
+	}
+	
+	public static Intent quickActionEdit(Context context, long quickActionId){
+		Intent intent = new Intent(context, QuickActionNew.class);
+		
+		Bundle extras = new Bundle();
+		extras.putLong("quick_action_id", quickActionId);
+		intent.putExtras(extras);
+		
+		return intent;
+	}
+	
+	public static Intent quickActionTargetPicker(Context context, int actionType){
+		Intent intent = new Intent(context, QuickActionTargetPicker.class);
+		
+		Bundle extras = new Bundle();
+		extras.putInt("action_type", actionType);
 		intent.putExtras(extras);
 		
 		return intent;

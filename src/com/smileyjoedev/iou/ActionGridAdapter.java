@@ -1,3 +1,8 @@
+/********************************************
+ * Adapter to build the ActionGrid as used
+ * on the main dash
+ *******************************************/
+
 package com.smileyjoedev.iou;
 
 import java.util.ArrayList;
@@ -19,22 +24,26 @@ import android.widget.TextView;
 
 public class ActionGridAdapter extends BaseAdapter {
 
-	private ArrayList<User> users;
+	private ArrayList<QuickAction> quickActions;
 	private Context context;
 	
-	public ActionGridAdapter(Context context, ArrayList<User> users){
-		this.users = users;
+	public ActionGridAdapter(Context context, ArrayList<QuickAction> quickActions){
+		this.quickActions = quickActions;
 		this.context = context;
+	}
+	
+	public void setQuickActions(ArrayList<QuickAction> quickActions){
+		this.quickActions = quickActions;
 	}
 	
 	@Override
 	public int getCount() {
-		return this.users.size();
+		return this.quickActions.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return this.users.get(position);
+		return this.quickActions.get(position);
 	}
 
 	@Override
@@ -44,8 +53,8 @@ public class ActionGridAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		User user = this.users.get(position);
-		Contacts cont = new Contacts(this.context);
+		QuickAction quickAction = this.quickActions.get(position);
+		
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		convertView = inflater.inflate(R.xml.action_grid_item, parent, false);
 		
@@ -53,10 +62,17 @@ public class ActionGridAdapter extends BaseAdapter {
 		TextView tvAction = (TextView) convertView.findViewById(R.id.tv_action);
 		ImageView ivUserImage = (ImageView) convertView.findViewById(R.id.iv_user_image);
 		
-		tvUserName.setText(user.getName());
-		tvAction.setText("View");
+		tvUserName.setText(quickAction.getTitle());
+		tvAction.setText(quickAction.getActionText());
+		switch(quickAction.getType()){
+			case QuickAction.TYPE_USER:
+				Gen.setActionImage(this.context, ivUserImage, (User) quickAction.getTargetData());
+				break;
+			case QuickAction.TYPE_GROUP:
+				ivUserImage.setImageResource(R.drawable.default_group_large);
+				break;
+		}
 		
-		Gen.setActionImage(this.context, ivUserImage, user);
 		
 		return convertView;
 	}

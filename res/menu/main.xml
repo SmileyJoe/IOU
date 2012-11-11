@@ -3,4 +3,8 @@
         android:icon="@drawable/settings"
         android:showAsAction="ifRoom|withText"
         android:title="@string/menu_settings" />
+    <item android:id="@+id/menu_quick_action_new"
+        android:icon="@drawable/quick_action_new"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_quick_action_new" />
 </menu>

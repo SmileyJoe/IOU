@@ -59,36 +59,62 @@ public class DbGroupAdapter {
 
 	public long save(Group group) {
 		long dbId = 0;
+		// Check if a group with that title exists //
 		if(this.checkGroupExists(group.getTitle())){
+			// if it exists dont save it and notify the user with a toast //
 			Notify.toast(this.context, R.string.toast_group_exists, group.getTitle());
 		} else {
 			ContentValues values = createContentValues(group);
-			dbId = db.insert("group_detail", null, values);
+			// insert the group details into the db //
+			dbId = this.db.insert("group_detail", null, values);
+			// check if the insert was successfull //
 			if(dbId > 0){
 				boolean usersSaved= false;
+				// insert the users relationship to the group //
 				usersSaved = this.saveUsersRel(group.getUsers(), (int) dbId);
+				// check if the relationships saved successfully //
 				if(usersSaved){
+					// it was successfull notify the user with a toast //
 					Notify.toast(this.context, R.string.toast_group_saved, group.getTitle());
 				} else {
+					// if the users relationship didn't save delete the group details//
 					group.setId((int) dbId);
 					this.delete(group, false);
+					// Notify the user of an error with a toast//
 					Notify.toast(this.context, R.string.toast_group_saved_error, group.getTitle());
 				}
 			} else {
+				// if the group details didn't save notify the user with a toast //
 				Notify.toast(this.context, R.string.toast_group_saved_error, group.getTitle());
 			}
 		}
 		
+		// return the new DB id //
 		return dbId;
 	}
 	
 	public boolean saveUsersRel(ArrayList<User> users, int groupId){
 		boolean success = true;
+		long dbId = 0;
 		
+		// cycle through the users //
 		for(int i = 0; i < users.size(); i++){
-			if(users.get(i).isSelected()){
-				this.saveUserRel(users.get(i).getId(), groupId);
+			// check if the user is selected and there have been no previous errors //
+			if(users.get(i).isSelected() && success){
+				// save the users relationship //
+				dbId = this.saveUserRel(users.get(i).getId(), groupId);
+				
+				// if the relationship didn't save successfully //
+				if(dbId <= 0){
+					success = false;
+				}
 			}
+		}
+		
+		// if any of the relationships didnt save successfully //
+		// delete all the relationships for that group //
+		if(!success){
+			this.deleteUsersRel(groupId);
 		}
 		
 		return success;
@@ -109,13 +135,19 @@ public class DbGroupAdapter {
 	
 	public int update(Group group) {
 		int numRows = 0;
+		// check that the new name does not already exist for another group //
 		if(this.checkGroupExists(group.getTitle(), group.getId())){
+			// if it does notify the user via a toast //
 			Notify.toast(this.context, R.string.toast_group_exists, group.getTitle());
 		} else {
 			ContentValues values = createContentValues(group);
+			// update the group details //
 			numRows = this.db.update("group_detail", values, " _id = '" + group.getId() + "' ", null);
+			// delete the users relationships to the group //
 			this.deleteUsersRel(group.getId());
+			// re-add the users relationships to the group //
 			this.saveUsersRel(group.getUsers(), group.getId());
+			// notify the user via a toast that the group has been updated //
 			Notify.toast(this.context, R.string.toast_group_updated, group.getTitle());
 		}
 		return numRows;
