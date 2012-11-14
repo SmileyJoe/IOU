@@ -13,6 +13,8 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.smileyjoedev.genLibrary.Debug;
+import com.smileyjoedev.genLibrary.R;
 
 public class QuickActionNew extends SherlockActivity implements OnClickListener {
 
@@ -30,6 +32,7 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
 	private TextView tvTargetTitle;
 	private DbQuickActionAdapter quickActionAdapter;
 	private boolean isEdit;
+	private boolean returnResult;
 	
 	
     @Override
@@ -49,6 +52,13 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
 		} catch(NullPointerException e){
 			this.quickAction = new QuickAction(this);
 			this.isEdit = false;
+		}
+        
+        try{
+			Bundle extras = getIntent().getExtras();
+			this.returnResult = extras.getBoolean("return_result", false);
+		} catch(NullPointerException e){
+			this.returnResult = false;
 		}
         
         this.populateView();
@@ -100,6 +110,8 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
     	
     	this.tvTargetTitle = (TextView) findViewById(R.id.tv_target_title);
     	this.quickActionAdapter = new DbQuickActionAdapter(this);
+    	
+    	this.returnResult = false;
     }
     
     private void populateView(){
@@ -237,8 +249,18 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
 				finish();
 				break;
 			case R.id.bt_save:
-				long dbId = this.quickActionAdapter.save(this.quickAction);
-				if(dbId > 0){
+				if(!this.returnResult){
+					long dbId = this.quickActionAdapter.save(this.quickAction);
+					if(dbId > 0){
+						finish();
+					}
+				} else {
+					Debug.d(this.quickAction.toString());
+					Intent resultIntent = new Intent();
+					resultIntent.putExtra("quick_action_type", this.quickAction.getType());
+					resultIntent.putExtra("quick_action_action", this.quickAction.getAction());
+					resultIntent.putExtra("quick_action_target_id", this.quickAction.getTargetId());
+					setResult(Activity.RESULT_OK, resultIntent);
 					finish();
 				}
 				break;

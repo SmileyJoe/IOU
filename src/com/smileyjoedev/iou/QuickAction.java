@@ -1,5 +1,6 @@
 package com.smileyjoedev.iou;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import android.content.Context;
@@ -71,18 +72,18 @@ public class QuickAction {
 	}
 	
 	public void setTargetId(int targetId) {
-		this.targetId = targetId;
-		switch(this.getType()){
-			case TYPE_USER:
-				this.setTargetData(this.userAdapter.getDetails(this.targetId));
-				break;
-			case TYPE_GROUP:
-				this.setTargetData(this.groupAdapter.getDetails(this.targetId));
-				break;
-			default:
-				this.setTargetData(new Object());
-				break;
-		}
+			this.targetId = targetId;
+			switch(this.getType()){
+				case TYPE_USER:
+					this.setTargetData(this.userAdapter.getDetails(this.targetId));
+					break;
+				case TYPE_GROUP:
+					this.setTargetData(this.groupAdapter.getDetails(this.targetId));
+					break;
+				default:
+					this.setTargetData(new Object());
+					break;
+			}			
 		
 	}
 	
@@ -229,7 +230,7 @@ public class QuickAction {
 	public String toString() {
 		return "QuickAction [getAction()=" + getAction() + ", getType()="
 				+ getType() + ", getTargetId()=" + getTargetId()
-				+ ", getTargetData()=" + getTargetData().toString() + "]";
+				+ "]";
 	}
 	
 	

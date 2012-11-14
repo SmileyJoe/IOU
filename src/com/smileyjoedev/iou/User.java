@@ -248,4 +248,24 @@ public class User {
 		return this.selected;
 	}
 	
+	@Override
+	public String toString() {
+		return "User [getId()=" + getId() + ", getName()=" + getName()
+				+ ", getOnlineId()=" + getOnlineId() + ", getStatus()="
+				+ getStatus() + ", getPayments()=" + getPayments()
+				+ ", getBalance()=" + getBalance() + ", getStatusText()="
+				+ getStatusText() + ", getBalanceText()=" + getBalanceText()
+				+ ", getVariableName()=" + getVariableName()
+				+ ", getMinimalisticTextFlag()=" + getMinimalisticTextFlag()
+				+ ", getContactId()=" + getContactId() + ", getSelected()="
+				+ getSelected() + ", getStateText()=" + getStateText()
+				+ ", getFirstName()=" + getFirstName() + ", isInactive()="
+				+ isInactive() + ", isActive()=" + isActive()
+				+ ", isCurrent()=" + isCurrent() + ", isFavourite()="
+				+ isFavourite() + ", isUsingMinimalisticText()="
+				+ isUsingMinimalisticText() + ", isNotUsingMinimalisticText()="
+				+ isNotUsingMinimalisticText() + ", isInContactDir()="
+				+ isInContactDir() + ", isSelected()=" + isSelected() + "]";
+	}
+	
 }

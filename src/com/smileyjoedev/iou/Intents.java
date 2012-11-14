@@ -51,7 +51,16 @@ public class Intents {
 	}
 	
 	public static Intent quickActionNew(Context context){
+		return quickActionNew(context, false);
+	}
+	
+	public static Intent quickActionNew(Context context, boolean returnResult){
 		Intent intent = new Intent(context, QuickActionNew.class);
+		
+		Bundle extras = new Bundle();
+		extras.putBoolean("return_result", returnResult);
+		intent.putExtras(extras);		
+		
 		return intent;
 	}
 	
