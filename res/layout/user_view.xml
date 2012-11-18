@@ -71,19 +71,7 @@
 		    </TextView>
 		</LinearLayout>
 	</RelativeLayout>
-	<ListView
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:id="@+id/lv_payment_list">
-	</ListView>
-	<ImageButton 
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:layout_gravity="center"
-	    android:src="@drawable/add_payment"
-	    android:background="@drawable/btn_default_holo_transparent"
-	    android:id="@+id/ibt_add_payment">
-	</ImageButton>
+	<include layout="@xml/user_payment_list"/>
 	<Spinner 
 	    android:layout_height="0dip"
 	    android:layout_width="0dip"

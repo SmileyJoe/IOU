@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
@@ -72,37 +73,40 @@ public class QuickActionTargetPicker extends SherlockActivity implements OnItemC
     }
     
     private void initialize(){
-    	this.lvTargetPicker = (ListView) findViewById(R.id.lv_target_list);
-    	this.lvTargetPicker.setOnItemClickListener(this);
     	
     	this.btCancel = (Button) findViewById(R.id.bt_cancel);
     	this.btCancel.setOnClickListener(this);
-    	
-    	this.lvTargetPicker = (ListView) findViewById(R.id.lv_target_list);
-    	this.lvTargetPicker.setOnItemClickListener(this);
     	
     	this.view = new Views(this);
     	
     	switch(this.type){
 	    	case QuickAction.TYPE_USER:
+	        	this.lvTargetPicker = (ListView) findViewById(R.id.lv_user_list);
 	    		this.userAdapter = new DbUserAdapter(this);
 	    		this.users = this.userAdapter.get();
+	    		LinearLayout llGroupWrapper = (LinearLayout) findViewById(R.id.ll_group_list_wrapper);
+	    		llGroupWrapper.setVisibility(View.GONE);
 	    		break;
 	    	case QuickAction.TYPE_GROUP:
+	        	this.lvTargetPicker = (ListView) findViewById(R.id.lv_group_list);
 	    		this.groupAdapter = new DbGroupAdapter(this);
 	    		this.groups = this.groupAdapter.get();
+	    		LinearLayout llUserWrapper = (LinearLayout) findViewById(R.id.ll_user_list_wrapper);
+	    		llUserWrapper.setVisibility(View.GONE);
 	    		break;
     	}
+    	
+    	this.lvTargetPicker.setOnItemClickListener(this);
     }
     
     private void populateView(){
     	
     	switch(this.type){
 	    	case QuickAction.TYPE_USER:
-	    		this.view.userList(this.users, this.lvTargetPicker);
+	    		this.view.userList(this.users, (LinearLayout) findViewById(R.id.ll_user_list_wrapper));
 	    		break;
 	    	case QuickAction.TYPE_GROUP:
-	    		this.view.groupList(this.groups, this.lvTargetPicker);
+	    		this.view.groupList(this.groups, (LinearLayout) findViewById(R.id.ll_group_list_wrapper));
 	    		break;
 		}
     	
@@ -121,7 +125,8 @@ public class QuickActionTargetPicker extends SherlockActivity implements OnItemC
 	@Override
 	public void onItemClick(AdapterView<?> v, View arg1, int position, long arg3) {
 		switch(v.getId()){
-			case R.id.lv_target_list:
+			case R.id.lv_user_list:
+			case R.id.lv_group_list:
 				Intent resultIntent = new Intent();
 				
 				switch(this.type){

@@ -13,6 +13,7 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.smileyjoedev.genLibrary.Contact;
 import com.smileyjoedev.genLibrary.Contacts;
+import com.smileyjoedev.genLibrary.Debug;
 import com.smileyjoedev.genLibrary.Notify;
 import com.smileyjoedev.iou.R;
 
@@ -171,8 +172,21 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 	}
 	
 	private void populateAutoNames(){
+		Debug.d("populate auto names");
 		this.contacts = cont.getList(true);
-		   
+		Debug.d("Contact size", this.contacts.size());
+		for(int i = 0; i < this.contacts.size(); i++){
+			Debug.d(this.contacts.get(i).getName());
+		}
+		
+		ArrayList<String> names = cont.getNameList(contacts);
+		
+		Debug.d("names size", names.size());
+		
+		for(int i = 0; i < names.size(); i++){
+			Debug.d(names.get(i).getBytes().toString());
+		}
+		
 		this.etName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, cont.getNameList(contacts)));
 	}
 	

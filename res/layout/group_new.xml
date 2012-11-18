@@ -51,11 +51,10 @@
 	  		android:layout_weight="0.5">
 	  	</Button>
 	</LinearLayout>
-	<ListView 
-	    android:layout_height="fill_parent"
+	<include
 	    android:layout_width="fill_parent"
-	    android:id="@+id/lv_user_list"
+	    android:layout_height="fill_parent"
 	    android:layout_below="@id/tv_user_list_title"
-	    android:layout_above="@id/ll_controls">
-	</ListView>
+	    android:layout_above="@id/ll_controls" 
+	    layout="@xml/user_list_wrapper"/>
 </RelativeLayout>

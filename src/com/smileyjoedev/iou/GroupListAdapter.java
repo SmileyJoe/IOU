@@ -27,6 +27,10 @@ public class GroupListAdapter extends BaseAdapter {
 		this.context = context;
 	}
 	
+	public void setGroups(ArrayList<Group> groups){
+		this.groups = groups;
+	}
+	
 	@Override
 	public int getCount() {
 		return this.groups.size();

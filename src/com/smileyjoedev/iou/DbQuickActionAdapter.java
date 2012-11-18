@@ -10,6 +10,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+// TODO: Delete actions when a group or user is deleted //
+
 public class DbQuickActionAdapter {
 	
 	/*****************************************

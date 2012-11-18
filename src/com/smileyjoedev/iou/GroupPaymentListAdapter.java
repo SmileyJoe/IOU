@@ -29,6 +29,10 @@ public class GroupPaymentListAdapter extends BaseAdapter {
 		this.views = new Views(this.context);
 	}
 	
+	public void setPayments(ArrayList<GroupPayment> payments){
+		this.payments = payments;
+	}
+	
 	@Override
 	public int getCount() {
 		return this.payments.size();

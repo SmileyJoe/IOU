@@ -33,6 +33,7 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
 	private Views views;
 	private DbGroupPaymentAdapter groupPaymentAdapter;
 	private int selectedPayment;
+	private GroupPaymentListAdapter groupPaymentListAdapter;
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +91,14 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
     
     private void populateView(){
     	this.payments = this.groupPaymentAdapter.getByGroup(this.group.getId());
-    	this.views.groupPaymentList(this.payments, this.lvPaymentList);
+    	this.groupPaymentListAdapter = this.views.groupPaymentList(this.payments, (LinearLayout) findViewById(R.id.ll_group_payment_list_wrapper));
+    }
+    
+    private void updatePaymentList(){
+    	this.payments = this.groupPaymentAdapter.getByGroup(this.group.getId());
+    	this.groupPaymentListAdapter.setPayments(this.payments);
+    	this.groupPaymentListAdapter.notifyDataSetChanged();
+		this.lvPaymentList.refreshDrawableState();
     }
 
 	@Override
@@ -106,21 +114,21 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch(requestCode){
 			case Constants.ACTIVITY_GROUP_PAYMENT_NEW:
-				this.populateView();
+				this.updatePaymentList();
 				break;
 			case Constants.ACTIVITY_GROUP_REPAYMENT:
-				this.populateView();
+				this.updatePaymentList();
 				break;
 			case Constants.ACTIVITY_POPUP_DELETE:
 				if(resultCode == Activity.RESULT_OK){
 					if(data.getBooleanExtra("result", false)){
 						this.groupPaymentAdapter.delete(this.payments.get(this.selectedPayment));
-						this.populateView();
+						this.updatePaymentList();
 					}
 				}
 				break;
 			case Constants.ACTIVITY_GROUP_PAYMENT_EDIT:
-				this.populateView();
+				this.updatePaymentList();
 				break;
 		}
 	}

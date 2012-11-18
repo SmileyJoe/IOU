@@ -20,6 +20,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 
@@ -31,6 +32,7 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 	private ArrayList<Group> groups; 
 	private DbGroupAdapter groupAdapter;
 	private int selectedGroup;
+	private GroupListAdapter groupListAdapter;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,13 +79,16 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
     	
     }
     
-    public void populateView(boolean getAll){
+    public void populateView(){
     	this.groups = this.groupAdapter.get();
-    	this.views.groupList(this.groups, this.lvGroupList);
+    	this.groupListAdapter = this.views.groupList(this.groups, (LinearLayout) findViewById(R.id.ll_group_list_wrapper));
     }
     
-    private void populateView(){
-    	this.populateView(true);
+    private void updateGroupList(){
+    	this.groups = this.groupAdapter.get();
+    	this.groupListAdapter.setGroups(this.groups);
+    	this.groupListAdapter.notifyDataSetChanged();
+		this.lvGroupList.refreshDrawableState();
     }
     
 	@Override
@@ -91,7 +96,7 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 		switch(view.getId()){
 		}
 		
-		this.populateView(false);
+		this.updateGroupList();
 		
 	}
 	
@@ -117,18 +122,18 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 				if(resultCode == Activity.RESULT_OK){
 					if(data.getBooleanExtra("result", false)){
 						this.groupAdapter.delete(this.groups.get(this.selectedGroup));
-						this.populateView();
+						this.updateGroupList();
 					}
 				}
 				break;
 			case Constants.ACTIVITY_GROUP_NEW:
-				this.populateView();
+				this.updateGroupList();
 				break;
 			case Constants.ACTIVITY_GROUP_EDIT:
-				this.populateView();
+				this.updateGroupList();
 				break;
 			case Constants.ACTIVITY_GROUP_VIEW:
-				this.populateView();
+				this.updateGroupList();
 				break;
 		}
 	}

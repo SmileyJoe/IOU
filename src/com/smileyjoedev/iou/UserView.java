@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -39,7 +40,7 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 	private ArrayList<Payment> payments;
 	private int selectedPayment;
 	private Spinner spFilter;
-	private UserPaymentListAdapter paymentlistAdapter;
+	private UserPaymentListAdapter paymentListAdapter;
 	private int userId;
 	private ImageButton ibtAddPayment;
 	
@@ -114,7 +115,7 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
     	tvUserName.setText(this.user.getName());
     	
     	this.populateHeader();
-    	this.paymentlistAdapter = this.views.paymentList(this.payments, this.lvPaymentList);
+    	this.paymentListAdapter = this.views.paymentList(this.payments, (LinearLayout) findViewById(R.id.ll_user_payment_list_wrapper));
     }
     
     private void populateHeader(){
@@ -147,8 +148,8 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
     private void updatePaymentList(){
     	this.user = this.userAdapter.getDetails(userId);
     	this.payments = this.user.getPayments();
-    	this.paymentlistAdapter.setPayments(this.payments);
-    	this.paymentlistAdapter.notifyDataSetChanged();
+    	this.paymentListAdapter.setPayments(this.payments);
+    	this.paymentListAdapter.notifyDataSetChanged();
 		this.lvPaymentList.refreshDrawableState();
 		this.populateHeader();
     }

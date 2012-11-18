@@ -29,6 +29,10 @@ public class UserListAdapter extends BaseAdapter {
 		this.showCheck = showCheck;
 	}
 	
+	public void setUsers(ArrayList<User> users){
+		this.users = users;
+	}
+	
 	@Override
 	public int getCount() {
 		return this.users.size();

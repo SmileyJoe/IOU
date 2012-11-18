@@ -53,12 +53,7 @@
 		</LinearLayout>
     </LinearLayout>
     
-    <ListView
-		android:id="@+id/lv_user_list"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:layout_alignParentTop="true">
-	</ListView>
+	<include layout="@xml/user_list_wrapper"/>
 	
     <Spinner 
 	    android:layout_height="0dip"

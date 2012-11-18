@@ -72,6 +72,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 	private Spinner spPhoneNumberList;
 	private SharedPreferences prefs;
 	private LinearLayout llFilterWrapper;
+	private UserListAdapter userListAdapter;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -138,19 +139,28 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     	
     }
     
-    public void populateView(boolean getAll){
+    public void populateView(){
+    	this.users = this.userAdapter.get();
+    	
+    	this.userListAdapter = this.views.userList(this.users, (LinearLayout) findViewById(R.id.ll_user_list_wrapper));
+    }
+    
+    private void updateUserList(){
+    	this.updateUserList(true);
+    }
+    
+    private void updateUserList(boolean getAll){
     	if(getAll){
+    		this.allUsers = this.userAdapter.get();
     		this.users.clear();
     		for(int i = 0; i < this.allUsers.size(); i++){
     			this.users.add(this.allUsers.get(i));
     		}
     	}
     	
-    	this.views.userList(this.users, this.lvUserList);
-    }
-    
-    private void populateView(){
-    	this.populateView(true);
+    	this.userListAdapter.setUsers(this.users);
+    	this.userListAdapter.notifyDataSetChanged();
+		this.lvUserList.refreshDrawableState();
     }
     
     private void populateSpEmailList(long id){
@@ -204,10 +214,12 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 			case R.id.sp_filter:
 				this.filterUsers(position);
 				this.sortUsers(this.sort);
+				this.updateUserList(false);
 				break;
 			case R.id.sp_sort:
 				this.sort = position;
 				this.sortUsers(position);
+				this.updateUserList(false);
 				break;
 			case R.id.sp_email_list:
 				if(position > 0){
@@ -234,8 +246,6 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				
 				break;
 		}
-		
-		this.populateView(false);
 		
 	}
 	
@@ -296,41 +306,24 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch(requestCode){
 			case Constants.ACTIVITY_NEW_USER:
-				this.getAllUsers();
-				this.populateView();
+				this.updateUserList();
 				break;
 			case Constants.ACTIVITY_USER_VIEW:
-				this.getAllUsers();
-				this.populateView();
+				this.updateUserList();
 				break;	
-			case Constants.ACTIVITY_SETTINGS:
-				Gen.changeTheme(this);
-				break;
 			case Constants.ACTIVITY_POPUP_DELETE:
 				if(resultCode == Activity.RESULT_OK){
 					if(data.getBooleanExtra("result", false)){
 						this.userAdapter.delete(this.users.get(this.selectedUser));
-						this.getAllUsers();
-						this.populateView();
+						this.updateUserList();
 					}
 				}
 				break;
 			case Constants.ACTIVITY_REPAY_PAYMENT_USER:
-				this.getAllUsers();
-				this.populateView();
+				this.updateUserList();
 				break;
 			case Constants.ACTIVITY_EDIT_USER:
-				this.getAllUsers();
-				this.populateView();
-				break;
-			case Constants.ACTIVITY_GROUP_NEW:
-				this.populateView();
-				break;
-			case Constants.ACTIVITY_GROUP_EDIT:
-				this.populateView();
-				break;
-			case Constants.ACTIVITY_GROUP_VIEW:
-				this.populateView();
+				this.updateUserList();
 				break;
 		}
 	}
@@ -396,7 +389,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				
 				Gen.displayMinimalisticText(this, this.users.get(this.selectedUser), payment);
 				
-				this.populateView();
+				this.updateUserList();
 				
 				break;
 			case Constants.CONTEXT_REPAY_SOME:

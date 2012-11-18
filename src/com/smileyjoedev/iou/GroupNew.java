@@ -18,6 +18,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -35,6 +36,7 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 	private DbGroupAdapter groupAdapter;
 	private Group group;
 	private boolean edit;
+	private UserListAdapter userListAdapter;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,13 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
         return super.onCreateOptionsMenu(menu);
     }
     
+    private void updateUserList(){
+    	this.users = this.userAdapter.get();
+    	this.userListAdapter.setUsers(this.users);
+    	this.userListAdapter.notifyDataSetChanged();
+		this.lvUserList.refreshDrawableState();
+    }
+    
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 			case R.id.menu_add_user:
@@ -123,7 +132,7 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
     		this.etGroupDescription.setText(this.group.getDescription());
     	}
     	
-    	this.views.userList(this.users, this.lvUserList, true);
+    	this.userListAdapter = this.views.userList(this.users, (LinearLayout) findViewById(R.id.ll_user_list_wrapper), true);
     }
 
 	@Override
@@ -180,7 +189,7 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch(requestCode){
 			case Constants.ACTIVITY_NEW_USER:
-				this.populateView();
+				this.updateUserList();
 				break;
 		}
 	}

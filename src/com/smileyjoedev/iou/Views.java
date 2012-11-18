@@ -55,150 +55,108 @@ public class Views {
 
 
 	/******************************************************
-	 * PLAYER
+	 * USER
 	 *****************************************************/
 
-	public void userList(ArrayList<User> users, ListView lvUserList) {
-		this.userList(users, lvUserList, false);
+	public UserListAdapter userList(ArrayList<User> users, LinearLayout llUserList) {
+		return this.userList(users, llUserList, false);
 	}
 	
-	public void userList(ArrayList<User> users, ListView lvUserList, boolean showCheck) {
-		if(this.checkListContents(users, lvUserList, Constants.USER)){
-			int first = lvUserList.getFirstVisiblePosition();
-			View top_child = lvUserList.getChildAt(0);
-			int top;
-			
-			if(top_child == null){
-				top = 0;
-			}else{
-				top = top_child.getTop();
-			}
-			
-			UserListAdapter adapter = new UserListAdapter(this.context, users, showCheck);
-			lvUserList.setAdapter(adapter);
-			lvUserList.setSelectionFromTop(first, top);
+	public UserListAdapter userList(ArrayList<User> users, LinearLayout wrapper, boolean showCheck) {
+		ListView list = (ListView) wrapper.findViewById(R.id.lv_user_list);
+		TextView emptyView = (TextView) wrapper.findViewById(R.id.tv_user_list_empty);
+		
+		int first = list.getFirstVisiblePosition();
+		View topChild = list.getChildAt(0);
+		int top;
+		
+		if(topChild == null){
+			top = 0;
+		}else{
+			top = topChild.getTop();
 		}
-	}
-	
-	public void userList(ArrayList<User> users, LinearLayout llUserList) {
-		this.userList(users, llUserList, false);
-	}
-	
-	public void userList(ArrayList<User> users, LinearLayout llUserList, boolean showCheck) {
-//		TextView tv = (TextView) llUserList.findViewById(R.id.tv_no_users);
-		ListView list = (ListView) llUserList.findViewById(R.id.lv_user_list);
-		if(users.size() == 0){
-//			tv.setText(this.context.getText(R.string.tv_no_users).toString());
-//			tv.setVisibility(View.VISIBLE);
-//			list.setVisibility(View.GONE);
-		} else {
-			int first = list.getFirstVisiblePosition();
-			View topChild = list.getChildAt(0);
-			int top;
-			
-			if(topChild == null){
-				top = 0;
-			}else{
-				top = topChild.getTop();
-			}
-			
-			UserListAdapter adapter = new UserListAdapter(this.context, users, showCheck);
-			list.setAdapter(adapter);
-			list.setSelectionFromTop(first, top);
-//			tv.setVisibility(View.GONE);
-			list.setVisibility(View.VISIBLE);
-		}
+		
+		UserListAdapter adapter = new UserListAdapter(this.context, users, showCheck);
+		list.setAdapter(adapter);
+		list.setSelectionFromTop(first, top);
+		list.setEmptyView(emptyView);
+		
+		
+		return adapter;
 	}
 	
 	/*******************************************************
 	 * GROUP
 	 ******************************************************/
 	
-	public void groupList(ArrayList<Group> groups, ListView lvGroupList) {
-		if(this.checkListContents(groups, lvGroupList, Constants.GROUP)){
-			int first = lvGroupList.getFirstVisiblePosition();
-			View top_child = lvGroupList.getChildAt(0);
-			int top;
-			
-			if(top_child == null){
-				top = 0;
-			}else{
-				top = top_child.getTop();
-			}
-			
-			GroupListAdapter adapter = new GroupListAdapter(this.context, groups);
-			lvGroupList.setAdapter(adapter);
-			lvGroupList.setSelectionFromTop(first, top);
+	public GroupListAdapter groupList(ArrayList<Group> groups, LinearLayout wrapper) {
+		ListView list = (ListView) wrapper.findViewById(R.id.lv_group_list);
+		TextView emptyView = (TextView) wrapper.findViewById(R.id.tv_group_list_empty);
+		
+		int first = list.getFirstVisiblePosition();
+		View topChild = list.getChildAt(0);
+		int top;
+		
+		if(topChild == null){
+			top = 0;
+		}else{
+			top = topChild.getTop();
 		}
-	}
-	
-	public void groupList(ArrayList<Group> groups, LinearLayout llGroupList) {
-//		TextView tv = (TextView) llGroupList.findViewById(R.id.tv_no_groups);
-		ListView list = (ListView) llGroupList.findViewById(R.id.lv_group_list);
-		if(groups.size() == 0){
-//			tv.setText(this.context.getText(R.string.tv_no_groups).toString());
-//			tv.setVisibility(View.VISIBLE);
-//			list.setVisibility(View.GONE);
-		} else {
-			int first = list.getFirstVisiblePosition();
-			View topChild = list.getChildAt(0);
-			int top;
-			
-			if(topChild == null){
-				top = 0;
-			}else{
-				top = topChild.getTop();
-			}
-			
-			GroupListAdapter adapter = new GroupListAdapter(this.context, groups);
-			list.setAdapter(adapter);
-			list.setSelectionFromTop(first, top);
-//			tv.setVisibility(View.GONE);
-			list.setVisibility(View.VISIBLE);
-		}
+		
+		GroupListAdapter adapter = new GroupListAdapter(this.context, groups);
+		list.setAdapter(adapter);
+		list.setSelectionFromTop(first, top);
+		list.setEmptyView(emptyView);
+		
+		return adapter;
 	}
 	
 	/*******************************************************
 	 * PAYMENTS
 	 ******************************************************/
 	
-	public UserPaymentListAdapter paymentList(ArrayList<Payment> payments, ListView lvPaymentList) {
-//		if(this.check_list_contents(payments, lvPaymentList, Constants.PAYMENT)){
-			int first = lvPaymentList.getFirstVisiblePosition();
-			View top_child = lvPaymentList.getChildAt(0);
-			int top;
-			
-			if(top_child == null){
-				top = 0;
-			}else{
-				top = top_child.getTop();
-			}
-			
-			UserPaymentListAdapter adapter = new UserPaymentListAdapter(this.context, payments);
-			lvPaymentList.setAdapter(adapter);
-			lvPaymentList.setSelectionFromTop(first, top);
-			
-//		}
+	public UserPaymentListAdapter paymentList(ArrayList<Payment> payments, LinearLayout wrapper) {
+		
+		ListView list = (ListView) wrapper.findViewById(R.id.lv_payment_list);
+		
+		int first = list.getFirstVisiblePosition();
+		View top_child = list.getChildAt(0);
+		int top;
+		
+		if(top_child == null){
+			top = 0;
+		}else{
+			top = top_child.getTop();
+		}
+		
+		UserPaymentListAdapter adapter = new UserPaymentListAdapter(this.context, payments);
+		list.setAdapter(adapter);
+		list.setSelectionFromTop(first, top);
 			
 		return adapter;
 	}
 	
-	public void groupPaymentList(ArrayList<GroupPayment> payments, ListView lvPaymentList) {
-		if(this.checkListContents(payments, lvPaymentList, Constants.PAYMENT)){
-			int first = lvPaymentList.getFirstVisiblePosition();
-			View top_child = lvPaymentList.getChildAt(0);
-			int top;
-			
-			if(top_child == null){
-				top = 0;
-			}else{
-				top = top_child.getTop();
-			}
-			
-			GroupPaymentListAdapter adapter = new GroupPaymentListAdapter(this.context, payments);
-			lvPaymentList.setAdapter(adapter);
-			lvPaymentList.setSelectionFromTop(first, top);
+	public GroupPaymentListAdapter groupPaymentList(ArrayList<GroupPayment> payments, LinearLayout wrapper) {
+		
+		ListView list = (ListView) wrapper.findViewById(R.id.lv_payment_list);
+		TextView emptyView = (TextView) wrapper.findViewById(R.id.tv_payment_list_empty);
+		
+		int first = list.getFirstVisiblePosition();
+		View top_child = list.getChildAt(0);
+		int top;
+		
+		if(top_child == null){
+			top = 0;
+		}else{
+			top = top_child.getTop();
 		}
+		
+		GroupPaymentListAdapter adapter = new GroupPaymentListAdapter(this.context, payments);
+		list.setAdapter(adapter);
+		list.setSelectionFromTop(first, top);
+		list.setEmptyView(emptyView);
+		
+		return adapter;
 	}
 	
 	/******************************************************
@@ -269,64 +227,6 @@ public class Views {
 		tv.setTextSize(20);
 		
 		return tv;
-	}
-
-	/***********************************************************
-	 * PRIVATE
-	 **********************************************************/
-	
-	private void emptyList(View List, int sectionId) {
-		
-		String message = new String();
-		
-		switch(sectionId){
-			case Constants.USER:
-				message = this.context.getText(R.string.tv_no_users).toString();
-				break;
-			case Constants.PAYMENT:
-				message = this.context.getText(R.string.tv_no_payments).toString();
-				break;
-			case Constants.GROUP:
-				message = this.context.getText(R.string.tv_no_groups).toString();
-				break;
-		}
-		
-		TextView tv = new TextView(this.context);
-		tv.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
-		tv.setText(message);
-		tv.setGravity(Gravity.CENTER);
-		tv.setTextSize(15);
-		tv.setPadding(10, 0, 10, 0);
-		tv.setTypeface(null, Typeface.BOLD);
-		tv.setId(sectionId);
-		ViewGroup parent = (ViewGroup) List.getParent();
-		parent.addView(tv);
-		List.setVisibility(View.GONE);
-	}
-	
-	private void notEmptyList(View List, int sectionId) {
-		try{
-			ViewGroup parent = (ViewGroup) List.getParent();
-			TextView tv = (TextView) parent.findViewById(sectionId);
-			tv.setVisibility(View.GONE);
-			List.setVisibility(View.VISIBLE);
-		}catch(Exception e){
-			
-		}
-	}
-	
-	private boolean checkListContents(ArrayList<?> array, View list, int sectionId) {
-		boolean isNotEmpty;
-		
-		if(array.size() == 0){
-			this.emptyList(list, sectionId);
-			isNotEmpty = false;
-		}else{
-			this.notEmptyList(list, sectionId);
-			isNotEmpty = true;
-		}
-		
-		return isNotEmpty;
 	}
 	
 }

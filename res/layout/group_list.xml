@@ -3,10 +3,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
-	<ListView
-		android:id="@+id/lv_group_list"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
-	</ListView>
+	<include layout="@xml/group_list_wrapper"/>
 </LinearLayout>

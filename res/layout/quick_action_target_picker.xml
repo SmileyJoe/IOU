@@ -27,12 +27,17 @@
 	  	</Button> -->
 	</LinearLayout>
     
-    <ListView 
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/lv_target_list"
+   	<include 
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
-        android:layout_above="@id/ll_controls">
-    </ListView>
+        android:layout_above="@id/ll_controls"
+   	    layout="@xml/user_list_wrapper"/>
+   	<include
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="fill_parent" 
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/ll_controls"
+   	    layout="@xml/group_list_wrapper"/>
 
 </RelativeLayout>

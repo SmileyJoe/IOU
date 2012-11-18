@@ -4,9 +4,5 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" 
     android:id="@+id/rl_main_wrapper">
-	<ListView
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:id="@+id/lv_payment_list">
-	</ListView>
+	<include layout="@xml/group_payment_list"/>
 </LinearLayout>
