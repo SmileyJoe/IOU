@@ -12,7 +12,8 @@
 		android:paddingLeft="5dip"
 		android:background="@color/dark_grey"
 		android:weightSum="1.0"
-		android:orientation="horizontal">
+		android:orientation="horizontal"
+		android:id="@+id/ll_balance_wrapper">
 		<LinearLayout 
 		    android:layout_width="wrap_content"
 		    android:layout_height="fill_parent"

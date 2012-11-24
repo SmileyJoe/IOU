@@ -45,6 +45,7 @@ public class Constants {
 	public static final int ACTIVITY_QUICK_ACTION_TARGET_PICKER = 21;
 	public static final int ACTIVITY_QUICK_ACTION_EXCECUTE = 22;
 	public static final int ACTIVITY_QUICK_ACTION_EDIT = 23;
+	public static final int ACTIVITY_START_PAGE = 24;
 	
 	public static final int PAYMENT = 101;
 	public static final int USER = 102;
@@ -63,6 +64,7 @@ public class Constants {
 	public static final int CONTEXT_REMINDER_EMAIL = 4;
 	public static final int CONTEXT_REMINDER_SMS = 5;
 	public static final int CONTEXT_VIEW_CONTACT_CARD = 6;
+	public static final int CONTEXT_PERSISTENT_NOTIFICATION = 7;
 	
 	public static final String ACTION_WIDGET_QUICK_ADD = "com.smileyjoedev.iou.quickAdd";
 }

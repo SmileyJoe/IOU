@@ -13,7 +13,9 @@ import com.smileyjoedev.iou.R;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.ContextMenu;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -35,6 +37,9 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
 	private ArrayList<QuickAction> quickActions;
 	private int selectedQuickAction;
 	private DbQuickActionAdapter quickActionAdapter;
+	private LinearLayout llUserListWrapper;
+	private LinearLayout llGroupListWrapper;
+	private SharedPreferences prefs;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +49,17 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
 //        BugSenseHandler.setup(this, "04b74a70");
         
         this.initialize();
+        
+        switch(Integer.parseInt(this.prefs.getString("default_start_page", "0"))){
+        	case Settings.START_INDIVIDUAL_VIEW_ALL:
+        		startActivityForResult(Intents.userList(this), Constants.ACTIVITY_START_PAGE);
+        		break;
+        	case Settings.START_GROUP_VIEW_ALL:
+        		startActivityForResult(Intents.groupList(this), Constants.ACTIVITY_START_PAGE);
+        		break;
+        	default:
+        		break;
+        }
         
         this.getQuickActions();
         this.actionGridApater = this.views.actionGrid(this.quickActions, this.gvActions);
@@ -84,11 +100,13 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     	
     	this.quickActionAdapter = new DbQuickActionAdapter(this);
     	
-    	LinearLayout llUserListWrapper = (LinearLayout) findViewById(R.id.ll_user_list_wrapper);
-    	llUserListWrapper.setOnClickListener(this);
+    	this.llUserListWrapper = (LinearLayout) findViewById(R.id.ll_user_list_wrapper);
+    	this.llUserListWrapper.setOnClickListener(this);
     	
-    	LinearLayout llGroupListWrapper = (LinearLayout) findViewById(R.id.ll_group_list_wrapper);
-    	llGroupListWrapper.setOnClickListener(this);
+    	this.llGroupListWrapper = (LinearLayout) findViewById(R.id.ll_group_list_wrapper);
+    	this.llGroupListWrapper.setOnClickListener(this);
+    	
+    	this.prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     	
     }
     
@@ -102,6 +120,22 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     	
     	TextView tvTotalUserOwed = (TextView) findViewById(R.id.tv_total_user_owed);
     	tvTotalUserOwed.setText(this.getOweText(users));
+    	
+    	LinearLayout llBalanceWrapper = (LinearLayout) findViewById(R.id.ll_balance_wrapper);
+    	
+    	if(!this.prefs.getBoolean("allow_individual", true)){
+    		this.llUserListWrapper.setVisibility(View.GONE);
+    		llBalanceWrapper.setVisibility(View.GONE);
+    	} else {
+    		this.llUserListWrapper.setVisibility(View.VISIBLE);
+    		llBalanceWrapper.setVisibility(View.VISIBLE);
+    	}
+    	
+    	if(!this.prefs.getBoolean("allow_group", true)){
+    		this.llGroupListWrapper.setVisibility(View.GONE);
+    	} else {
+    		this.llGroupListWrapper.setVisibility(View.VISIBLE);
+    	}
     }
     
     private void getQuickActions(){
@@ -174,6 +208,14 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
 				break;
 			case Constants.ACTIVITY_QUICK_ACTION_EDIT:
 				this.updateQuickActions();
+				break;
+			case Constants.ACTIVITY_SETTINGS:
+				this.populateView();
+				this.updateQuickActions();
+				break;
+			case Constants.ACTIVITY_START_PAGE:
+				this.populateView();
+				finish();
 				break;
 		}
 	}

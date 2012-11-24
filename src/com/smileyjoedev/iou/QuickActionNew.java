@@ -2,7 +2,9 @@ package com.smileyjoedev.iou;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,6 +35,7 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
 	private DbQuickActionAdapter quickActionAdapter;
 	private boolean isEdit;
 	private boolean returnResult;
+	private SharedPreferences prefs;
 	
 	
     @Override
@@ -112,6 +115,8 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
     	this.quickActionAdapter = new DbQuickActionAdapter(this);
     	
     	this.returnResult = false;
+    	
+    	this.prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     }
     
     private void populateView(){
@@ -141,6 +146,14 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
     		
     		this.handleChooseButton();
     		this.handleSaveButton();
+    	}
+    	
+    	if(!this.prefs.getBoolean("allow_individual", true)){
+    		this.rbTypeUser.setVisibility(View.GONE);
+    	}
+    	
+    	if(!this.prefs.getBoolean("allow_group", true)){
+    		this.rbTypeGroup.setVisibility(View.GONE);
     	}
     }
     

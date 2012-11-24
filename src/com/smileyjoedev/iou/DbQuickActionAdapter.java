@@ -2,13 +2,17 @@ package com.smileyjoedev.iou;
 
 import java.util.ArrayList;
 
+import com.smileyjoedev.genLibrary.Debug;
 import com.smileyjoedev.genLibrary.Notify;
 import com.smileyjoedev.iou.R;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.preference.PreferenceManager;
+import android.view.View;
 
 // TODO: Delete actions when a group or user is deleted //
 
@@ -26,6 +30,7 @@ public class DbQuickActionAdapter {
 	private int typeCol;
 	private int actionCol;
 	private int targetIdCol;
+	private SharedPreferences prefs;
 	
 	/*****************************************
 	 * CONSTRUCTOR
@@ -35,6 +40,7 @@ public class DbQuickActionAdapter {
 		this.context = context;
 		this.dbHelper = new DbHelper(context);
 		this.db = dbHelper.getWritableDatabase();
+		this.prefs = PreferenceManager.getDefaultSharedPreferences(this.context);
 	}
 	
 	/******************************************
@@ -98,6 +104,31 @@ public class DbQuickActionAdapter {
 	 *****************************************/
 	
 	private void setCursor(String where){
+		String whereAdd = "";
+		
+		if(!this.prefs.getBoolean("allow_individual", true)){
+    		whereAdd += "quick_action_type !='" + QuickAction.TYPE_USER + "'";
+    	}
+    	
+    	if(!this.prefs.getBoolean("allow_group", true)){
+    		if(!whereAdd.equals("")){
+    			whereAdd += " OR ";
+    		}
+    		whereAdd += "quick_action_type !='" + QuickAction.TYPE_GROUP + "'";
+    	}
+    	
+    	if(!where.equals("")){
+    		if(!whereAdd.equals("")){
+    			where += " " + " AND (" + whereAdd + ")";
+    		}
+    	} else {
+    		if(!whereAdd.equals("")){
+    			where = "WHERE " + whereAdd;
+    		}
+    	}
+    	
+    	Debug.d(where);
+		
 		this.cursor = this.db.rawQuery(
 				"SELECT _id, quick_action_type, quick_action_action, quick_action_target_id "
 				+ "FROM quick_action " 

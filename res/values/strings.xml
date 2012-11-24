@@ -84,6 +84,8 @@
     <string name="context_delete">Delete</string>
     <string name="context_user_open_contact_card">Open Contact Card</string>
     
+    <string name="context_notification_reminder">Create Notification Reminder</string>
+    
     <string name="date_title">Date: </string>
     <string name="description_title">Description: </string>
     
@@ -212,8 +214,10 @@
     <!-- PREFERENCES -->
     <string name="category_title_integration">Integration</string>
     <string name="category_title_about">About</string>
-    <string name="category_title_reminders">Reminders</string>
+    <string name="category_title_individual_reminders">Individual Reminders</string>
     <string name="category_title_general">General</string>
+    <string name="category_title_sections">Sections</string>
+    <string name="category_title_specific_options">Specific Options</string>
     
     <string name="pref_title_allow_min_text">Minimalistic Text</string>
     <string name="pref_title_about_min_text">Minimalistic Text</string>
@@ -225,6 +229,14 @@
     <string name="pref_title_sms_body">Default sms body</string>
     <string name="pref_title_currency">Currency</string>
     <string name="pref_title_default_start_page">Start Page</string>
+    <string name="pref_title_notification_reminders">Notification Reminders</string>
+    <string name="pref_title_allow_individual">Individual</string>
+    <string name="pref_title_allow_group">Group</string>
+    <string name="pref_title_notification_reminder_persistent">Persistent Notification</string>
+    
+    <string name="pref_start_home_dash_title">Home Dash</string>
+    <string name="pref_start_individual_view_all_title">User List</string>
+    <string name="pref_start_group_view_all_title">Group List</string>
     
     <string name="pref_summary_allow_min_text">If this is check variables will allowed to be created to be used in minimalistic text</string>
     <string name="pref_summary_about_min_text">SmileyJoe Development have nothing to do with Minimalistic text, we just think its an amazing app and wanted to integrate with it, for more information click here to download it from google play</string>
@@ -235,12 +247,19 @@
     <string name="pref_summary_sms_reminders">Gives you the option to send an sms reminder to a user</string>
     <string name="pref_summary_sms_body" formatted="false">The Default message that will be sent, this will be editable before the message is sent. Use %USERNAME and %BALANCE as variables for the user name and user balance respectively</string>
     <string name="pref_summary_currency">Show amounts with your local currency symbol</string>
-    <string name="pref_summary_default_start_page">Select whether the IOU will start showing Groups or Individuals</string>
+    <string name="pref_summary_default_start_page">Select the starting page, this will take effect the next time the app starts. The home dash will be disabled if it is not the home page</string>
+    <string name="pref_summary_notification_reminders">Allows you to add a reminder to the notification bar</string>
+    <string name="pref_summary_allow_individual">If this is checked the individual section will be active</string>
+    <string name="pref_summary_allow_group">If this is checked the group section will be active</string>
+    <string name="pref_summary_individual_options">Options that apply to individual Users</string>
+    <string name="pref_summary_notification_reminder_persistent">Reminder Notifications will be persistent</string>
     
     <string name="pref_name_def_email_rem_body">Default Email Body</string>
     <string name="pref_name_def_email_rem_sub">Default Email Subject</string>
     <string name="pref_name_def_sms_rem_body">Default SMS Body</string>
     <string name="pref_name_currency">Currency</string>
+    
+    <string name="pref_screen_individual_options">Individual Options</string>
     
     <string name="default_email_reminder_body" formatted="false">Dear %USERNAME, You owe me %BALANCE. Please pay me as soon as you can.</string>
     <string name="default_email_reminder_subject">Please Pay</string>

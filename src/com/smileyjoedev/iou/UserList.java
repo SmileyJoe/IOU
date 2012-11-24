@@ -16,6 +16,8 @@ import com.actionbarsherlock.view.MenuItem;
 import com.bugsense.trace.BugSenseHandler;
 import com.smileyjoedev.genLibrary.Contact;
 import com.smileyjoedev.genLibrary.Contacts;
+import com.smileyjoedev.genLibrary.Debug;
+import com.smileyjoedev.genLibrary.Notify;
 import com.smileyjoedev.genLibrary.Send;
 import com.smileyjoedev.iou.R;
 
@@ -73,6 +75,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 	private SharedPreferences prefs;
 	private LinearLayout llFilterWrapper;
 	private UserListAdapter userListAdapter;
+	private boolean isStartPage;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,14 +85,22 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 //        BugSenseHandler.setup(this, "04b74a70");
         
         this.initialize();
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(!this.isStartPage){
+        	getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         this.populateView();
     }
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getSupportMenuInflater();
-        inflater.inflate(R.menu.user_list, menu);
+        
+        if(this.isStartPage){
+        	inflater.inflate(R.menu.user_list_start_page, menu);
+        } else {
+        	inflater.inflate(R.menu.user_list, menu);
+        }
+        
         return super.onCreateOptionsMenu(menu);
     }
     
@@ -105,8 +116,13 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 					this.llFilterWrapper.setVisibility(View.VISIBLE);
 				}
 				return true;
+			case R.id.menu_settings:
+				startActivityForResult(Intents.settings(this), Constants.ACTIVITY_SETTINGS);
+				return true;
 			case android.R.id.home:
-				finish();
+				if(!this.isStartPage){
+					finish();
+				}
 				return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
@@ -136,6 +152,12 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     	this.spPhoneNumberList.setOnItemSelectedListener(this);
     	this.prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     	this.llFilterWrapper = (LinearLayout) findViewById(R.id.ll_filter_wrapper);
+    	
+    	if(Integer.parseInt(this.prefs.getString("default_start_page", "0")) == Settings.START_INDIVIDUAL_VIEW_ALL){
+        	this.isStartPage = true;
+        } else {
+        	this.isStartPage = false;
+        }
     	
     }
     
@@ -340,6 +362,9 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				menu.add(Menu.NONE, Constants.CONTEXT_DELETE, Constants.CONTEXT_DELETE, this.getString(R.string.context_delete));
 				
 				if(this.users.get(this.selectedUser).getBalance() != 0){
+					if(this.prefs.getBoolean("allow_notification_reminders", true)){
+						menu.add(Menu.NONE, Constants.CONTEXT_PERSISTENT_NOTIFICATION, Constants.CONTEXT_PERSISTENT_NOTIFICATION, this.getString(R.string.context_notification_reminder));
+					}
 					menu.add(Menu.NONE, Constants.CONTEXT_REPAY_ALL, Constants.CONTEXT_REPAY_ALL, this.getString(R.string.context_user_repay_all));
 					menu.add(Menu.NONE, Constants.CONTEXT_REPAY_SOME, Constants.CONTEXT_REPAY_SOME, this.getString(R.string.context_user_repay_some));
 				}
@@ -413,6 +438,19 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				break;
 			case Constants.CONTEXT_VIEW_CONTACT_CARD:
 				Contacts.openContact(this, this.users.get(this.selectedUser).getContactId());
+				break;
+			case Constants.CONTEXT_PERSISTENT_NOTIFICATION:
+				String message = new String();
+				User user = this.users.get(this.selectedUser);
+				
+				if(user.getBalance() > 0){
+					message = user.getName() + " owes you " + user.getBalanceText();
+				} else {
+					message = "You owe " + user.getName() + " " + user.getBalanceText();
+				}
+				
+		        Notify.notification(this, Intents.userView(this, user.getId(), user.getId()), "Reminder Set", message, this.prefs.getBoolean("notification_reminder_persistent", false));
+				
 				break;
 		}
 		return true;

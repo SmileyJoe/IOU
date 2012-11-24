@@ -6,6 +6,7 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.smileyjoedev.genLibrary.Debug;
 import com.smileyjoedev.iou.R;
 
 import android.app.Activity;
@@ -33,6 +34,7 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 	private DbGroupAdapter groupAdapter;
 	private int selectedGroup;
 	private GroupListAdapter groupListAdapter;
+	private boolean isStartPage;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,14 +43,23 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
         setContentView(R.layout.group_list);
         
         this.initialize();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(!this.isStartPage){
+        	getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        
         this.populateView();
     }
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getSupportMenuInflater();
-        inflater.inflate(R.menu.group_list, menu);
+        
+        if(this.isStartPage){
+        	inflater.inflate(R.menu.group_list_start_page, menu);
+        } else {
+        	inflater.inflate(R.menu.group_list, menu);
+        }
+        
         return super.onCreateOptionsMenu(menu);
     }
     
@@ -58,8 +69,13 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
 			case R.id.menu_add_group:
 				startActivityForResult(Intents.groupNew(this), Constants.ACTIVITY_GROUP_NEW);
 				return true;
+			case R.id.menu_settings:
+				startActivityForResult(Intents.settings(this), Constants.ACTIVITY_SETTINGS);
+				return true;
 			case android.R.id.home:
-				finish();
+				if(!this.isStartPage){
+					finish();
+				}
 				return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
@@ -76,6 +92,12 @@ public class GroupList extends SherlockActivity implements OnItemClickListener, 
     	this.groups = new ArrayList<Group>();
     	this.groupAdapter = new DbGroupAdapter(this);
     	this.selectedGroup = 0;
+    	
+    	if(Integer.parseInt(this.prefs.getString("default_start_page", "0")) == Settings.START_GROUP_VIEW_ALL){
+        	this.isStartPage = true;
+        } else {
+        	this.isStartPage = false;
+        }
     	
     }
     

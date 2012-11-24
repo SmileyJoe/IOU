@@ -6,6 +6,8 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.smileyjoedev.genLibrary.Debug;
+import com.smileyjoedev.genLibrary.Notify;
 import com.smileyjoedev.iou.R;
 
 
@@ -53,6 +55,8 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
         Bundle extras = getIntent().getExtras();
 		
 		this.userId = extras.getInt("user_id");
+		Notify.cancelNotification(this, this.userId);
+		
 		this.user = new User();
 		this.user = this.userAdapter.getDetails(userId);
         

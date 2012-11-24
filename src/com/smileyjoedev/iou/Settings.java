@@ -16,6 +16,10 @@ import android.preference.PreferenceManager;
 
 public class Settings extends PreferenceActivity implements OnPreferenceClickListener {
 	
+	public static final int START_HOME_DASH = 1;
+	public static final int START_INDIVIDUAL_VIEW_ALL = 2;
+	public static final int START_GROUP_VIEW_ALL = 3;
+	
 	private SharedPreferences prefs;
 //	private String[] themeTypes = {"Dark", "Light"};
 //	private String[] themeTypesIds = {"1","2"};
@@ -27,8 +31,8 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 	private Preference emailReminders;
 	private Preference smsReminders;
 	private Preference defaultSmsRemindBody;
-	private String[] startPages = {"Individual", "Group"};
-	private String[] startPageIds = {"1","2"};
+	private Preference notificationReminders;
+	private Preference notificationReminderPersistent;
 	private ListPreference prefStartPage;
 	
 	@Override
@@ -46,6 +50,18 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		
 //		this.prefTheme.setEntries(this.themeTypes);
 //		this.prefTheme.setEntryValues(this.themeTypesIds);
+		
+		String[] startPages = {
+			this.getString(R.string.pref_start_home_dash_title), 
+			this.getString(R.string.pref_start_individual_view_all_title),
+			this.getString(R.string.pref_start_group_view_all_title)
+		};
+		
+		String[] startPageIds = {
+			Integer.toString(this.START_HOME_DASH),
+			Integer.toString(this.START_INDIVIDUAL_VIEW_ALL),
+			Integer.toString(this.START_GROUP_VIEW_ALL)
+		};
 		
 		this.contact = (Preference) findPreference("contact");
 		this.contact.setOnPreferenceClickListener(this);
@@ -66,8 +82,14 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		this.defaultSmsRemindBody.setEnabled(this.prefs.getBoolean("allow_sms_reminders", true));
 		
 		this.prefStartPage = (ListPreference) findPreference("default_start_page");
-		this.prefStartPage.setEntries(this.startPages);
-		this.prefStartPage.setEntryValues(this.startPageIds);
+		this.prefStartPage.setEntries(startPages);
+		this.prefStartPage.setEntryValues(startPageIds);
+		
+		this.notificationReminders = (Preference) findPreference("allow_notification_reminders");
+		this.notificationReminders.setOnPreferenceClickListener(this);
+		
+		this.notificationReminderPersistent = (Preference) findPreference("notification_reminder_persistent");
+		this.notificationReminderPersistent.setEnabled(this.prefs.getBoolean("allow_notification_reminders", true));
 	}
 	
 	public void populateView(){
@@ -93,6 +115,10 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		
 		if(pref.getKey().equals("allow_sms_reminders")){
 			this.defaultSmsRemindBody.setEnabled(!this.defaultSmsRemindBody.isEnabled());
+		}
+		
+		if(pref.getKey().equals("allow_notification_reminders")){
+			this.notificationReminderPersistent.setEnabled(!this.notificationReminderPersistent.isEnabled());
 		}
 		return true;
 	}

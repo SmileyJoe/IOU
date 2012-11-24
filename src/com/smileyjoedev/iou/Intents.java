@@ -1,5 +1,7 @@
 package com.smileyjoedev.iou;
 
+import com.smileyjoedev.genLibrary.Debug;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -114,6 +116,17 @@ public class Intents {
 		
 		Bundle extras = new Bundle();
 		extras.putInt("user_id", userId);
+		intent.putExtras(extras);
+		
+		return intent;
+	}
+	
+	public static Intent userView(Context context, int userId, int notificationId){
+		Intent intent = new Intent(context, UserView.class);
+		Bundle extras = new Bundle();
+		extras.putInt("user_id", userId);
+		extras.putInt("notification_id", notificationId);
+		intent.setAction(Long.toString(System.currentTimeMillis()));
 		intent.putExtras(extras);
 		
 		return intent;
