@@ -2,6 +2,8 @@ package com.smileyjoedev.iou;
 
 import java.util.ArrayList;
 
+import android.content.Context;
+
 public class GroupPayment {
 	
 	private int id;
@@ -12,12 +14,13 @@ public class GroupPayment {
 	private long pdt;
 	private int groupId;
 	private ArrayList<PaymentSplit> splits;
+	private Context context;
 	
 	/**************************************************
 	 * CONSTRUCTOR
 	 *************************************************/
 	
-	public GroupPayment() {
+	public GroupPayment(Context context) {
 		this.id = 0;
 		this.amount = 0;
 		this.type = 0;
@@ -26,6 +29,7 @@ public class GroupPayment {
 		this.pdt = Gen.getPdt();
 		this.splits = new ArrayList<PaymentSplit>();
 		this.groupId = 0;
+		this.context = context;
 	}
 	
 	/**************************************************
@@ -119,7 +123,7 @@ public class GroupPayment {
 	}
 	
 	public String getAmountText(){
-		return Gen.getAmountText(this.amount);
+		return Gen.getAmountText(this.context, this.amount);
 	}
 	
 	public String getPayingCsv(){

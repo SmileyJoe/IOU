@@ -195,7 +195,7 @@ public class DbGroupPaymentAdapter {
 	
 	private ArrayList<PaymentSplit> getSplit(int id){
 		ArrayList<PaymentSplit> splits = new ArrayList<PaymentSplit>();
-		PaymentSplit split = new PaymentSplit();
+		PaymentSplit split = new PaymentSplit(this.context);
 		Cursor cursor = this.db.rawQuery(
 				"SELECT _id, payment_id, user_id, payment_amount, split_type"
 				+ " FROM payment_split "
@@ -204,7 +204,7 @@ public class DbGroupPaymentAdapter {
 		if(cursor.getCount() > 0){
 			cursor.moveToFirst();
 			do{
-				split = new PaymentSplit();
+				split = new PaymentSplit(this.context);
 				split.setId(cursor.getInt(cursor.getColumnIndex("_id")));
 				split.setAmount(cursor.getFloat(cursor.getColumnIndex("payment_amount")));
 				split.setType(cursor.getInt(cursor.getColumnIndex("split_type")));
@@ -219,7 +219,7 @@ public class DbGroupPaymentAdapter {
 	}
 	
 	private GroupPayment getPaymentData(){
-		GroupPayment payment = new GroupPayment();
+		GroupPayment payment = new GroupPayment(this.context);
 		
 		payment.setId(this.cursor.getInt(this.idCol));
 		payment.setAmount(this.cursor.getFloat(this.amountCol));
@@ -249,7 +249,7 @@ public class DbGroupPaymentAdapter {
 	}
 	
 	private GroupPayment sortCursor(){
-		GroupPayment payment = new GroupPayment();
+		GroupPayment payment = new GroupPayment(this.context);
 		
 		this.setColoumns();
 		

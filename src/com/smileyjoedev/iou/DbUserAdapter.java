@@ -149,7 +149,7 @@ public class DbUserAdapter {
 	}
 	
 	private User getUserData(){
-		User user = new User();
+		User user = new User(this.context);
 		
 		user.setId(this.cursor.getInt(this.idCol));
 		user.setName(this.cursor.getString(this.nameCol));
@@ -186,7 +186,7 @@ public class DbUserAdapter {
 	}
 	
 	private User sortCursor(){
-		User user = new User();
+		User user = new User(this.context);
 		
 		this.setColoumns();
 		

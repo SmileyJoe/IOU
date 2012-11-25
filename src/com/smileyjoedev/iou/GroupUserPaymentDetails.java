@@ -57,7 +57,7 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		ArrayList<GroupUserPayment> userPayments = new ArrayList<GroupUserPayment>();
 		
 		for(int i = 0; i < this.group.getUsers().size(); i++){
-			GroupUserPayment userPayment = new GroupUserPayment();
+			GroupUserPayment userPayment = new GroupUserPayment(this);
 			
 			userPayment.setUser(this.group.getUser(i));
 			
@@ -88,7 +88,7 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		}
 		
 		this.tvGroupTotal.setText("Total spent by group:");
-		this.tvGroupTotalAmount.setText(Gen.getAmountText(total));
+		this.tvGroupTotalAmount.setText(Gen.getAmountText(this, total));
 		
 	}
 	

@@ -2,6 +2,8 @@ package com.smileyjoedev.iou;
 
 import java.util.ArrayList;
 
+import android.content.Context;
+
 public class User {
 	
 	private int id;
@@ -14,12 +16,13 @@ public class User {
 	private String variableName;
 	private long contactId;
 	private boolean selected;
+	private Context context;
 	
 	/*****************************************************
 	 * CONSTRUCTOR
 	 ****************************************************/
 	
-	public User(){
+	public User(Context context){
 		this.id = 0;
 		this.name = "";
 		this.onlineId = 0;
@@ -30,6 +33,7 @@ public class User {
 		this.variableName = "";
 		this.contactId = 0;
 		this.selected = false;
+		this.context = context;
 	}
 	
 	/*****************************************************
@@ -137,7 +141,7 @@ public class User {
 	}
 	
 	public String getBalanceText(){
-		return Gen.getAmountText(Math.abs(this.balance));
+		return Gen.getAmountText(this.context, Math.abs(this.balance));
 	}
 	
 	public String getVariableName(){

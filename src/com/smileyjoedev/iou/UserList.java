@@ -391,7 +391,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 		switch(menuItemIndex){
 			case Constants.CONTEXT_REPAY_ALL:
 				// repay all //
-				Payment payment = new Payment();
+				Payment payment = new Payment(this);
 				
 				payment.setDescription("Repayment: All");
 				

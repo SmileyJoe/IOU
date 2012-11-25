@@ -2,15 +2,22 @@ package com.smileyjoedev.iou;
 
 import java.text.DecimalFormat;
 
+import android.content.Context;
+
 public class GroupUserPayment {
 	
 	private User user;
 	private float paid;
 	private float spent;
+	private Context context;
 	
 	/**********************************************
 	 * CONSTRUCTOR
 	 *********************************************/
+	
+	public GroupUserPayment(Context context){
+		this.context = context;
+	}
 	
 	/**********************************************
 	 * SETTERS
@@ -52,11 +59,11 @@ public class GroupUserPayment {
 	}
 	
 	public String getPaidText(){
-		return Gen.getAmountText(this.getPaid());
+		return Gen.getAmountText(this.context, this.getPaid());
 	}
 	
 	public String getSpentText(){
-		return Gen.getAmountText(this.getSpent());
+		return Gen.getAmountText(this.context, this.getSpent());
 	}
 	
 	public String getBalanceText(){
@@ -65,9 +72,9 @@ public class GroupUserPayment {
 	
 	public String getBalanceText(boolean showSign){
 		if(showSign){
-			return Gen.getAmountText(this.getBalance());
+			return Gen.getAmountText(this.context, this.getBalance());
 		} else {
-			return Gen.getAmountText(Math.abs(this.getBalance()));
+			return Gen.getAmountText(this.context, Math.abs(this.getBalance()));
 		}
 		
 	}

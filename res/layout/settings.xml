@@ -36,8 +36,7 @@
 			android:title="@string/pref_screen_individual_options"
 			android:summary="@string/pref_summary_individual_options">
 			<PreferenceCategory
-				android:title="@string/category_title_individual_reminders"
-				android:id="@+id/category_individual_reminders">
+				android:title="@string/category_title_notification">
 				<CheckBoxPreference
 				        android:title="@string/pref_title_notification_reminders"
 				        android:defaultValue="true"
@@ -48,6 +47,9 @@
 				        android:defaultValue="false"
 				        android:summary="@string/pref_summary_notification_reminder_persistent"
 				        android:key="notification_reminder_persistent" />
+			</PreferenceCategory>
+			<PreferenceCategory
+				android:title="@string/category_title_email">
 				<CheckBoxPreference
 				        android:title="@string/pref_title_email_reminders"
 				        android:defaultValue="true"
@@ -65,6 +67,9 @@
 		                android:defaultValue="@string/default_email_reminder_body"
 		                android:title="@string/pref_title_email_body"
 		                android:key="default_email_reminder_body"/>
+			</PreferenceCategory>
+			<PreferenceCategory
+				android:title="@string/category_title_sms">
 				<CheckBoxPreference
 				        android:title="@string/pref_title_sms_reminders"
 				        android:defaultValue="true"
@@ -76,7 +81,7 @@
 		                android:defaultValue="@string/default_sms_reminder_body"
 		                android:title="@string/pref_title_sms_body"
 		                android:key="default_sms_reminder_body"/>
-		    </PreferenceCategory>
+			</PreferenceCategory>
 	    	<PreferenceCategory
 				android:title="@string/category_title_integration">
 				<CheckBoxPreference
@@ -86,6 +91,19 @@
 				        android:key="allow_minimalistic_text" />
 			</PreferenceCategory>
 		</PreferenceScreen>
+	</PreferenceCategory>
+	<PreferenceCategory
+		android:title="@string/category_title_currency">
+		<CheckBoxPreference
+		        android:title="@string/pref_title_allow_custom_currency_symbol"
+		        android:defaultValue="false"
+		        android:summary="@string/pref_summary_allow_custom_currency_symbol"
+		        android:key="allow_custom_currency_symbol" />
+		<EditTextPreference
+		        android:title="@string/pref_title_custom_currency_symbol"
+		        android:defaultValue=""
+		        android:summary="@string/pref_summary_custom_currency_symbol"
+		        android:key="custom_currency_symbol" />
 	</PreferenceCategory>
 	<PreferenceCategory
 	        android:title="@string/category_title_about">

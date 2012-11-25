@@ -221,6 +221,10 @@
     <string name="category_title_general">General</string>
     <string name="category_title_sections">Sections</string>
     <string name="category_title_specific_options">Specific Options</string>
+    <string name="category_title_notification">Notifications</string>
+    <string name="category_title_email">Email</string>
+    <string name="category_title_sms">SMS</string>
+    <string name="category_title_currency">Currency</string>
     
     <string name="pref_title_allow_min_text">Minimalistic Text</string>
     <string name="pref_title_about_min_text">Minimalistic Text</string>
@@ -236,6 +240,8 @@
     <string name="pref_title_allow_individual">Individual</string>
     <string name="pref_title_allow_group">Group</string>
     <string name="pref_title_notification_reminder_persistent">Persistent Notification</string>
+    <string name="pref_title_allow_custom_currency_symbol">Use custom symbol</string>
+    <string name="pref_title_custom_currency_symbol">Custom Symbol</string>
     
     <string name="pref_start_home_dash_title">Home Dash</string>
     <string name="pref_start_individual_view_all_title">User List</string>
@@ -256,6 +262,8 @@
     <string name="pref_summary_allow_group">If this is checked the group section will be active</string>
     <string name="pref_summary_individual_options">Options that apply to individual Users</string>
     <string name="pref_summary_notification_reminder_persistent">Reminder Notifications will be persistent</string>
+    <string name="pref_summary_allow_custom_currency_symbol">Overwrite default device symbol</string>
+    <string name="pref_summary_custom_currency_symbol">Symbol to use</string>
     
     <string name="pref_name_def_email_rem_body">Default Email Body</string>
     <string name="pref_name_def_email_rem_sub">Default Email Subject</string>

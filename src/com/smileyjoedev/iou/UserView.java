@@ -57,7 +57,7 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 		this.userId = extras.getInt("user_id");
 		Notify.cancelNotification(this, this.userId);
 		
-		this.user = new User();
+		this.user = new User(this);
 		this.user = this.userAdapter.getDetails(userId);
         
 		this.populateSpFilter();
@@ -223,7 +223,7 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 		int menuItemIndex = item.getItemId();
 		switch(menuItemIndex){
 			case Constants.CONTEXT_REPAY_ALL:
-				Payment payment = new Payment();
+				Payment payment = new Payment(this);
 				payment = this.payments.get(this.selectedPayment);
 				payment.setDescription("Repayment: " + payment.getDescription());
 				

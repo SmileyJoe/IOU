@@ -80,13 +80,13 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 			Bundle extras = getIntent().getExtras();
 			this.userId = extras.getInt("user_id");
 			getSupportActionBar().setTitle(R.string.bar_title_user_edit);
-			this.user = new User();
+			this.user = new User(this);
 			this.user = this.userAdapter.getDetails(this.userId);
 			this.edit = true;
 			this.oldUserName = this.user.getName();
 			this.oldContactId = this.user.getContactId();
 		} catch(NullPointerException e){
-			this.user = new User();
+			this.user = new User(this);
 			this.edit = false;
 		}
 		

@@ -1,20 +1,24 @@
 package com.smileyjoedev.iou;
 
+import android.content.Context;
+
 public class GroupRepayment {
 	
 	private User owedUser;
 	private User owingUser;
 	private float amount;
 	private boolean selected;
+	private Context context;
 	
 	/*****************************************************
 	 * CONSTRUCTOR
 	 ****************************************************/
 	
-	public GroupRepayment(){
+	public GroupRepayment(Context context){
+		this.context = context;
 		this.amount = 0;
-		this.owedUser = new User();
-		this.owingUser = new User();
+		this.owedUser = new User(this.context);
+		this.owingUser = new User(this.context);
 		this.selected = false;
 	}
 	
@@ -59,7 +63,7 @@ public class GroupRepayment {
 	}
 	
 	public String getAmountText(){
-		return Gen.getAmountText(this.amount);
+		return Gen.getAmountText(this.context, this.amount);
 	}
 
 	@Override

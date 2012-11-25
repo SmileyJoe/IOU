@@ -152,7 +152,7 @@ public class DbUserPaymentAdapter {
 	}
 	
 	private Payment getPaymentData(){
-		Payment payment = new Payment();
+		Payment payment = new Payment(this.context);
 		
 		payment.setId(this.cursor.getInt(this.idCol));
 		payment.setUserId(this.cursor.getInt(this.userIdCol));
@@ -184,7 +184,7 @@ public class DbUserPaymentAdapter {
 	}
 	
 	private Payment sortCursor(){
-		Payment payment = new Payment();
+		Payment payment = new Payment(this.context);
 		
 		this.setColoumns();
 		

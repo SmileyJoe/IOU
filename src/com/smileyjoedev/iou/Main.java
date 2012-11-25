@@ -153,7 +153,7 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     		}
     	}
     	
-    	totalText = Gen.getAmountText(total);
+    	totalText = Gen.getAmountText(this, total);
     	
     	return totalText;
     }
@@ -168,7 +168,7 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     		}
     	}
     	
-    	totalText = Gen.getAmountText(total);
+    	totalText = Gen.getAmountText(this, total);
     	
     	return totalText;
     }

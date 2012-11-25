@@ -147,7 +147,9 @@ public class Gen {
 		return imageFound;
 	}
 	
-	public static String getAmountText(float amount){
+	public static String getAmountText(Context context, float amount){
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+		String symbol = "";
 		boolean positive;
 		
 		if(amount < 0){
@@ -158,9 +160,14 @@ public class Gen {
 		
 		String number = Gen.getFormattedAmount(Math.abs(amount));
 		
-		Locale locale=Locale.getDefault();
-        Currency currency=Currency.getInstance(locale);
-        String symbol = currency.getSymbol();
+		if(prefs.getBoolean("allow_custom_currency_symbol", false)){
+			symbol = prefs.getString("custom_currency_symbol", "");
+		} else {
+			Locale locale=Locale.getDefault();
+	        Currency currency=Currency.getInstance(locale);
+	        symbol = currency.getSymbol();
+		}
+		
         
         number = symbol + number;
         
@@ -214,7 +221,7 @@ public class Gen {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		
 		if(prefs.getBoolean("allow_minimalistic_text", true)){
-			MinimalisticText.SendTo(context, variableName, Gen.getAmountText(amount));
+			MinimalisticText.SendTo(context, variableName, Gen.getAmountText(context, amount));
 			if(amount == 0){
 				MinimalisticText.SendTo(context, variableName + "SIGN", "0");
 			} else {
@@ -260,11 +267,11 @@ public class Gen {
     	return csv;
     }
     
-    public static ArrayList<Payment> getUserPayments(Group group, ArrayList<GroupPayment> payments){
+    public static ArrayList<Payment> getUserPayments(Context context, Group group, ArrayList<GroupPayment> payments){
     	 ArrayList<Payment> tempPayments = new ArrayList<Payment>();
          
          for(int i = 0; i < group.getUsers().size(); i++){
-         	Payment payment = new Payment();
+         	Payment payment = new Payment(context);
          	
          	payment.setUser(group.getUser(i));
          	payment.setUserId(group.getUser(i).getId());
@@ -291,7 +298,7 @@ public class Gen {
          return tempPayments;
     }
     
-    public static ArrayList<GroupRepayment> sortGroupRepayments(ArrayList<Payment> userPayments){
+    public static ArrayList<GroupRepayment> sortGroupRepayments(Context context, ArrayList<Payment> userPayments){
     	ArrayList<GroupRepayment> repayments = new ArrayList<GroupRepayment>();
     	
     	ArrayList<Payment> owedPayments = new ArrayList<Payment>();
@@ -311,7 +318,7 @@ public class Gen {
         for(int i = 0; i < owingPayments.size(); i++){
         	while(owingPayments.get(i).getAmount() > 0){
         		if(owingPayments.get(i).getAmount() >= owedPayments.get(0).getAmount()){
-        			GroupRepayment repayment = new GroupRepayment();
+        			GroupRepayment repayment = new GroupRepayment(context);
         			
         			repayment.setAmount(owedPayments.get(0).getAmount());
         			repayment.setOwedUser(owedPayments.get(0).getUser());
@@ -323,7 +330,7 @@ public class Gen {
         			owedPayments.remove(0);
         		} else {
         			
-        			GroupRepayment repayment = new GroupRepayment();
+        			GroupRepayment repayment = new GroupRepayment(context);
         			
         			repayment.setAmount(owingPayments.get(i).getAmount());
         			repayment.setOwedUser(owedPayments.get(0).getUser());

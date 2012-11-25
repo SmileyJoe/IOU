@@ -3,6 +3,8 @@ package com.smileyjoedev.iou;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+import android.content.Context;
+
 public class Payment {
 	
 	private int id;
@@ -15,21 +17,24 @@ public class Payment {
 	private User user;
 	private int type;
 	private int typeDb;
+	private Context context;
 	
 	/*********************************************************
 	 * CONSTRUCTOR
 	 ********************************************************/
 	
-	public Payment(){
+	public Payment(Context context){
+		this.context = context;
 		this.id = 0;
 		this.userId = 0;
 		this.amount = 0;
 		this.direction = 0;
 		this.description = "";
 		this.date = Gen.getPdt();
-		this.user = new User();
+		this.user = new User(this.context);
 		this.type = 0;
 		this.title = "";
+		
 	}
 	
 	/**********************************************************
@@ -219,7 +224,7 @@ public class Payment {
 	
 	public String getAmountText(boolean includeSymbol){
 		if(includeSymbol){
-			return Gen.getAmountText(this.getAmount());
+			return Gen.getAmountText(this.context, this.getAmount());
 		} else {
 			return Gen.getFormattedAmount(this.getAmount());
 		}

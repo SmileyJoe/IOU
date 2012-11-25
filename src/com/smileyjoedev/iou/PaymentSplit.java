@@ -1,5 +1,7 @@
 package com.smileyjoedev.iou;
 
+import android.content.Context;
+
 public class PaymentSplit {
 	
 	private int id;
@@ -8,18 +10,21 @@ public class PaymentSplit {
 	private User user;
 	private float amount;
 	private int paymentId;
+	private Context context;
 	
 	/*************************************************
 	 * CONSTRUCTOR
 	 ************************************************/
 	
-	public PaymentSplit() {
+	public PaymentSplit(Context context) {
+		this.context = context;
 		this.id = 0;
 		this.type = 0;
 		this.userId = 0;
-		this.user = new User();
+		this.user = new User(this.context);
 		this.amount = 0;
 		this.paymentId = 0;
+		
 	}
 
 	/*************************************************
@@ -80,7 +85,7 @@ public class PaymentSplit {
 	
 	public String getAmountText(boolean includeSymbol){
 		if(includeSymbol){
-			return Gen.getAmountText(this.getAmount());
+			return Gen.getAmountText(this.context, this.getAmount());
 		} else {
 			return Gen.getFormattedAmount(this.getAmount());
 		}

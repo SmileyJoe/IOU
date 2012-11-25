@@ -33,6 +33,8 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 	private Preference defaultSmsRemindBody;
 	private Preference notificationReminders;
 	private Preference notificationReminderPersistent;
+	private Preference allowCustomCurrSym;
+	private Preference customCurrSym;
 	private ListPreference prefStartPage;
 	
 	@Override
@@ -90,6 +92,12 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		
 		this.notificationReminderPersistent = (Preference) findPreference("notification_reminder_persistent");
 		this.notificationReminderPersistent.setEnabled(this.prefs.getBoolean("allow_notification_reminders", true));
+		
+		this.allowCustomCurrSym = (Preference) findPreference("allow_custom_currency_symbol");
+		this.allowCustomCurrSym.setOnPreferenceClickListener(this);
+		
+		this.customCurrSym = (Preference) findPreference("custom_currency_symbol");
+		this.customCurrSym.setEnabled(this.prefs.getBoolean("allow_custom_currency_symbol", false));
 	}
 	
 	public void populateView(){
@@ -119,6 +127,10 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		
 		if(pref.getKey().equals("allow_notification_reminders")){
 			this.notificationReminderPersistent.setEnabled(!this.notificationReminderPersistent.isEnabled());
+		}
+		
+		if(pref.getKey().equals("allow_custom_currency_symbol")){
+			this.customCurrSym.setEnabled(!this.customCurrSym.isEnabled());
 		}
 		return true;
 	}

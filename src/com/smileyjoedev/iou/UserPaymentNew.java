@@ -125,10 +125,10 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     }
     
     private void initialize(){
-    	this.user = new User();
+    	this.user = new User(this);
     	this.userAdapter = new DbUserAdapter(this);
     	this.userPaymentAdapter = new DbUserPaymentAdapter(this);
-    	this.payment = new Payment();
+    	this.payment = new Payment(this);
     	this.btSave = (Button) findViewById(R.id.bt_save);
     	this.btSave.setOnClickListener(this);
     	this.btCancel = (Button) findViewById(R.id.bt_cancel);

@@ -115,18 +115,18 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
     }
     
     private void getRepayments(){
-    	ArrayList<Payment> userPayments = Gen.getUserPayments(this.group, this.payments);
+    	ArrayList<Payment> userPayments = Gen.getUserPayments(this, this.group, this.payments);
         
     	if(userPayments.size() > 0){
-    		this.repayments = Gen.sortGroupRepayments(userPayments);
+    		this.repayments = Gen.sortGroupRepayments(this, userPayments);
     	}
         
     }
 
     private void repayUser(GroupRepayment repayment){
-    	GroupPayment payment = new GroupPayment();
+    	GroupPayment payment = new GroupPayment(this);
     	ArrayList<PaymentSplit> splits = new ArrayList<PaymentSplit>();
-    	PaymentSplit split = new PaymentSplit();
+    	PaymentSplit split = new PaymentSplit(this);
     	
     	payment.setAmount(repayment.getAmount());
     	payment.setDescription(this.getString(R.string.repayment_description));
@@ -140,7 +140,7 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
     	
     	splits.add(split);
     	
-    	split = new PaymentSplit();
+    	split = new PaymentSplit(this);
     	
     	split.setAmount(repayment.getAmount());
     	split.setType(1);
