@@ -45,6 +45,7 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Gen.setTheme(this);
+        
         setContentView(R.layout.main);
 //        BugSenseHandler.setup(this, "04b74a70");
         

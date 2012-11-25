@@ -6,15 +6,18 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.smileyjoedev.genLibrary.Debug;
 import com.smileyjoedev.genLibrary.Notify;
 import com.smileyjoedev.iou.R;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -38,6 +41,7 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 	private EditText etTitle;
 	private EditText etDescription;
 	private EditText etAmount;
+	private EditText etDate;
 	private RadioButton rbPaymentFrom;
 	private RadioButton rbPaymentTo;
 	private RadioButton rbLoan;
@@ -71,12 +75,18 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
             	this.isUser = extras.getBoolean("is_user");
             	this.payment = this.userPaymentAdapter.getDetails(extras.getInt("payment_id"));
             	this.user = this.userAdapter.getDetails(this.payment.getUserId());
+            	this.etDate.setText(Gen.convertPdt(this.payment.getDate(), true));
             }
         } catch(NullPointerException e){
         	this.isQuickAdd = true;
         	this.users = this.userAdapter.get();
         	this.populateSpUser();
         	this.llUserSpinner.setVisibility(View.VISIBLE);
+        }
+        
+        if(!this.isEdit){
+        	this.etDate.setText(Gen.convertPdt(Gen.getPdt(), true));
+        	this.payment.setDate(Gen.getPdt());
         }
 		
         
@@ -126,6 +136,8 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     	this.etTitle = (EditText) findViewById(R.id.et_payment_title);
     	this.etDescription = (EditText) findViewById(R.id.et_payment_description);
     	this.etAmount = (EditText) findViewById(R.id.et_payment_amount);
+    	this.etDate = (EditText) findViewById(R.id.et_payment_date);
+    	this.etDate.setOnClickListener(this);
     	this.rbPaymentFrom = (RadioButton) findViewById(R.id.rb_payment_from);
     	this.rbPaymentFrom.setOnClickListener(this);
     	this.rbPaymentTo = (RadioButton) findViewById(R.id.rb_payment_to);
@@ -225,7 +237,6 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 					this.payment.setDescription(this.etDescription.getText().toString().trim());
 					this.payment.setTitle(this.etTitle.getText().toString().trim());
 					this.payment.setAmount(Float.parseFloat(this.etAmount.getText().toString().trim()));
-					this.payment.setDate(Gen.getPdt());
 					this.payment.setTypeDb();
 					
 					if(this.isEdit){
@@ -260,6 +271,9 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 			case R.id.rb_repayment:
 				this.payment.setType(1);
 				break;
+			case R.id.et_payment_date:
+				startActivityForResult(Intents.dateTimePicker(this, this.payment.getDate()), Constants.ACTIVITY_DATE_PICKER);
+				break;
 		}
 	}
 
@@ -273,6 +287,18 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 		
+	}
+
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		switch(requestCode){
+			case Constants.ACTIVITY_DATE_PICKER:
+				if(resultCode == Activity.RESULT_OK){
+					long millie = data.getLongExtra("milliesecond_timestamp", Gen.getPdt());
+					this.etDate.setText(Gen.convertPdt(millie, true));
+					this.payment.setDate(millie);
+				}
+				break;
+		}
 	}
     
     

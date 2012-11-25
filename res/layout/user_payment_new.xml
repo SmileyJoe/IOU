@@ -81,6 +81,14 @@
 		        android:inputType="numberDecimal"
 		        android:layout_marginTop="10dip">
 		    </EditText>
+		    <EditText
+		        android:layout_height="wrap_content"
+		        android:layout_width="fill_parent"
+		        android:id="@+id/et_payment_date"
+		        android:hint="@string/et_payment_date_hint"
+		        android:layout_marginTop="10dip"
+		        android:focusable="false">
+		    </EditText>
 		    <RadioGroup 
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"

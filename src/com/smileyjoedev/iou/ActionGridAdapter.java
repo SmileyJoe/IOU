@@ -65,7 +65,6 @@ public class ActionGridAdapter extends BaseAdapter {
 		
 		tvUserName.setText(quickAction.getTitle());
 		tvAction.setText(quickAction.getActionText());
-		Debug.d(quickAction.toString());
 		switch(quickAction.getType()){
 			case QuickAction.TYPE_USER:
 				Gen.setActionImage(this.context, ivUserImage, (User) quickAction.getTargetData());

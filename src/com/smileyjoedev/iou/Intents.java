@@ -9,6 +9,21 @@ import android.provider.MediaStore;
 
 public class Intents {
 	
+	public static Intent dateTimePicker(Context context){
+		Intent intent = new Intent(context, com.smileyjoedev.genLibrary.DateTimePicker.class);
+		
+		return intent;
+	}
+	
+	public static Intent dateTimePicker(Context context, long millie){
+		Intent intent = new Intent(context, com.smileyjoedev.genLibrary.DateTimePicker.class);
+		Bundle extras = new Bundle();
+		extras.putLong("milliesecond_timestamp", millie);
+		intent.putExtras(extras);	
+		
+		return intent;
+	}
+	
 	public static Intent popupDelete(Context context, int sectionId){
 		Intent intent = new Intent(context, com.smileyjoedev.genLibrary.PopupDelete.class);
 		String message = "";

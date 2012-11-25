@@ -11,6 +11,7 @@ import com.smileyjoedev.iou.R;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -45,6 +46,7 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 	private Button btCancel;
 	private EditText etTitle;
 	private EditText etDescription;
+	private EditText etDate;
 	private float payingAmount;
 	private float paidAmount;
 	
@@ -76,11 +78,14 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 			if(extras.containsKey("group_id")){
 				int groupId = extras.getInt("group_id");
 				this.group = this.groupAdapter.getDetails(groupId);
+				this.etDate.setText(Gen.convertPdt(Gen.getPdt(), true));
+	        	this.payment.setPdt(Gen.getPdt());
 			}
 			
 			if(extras.containsKey("payment_id")){
 				this.isEdit = true;
 				this.payment = this.groupPaymentAdapter.getDetails(extras.getInt("payment_id"));
+				this.etDate.setText(Gen.convertPdt(this.payment.getPdt(), true));
 			}
 		}catch(NullPointerException e){
 		}
@@ -122,6 +127,8 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 		this.btCancel.setOnClickListener(this);
 		this.etTitle = (EditText) findViewById(R.id.et_payment_title);
 		this.etDescription = (EditText) findViewById(R.id.et_payment_description);
+    	this.etDate = (EditText) findViewById(R.id.et_payment_date);
+    	this.etDate.setOnClickListener(this);
 		this.payingAmount = 0;
 		this.paidAmount = 0;
 		this.totalPaying = 0;
@@ -344,6 +351,9 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 					this.tvDifferenceAmountTitle.setText("");
 				}
 				break;
+			case R.id.et_payment_date:
+				startActivityForResult(Intents.dateTimePicker(this, this.payment.getPdt()), Constants.ACTIVITY_DATE_PICKER);
+				break;
 		}
 		
 	}
@@ -395,6 +405,18 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 				}
 				
 			}
+		}
+	}
+
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		switch(requestCode){
+			case Constants.ACTIVITY_DATE_PICKER:
+				if(resultCode == Activity.RESULT_OK){
+					long millie = data.getLongExtra("milliesecond_timestamp", Gen.getPdt());
+					this.etDate.setText(Gen.convertPdt(millie, true));
+					this.payment.setPdt(millie);
+				}
+				break;
 		}
 	}
 	

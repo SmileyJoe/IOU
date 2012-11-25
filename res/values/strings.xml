@@ -68,6 +68,8 @@
     
     <string name="et_payment_title_hint">Title</string>
     
+    <string name="et_payment_date_hint">Date</string>
+    
     <string name="tv_no_description">* No Description *</string>
     <string name="tv_no_title">* No Title *</string>
     
@@ -183,6 +185,7 @@
     <string name="bar_title_quick_action_new">New Action</string>
     <string name="bar_title_quick_action_edit">Edit Action</string>
     <string name="bar_title_quick_action_target_picker">Choose</string>
+    <string name="bar_title_date_time_picker">Select Date</string>
     
     <!-- DROPDOWN MENUS -->
     
