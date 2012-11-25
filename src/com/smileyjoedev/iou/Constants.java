@@ -11,6 +11,9 @@ import android.os.Environment;
 public class Constants {
 	
 	public static final String DB_NAME = "iou";
+	public static final String APP_FILEPATH = Environment.getExternalStorageDirectory() + File.separator + "com.smileyjoedev" + File.separator + "iou" + File.separator;
+	public static final String DB_FILEPATH = "/data/data/com.smileyjoedev.iou/databases/" + Constants.DB_NAME;
+	public static final String DB_BACKUP_FILEPATH = Constants.APP_FILEPATH + Constants.DB_NAME;
 	public static final int DB_VERSION = 22;
 	
 	public static final String PREFERENCE_NAME = "iou";

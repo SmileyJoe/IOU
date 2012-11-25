@@ -1,5 +1,9 @@
 package com.smileyjoedev.iou;
 
+import java.io.IOException;
+
+import com.smileyjoedev.genLibrary.Debug;
+import com.smileyjoedev.genLibrary.Notify;
 import com.smileyjoedev.genLibrary.Send;
 import com.smileyjoedev.iou.R;
 
@@ -35,6 +39,8 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 	private Preference notificationReminderPersistent;
 	private Preference allowCustomCurrSym;
 	private Preference customCurrSym;
+	private Preference dbBackup;
+	private Preference dbRestore;
 	private ListPreference prefStartPage;
 	
 	@Override
@@ -98,6 +104,12 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		
 		this.customCurrSym = (Preference) findPreference("custom_currency_symbol");
 		this.customCurrSym.setEnabled(this.prefs.getBoolean("allow_custom_currency_symbol", false));
+		
+		this.dbBackup = (Preference) findPreference("db_backup");
+		this.dbBackup.setOnPreferenceClickListener(this);
+		
+		this.dbRestore = (Preference) findPreference("db_restore");
+		this.dbRestore.setOnPreferenceClickListener(this);
 	}
 	
 	public void populateView(){
@@ -132,6 +144,39 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		if(pref.getKey().equals("allow_custom_currency_symbol")){
 			this.customCurrSym.setEnabled(!this.customCurrSym.isEnabled());
 		}
+		
+		if(pref.getKey().equals("db_backup")){
+			DbHelper helper = new DbHelper(this);
+			boolean success = false;
+			try {
+				success = helper.exportDatabase();
+			} catch (IOException e) {
+				success = false;
+			}
+			
+			if(success){
+				Notify.toast(this, R.string.toast_db_backup_successful);
+			} else {
+				Notify.toast(this, R.string.toast_db_backup_failed);
+			}
+		}
+		
+		if(pref.getKey().equals("db_restore")){
+			DbHelper helper = new DbHelper(this);
+			boolean success = false;
+			try {
+				success = helper.importDatabase();
+			} catch (IOException e) {
+				success = false;
+			}
+			
+			if(success){
+				Notify.toast(this, R.string.toast_db_restore_successful);
+			} else {
+				Notify.toast(this, R.string.toast_db_restore_failed);
+			}
+		}
+		
 		return true;
 	}
 	

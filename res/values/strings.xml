@@ -51,6 +51,11 @@
     <string name="toast_quick_action_deleted">Action deleted</string>
     <string name="toast_quick_action_saved_error">An error has occured and the action was not saved.</string>
     
+    <string name="toast_db_backup_successful">Data backup successful</string>
+    <string name="toast_db_backup_failed">Data backup failed</string>
+    <string name="toast_db_restore_successful">Data restore successful</string>
+    <string name="toast_db_restore_failed">Data backup failed</string>
+    
     <string name="tv_no_users">There are no users</string>
     <string name="tv_no_payments">There are no payments</string>
     <string name="tv_no_groups">There are no groups</string>
@@ -225,6 +230,7 @@
     <string name="category_title_email">Email</string>
     <string name="category_title_sms">SMS</string>
     <string name="category_title_currency">Currency</string>
+    <string name="category_title_data">Data</string>
     
     <string name="pref_title_allow_min_text">Minimalistic Text</string>
     <string name="pref_title_about_min_text">Minimalistic Text</string>
@@ -242,6 +248,8 @@
     <string name="pref_title_notification_reminder_persistent">Persistent Notification</string>
     <string name="pref_title_allow_custom_currency_symbol">Use custom symbol</string>
     <string name="pref_title_custom_currency_symbol">Custom Symbol</string>
+    <string name="pref_title_db_backup">Backup</string>
+    <string name="pref_title_db_restore">Restore</string>
     
     <string name="pref_start_home_dash_title">Home Dash</string>
     <string name="pref_start_individual_view_all_title">User List</string>
@@ -264,6 +272,8 @@
     <string name="pref_summary_notification_reminder_persistent">Reminder Notifications will be persistent</string>
     <string name="pref_summary_allow_custom_currency_symbol">Overwrite default device symbol</string>
     <string name="pref_summary_custom_currency_symbol">Symbol to use</string>
+    <string name="pref_summary_db_backup">Backup data to a file on your sdcard</string>
+    <string name="pref_summary_db_restore">Restore data from your sdcard</string>
     
     <string name="pref_name_def_email_rem_body">Default Email Body</string>
     <string name="pref_name_def_email_rem_sub">Default Email Subject</string>

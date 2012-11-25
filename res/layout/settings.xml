@@ -116,4 +116,15 @@
                 android:summary="@string/pref_summary_about_min_text"
                 android:key="minimalistic_text_download" />
 	</PreferenceCategory>
+	<PreferenceCategory
+		android:title="@string/category_title_data">
+		<Preference
+			android:title="@string/pref_title_db_backup"
+			android:summary="@string/pref_summary_db_backup"
+			android:key="db_backup" />
+		<Preference
+			android:title="@string/pref_title_db_restore"
+			android:summary="@string/pref_summary_db_restore"
+			android:key="db_restore" />
+	</PreferenceCategory>
 </PreferenceScreen>
