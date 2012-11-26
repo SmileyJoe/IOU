@@ -4,6 +4,11 @@ import java.util.Comparator;
 
 
 public class SortUser implements Comparator<User> {
+	
+	public static final int SORT_ALPHABETICAL = 0;
+	public static final int SORT_DESC = 1;
+	public static final int SORT_ASC = 2;
+	
 	int sort;
 	
 	public SortUser(int sort){
@@ -19,17 +24,17 @@ public class SortUser implements Comparator<User> {
 		int returnValue = 0;
 		
 		switch(this.sort){
-			case 0:
+			case SortUser.SORT_ALPHABETICAL:
 				returnValue = user1.getName().compareToIgnoreCase(user2.getName());
 				break;
-			case 1:
+			case SortUser.SORT_DESC:
 				if(user1.getBalance() > user2.getBalance()){
 					returnValue = -1;
 				} else {
 					returnValue = 1;
 				}
 				break;
-			case 2:
+			case SortUser.SORT_ASC:
 				if(user1.getBalance() < user2.getBalance()){
 					returnValue = -1;
 				} else {

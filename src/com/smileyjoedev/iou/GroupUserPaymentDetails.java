@@ -22,8 +22,8 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 	private Group group;
 	private Button btOk;
 	private LinearLayout llUserDetails;
-	private TextView tvGroupTotal;
-	private TextView tvGroupTotalAmount;
+//	private TextView tvGroupTotal;
+//	private TextView tvGroupTotalAmount;
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,8 +47,8 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		this.btOk = (Button) findViewById(R.id.bt_ok);
 		this.btOk.setOnClickListener(this);
 		this.llUserDetails = (LinearLayout) findViewById(R.id.ll_user_details);
-		this.tvGroupTotal = (TextView) findViewById(R.id.tv_group_total);
-		this.tvGroupTotalAmount = (TextView) findViewById(R.id.tv_group_total_amount);
+//		this.tvGroupTotal = (TextView) findViewById(R.id.tv_group_total);
+//		this.tvGroupTotalAmount = (TextView) findViewById(R.id.tv_group_total_amount);
 	}
 	
 	private void populateView() {
@@ -87,8 +87,8 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 			total += userPayments.get(i).getSpent();
 		}
 		
-		this.tvGroupTotal.setText("Total spent by group:");
-		this.tvGroupTotalAmount.setText(Gen.getAmountText(this, total));
+//		this.tvGroupTotal.setText("Total spent by group:");
+//		this.tvGroupTotalAmount.setText(Gen.getAmountText(this, total));
 		
 	}
 	
@@ -100,7 +100,7 @@ public class GroupUserPaymentDetails extends Activity implements OnClickListener
 		TextView name = (TextView) view.findViewById(R.id.tv_user_name);
 		TextView balance = (TextView) view.findViewById(R.id.tv_user_balance);
 		
-		details.setText("Paid " + userPayments.getPaidText() + ", Spent " + userPayments.getSpentText());
+		details.setText(this.getString(R.string.tv_paid_title) + " " + userPayments.getPaidText() + ", " + this.getString(R.string.tv_spent_title) + " " + userPayments.getSpentText());
 		name.setText(userPayments.getUser().getName());
 		balance.setText(userPayments.getBalanceText());
 		

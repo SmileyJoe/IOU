@@ -77,14 +77,14 @@ public class DbUserPaymentAdapter {
 			long relDbId = 0;
 			relDbId = this.saveRel(payment.getUserId(), (int) dbId);
 			if(relDbId > 0){
-				Notify.toast(this.context, R.string.toast_payment_saved, payment.getDescription());
+				Notify.toast(this.context, R.string.toast_payment_saved, payment.getTitle());
 			} else {
 				payment.setId((int) dbId);
 				this.delete(payment, false);
-				Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getDescription());
+				Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getTitle());
 			}
 		} else {
-			Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getDescription());
+			Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getTitle());
 		}
 		
 		return dbId;
@@ -105,7 +105,7 @@ public class DbUserPaymentAdapter {
 	public void update(Payment payment) {
 		ContentValues values = createContentValues(payment);
 		db.update("payment", values, " _id = '" + payment.getId() + "' ", null);
-		Notify.toast(this.context, R.string.toast_payment_updated, payment.getDescription());
+		Notify.toast(this.context, R.string.toast_payment_updated, payment.getTitle());
 	}
 	
 	/******************************************
@@ -120,7 +120,7 @@ public class DbUserPaymentAdapter {
 		db.delete("payment", " _id='" + payment.getId() + "' ", null);
 		this.deleteRel(payment);
 		if(showToast){
-			Notify.toast(this.context, R.string.toast_payment_deleted, payment.getDescription());
+			Notify.toast(this.context, R.string.toast_payment_deleted, payment.getTitle());
 		}
 	}
 	

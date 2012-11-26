@@ -42,7 +42,7 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 	private LinearLayout llPaidForWrapper;
 	private ArrayList<EditText> payingFields;
 	private ArrayList<EditText> paidForFields;
-	private Button btSave;
+	public static Button btSave;
 	private Button btCancel;
 	private EditText etTitle;
 	private EditText etDescription;
@@ -158,6 +158,8 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 		
 		this.tvPayingTotal.setText(Gen.getAmountText(this, this.totalPaying));
 		this.tvPaidForTotal.setText(Gen.getAmountText(this, this.totalPaidFor));
+		
+		this.enableSave();
 		
 	}
 	
@@ -299,6 +301,8 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 				}
 			}
 		}
+		
+		GroupPaymentNew.enableSave();
 	}
 	
 	@Override
@@ -306,8 +310,8 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 		switch(v.getId()){
 			case R.id.bt_save:
 				this.payment.setSplits(new ArrayList<PaymentSplit>());
-				this.setSplit(this.payingFields, 0);
-				this.setSplit(this.paidForFields, 1);
+				this.setSplit(this.payingFields, PaymentSplit.TYPE_PAYING);
+				this.setSplit(this.paidForFields, PaymentSplit.TYPE_PAID_FOR);
 				
 				this.payment.setTitle(this.etTitle.getText().toString().trim());
 				this.payment.setDescription(this.etDescription.getText().toString().trim());
@@ -370,7 +374,7 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 			userId = Integer.parseInt(etAmount.getTag().toString().trim());
 			
 			
-			if(type == 1){
+			if(type == PaymentSplit.TYPE_PAID_FOR){
 				if(this.equalPayment){
 					amount = Float.parseFloat(Gen.getFormattedAmount((this.totalPaying/this.group.getUsers().size())));
 				} else {
@@ -417,6 +421,14 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 					this.payment.setPdt(millie);
 				}
 				break;
+		}
+	}
+	
+	public static void enableSave(){
+		if((GroupPaymentNew.totalPaying > 0) && (GroupPaymentNew.totalPaying == GroupPaymentNew.totalPaidFor)){
+			GroupPaymentNew.btSave.setEnabled(true);
+		} else {
+			GroupPaymentNew.btSave.setEnabled(false);
 		}
 	}
 	

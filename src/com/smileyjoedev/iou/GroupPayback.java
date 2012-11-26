@@ -74,22 +74,9 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
         	}    		
     	} else {
     		this.populateEmptyDetails();
-    		this.disableButton(this.btRepaySelected);
     	}
     	
-    	if(this.selectedCount > 0){
-			this.enableButton(this.btRepaySelected);
-		} else {
-			this.disableButton(this.btRepaySelected);
-		}
-    }
-    
-    private void disableButton(Button button){
-    	button.setClickable(false);
-    }
-    
-    private void enableButton(Button button){
-    	button.setClickable(true);
+    	this.enableRepay();
     }
     
     private void populateEmptyDetails(){
@@ -134,7 +121,7 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
     	payment.setPdt(Gen.getPdt());
     	
     	split.setAmount(repayment.getAmount());
-    	split.setType(0);
+    	split.setType(PaymentSplit.TYPE_PAYING);
     	split.setUser(repayment.getOwingUser());
     	split.setUserId(repayment.getOwingUser().getId());
     	
@@ -143,7 +130,7 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
     	split = new PaymentSplit(this);
     	
     	split.setAmount(repayment.getAmount());
-    	split.setType(1);
+    	split.setType(PaymentSplit.TYPE_PAID_FOR);
     	split.setUser(repayment.getOwedUser());
     	split.setUserId(repayment.getOwedUser().getId());
     	
@@ -188,13 +175,17 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
 					this.selectedCount--;
 				}
 				
+				this.enableRepay();
 				
-				if(this.selectedCount > 0){
-					this.enableButton(this.btRepaySelected);
-				} else {
-					this.disableButton(this.btRepaySelected);
-				}
 				break;
+		}
+	}
+	
+	private void enableRepay(){
+		if(this.selectedCount > 0){
+			this.btRepaySelected.setEnabled(true);
+		} else {
+			this.btRepaySelected.setEnabled(false);
 		}
 	}
 	

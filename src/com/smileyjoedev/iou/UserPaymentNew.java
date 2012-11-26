@@ -15,6 +15,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
@@ -30,7 +32,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class UserPaymentNew extends SherlockActivity implements OnClickListener, OnItemSelectedListener {
+public class UserPaymentNew extends SherlockActivity implements OnClickListener, OnItemSelectedListener, TextWatcher {
 	
 	private User user;
 	private DbUserAdapter userAdapter;
@@ -136,6 +138,7 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     	this.etTitle = (EditText) findViewById(R.id.et_payment_title);
     	this.etDescription = (EditText) findViewById(R.id.et_payment_description);
     	this.etAmount = (EditText) findViewById(R.id.et_payment_amount);
+    	this.etAmount.addTextChangedListener(this);
     	this.etDate = (EditText) findViewById(R.id.et_payment_date);
     	this.etDate.setOnClickListener(this);
     	this.rbPaymentFrom = (RadioButton) findViewById(R.id.rb_payment_from);
@@ -157,16 +160,16 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     }
     
     private void populateView(){
-    	this.rbPaymentFrom.setText("From " + this.user.getFirstName());
+    	this.rbPaymentFrom.setText(this.getString(R.string.payment_direction_from_user_short) + " " + this.user.getFirstName());
     	this.rbPaymentFrom.setTextColor(Color.RED);
-    	this.rbPaymentTo.setText("To " + this.user.getFirstName());
+    	this.rbPaymentTo.setText(this.getString(R.string.payment_direction_to_user_short) + " " + this.user.getFirstName());
     	this.rbPaymentTo.setTextColor(Color.GREEN);
     	
     	switch(this.payment.getDirection()){
-    		case 0:
+    		case Payment.DIRECTION_TO_USER:
     			this.rbPaymentTo.setChecked(true);
     			break;
-    		case 1:
+    		case Payment.DIRECTION_FROM_USER:
     			this.rbPaymentFrom.setChecked(true);
     			break;
     		default:
@@ -175,10 +178,10 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     	}
     	
     	switch(this.payment.getType()){
-    		case 0:
+    		case Payment.TYPE_LOAN:
     			this.rbLoan.setChecked(true);
     			break;
-    		case 1:
+    		case Payment.TYPE_REPAYMENT:
     			this.rbRepayment.setChecked(true);
     			break;
     		default:
@@ -190,30 +193,33 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     		this.etAmount.setText(this.payment.getAmountText(false));
     		this.etDescription.setText(this.payment.getDescription());
     		this.etTitle.setText(this.payment.getTitle());
+    		this.btSave.setEnabled(true);
+    	} else {
+    		this.btSave.setEnabled(false);
     	}
     	
     	if(this.isRepayment){
     		if(this.isUser){
     			this.etAmount.setHint(Float.toString(Math.abs(this.user.getBalance())));
-    			this.etDescription.setText("Part repayment: All");
-    			this.etTitle.setText("Part repayment");
+    			this.etDescription.setText(this.getString(R.string.payment_description_repayment_all));
+    			this.etTitle.setText(this.getString(R.string.payment_title_part_repayment));
     			if(this.user.getBalance() > 0){
-    				this.payment.setDirection(1);
+    				this.payment.setDirection(Payment.DIRECTION_FROM_USER);
         			this.rbPaymentFrom.setChecked(true);
         		} else {
-        			this.payment.setDirection(0);
+        			this.payment.setDirection(Payment.DIRECTION_TO_USER);
         			this.rbPaymentTo.setChecked(true);
         		}
     		} else {
     			this.etAmount.setHint(Float.toString(this.payment.getAmount()));
-    			this.etDescription.setText("Part repayment: " + this.payment.getDescription());
-    			this.etTitle.setText("Part repayment");
+    			this.etDescription.setText(this.payment.getTitle());
+    			this.etTitle.setText(this.getString(R.string.payment_title_part_repayment));
     			if(this.payment.isToUser()){
         			this.rbPaymentFrom.setChecked(true);
-        			this.payment.setDirection(1);
+        			this.payment.setDirection(Payment.DIRECTION_FROM_USER);
         		} else {
         			this.rbPaymentTo.setChecked(true);
-        			this.payment.setDirection(0);
+        			this.payment.setDirection(Payment.DIRECTION_TO_USER);
         		}
     		}
     		this.payment.setType(1);
@@ -260,16 +266,16 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 				finish();
 				break;
 			case R.id.rb_payment_from:
-				this.payment.setDirection(1);
+				this.payment.setDirection(Payment.DIRECTION_FROM_USER);
 				break;
 			case R.id.rb_payment_to:
-				this.payment.setDirection(0);
+				this.payment.setDirection(Payment.DIRECTION_TO_USER);
 				break;
 			case R.id.rb_loan:
-				this.payment.setType(0);
+				this.payment.setType(Payment.TYPE_LOAN);
 				break;
 			case R.id.rb_repayment:
-				this.payment.setType(1);
+				this.payment.setType(Payment.TYPE_REPAYMENT);
 				break;
 			case R.id.et_payment_date:
 				startActivityForResult(Intents.dateTimePicker(this, this.payment.getDate()), Constants.ACTIVITY_DATE_PICKER);
@@ -280,8 +286,8 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
 		this.user = this.users.get(position);
-    	this.rbPaymentFrom.setText("From " + this.user.getName());
-    	this.rbPaymentTo.setText("To " + this.user.getName());
+    	this.rbPaymentFrom.setText(this.getString(R.string.payment_direction_from_user_short) + " " + this.user.getName());
+    	this.rbPaymentTo.setText(this.getString(R.string.payment_direction_to_user_short) + " " + this.user.getName());
 	}
 
 	@Override
@@ -299,6 +305,25 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 				}
 				break;
 		}
+	}
+
+	@Override
+	public void afterTextChanged(Editable arg0) {
+		if(arg0.toString().equals("")){
+			this.btSave.setEnabled(false);
+		} else {
+			this.btSave.setEnabled(true);
+		}
+	}
+
+	@Override
+	public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+		
+	}
+
+	@Override
+	public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+		
 	}
     
     

@@ -58,6 +58,11 @@ import android.widget.TabHost.TabContentFactory;
 
 
 public class UserList extends SherlockActivity implements OnItemClickListener, OnClickListener, OnItemSelectedListener {
+
+	public static final int FILTER_ALL = 0;
+	public static final int FILTER_OWE_ME = 1;
+	public static final int FILTER_I_OWE = 2;
+	public static final int FILTER_NEUTRAL = 3;
 	
 	private ArrayList<User> users;
 	private DbUserAdapter userAdapter;
@@ -144,7 +149,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     	this.allUsers = this.userAdapter.get();
     	this.spSort = (Spinner) findViewById(R.id.sp_sort);
     	this.spSort.setOnItemSelectedListener(this);
-    	this.sort = 0;
+    	this.sort = SortUser.SORT_ALPHABETICAL;
     	this.contact = new Contact();
     	this.spEmailList = (Spinner) findViewById(R.id.sp_email_list);
     	this.spEmailList.setOnItemSelectedListener(this);
@@ -192,7 +197,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     	ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		
-		adapter.add("Cancel");
+		adapter.add(this.getString(R.string.spinner_cancel));
 		
 		for(int i = 0; i < this.contact.getEmails().size(); i++){
 			adapter.add(this.contact.getEmail(i).getType() + " (" + this.contact.getEmail(i).getAddress() + ")");
@@ -210,7 +215,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     	ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		
-		adapter.add("Cancel");
+		adapter.add(this.getString(R.string.spinner_cancel));
 		
 		for(int i = 0; i < this.contact.getNumbers().size(); i++){
 			adapter.add(this.contact.getNumber(i).getType() + " (" + this.contact.getNumber(i).getNumber() + ")");
@@ -221,12 +226,6 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
     }
     
     private void sortUsers(int sort){
-    	/*
-    	 * 0 - Alphabetical
-    	 * 1 - desc
-    	 * 2 - asc
-    	 */
-    	
     	Gen.sortUser(this.users, sort);
     }
     
@@ -272,30 +271,23 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 	}
 	
 	private void filterUsers(int filter){
-		/*
-		 * 0 - all
-		 * 1 - owe me
-		 * 2 - i owe
-		 * 3 - neutral
-		 */
-		
 		this.users.clear();
 		for(int i = 0; i < this.allUsers.size(); i++){
 			switch(filter){
-				case 0:
+				case UserList.FILTER_ALL:
 					this.users.add(this.allUsers.get(i));
 					break;
-				case 1:
+				case UserList.FILTER_OWE_ME:
 					if(this.allUsers.get(i).getBalance() > 0){
 						this.users.add(this.allUsers.get(i));
 					}
 					break;
-				case 2:
+				case UserList.FILTER_I_OWE:
 					if(this.allUsers.get(i).getBalance() < 0){
 						this.users.add(this.allUsers.get(i));
 					}
 					break;
-				case 3:
+				case UserList.FILTER_NEUTRAL:
 					if(this.allUsers.get(i).getBalance() == 0){
 						this.users.add(this.allUsers.get(i));
 					}
@@ -390,15 +382,14 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 		int menuItemIndex = item.getItemId();
 		switch(menuItemIndex){
 			case Constants.CONTEXT_REPAY_ALL:
-				// repay all //
 				Payment payment = new Payment(this);
-				
-				payment.setDescription("Repayment: All");
+				payment.setTitle(this.getString(R.string.payment_title_repayment));
+				payment.setDescription(this.getString(R.string.payment_description_repayment_all));
 				
 				if(this.users.get(this.selectedUser).getBalance() > 0){
-					payment.setTypeDb(3);
+					payment.setTypeDb(Payment.TYPE_DB_PAYMENT_FROM_USER);
 				} else {
-					payment.setTypeDb(2);
+					payment.setTypeDb(Payment.TYPE_DB_PAYMENT_TO_USER);
 				}
 				
 				
@@ -427,12 +418,10 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				startActivityForResult(Intents.popupDelete(this, Constants.GROUP), Constants.ACTIVITY_POPUP_DELETE);
 				break;
 			case Constants.CONTEXT_REMINDER_EMAIL:
-				// email reminder //
 				this.populateSpEmailList(this.users.get(this.selectedUser).getContactId());
 				this.spEmailList.performClick();
 				break;
 			case Constants.CONTEXT_REMINDER_SMS:
-				// sms reminder //
 				this.populateSpPhoneNumberList(this.users.get(this.selectedUser).getContactId());
 				this.spPhoneNumberList.performClick();
 				break;
@@ -444,12 +433,12 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				User user = this.users.get(this.selectedUser);
 				
 				if(user.getBalance() > 0){
-					message = user.getName() + " owes you " + user.getBalanceText();
+					message = user.getName() + " " + this.getString(R.string.notification_owed_user) + " " + user.getBalanceText();
 				} else {
-					message = "You owe " + user.getName() + " " + user.getBalanceText();
+					message = this.getString(R.string.notification_user_owed) + " " + user.getName() + " " + user.getBalanceText();
 				}
 				
-		        Notify.notification(this, Intents.userView(this, user.getId(), user.getId()), "Reminder Set", message, this.prefs.getBoolean("notification_reminder_persistent", false));
+		        Notify.notification(this, Intents.userView(this, user.getId(), user.getId()), this.getString(R.string.notification_title), message, this.prefs.getBoolean("notification_reminder_persistent", false));
 				
 				break;
 		}

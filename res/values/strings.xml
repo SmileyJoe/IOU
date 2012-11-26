@@ -62,6 +62,8 @@
     <string name="tv_user_name">Name:</string>
     <string name="et_user_name_hint">Name</string>
     
+    <string name="tv_last_payment_title">Last</string>
+    
     <string name="tv_payment_description">Description:</string>
     <string name="et_payment_description_hint">Description</string>
     
@@ -130,8 +132,20 @@
     <string name="tv_sp_filter_title">Filter:</string>
     <string name="tv_sp_sort_title">Sort:</string>
     
-    <string name="dash_summary_total_user_owed">You owe</string>
-    <string name="dash_summary_total_owed_user">Owed to you</string>
+    <string name="tv_total_user_owed">You owe</string>
+    <string name="tv_total_owed_user">Owed to you</string>
+    <string name="tv_total_all_square">All Square</string>
+    
+    <string name="notification_user_owed">You owe</string>
+    <string name="notification_owed_user">owes you</string>
+    <string name="notification_title">Reminder Set</string>
+    
+    <string name="spinner_cancel">Cancel</string>
+    <string name="spinner_all">All</string>
+    <string name="spinner_loans_to">Loans to</string>
+    <string name="spinner_loans_from">Loans from</string>
+    <string name="spinner_repayments_to">Repayments to</string>
+    <string name="spinner_repayments_from">Repayments from</string>
     
     <string name="et_group_description_hint">Description</string>
     
@@ -155,6 +169,29 @@
     <string name="rb_action_payment_new_title">New Payment</string>
     
     <string name="tv_no_target">None Selected</string>
+    
+    <string name="payment_title_repayment">Repayment</string>
+    <string name="payment_title_part_repayment">Part Repayment</string>
+    <string name="payment_description_repayment_all">All</string>
+    
+    <string name="user_status_inactive">Inactive</string>
+    <string name="user_status_active">Active</string>
+    <string name="user_status_current">Current</string>
+    <string name="user_status_favourite">Favourite</string>
+    
+    <string name="payment_type_loan">Loan</string>
+    <string name="payment_type_repayment">Repayment</string>
+    <string name="payment_direction_to_user">To User</string>
+    <string name="payment_direction_from_user">From User</string>
+    <string name="payment_direction_to_user_short">To</string>
+    <string name="payment_direction_from_user_short">From</string>
+    <string name="payment_type_db_loan_to_user">Loan to user</string>
+    <string name="payment_type_db_loan_from_user">Loan from user</string>
+    <string name="payment_type_db_payment_to_user">Payment to user</string>
+    <string name="payment_type_db_payment_from_user">Payment from user</string>
+    
+    <string name="tv_spent_title">Spent</string>
+    <string name="tv_paid_title">Paid</string>
     
     <!-- SPINNERS -->
     

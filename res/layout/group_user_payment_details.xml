@@ -19,7 +19,7 @@
 		    	android:id="@+id/ll_user_details"
 		    	android:layout_marginBottom="5dip">
 		    </LinearLayout>
-		    <include layout="@xml/one_dip_line_grey"/>
+		    <!-- <include layout="@xml/one_dip_line_grey"/>
 		    <RelativeLayout 
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
 			    	android:layout_toLeftOf="@id/tv_group_total_amount">
 			    </TextView>
 		    </RelativeLayout>
-		    <include layout="@xml/one_dip_line_grey"/>
+		    <include layout="@xml/one_dip_line_grey"/> -->
 		    <Button
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"

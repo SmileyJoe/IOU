@@ -26,7 +26,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:gravity="center_horizontal"
-		        android:text="@string/dash_summary_total_owed_user"
+		        android:text="@string/tv_total_owed_user"
 		        android:textColor="@color/green">
 		    </TextView>
 		    <TextView
@@ -56,7 +56,7 @@
 		        android:layout_height="wrap_content"
 		        android:id="@+id/tv_total_state_text"
 		        android:gravity="center_horizontal"
-		        android:text="@string/dash_summary_total_user_owed"
+		        android:text="@string/tv_total_user_owed"
 		        android:textColor="@color/red">
 		    </TextView>
 		    <TextView

@@ -4,6 +4,9 @@ import android.content.Context;
 
 public class PaymentSplit {
 	
+	public static final int TYPE_PAYING = 0;
+	public static final int TYPE_PAID_FOR = 1;
+	
 	private int id;
 	private int type;
 	private int userId;
@@ -19,7 +22,7 @@ public class PaymentSplit {
 	public PaymentSplit(Context context) {
 		this.context = context;
 		this.id = 0;
-		this.type = 0;
+		this.type = PaymentSplit.TYPE_PAYING;
 		this.userId = 0;
 		this.user = new User(this.context);
 		this.amount = 0;
@@ -97,7 +100,7 @@ public class PaymentSplit {
 	 ************************************************/
 
 	public boolean isPaying(){
-		if(this.type == 0){
+		if(this.type == PaymentSplit.TYPE_PAYING){
 			return true;
 		} else {
 			return false;
@@ -105,7 +108,7 @@ public class PaymentSplit {
 	}
 
 	public boolean isPaidFor(){
-		if(this.type == 1){
+		if(this.type == PaymentSplit.TYPE_PAID_FOR){
 			return true;
 		} else {
 			return false;

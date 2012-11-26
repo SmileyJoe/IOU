@@ -69,14 +69,14 @@ public class DbGroupPaymentAdapter {
 			relDbId = this.saveRel(payment.getGroupId(), (int) dbId);
 			if(relDbId > 0){
 				this.saveSplits(payment.getSplits(), (int) dbId);
-				Notify.toast(this.context, R.string.toast_payment_saved, payment.getDescription());
+				Notify.toast(this.context, R.string.toast_payment_saved, payment.getTitle());
 			} else {
 				payment.setId((int) dbId);
 				this.delete(payment, false);
-				Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getDescription());
+				Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getTitle());
 			}
 		} else {
-			Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getDescription());
+			Notify.toast(this.context, R.string.toast_payment_saved_error, payment.getTitle());
 		}
 		
 		return dbId;
@@ -114,7 +114,7 @@ public class DbGroupPaymentAdapter {
 		ContentValues values = createContentValues(payment);
 		db.update("payment", values, " _id = '" + payment.getId() + "' ", null);
 		this.updateSplits(payment.getSplits(), payment.getId());
-		Notify.toast(this.context, R.string.toast_payment_updated, payment.getDescription());
+		Notify.toast(this.context, R.string.toast_payment_updated, payment.getTitle());
 	}
 	
 	public void updateSplits(ArrayList<PaymentSplit> splits, int paymentId){
@@ -135,7 +135,7 @@ public class DbGroupPaymentAdapter {
 		this.deleteRel(payment.getId());
 		this.deleteSplits(payment.getId());
 		if(showToast){
-			Notify.toast(this.context, R.string.toast_payment_deleted, payment.getDescription());
+			Notify.toast(this.context, R.string.toast_payment_deleted, payment.getTitle());
 		}
 	}
 	

@@ -7,6 +7,17 @@ import android.content.Context;
 
 public class Payment {
 	
+	public static final int DIRECTION_TO_USER = 0;
+	public static final int DIRECTION_FROM_USER = 1;
+	
+	public static final int TYPE_LOAN = 0;
+	public static final int TYPE_REPAYMENT = 1;
+	
+	public static final int TYPE_DB_LOAN_TO_USER = 0;
+	public static final int TYPE_DB_LOAN_FROM_USER = 1;
+	public static final int TYPE_DB_PAYMENT_TO_USER = 2;
+	public static final int TYPE_DB_PAYMENT_FROM_USER = 3;
+	
 	private int id;
 	private int userId;
 	private float amount;
@@ -28,11 +39,11 @@ public class Payment {
 		this.id = 0;
 		this.userId = 0;
 		this.amount = 0;
-		this.direction = 0;
+		this.direction = Payment.DIRECTION_TO_USER;
 		this.description = "";
 		this.date = Gen.getPdt();
 		this.user = new User(this.context);
-		this.type = 0;
+		this.type = Payment.TYPE_LOAN;
 		this.title = "";
 		
 	}
@@ -81,21 +92,21 @@ public class Payment {
 	public void setTypeDb(int type){
 		this.typeDb = type;
     	switch(this.getTypeDb()){
-    		case 0:
-    			this.setType(0);
-    			this.setDirection(0);
+    		case Payment.TYPE_DB_LOAN_TO_USER:
+    			this.setType(Payment.TYPE_LOAN);
+    			this.setDirection(Payment.DIRECTION_TO_USER);
     			break;
-    		case 1:
-    			this.setType(0);
-    			this.setDirection(1);
+    		case Payment.TYPE_DB_LOAN_FROM_USER:
+    			this.setType(Payment.TYPE_LOAN);
+    			this.setDirection(Payment.DIRECTION_FROM_USER);
     			break;
-    		case 2:
-    			this.setType(1);
-    			this.setDirection(0);
+    		case Payment.TYPE_DB_PAYMENT_TO_USER:
+    			this.setType(Payment.TYPE_REPAYMENT);
+    			this.setDirection(Payment.DIRECTION_TO_USER);
     			break;
-    		case 3:
-    			this.setType(1);
-    			this.setDirection(1);
+    		case Payment.TYPE_DB_PAYMENT_FROM_USER:
+    			this.setType(Payment.TYPE_REPAYMENT);
+    			this.setDirection(Payment.DIRECTION_FROM_USER);
     			break;
     	}
 		
@@ -104,18 +115,18 @@ public class Payment {
 	
 	public void setTypeDb(){
 		switch(this.getType()){
-			case 0:
+			case Payment.TYPE_LOAN:
 				if(this.isFromUser()){
-					this.setTypeDb(1);
+					this.setTypeDb(Payment.TYPE_DB_LOAN_FROM_USER);
 				} else {
-					this.setTypeDb(0);
+					this.setTypeDb(Payment.TYPE_DB_LOAN_TO_USER);
 				}
 				break;
-			case 1:
+			case Payment.TYPE_REPAYMENT:
 				if(this.isFromUser()){
-					this.setTypeDb(3);
+					this.setTypeDb(Payment.TYPE_DB_PAYMENT_FROM_USER);
 				} else {
-					this.setTypeDb(2);
+					this.setTypeDb(Payment.TYPE_DB_PAYMENT_TO_USER);
 				}
 				break;
 		}
@@ -171,17 +182,16 @@ public class Payment {
 	}
 	
 	public String getDirectionText(){
-		// TODO: Use strings from strings.xml //
 		String direction = "";
 		switch(this.getDirection()){
-			case 0:
-				direction = "To User";
+			case Payment.DIRECTION_TO_USER:
+				direction = this.context.getString(R.string.payment_direction_to_user);
 				break;
-			case 1:
-				direction = "From User";
+			case Payment.DIRECTION_FROM_USER:
+				direction = this.context.getString(R.string.payment_direction_from_user);;
 				break;
 			default:
-				direction = "To User";
+				direction = this.context.getString(R.string.payment_direction_to_user);;
 				break;
 		}
 		
@@ -190,32 +200,32 @@ public class Payment {
 	
 	public String getTypeText(){
 		switch(this.getType()){
-			case 0:
-				return "Loan";
-			case 1:
-				return "Repayment";
+			case Payment.TYPE_LOAN:
+				return this.context.getString(R.string.payment_type_loan);
+			case Payment.TYPE_REPAYMENT:
+				return this.context.getString(R.string.payment_type_repayment);
 			default:
-				return "Loan";
+				return this.context.getString(R.string.payment_type_loan);
 		}
 	}
 	
 	public String getTypeDbText(){
 		String type = "";
 		switch(this.getTypeDb()){
-			case 0:
-				type = "Loan to user";
+			case Payment.TYPE_DB_LOAN_TO_USER:
+				type = this.context.getString(R.string.payment_type_db_loan_to_user);
 				break;
-			case 1:
-				type = "Loan from user";
+			case Payment.TYPE_DB_LOAN_FROM_USER:
+				type = this.context.getString(R.string.payment_type_db_loan_from_user);
 				break;
-			case 2:
-				type = "Payment to user";
+			case Payment.TYPE_DB_PAYMENT_TO_USER:
+				type = this.context.getString(R.string.payment_type_db_payment_to_user);
 				break;
-			case 3:
-				type = "Payment from user";
+			case Payment.TYPE_DB_PAYMENT_FROM_USER:
+				type = this.context.getString(R.string.payment_type_db_payment_from_user);
 				break;
 			default:
-				type = "To User";
+				type = this.context.getString(R.string.payment_type_db_payment_to_user);
 				break;
 		}
 		
@@ -236,7 +246,7 @@ public class Payment {
 	 *********************************************************/
 	
 	public boolean isToUser(){
-		if(this.getDirection() == 0){
+		if(this.getDirection() == Payment.DIRECTION_TO_USER){
 			return true;
 		} else {
 			return false;
@@ -244,7 +254,7 @@ public class Payment {
 	}
 	
 	public boolean isFromUser(){
-		if(this.getDirection() == 1){
+		if(this.getDirection() == Payment.DIRECTION_FROM_USER){
 			return true;
 		} else {
 			return false;
@@ -252,7 +262,7 @@ public class Payment {
 	}
 	
 	public boolean isLoan(){
-		if(this.type == 0){
+		if(this.type == Payment.TYPE_LOAN){
 			return true;
 		} else {
 			return false;
@@ -260,7 +270,7 @@ public class Payment {
 	}
 	
 	public boolean isPayment(){
-		if(this.type == 1){
+		if(this.type == Payment.TYPE_REPAYMENT){
 			return true;
 		} else {
 			return false;

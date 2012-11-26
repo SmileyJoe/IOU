@@ -11,6 +11,8 @@ import com.smileyjoedev.iou.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -23,7 +25,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class GroupNew extends SherlockActivity implements OnClickListener, OnItemClickListener {
+public class GroupNew extends SherlockActivity implements OnClickListener, OnItemClickListener, TextWatcher {
 	
 	private Button btSave;
 	private Button btCancel;
@@ -37,6 +39,8 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 	private Group group;
 	private boolean edit;
 	private UserListAdapter userListAdapter;
+	private boolean isTitle;
+	private int numSelectedUser;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +75,9 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 			this.group.setUsers(this.users);
 			
 			this.edit = true;
+			
+			this.isTitle = true;
+			this.numSelectedUser = this.group.getUsers().size();
 		} catch(NullPointerException e){
 			this.edit = false;
 		}
@@ -112,6 +119,7 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
     	this.btCancel = (Button) findViewById(R.id.bt_cancel);
     	this.btCancel.setOnClickListener(this);
     	this.etGroupTitle = (EditText) findViewById(R.id.et_group_title);
+    	this.etGroupTitle.addTextChangedListener(this);
     	this.etGroupDescription = (EditText) findViewById(R.id.et_group_description);
     	this.lvUserList = (ListView) findViewById(R.id.lv_user_list);
     	this.lvUserList.setOnItemClickListener(this);
@@ -121,6 +129,8 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
     	this.groupAdapter = new DbGroupAdapter(this);
     	this.group = new Group();
     	this.edit = false;
+    	this.isTitle = false;
+    	this.numSelectedUser = 0;
     }
     
     private void populateView(){
@@ -133,6 +143,7 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
     	}
     	
     	this.userListAdapter = this.views.userList(this.users, (LinearLayout) findViewById(R.id.ll_user_list_wrapper), true);
+    	this.enableSave();
     }
 
 	@Override
@@ -174,13 +185,15 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 				int elementPos = position - this.lvUserList.getFirstVisiblePosition();
 				CheckBox clickedBox = (CheckBox) row.findViewById(R.id.cb_user_selected);
 				if(clickedBox.isChecked()){
+					this.numSelectedUser--;
 					clickedBox.setChecked(false);
 					this.users.get(position).setSelected(false);
 				}else{
+					this.numSelectedUser++;
 					clickedBox.setChecked(true);
 					this.users.get(position).setSelected(true);
 				}
-				
+				this.enableSave();
 				break;
 		}
 		
@@ -192,6 +205,35 @@ public class GroupNew extends SherlockActivity implements OnClickListener, OnIte
 				this.updateUserList();
 				break;
 		}
+	}
+	
+	private void enableSave(){
+		if((this.isTitle) && (this.numSelectedUser > 0)){
+			this.btSave.setEnabled(true);
+		} else {
+			this.btSave.setEnabled(false);
+		}
+	}
+
+	@Override
+	public void afterTextChanged(Editable s) {
+		if(s.toString().equals("")){
+			this.isTitle = false;
+		} else {
+			this.isTitle = true;
+		}
+		
+		this.enableSave();
+	}
+
+	@Override
+	public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+		
+	}
+
+	@Override
+	public void onTextChanged(CharSequence s, int start, int before, int count) {
+		
 	}
 	
 }

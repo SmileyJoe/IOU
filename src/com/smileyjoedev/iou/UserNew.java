@@ -85,9 +85,11 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 			this.edit = true;
 			this.oldUserName = this.user.getName();
 			this.oldContactId = this.user.getContactId();
+			this.btSave.setEnabled(true);
 		} catch(NullPointerException e){
 			this.user = new User(this);
 			this.edit = false;
+			this.btSave.setEnabled(false);
 		}
 		
 		
@@ -289,6 +291,11 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 	
 	@Override
 	public void afterTextChanged(Editable arg0) {
+		if(arg0.toString().equals("")){
+			this.btSave.setEnabled(false);
+		} else {
+			this.btSave.setEnabled(true);
+		}
 	}
 
 	@Override

@@ -6,6 +6,12 @@ import android.content.Context;
 
 public class User {
 	
+	public static final int STATUS_INACTIVE = 0;
+	public static final int STATUS_ACTIVE = 1;
+	public static final int STATUS_CURRENT = 2;
+	public static final int STATUS_FAVOURITE = 3;
+	
+	
 	private int id;
 	private String name;
 	private int onlineId;
@@ -26,7 +32,7 @@ public class User {
 		this.id = 0;
 		this.name = "";
 		this.onlineId = 0;
-		this.status = 1;
+		this.status = User.STATUS_ACTIVE;
 		this.payments = new ArrayList<Payment>();
 		this.balance = 0;
 		this.minimalisticTextFlag = 0;
@@ -120,20 +126,20 @@ public class User {
 	public String getStatusText(){
 		String status = "";
 		switch(this.status){
-			case 0:
-				status = "Inactive";
+			case User.STATUS_INACTIVE:
+				status = this.context.getString(R.string.user_status_inactive);
 				break;
-			case 1:
-				status = "Active";
+			case User.STATUS_ACTIVE:
+				status = this.context.getString(R.string.user_status_active);
 				break;
-			case 2:
-				status = "Current";
+			case User.STATUS_CURRENT:
+				status = this.context.getString(R.string.user_status_current);
 				break;
-			case 3:
-				status = "Favourite";
+			case User.STATUS_FAVOURITE:
+				status = this.context.getString(R.string.user_status_favourite);
 				break;
 			default:
-				status = "Active";
+				status = this.context.getString(R.string.user_status_active);
 				break;
 		}
 		
@@ -162,14 +168,13 @@ public class User {
 	
 	public String getStateText(){
 		String state = "";
-		// TODO: Use Strings from strings.xml //
 		if(this.getBalance() > 0){
-			state = "Owes You";
+			state = this.context.getString(R.string.tv_total_owed_user);
 		} else {
 			if(this.getBalance() < 0){
-				state = "You Owe";
+				state = this.context.getString(R.string.tv_total_user_owed);
 			} else {
-				state = "All Square";
+				state = this.context.getString(R.string.tv_total_all_square);
 			}
 		}
 		
@@ -193,7 +198,7 @@ public class User {
 	 ******************************************************/
 
 	public boolean isInactive(){
-		if(this.getStatus() == 0){
+		if(this.getStatus() == User.STATUS_INACTIVE){
 			return true;
 		} else {
 			return false;
@@ -201,7 +206,7 @@ public class User {
 	}
 	
 	public boolean isActive(){
-		if(this.getStatus() == 1){
+		if(this.getStatus() == User.STATUS_ACTIVE){
 			return true;
 		} else {
 			return false;
@@ -209,7 +214,7 @@ public class User {
 	}
 	
 	public boolean isCurrent(){
-		if(this.getStatus() == 2){
+		if(this.getStatus() == User.STATUS_CURRENT){
 			return true;
 		} else {
 			return false;
@@ -217,7 +222,7 @@ public class User {
 	}
 	
 	public boolean isFavourite(){
-		if(this.getStatus() == 3){
+		if(this.getStatus() == User.STATUS_FAVOURITE){
 			return true;
 		} else {
 			return false;

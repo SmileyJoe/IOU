@@ -130,9 +130,8 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
     	tvTotalAmount.setText(this.user.getBalanceText());
     	tvTotalStateText.setText(this.user.getStateText());
     	
-    	//TODO: Use String for this //
     	if(!this.user.getPayments().isEmpty()){
-    		tvLastPaymentDate.setText("Last: " + this.user.getPayments().get(0).getDateText(false));
+    		tvLastPaymentDate.setText(this.getString(R.string.tv_last_payment_title) + ": " + this.user.getPayments().get(0).getDateText(false));
     	} else {
     		tvLastPaymentDate.setVisibility(View.GONE);
     	}
@@ -162,12 +161,11 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
     	ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		
-		//TODO: Use Strings for this //
-		adapter.add("All");
-		adapter.add("Loans to " + this.user.getName());
-		adapter.add("Loans from " + this.user.getName());
-		adapter.add("Repayments to " + this.user.getName());
-		adapter.add("Repayments from " + this.user.getName());
+		adapter.add(this.getString(R.string.spinner_all));
+		adapter.add(this.getString(R.string.spinner_loans_to) + " " + this.user.getName());
+		adapter.add(this.getString(R.string.spinner_loans_from) + " " + this.user.getName());
+		adapter.add(this.getString(R.string.spinner_repayments_to) + " " + this.user.getName());
+		adapter.add(this.getString(R.string.spinner_repayments_from) + " " + this.user.getName());
 		
 		this.spFilter.setAdapter(adapter);
     }
@@ -225,12 +223,14 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 			case Constants.CONTEXT_REPAY_ALL:
 				Payment payment = new Payment(this);
 				payment = this.payments.get(this.selectedPayment);
-				payment.setDescription("Repayment: " + payment.getDescription());
+				payment.setDescription(payment.getTitle());
+				payment.setTitle(this.getString(R.string.payment_title_repayment));
+				
 				
 				if(payment.isToUser()){
-					payment.setTypeDb(3);
+					payment.setTypeDb(Payment.TYPE_DB_PAYMENT_FROM_USER);
 				} else {
-					payment.setTypeDb(2);
+					payment.setTypeDb(Payment.TYPE_DB_PAYMENT_TO_USER);
 				}
 				
 				payment.setDate(Gen.getPdt());
@@ -266,16 +266,16 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 				this.payments = this.userPaymentAdapter.getByUser(this.user.getId());
 				break;
 			case 1:
-				this.payments = this.userPaymentAdapter.getByTypeDb(0, this.user.getId());
+				this.payments = this.userPaymentAdapter.getByTypeDb(Payment.TYPE_DB_LOAN_TO_USER, this.user.getId());
 				break;
 			case 2:
-				this.payments = this.userPaymentAdapter.getByTypeDb(1, this.user.getId());
+				this.payments = this.userPaymentAdapter.getByTypeDb(Payment.TYPE_DB_LOAN_FROM_USER, this.user.getId());
 				break;
 			case 3:
-				this.payments = this.userPaymentAdapter.getByTypeDb(2, this.user.getId());
+				this.payments = this.userPaymentAdapter.getByTypeDb(Payment.TYPE_DB_PAYMENT_TO_USER, this.user.getId());
 				break;
 			case 4:
-				this.payments = this.userPaymentAdapter.getByTypeDb(3, this.user.getId());
+				this.payments = this.userPaymentAdapter.getByTypeDb(Payment.TYPE_DB_PAYMENT_FROM_USER, this.user.getId());
 				break;
 		}
 		this.populateView(false);
