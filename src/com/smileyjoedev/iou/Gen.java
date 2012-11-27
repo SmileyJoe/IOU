@@ -168,8 +168,11 @@ public class Gen {
 	        symbol = currency.getSymbol();
 		}
 		
-        
-        number = symbol + number;
+		if(prefs.getBoolean("currency_symbol_right", false)){
+			number = number + " " + symbol;
+		} else {
+			number = symbol + " " + number;
+		}
         
         if(!positive){
         	number = "-" + number;	        	

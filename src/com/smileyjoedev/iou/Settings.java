@@ -2,6 +2,8 @@ package com.smileyjoedev.iou;
 
 import java.io.IOException;
 
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.smileyjoedev.genLibrary.Debug;
 import com.smileyjoedev.genLibrary.Notify;
 import com.smileyjoedev.genLibrary.Send;
@@ -17,8 +19,9 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceManager;
+import android.view.View;
 
-public class Settings extends PreferenceActivity implements OnPreferenceClickListener {
+public class Settings extends SherlockPreferenceActivity implements OnPreferenceClickListener {
 	
 	public static final int START_HOME_DASH = 1;
 	public static final int START_INDIVIDUAL_VIEW_ALL = 2;
@@ -30,13 +33,6 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 //	private ListPreference prefTheme;
 	private Preference contact;
 	private Preference minimalisticTextDownload;
-	private Preference defaultEmailRemindBody;
-	private Preference defaultEmailRemindSubject;
-	private Preference emailReminders;
-	private Preference smsReminders;
-	private Preference defaultSmsRemindBody;
-	private Preference notificationReminders;
-	private Preference notificationReminderPersistent;
 	private Preference allowCustomCurrSym;
 	private Preference customCurrSym;
 	private Preference dbBackup;
@@ -49,8 +45,20 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		addPreferencesFromResource(R.layout.settings);
 		
 		this.initialize();
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		this.populateView();
 	}
+	
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+			case android.R.id.home:
+				finish();
+				return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+        }
+
+    }
 	
 	public void initialize(){
 		this.prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
@@ -77,27 +85,9 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 		this.minimalisticTextDownload = (Preference) findPreference("minimalistic_text_download");
 		this.minimalisticTextDownload.setOnPreferenceClickListener(this);
 		
-		this.emailReminders = (Preference) findPreference("allow_email_reminders");
-		this.emailReminders.setOnPreferenceClickListener(this);
-		this.defaultEmailRemindBody = (Preference) findPreference("default_email_reminder_body");
-		this.defaultEmailRemindBody.setEnabled(this.prefs.getBoolean("allow_email_reminders", true));
-		this.defaultEmailRemindSubject = (Preference) findPreference("default_email_reminder_subject");
-		this.defaultEmailRemindSubject.setEnabled(this.prefs.getBoolean("allow_email_reminders", true));
-		
-		this.smsReminders = (Preference) findPreference("allow_sms_reminders");
-		this.smsReminders.setOnPreferenceClickListener(this);
-		this.defaultSmsRemindBody = (Preference) findPreference("default_sms_reminder_body");
-		this.defaultSmsRemindBody.setEnabled(this.prefs.getBoolean("allow_sms_reminders", true));
-		
 		this.prefStartPage = (ListPreference) findPreference("default_start_page");
 		this.prefStartPage.setEntries(startPages);
 		this.prefStartPage.setEntryValues(startPageIds);
-		
-		this.notificationReminders = (Preference) findPreference("allow_notification_reminders");
-		this.notificationReminders.setOnPreferenceClickListener(this);
-		
-		this.notificationReminderPersistent = (Preference) findPreference("notification_reminder_persistent");
-		this.notificationReminderPersistent.setEnabled(this.prefs.getBoolean("allow_notification_reminders", true));
 		
 		this.allowCustomCurrSym = (Preference) findPreference("allow_custom_currency_symbol");
 		this.allowCustomCurrSym.setOnPreferenceClickListener(this);
@@ -126,19 +116,6 @@ public class Settings extends PreferenceActivity implements OnPreferenceClickLis
 			Intent intent = new Intent(Intent.ACTION_VIEW);
 			intent.setData(Uri.parse("market://details?id=de.devmil.minimaltext&hl=en"));
 			startActivity(intent);
-		}
-		
-		if(pref.getKey().equals("allow_email_reminders")){
-			this.defaultEmailRemindBody.setEnabled(!this.defaultEmailRemindBody.isEnabled());
-			this.defaultEmailRemindSubject.setEnabled(!this.defaultEmailRemindSubject.isEnabled());
-		}
-		
-		if(pref.getKey().equals("allow_sms_reminders")){
-			this.defaultSmsRemindBody.setEnabled(!this.defaultSmsRemindBody.isEnabled());
-		}
-		
-		if(pref.getKey().equals("allow_notification_reminders")){
-			this.notificationReminderPersistent.setEnabled(!this.notificationReminderPersistent.isEnabled());
 		}
 		
 		if(pref.getKey().equals("allow_custom_currency_symbol")){

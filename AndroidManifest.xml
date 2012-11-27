@@ -76,6 +76,8 @@
 		</activity>	
   	   	<activity android:name=".Settings" 
 			android:label="@string/bar_title_settings"/>
+  	   	<activity android:name=".SettingsUser" 
+			android:label="@string/bar_title_settings_user"/>
   	   	<activity android:name="com.smileyjoedev.genLibrary.PopupDelete" 
 			android:label="@string/bar_title_delete"
 			android:theme="@style/Holo.Theme.Dialog"/>
@@ -117,6 +119,9 @@
 			android:label="@string/bar_title_date_time_picker"
 			android:theme="@style/Holo.Theme.Dialog">
    		</activity>
+   		<activity android:name=".Thanks" 
+			android:label="@string/bar_title_thanks"
+			android:theme="@style/Holo.Theme.Dialog"/>
     </application>
 
 </manifest>

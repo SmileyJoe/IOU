@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory
+		android:title="@string/category_title_notification">
+		<CheckBoxPreference
+		        android:title="@string/pref_title_notification_reminders"
+		        android:defaultValue="true"
+		        android:summary="@string/pref_summary_notification_reminders"
+		        android:key="allow_notification_reminders" />
+		<CheckBoxPreference
+		        android:title="@string/pref_title_notification_reminder_persistent"
+		        android:defaultValue="false"
+		        android:summary="@string/pref_summary_notification_reminder_persistent"
+		        android:key="notification_reminder_persistent" />
+	</PreferenceCategory>
+	<PreferenceCategory
+		android:title="@string/category_title_email">
+		<CheckBoxPreference
+		        android:title="@string/pref_title_email_reminders"
+		        android:defaultValue="true"
+		        android:summary="@string/pref_summary_email_reminders"
+		        android:key="allow_email_reminders" />
+		<EditTextPreference
+                android:name="@string/pref_name_def_email_rem_sub"
+                android:summary="@string/pref_summary_email_subject"
+                android:defaultValue="@string/default_email_reminder_subject"
+                android:title="@string/pref_title_email_subject"
+                android:key="default_email_reminder_subject"/>
+		<EditTextPreference
+                android:name="@string/pref_name_def_email_rem_body"
+                android:summary="@string/pref_summary_email_body"
+                android:defaultValue="@string/default_email_reminder_body"
+                android:title="@string/pref_title_email_body"
+                android:key="default_email_reminder_body"/>
+	</PreferenceCategory>
+	<PreferenceCategory
+		android:title="@string/category_title_sms">
+		<CheckBoxPreference
+		        android:title="@string/pref_title_sms_reminders"
+		        android:defaultValue="true"
+		        android:summary="@string/pref_summary_sms_reminders"
+		        android:key="allow_sms_reminders" />
+		<EditTextPreference
+                android:name="@string/pref_name_def_sms_rem_body"
+                android:summary="@string/pref_summary_sms_body"
+                android:defaultValue="@string/default_sms_reminder_body"
+                android:title="@string/pref_title_sms_body"
+                android:key="default_sms_reminder_body"/>
+	</PreferenceCategory>
+   	<PreferenceCategory
+		android:title="@string/category_title_integration">
+		<CheckBoxPreference
+		        android:title="@string/pref_title_allow_min_text"
+		        android:defaultValue="true"
+		        android:summary="@string/pref_summary_allow_min_text"
+		        android:key="allow_minimalistic_text" />
+	</PreferenceCategory>
+</PreferenceScreen>
