@@ -58,11 +58,33 @@
 		        android:key="currency_symbol_right" />
 	</PreferenceCategory>
 	<PreferenceCategory
+	    android:title="@string/category_title_misc">
+    	<CheckBoxPreference
+	        android:title="@string/pref_title_send_crash_data"
+	        android:defaultValue="false"
+	        android:summary="@string/pref_summary_send_crash_data"
+	        android:key="send_crash_data" />
+	</PreferenceCategory>
+	<PreferenceCategory
+	        android:title="@string/category_title_contact">
+	    	<Preference
+                android:title="@string/pref_title_feedback"
+                android:summary="@string/pref_summary_feedback"
+                android:key="feedback" />
+	    	<Preference
+                android:title="@string/pref_title_bugs"
+                android:summary="@string/pref_summary_bugs"
+                android:key="bugs" />
+			<Preference
+			    android:title="@string/pref_title_user_voice"
+				android:summary="@string/pref_summary_user_voice">
+				<intent 
+				    android:action="android.intent.action.VIEW"
+					android:data="http://www.smileyjoedev.uservoice.com"/>
+			</Preference>
+    </PreferenceCategory>
+	<PreferenceCategory
 	        android:title="@string/category_title_about">
-        <Preference
-                android:title="@string/pref_title_contact"
-                android:summary="@string/pref_summary_contact"
-                android:key="contact" />
         <Preference
                 android:title="@string/pref_title_about_min_text"
                 android:summary="@string/pref_summary_about_min_text"

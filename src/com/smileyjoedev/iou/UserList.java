@@ -13,7 +13,6 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-import com.bugsense.trace.BugSenseHandler;
 import com.smileyjoedev.genLibrary.Contact;
 import com.smileyjoedev.genLibrary.Contacts;
 import com.smileyjoedev.genLibrary.Debug;
@@ -87,7 +86,6 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
         super.onCreate(savedInstanceState);
         Gen.setTheme(this);
         setContentView(R.layout.user_list);
-//        BugSenseHandler.setup(this, "04b74a70");
         
         this.initialize();
         if(!this.isStartPage){

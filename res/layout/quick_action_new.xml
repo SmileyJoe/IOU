@@ -40,7 +40,7 @@
 		    <TextView
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:text="@string/quick_action_type_title"
+		        android:text="@string/tv_quick_action_type_title"
 		        style="@style/heading">
 		    </TextView>
 		    
@@ -68,7 +68,7 @@
 		    <TextView
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:text="@string/quick_action_action_title"
+		        android:text="@string/tv_quick_action_action_title"
 		        style="@style/heading">
 		    </TextView>
 		    

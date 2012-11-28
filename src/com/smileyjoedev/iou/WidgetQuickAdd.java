@@ -1,6 +1,5 @@
 package com.smileyjoedev.iou;
 
-import com.bugsense.trace.BugSenseHandler;
 import com.smileyjoedev.iou.R;
 
 import android.app.PendingIntent;

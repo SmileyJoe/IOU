@@ -45,9 +45,12 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Gen.setTheme(this);
-        
         setContentView(R.layout.main);
-//        BugSenseHandler.setup(this, "04b74a70");
+        this.prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        
+        if(this.prefs.getBoolean("send_crash_data", false)){
+        	BugSenseHandler.setup(this, "04b74a70");
+        }
         
         this.initialize();
         
@@ -107,7 +110,7 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     	this.llGroupListWrapper = (LinearLayout) findViewById(R.id.ll_group_list_wrapper);
     	this.llGroupListWrapper.setOnClickListener(this);
     	
-    	this.prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+    	
     	
     }
     

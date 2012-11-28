@@ -31,7 +31,8 @@ public class Settings extends SherlockPreferenceActivity implements OnPreference
 //	private String[] themeTypes = {"Dark", "Light"};
 //	private String[] themeTypesIds = {"1","2"};
 //	private ListPreference prefTheme;
-	private Preference contact;
+	private Preference feedback;
+	private Preference bugs;
 	private Preference minimalisticTextDownload;
 	private Preference allowCustomCurrSym;
 	private Preference customCurrSym;
@@ -79,8 +80,11 @@ public class Settings extends SherlockPreferenceActivity implements OnPreference
 			Integer.toString(this.START_GROUP_VIEW_ALL)
 		};
 		
-		this.contact = (Preference) findPreference("contact");
-		this.contact.setOnPreferenceClickListener(this);
+		this.feedback = (Preference) findPreference("feedback");
+		this.feedback.setOnPreferenceClickListener(this);
+		
+		this.bugs = (Preference) findPreference("bugs");
+		this.bugs.setOnPreferenceClickListener(this);
 		
 		this.minimalisticTextDownload = (Preference) findPreference("minimalistic_text_download");
 		this.minimalisticTextDownload.setOnPreferenceClickListener(this);
@@ -108,8 +112,12 @@ public class Settings extends SherlockPreferenceActivity implements OnPreference
 
 	@Override
 	public boolean onPreferenceClick(Preference pref) {
-		if(pref.getKey().equals("contact")){
-			Send.emailDialog(this, "smileyjoedev@gmail.com", "IOU - Feedback", "");
+		if(pref.getKey().equals("feedback")){
+			Send.emailDialog(this, "feedback@smileyjoedev.co.za", "IOU - Feedback", "");
+		}
+		
+		if(pref.getKey().equals("bugs")){
+			Send.emailDialog(this, "bugs@smileyjoedev.co.za", "IOU - Bug Report", "");
 		}
 		
 		if(pref.getKey().equals("minimalistic_text_download")){
