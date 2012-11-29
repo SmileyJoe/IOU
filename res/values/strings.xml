@@ -117,7 +117,8 @@
     <string name="payment_title_repayment">Repayment</string>
     <string name="payment_title_part_repayment">Part Repayment</string>
     <string name="payment_description_repayment_all">All</string>
-    <string name="repayment_description">Repayment</string>
+    
+    <string name="group_repayment_title">Repayment</string>
         
     <!-- POPUP DELETE -->
     

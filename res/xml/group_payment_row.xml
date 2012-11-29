@@ -3,14 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip"
+    android:paddingTop="5dip"
+    android:paddingBottom="5dip">
     <TextView 
         android:id="@+id/tv_payment_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="20dip"
+        style="@style/heading"
         android:singleLine="true">
+    </TextView>
+       <TextView 
+        android:id="@+id/tv_payment_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
     </TextView>
     <TextView 
         android:id="@+id/tv_payment_description"

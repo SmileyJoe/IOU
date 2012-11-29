@@ -354,6 +354,7 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 					this.tvDifferenceAmount.setText("");
 					this.tvDifferenceAmountTitle.setText("");
 				}
+				this.enableSave();
 				break;
 			case R.id.et_payment_date:
 				startActivityForResult(Intents.dateTimePicker(this, this.payment.getPdt()), Constants.ACTIVITY_DATE_PICKER);
@@ -425,7 +426,7 @@ public class GroupPaymentNew extends SherlockActivity implements OnClickListener
 	}
 	
 	public static void enableSave(){
-		if((GroupPaymentNew.totalPaying > 0) && (GroupPaymentNew.totalPaying == GroupPaymentNew.totalPaidFor)){
+		if((GroupPaymentNew.totalPaying > 0) && ((GroupPaymentNew.totalPaying == GroupPaymentNew.totalPaidFor) || (GroupPaymentNew.equalPayment))){
 			GroupPaymentNew.btSave.setEnabled(true);
 		} else {
 			GroupPaymentNew.btSave.setEnabled(false);

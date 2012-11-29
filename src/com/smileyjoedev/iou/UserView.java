@@ -45,6 +45,7 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 	private UserPaymentListAdapter paymentListAdapter;
 	private int userId;
 	private ImageButton ibtAddPayment;
+	private LinearLayout llFilterWrapper;
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +79,11 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 				startActivityForResult(Intents.newPayment(this, this.user.getId()), Constants.ACTIVITY_NEW_PAYMENT);
 				return true;
 			case R.id.menu_filter:
-				this.spFilter.performClick();
+				if(this.llFilterWrapper.getVisibility() == View.VISIBLE){
+					this.llFilterWrapper.setVisibility(View.GONE);
+				} else {
+					this.llFilterWrapper.setVisibility(View.VISIBLE);
+				}
 				return true;
 			case android.R.id.home:
 				finish();
@@ -102,6 +107,7 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
     	this.spFilter.setOnItemSelectedListener(this);
     	this.ibtAddPayment = (ImageButton) findViewById(R.id.ibt_add_payment);
     	this.ibtAddPayment.setOnClickListener(this);
+    	this.llFilterWrapper = (LinearLayout) findViewById(R.id.ll_filter_wrapper);
     }
     
     private void populateView(){

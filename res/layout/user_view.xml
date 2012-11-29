@@ -3,6 +3,34 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="5dip"
+		android:paddingBottom="5dip"
+		android:paddingLeft="5dip"
+		android:background="@color/dark_grey"
+	    android:orientation="horizontal" 
+	    android:weightSum="1.0"
+	    android:id="@+id/ll_filter_wrapper"
+	    android:visibility="gone">
+	    <LinearLayout
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_weight="0.5"
+	        android:orientation="vertical">
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/tv_sp_filter_title">
+	        </TextView>
+	        <Spinner 
+			    android:layout_height="wrap_content"
+			    android:layout_width="wrap_content"
+			    android:id="@+id/sp_filter">
+			</Spinner>	        
+	    </LinearLayout>
+    </LinearLayout>
     <RelativeLayout
 		android:layout_width="fill_parent"
 		android:layout_height="60dip"
@@ -72,10 +100,5 @@
 		</LinearLayout>
 	</RelativeLayout>
 	<include layout="@xml/user_payment_list"/>
-	<Spinner 
-	    android:layout_height="0dip"
-	    android:layout_width="0dip"
-	    android:id="@+id/sp_filter">
-	</Spinner>
 
 </LinearLayout>

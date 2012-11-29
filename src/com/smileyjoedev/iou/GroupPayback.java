@@ -116,7 +116,7 @@ public class GroupPayback extends Activity implements OnClickListener, OnChecked
     	PaymentSplit split = new PaymentSplit(this);
     	
     	payment.setAmount(repayment.getAmount());
-    	payment.setDescription(this.getString(R.string.repayment_description));
+    	payment.setTitle(this.getString(R.string.group_repayment_title));
     	payment.setGroupId(this.group.getId());
     	payment.setPdt(Gen.getPdt());
     	

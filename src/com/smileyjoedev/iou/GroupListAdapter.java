@@ -56,23 +56,18 @@ public class GroupListAdapter extends BaseAdapter {
 		
 		TextView tvGroupTitle = (TextView) convertView.findViewById(R.id.tv_group_title);
 		TextView tvGroupDescription = (TextView) convertView.findViewById(R.id.tv_group_description);
-		LinearLayout llGroupDetails = (LinearLayout) convertView.findViewById(R.id.ll_group_details);
+		TextView tvGroupUsers = (TextView) convertView.findViewById(R.id.tv_group_users);
 		
 		tvGroupTitle.setText(group.getTitle());
-		tvGroupDescription.setText(group.getDescription());
-		llGroupDetails.addView(views.addField(R.string.tv_user_list_title, Gen.getUserCsv(group.getUsers())));
 		
-//		Gen.set_group_image(this.context, ivUserImage, user);
+		if(!group.getDescription().equals("")){
+			tvGroupDescription.setText(group.getDescription());
+		} else {
+			tvGroupDescription.setVisibility(View.GONE);
+		}
 		
-//		if(user.get_balance() > 0){
-//			tvUserBalance.setTextColor(Color.GREEN);
-//		} else {
-//			if(user.get_balance() < 0){
-//				tvUserBalance.setTextColor(Color.RED);
-//			}
-//		}
+		tvGroupUsers.setText(Gen.getUserCsv(group.getUsers()));
 		
-//		tvUserBalance.setText(user.get_balance_text());
 		return convertView;
 	}
 	
