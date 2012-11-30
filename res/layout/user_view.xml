@@ -100,5 +100,14 @@
 		</LinearLayout>
 	</RelativeLayout>
 	<include layout="@xml/user_payment_list"/>
-
+    <Spinner 
+	    android:layout_height="0dip"
+	    android:layout_width="0dip"
+	    android:id="@+id/sp_email_list">
+	</Spinner>
+	<Spinner 
+	    android:layout_height="0dip"
+	    android:layout_width="0dip"
+	    android:id="@+id/sp_phone_number_list">
+	</Spinner>
 </LinearLayout>

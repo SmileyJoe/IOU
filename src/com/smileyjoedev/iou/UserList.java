@@ -252,13 +252,8 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				if(position > 0){
 					position = position - 1;
 					
-					String message = this.prefs.getString("default_sms_reminder_body", this.getString(R.string.default_sms_reminder_body));
-					String username = this.users.get(this.selectedUser).getName();
-					String balance = this.prefs.getString("default_currency", this.getString(R.string.default_currency)) + this.users.get(this.selectedUser).getBalanceText();
 					String number = this.contact.getNumber(position).getNumber();
-					
-					message = message.replace("%USERNAME", username);
-					message = message.replace("%BALANCE", balance);
+					String message = Gen.createSms(this, this.users.get(this.selectedUser));
 					
 					Send.smsDialog(this, number, message);
 				}
@@ -413,7 +408,7 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				startActivityForResult(Intents.editUser(this, this.users.get(this.selectedUser).getId()), Constants.ACTIVITY_EDIT_USER);
 				break;
 			case Constants.CONTEXT_DELETE:
-				startActivityForResult(Intents.popupDelete(this, Constants.GROUP), Constants.ACTIVITY_POPUP_DELETE);
+				startActivityForResult(Intents.popupDelete(this, Constants.USER), Constants.ACTIVITY_POPUP_DELETE);
 				break;
 			case Constants.CONTEXT_REMINDER_EMAIL:
 				this.populateSpEmailList(this.users.get(this.selectedUser).getContactId());

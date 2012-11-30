@@ -50,6 +50,7 @@ public class Constants {
 	public static final int ACTIVITY_QUICK_ACTION_EDIT = 23;
 	public static final int ACTIVITY_START_PAGE = 24;
 	public static final int ACTIVITY_DATE_PICKER = 25;
+	public static final int ACTIVITY_POPUP_DELETE_USER = 26;
 	
 	public static final int PAYMENT = 101;
 	public static final int USER = 102;

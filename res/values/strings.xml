@@ -263,6 +263,11 @@
     <string name="menu_user_details">User Details</string>
     <string name="menu_repayment">Who owes who?</string>
     <string name="menu_quick_action_new">New Quick Action</string>
+    <string name="menu_edit_user">Edit</string>
+    <string name="menu_delete_user">Delete</string>
+    <string name="menu_send_email_reminder">Send Email reminder</string>
+    <string name="menu_send_sms_reminder">Send SMS reminder</string>
+    <string name="menu_notification_reminder">Set notification reminder</string>
     
     <!-- DIALOG HEADINGS -->
     

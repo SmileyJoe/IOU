@@ -246,12 +246,24 @@ public class Gen {
     	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
     	String msg = prefs.getString("default_email_reminder_body", context.getString(R.string.default_email_reminder_body));
 		String username = user.getName();
-		String balance = prefs.getString("default_currency", context.getString(R.string.default_currency)) + user.getBalanceText();
+		String balance = user.getBalanceText();
 		
 		msg = msg.replace("%USERNAME", username);
 		msg = msg.replace("%BALANCE", balance);
     	
     	return msg;
+    }
+    
+    public static String createSms(Context context, User user){
+    	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+    	String message = prefs.getString("default_sms_reminder_body", context.getString(R.string.default_sms_reminder_body));
+		String username = user.getName();
+		String balance = user.getBalanceText();
+		
+		message = message.replace("%USERNAME", username);
+		message = message.replace("%BALANCE", balance);
+		
+		return message;
     }
 
     public static String getUserCsv(ArrayList<User> users){

@@ -1,11 +1,39 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-	<item android:id="@+id/menu_filter"
-		android:icon="@drawable/filter"
-		android:showAsAction="ifRoom|withText"
-		android:title="@string/menu_filter" />
     <item android:id="@+id/menu_add_payment"
         android:icon="@drawable/add_payment"
-        android:showAsAction="ifRoom|withText"
+        android:showAsAction="ifRoom"
         android:title="@string/menu_add_payment">
     </item>
+    <item android:id="@+id/menu_edit_user"
+        android:icon="@drawable/edit"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_edit_user">
+    </item>
+	<item android:id="@+id/menu_delete_user"
+        android:icon="@drawable/delete"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_delete_user">
+    </item>
+    <item android:id="@+id/menu_send_email_reminder"
+        android:icon="@drawable/send_email"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_send_email_reminder"
+        android:visible="false">
+    </item>
+    <item android:id="@+id/menu_send_sms_reminder"
+        android:icon="@drawable/send_sms"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_send_sms_reminder"
+        android:visible="false">
+    </item>
+    <item android:id="@+id/menu_notification_reminder"
+        android:icon="@drawable/add_notification_reminder"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_notification_reminder"
+        android:visible="false">
+    </item>
+	<item android:id="@+id/menu_filter"
+		android:icon="@drawable/filter"
+		android:showAsAction="ifRoom"
+		android:title="@string/menu_filter" />        
 </menu>
