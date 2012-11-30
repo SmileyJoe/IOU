@@ -9,6 +9,6 @@
         android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
 	    android:id="@+id/iv_quick_add"
-	    android:src="@drawable/ic_launcher">
+	    android:src="@drawable/widget_quick_add">
     </ImageView>
 </LinearLayout>

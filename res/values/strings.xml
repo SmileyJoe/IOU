@@ -317,30 +317,30 @@
     <string name="pref_start_individual_view_all_title">User List</string>
     <string name="pref_start_group_view_all_title">Group List</string>
     
-    <string name="pref_summary_allow_min_text">If this is check variables will allowed to be created to be used in minimalistic text</string>
-    <string name="pref_summary_about_min_text">I have nothing to do with Minimalistic text, I just think its an amazing app and wanted to integrate with it, for more information click here to download it from google play</string>
-    <string name="pref_summary_feedback">Send Feedback to the developer</string>
-    <string name="pref_summary_bugs">Notify us of a bug</string>
+    <string name="pref_summary_allow_min_text">When checked, variables can be created to be used in Minimalistic Text</string>
+    <string name="pref_summary_about_min_text">I have nothing to do with Minimalistic Text, I just think it\'s an amazing app and wanted to integrate with it. For more information click here to download it from Google Play</string>
+    <string name="pref_summary_feedback">Send Feedback to the developer. I wish I was multi-lingual, but I can only understand feedback written in English.</string>
+    <string name="pref_summary_bugs">Notify us of a bug. I wish I was multi-lingual, but I can only understand bug reports written in English.</string>
     <string name="pref_summary_email_reminders">Gives you the option to send an email reminder to a user</string>
-    <string name="pref_summary_email_subject">The Default message subject that will be sent, this will be editable before the message is sent.</string>
-    <string name="pref_summary_email_body" formatted="false">The Default message that will be sent, this will be editable before the message is sent. Use %USERNAME and %BALANCE as variables for the user name and user balance respectively</string>
+    <string name="pref_summary_email_subject">The Default message subject that will be sent. This will be editable before the message is sent.</string>
+    <string name="pref_summary_email_body" formatted="false">The Default message that will be sent. This will be editable before the message is sent. Use %USERNAME and %BALANCE as variables for the user name and user balance respectively</string>
     <string name="pref_summary_sms_reminders">Gives you the option to send an sms reminder to a user</string>
-    <string name="pref_summary_sms_body" formatted="false">The Default message that will be sent, this will be editable before the message is sent. Use %USERNAME and %BALANCE as variables for the user name and user balance respectively</string>
+    <string name="pref_summary_sms_body" formatted="false">The Default message that will be sent. This will be editable before the message is sent. Use %USERNAME and %BALANCE as variables for the user name and user balance respectively</string>
     <string name="pref_summary_currency">Show amounts with your local currency symbol</string>
     <string name="pref_summary_default_start_page">Select the starting page, this will take effect the next time the app starts. The home dash will be disabled if it is not the home page</string>
     <string name="pref_summary_notification_reminders">Allows you to add a reminder to the notification bar</string>
-    <string name="pref_summary_allow_individual">If this is checked the individual section will be active</string>
-    <string name="pref_summary_allow_group">If this is checked the group section will be active</string>
+    <string name="pref_summary_allow_individual">When checked, the individual section will be active</string>
+    <string name="pref_summary_allow_group">When checked, the group section will be active</string>
     <string name="pref_summary_individual_options">Options that apply to individual Users</string>
     <string name="pref_summary_notification_reminder_persistent">Reminder Notifications will be persistent</string>
     <string name="pref_summary_allow_custom_currency_symbol">Overwrite default device symbol</string>
     <string name="pref_summary_custom_currency_symbol">Symbol to use</string>
-    <string name="pref_summary_currency_symbol_right">Position the currenct Symbol on the right of the amount</string>
-    <string name="pref_summary_db_backup">Backup data to a file on your sdcard</string>
-    <string name="pref_summary_db_restore">Restore data from your sdcard</string>
+    <string name="pref_summary_currency_symbol_right">Position the currency Symbol on the right of the amount</string>
+    <string name="pref_summary_db_backup">Backup data to a file on your SD card</string>
+    <string name="pref_summary_db_restore">Restore data from your SD card</string>
     <string name="pref_summary_thanks">People and projects who have made this application possible</string>
-    <string name="pref_summary_user_voice">Got an idea for the app, let us know</string>
-    <string name="pref_summary_send_crash_data">Send annonymous crash report data to help us improve the app</string>
+    <string name="pref_summary_user_voice">Got an idea for the app? Let us know</string>
+    <string name="pref_summary_send_crash_data">Send anonymous crash report data to help us improve the app</string>
     
     <string name="pref_name_def_email_rem_body">Default Email Body</string>
     <string name="pref_name_def_email_rem_sub">Default Email Subject</string>

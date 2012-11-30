@@ -26,6 +26,9 @@
  	<style name="actionbar" parent="Widget.Sherlock.ActionBar">
 	    <item name="android:background">@drawable/header_background</item>
 	    <item name="background">@drawable/header_background</item>
+	    
+	    <item name="backgroundSplit">@drawable/actionbar_split_background</item>
+    	<item name="android:backgroundSplit">@drawable/actionbar_split_background</item>
 	</style>
 	
  	<style name="TextViewEmptyListView">
