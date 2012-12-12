@@ -9,6 +9,11 @@
 	    android:layout_height="wrap_content"
 	    android:id="@+id/lv_payment_list">
 	</ListView>
+	<TextView
+	    style="@style/TextViewEmptyListView"
+	    android:id="@+id/tv_user_payment_list_empty"
+	    android:text="@string/tv_no_payments">
+	</TextView>
 <!-- 	<ImageButton 
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"

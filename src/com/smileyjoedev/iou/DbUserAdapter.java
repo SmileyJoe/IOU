@@ -114,6 +114,7 @@ public class DbUserAdapter {
 	
 	public void delete(User user){
 		db.delete("user", " _id='" + user.getId() + "' ", null);
+		Gen.displayMinimalisticText(this.context, user, 0);
 		Notify.toast(this.context, R.string.toast_user_deleted, user.getName());
 	}
 	

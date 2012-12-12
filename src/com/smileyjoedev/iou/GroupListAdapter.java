@@ -48,15 +48,37 @@ public class GroupListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		Group group = this.groups.get(position);
-		Contacts cont = new Contacts(this.context);
-		Views views = new Views(this.context);
+		convertView = GroupListAdapter.populateView(this.context, this.groups.get(position));
+		
+		return convertView;
+	}
+	
+	public static View populateView(Context context, Group group){
+		DbGroupPaymentAdapter groupPaymentAdapter = new DbGroupPaymentAdapter(context);
+		ArrayList<GroupPayment> payments = groupPaymentAdapter.getByGroup(group.getId());
+		ArrayList<Payment> userPayments = Gen.getUserPayments(context, group, payments);
+        
+		Contacts cont = new Contacts(context);
+		Views views = new Views(context);
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		convertView = inflater.inflate(R.xml.group_row, null);
+		View convertView = inflater.inflate(R.xml.group_row, null);
 		
 		TextView tvGroupTitle = (TextView) convertView.findViewById(R.id.tv_group_title);
 		TextView tvGroupDescription = (TextView) convertView.findViewById(R.id.tv_group_description);
 		TextView tvGroupUsers = (TextView) convertView.findViewById(R.id.tv_group_users);
+		LinearLayout llGroupImageWrapper = (LinearLayout) convertView.findViewById(R.id.ll_group_image_wrapper);
+		View vStateIndicator = (View) convertView.findViewById(R.id.v_state_indicator);
+		
+		if(userPayments.size() > 0){
+    		ArrayList<GroupRepayment> repayments = Gen.sortGroupRepayments(context, userPayments);
+    		
+    		if(repayments.size() > 0){
+    			tvGroupTitle.setTextColor(context.getResources().getColor(R.color.red));
+    			vStateIndicator.setBackgroundColor(context.getResources().getColor(R.color.red));
+    		}
+    	}
+		
+		Gen.setGroupImage(context, group.getUsers(), llGroupImageWrapper);
 		
 		tvGroupTitle.setText(group.getTitle());
 		

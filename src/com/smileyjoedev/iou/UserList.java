@@ -124,6 +124,9 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 				return true;
 			case android.R.id.home:
 				if(!this.isStartPage){
+					Intent intent = new Intent(this, Main.class);
+		            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+		            startActivity(intent);
 					finish();
 				}
 				return true;
@@ -443,4 +446,11 @@ public class UserList extends SherlockActivity implements OnItemClickListener, O
 		
 	}
 
+	public void onBackPressed() {
+		if(this.llFilterWrapper.getVisibility() == View.VISIBLE){
+			this.llFilterWrapper.setVisibility(View.GONE);
+		} else {
+			finish();
+		}
+	}
 }

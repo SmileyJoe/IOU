@@ -10,6 +10,8 @@
 	<color name="medium_grey">#2A2A2A</color>
 	<color name="green">#00FF00</color>
 	<color name="red">#FF0000</color>
+	<color name="purple">#9933CC</color>
+	<color name="orange">#FF8800</color>
 	
 
 	<color name="header_border">@color/blue</color>

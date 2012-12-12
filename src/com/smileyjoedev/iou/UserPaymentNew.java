@@ -40,6 +40,7 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 	private Payment payment;
 	private Button btSave;
 	private Button btCancel;
+	private Button btNewUser;
 	private EditText etTitle;
 	private EditText etDescription;
 	private EditText etAmount;
@@ -55,6 +56,9 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 	private ArrayList<User> users;
 	private LinearLayout llUserSpinner;
 	private Spinner spUserSpinner;
+	private Menu menu;
+	
+	private static final int MENU_NEW_USER = 0;
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,12 +103,21 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getSupportMenuInflater();
         inflater.inflate(R.menu.payment_new, menu);
+        this.menu = menu;
+        
+        if(!this.isQuickAdd){
+        	this.menu.getItem(UserPaymentNew.MENU_NEW_USER).setVisible(false);
+        }
+        
         return super.onCreateOptionsMenu(menu);
     }
     
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+	        case R.id.menu_add_user:
+				startActivityForResult(Intents.userNew(this), Constants.ACTIVITY_NEW_USER);
+				return true;
 			case android.R.id.home:
 				this.hideKeyboard();
 				finish();
@@ -116,14 +129,22 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     }
     
     private void populateSpUser(){
-    	ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		
-		for(int i = 0; i < this.users.size(); i++){
-			adapter.add(this.users.get(i).getName());
-		}
-		
-		this.spUserSpinner.setAdapter(adapter);
+    	if(this.users.size() > 0){
+    		this.spUserSpinner.setVisibility(View.VISIBLE);
+    		this.btNewUser.setVisibility(View.GONE);
+    		ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
+    		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    		
+    		for(int i = 0; i < this.users.size(); i++){
+    			adapter.add(this.users.get(i).getName());
+    		}
+    		
+    		this.spUserSpinner.setAdapter(adapter);
+    	} else {
+    		this.spUserSpinner.setVisibility(View.GONE);
+    		this.btNewUser.setVisibility(View.VISIBLE);
+    	}
+    	
     }
     
     private void initialize(){
@@ -135,6 +156,8 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
     	this.btSave.setOnClickListener(this);
     	this.btCancel = (Button) findViewById(R.id.bt_cancel);
     	this.btCancel.setOnClickListener(this);
+    	this.btNewUser = (Button) findViewById(R.id.bt_new_user);
+    	this.btNewUser.setOnClickListener(this);
     	this.etTitle = (EditText) findViewById(R.id.et_payment_title);
     	this.etDescription = (EditText) findViewById(R.id.et_payment_description);
     	this.etAmount = (EditText) findViewById(R.id.et_payment_amount);
@@ -265,6 +288,9 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 				this.hideKeyboard();
 				finish();
 				break;
+			case R.id.bt_new_user:
+				startActivityForResult(Intents.userNew(this), Constants.ACTIVITY_NEW_USER);
+				break;
 			case R.id.rb_payment_from:
 				this.payment.setDirection(Payment.DIRECTION_FROM_USER);
 				break;
@@ -303,6 +329,10 @@ public class UserPaymentNew extends SherlockActivity implements OnClickListener,
 					this.etDate.setText(Gen.convertPdt(millie, true));
 					this.payment.setDate(millie);
 				}
+				break;
+			case Constants.ACTIVITY_NEW_USER:
+				this.users = this.userAdapter.get();
+				this.populateSpUser();
 				break;
 		}
 	}

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.smileyjoedev.iou"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="0.9" >
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" 
         android:theme="@style/Theme.Main.Dark"
-        android:windowSoftInputMode="stateHidden"
+        android:windowSoftInputMode="adjustPan"
         android:uiOptions="splitActionBarWhenNarrow">
         
 		
@@ -43,29 +43,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-   		<activity android:name=".UserNew" 
-			android:label="@string/bar_title_user_new">
+   		<activity 
+   		    android:name=".UserNew" 
+			android:label="@string/bar_title_user_new"
+			android:windowSoftInputMode="adjustPan">
    		</activity>
-   		<activity android:name=".UserList" 
+   		<activity 
+   		    android:name=".UserList" 
 			android:label="@string/bar_title_user_list">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
    		</activity>
-   		<activity android:name=".GroupList" 
+   		<activity 
+   		    android:name=".GroupList" 
 			android:label="@string/bar_title_group_list">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
    		</activity>
-   		<activity android:name=".UserView" 
+   		<activity 
+   		    android:name=".UserView" 
    		    android:label="@string/bar_title_user_view">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
 		</activity>
-  		<activity android:name=".UserPaymentNew" 
-			android:label="@string/bar_title_payment_new">
+  		<activity 
+  		    android:name=".UserPaymentNew" 
+			android:label="@string/bar_title_payment_new"
+			android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -74,52 +81,69 @@
 					android:name="com.joedev.iou.Constants.ACTION_WIDGET_QUICK_ADD"/>
 			</intent-filter>
 		</activity>	
-  	   	<activity android:name=".Settings" 
+  	   	<activity 
+  	   	    android:name=".Settings" 
 			android:label="@string/bar_title_settings"/>
-  	   	<activity android:name=".SettingsUser" 
+  	   	<activity 
+  	   	    android:name=".SettingsUser" 
 			android:label="@string/bar_title_settings_user"/>
-  	   	<activity android:name="com.smileyjoedev.genLibrary.PopupDelete" 
+  	   	<activity 
+  	   	    android:name="com.smileyjoedev.genLibrary.PopupDelete" 
 			android:label="@string/bar_title_delete"
 			android:theme="@style/Holo.Theme.Dialog"/>
-  	   	<activity android:name=".GroupNew" 
-			android:label="@string/bar_title_group_new">
+  	   	<activity 
+  	   	    android:name=".GroupNew" 
+			android:label="@string/bar_title_group_new"
+			android:windowSoftInputMode="adjustPan">
    		</activity>
-   		<activity android:name=".GroupView" 
+   		<activity 
+   		    android:name=".GroupView" 
    		    android:label="@string/bar_title_group_view">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
 		</activity>
-		<activity android:name=".GroupPaymentNew" 
-			android:label="@string/bar_title_group_payment_new">
+		<activity 
+		    android:name=".GroupPaymentNew" 
+			android:label="@string/bar_title_group_payment_new"
+			android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
    		</activity>
-   		<activity android:name=".GroupPayback" 
+   		<activity 
+   		    android:name=".GroupPayback" 
 			android:label="@string/bar_title_group_payback" 
 			android:theme="@style/Holo.Theme.Dialog">
    		</activity>
-   		<activity android:name=".GroupUserPaymentDetails" 
+   		<activity 
+   		    android:name=".GroupUserPaymentDetails" 
 			android:label="@string/bar_title_group_user_details" 
 			android:theme="@style/Holo.Theme.Dialog">
    		</activity>
-		<activity android:name=".QuickActionNew" 
+		<activity 
+		    android:name=".QuickActionNew" 
 			android:label="@string/bar_title_quick_action_new">
    		</activity>
-		<activity android:name=".QuickActionTargetPicker" 
+		<activity 
+		    android:name=".QuickActionTargetPicker" 
 			android:label="@string/bar_title_quick_action_target_picker">
    		</activity>
-		<activity android:exported="true" android:name=".Shortcut" android:label="@string/shortcut_label">
+		<activity 
+		    android:exported="true" 
+		    android:name=".Shortcut" 
+		    android:label="@string/shortcut_label">
 			<intent-filter>
 				<action android:name="android.intent.action.CREATE_SHORTCUT" />
 			</intent-filter>
 		</activity>
-		<activity android:name="com.smileyjoedev.genLibrary.DateTimePicker" 
+		<activity 
+		    android:name="com.smileyjoedev.genLibrary.DateTimePicker" 
 			android:label="@string/bar_title_date_time_picker"
 			android:theme="@style/Holo.Theme.Dialog">
    		</activity>
-   		<activity android:name=".Thanks" 
+   		<activity 
+   		    android:name=".Thanks" 
 			android:label="@string/bar_title_thanks"
 			android:theme="@style/Holo.Theme.Dialog"/>
     </application>

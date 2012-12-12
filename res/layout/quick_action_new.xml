@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="10dip">
     
    	<LinearLayout
 		android:layout_width="fill_parent"
@@ -101,10 +104,25 @@
 		    </RadioGroup>   
 		    
 			<TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/tv_quick_action_target_title"
+		        style="@style/heading">
+		    </TextView>
+			
+			<LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal"
+			    android:id="@+id/ll_target_details">
+			</LinearLayout>
+			
+			<TextView
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
 			    android:id="@+id/tv_target_title"
-			    android:text="@string/tv_no_target">
+			    android:text="@string/tv_no_target"
+			    android:textSize="20dip">
 			</TextView>
 			
 			<Button

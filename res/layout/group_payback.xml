@@ -7,7 +7,11 @@
         android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:orientation="vertical" 
-    	android:id="@+id/ll_repayment_details">
+    	android:id="@+id/ll_repayment_details"
+    	android:paddingLeft="5dip"
+    	android:paddingRight="5dip"
+    	android:paddingTop="5dip"
+    	android:paddingBottom="5dip">
     </LinearLayout>
     <LinearLayout 
 		android:layout_width="fill_parent"

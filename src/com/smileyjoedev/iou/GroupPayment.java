@@ -129,15 +129,22 @@ public class GroupPayment {
 	public String getPayingCsv(){
 		String result = "";
 		boolean first = true;
+		String name = "";
 		
 		for(int i = 0; i < this.getSplits().size(); i++){
 			if(this.getSplit(i).isPaying()){
-				String temp = this.getSplit(i).getUser().getName() + "(" + this.getSplit(i).getAmountText(true) + ")";
+				if(this.getSplit(i).getUser().getName().equals("")){
+					name = this.context.getString(R.string.tv_group_user_deleted);
+				} else {
+					name = this.getSplit(i).getUser().getName();
+				}
+				
+				String temp = this.getSplit(i).getAmountText(true) + " " + name;
 				if(first){
 					result += temp;
 					first = false;
 				} else {
-					result += ", " + temp;
+					result += " - " + temp;
 				}
 			}
 		}
@@ -148,15 +155,23 @@ public class GroupPayment {
 	public String getPaidForCsv(){
 		String result = "";
 		boolean first = true;
+		String name = "";
 		
 		for(int i = 0; i < this.getSplits().size(); i++){
 			if(this.getSplit(i).isPaidFor()){
-				String temp = this.getSplit(i).getUser().getName() + "(" + this.getSplit(i).getAmountText(true) + ")";
+				
+				if(this.getSplit(i).getUser().getName().equals("")){
+					name = this.context.getString(R.string.tv_group_user_deleted);
+				} else {
+					name = this.getSplit(i).getUser().getName();
+				}
+				
+				String temp = this.getSplit(i).getAmountText(true) + " " + name;
 				if(first){
 					result += temp;
 					first = false;
 				} else {
-					result += ", " + temp;
+					result += " - " + temp;
 				}
 			}
 		}

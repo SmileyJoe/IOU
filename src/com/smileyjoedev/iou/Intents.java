@@ -156,6 +156,12 @@ public class Intents {
 		
 		return intent;
 	}
+	
+	public static Intent newPayment(Context context){
+		Intent intent = new Intent(context, UserPaymentNew.class);
+		
+		return intent;
+	}
 
 	public static Intent settings(Context context){
 		Intent intent = new Intent(context, Settings.class);

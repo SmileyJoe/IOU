@@ -59,7 +59,8 @@ public class GroupPaymentListAdapter extends BaseAdapter {
 		TextView tvPaymentTitle = (TextView) convertView.findViewById(R.id.tv_payment_title);
 		TextView tvPaymentDate = (TextView) convertView.findViewById(R.id.tv_payment_date);
 		TextView tvPaymentDescription = (TextView) convertView.findViewById(R.id.tv_payment_description);
-		LinearLayout llGroupDetails = (LinearLayout) convertView.findViewById(R.id.ll_payment_details);
+		TextView tvUsersPaid = (TextView) convertView.findViewById(R.id.tv_users_paid);
+		TextView tvUsersPaidFor = (TextView) convertView.findViewById(R.id.tv_users_paid_for);
 		
 		if(!payment.getTitle().equals("")){
 			tvPaymentTitle.setText(payment.getTitle());
@@ -75,11 +76,8 @@ public class GroupPaymentListAdapter extends BaseAdapter {
 			tvPaymentDescription.setVisibility(View.GONE);
 		}
 		
-		llGroupDetails.addView(this.views.addField(R.string.tv_paying_title));
-		llGroupDetails.addView(this.views.addField(payment.getPayingCsv()));
-		
-		llGroupDetails.addView(this.views.addField(R.string.tv_payed_for_title));
-		llGroupDetails.addView(this.views.addField(payment.getPaidForCsv()));
+		tvUsersPaid.setText(payment.getPayingCsv());
+		tvUsersPaidFor.setText(payment.getPaidForCsv());
 		
 		return convertView;
 	}

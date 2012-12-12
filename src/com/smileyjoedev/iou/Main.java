@@ -29,16 +29,19 @@ import android.widget.TextView;
 
 // TODO: Add in a click background to the all users/groups LinearLayouts //
 
-public class Main extends SherlockActivity implements OnClickListener, OnItemClickListener {
+public class Main extends SherlockActivity implements OnClickListener {
 	
 	private Views views;
-	private ActionGridAdapter actionGridApater;
-	private GridView gvActions;
-	private ArrayList<QuickAction> quickActions;
-	private int selectedQuickAction;
-	private DbQuickActionAdapter quickActionAdapter;
+//	private ActionGridAdapter actionGridApater;
+//	private GridView gvActions;
+//	private ArrayList<QuickAction> quickActions;
+//	private int selectedQuickAction;
+//	private DbQuickActionAdapter quickActionAdapter;
 	private LinearLayout llUserListWrapper;
+	private LinearLayout llUserNewWrapper;
+	private LinearLayout llUserNewPaymentWrapper;
 	private LinearLayout llGroupListWrapper;
+	private LinearLayout llGroupNewWrapper;
 	private SharedPreferences prefs;
 	
     @Override
@@ -65,8 +68,8 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
         		break;
         }
         
-        this.getQuickActions();
-        this.actionGridApater = this.views.actionGrid(this.quickActions, this.gvActions);
+//        this.getQuickActions();
+//        this.actionGridApater = this.views.actionGrid(this.quickActions, this.gvActions);
         
         this.populateView();
         
@@ -85,9 +88,9 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
 			case R.id.menu_settings:
 				startActivityForResult(Intents.settings(this), Constants.ACTIVITY_SETTINGS);
 				return true;
-			case R.id.menu_quick_action_new:
-				startActivityForResult(Intents.quickActionNew(this), Constants.ACTIVITY_QUICK_ACTION_NEW);
-				return true;
+//			case R.id.menu_quick_action_new:
+//				startActivityForResult(Intents.quickActionNew(this), Constants.ACTIVITY_QUICK_ACTION_NEW);
+//				return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
         }
@@ -96,19 +99,28 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     
     public void initialize(){
     	this.views = new Views(this, getWindowManager());
-    	this.gvActions = (GridView) findViewById(R.id.gv_actions);
-    	this.gvActions.setOnItemClickListener(this);
-    	registerForContextMenu(this.gvActions);
+//    	this.gvActions = (GridView) findViewById(R.id.gv_actions);
+//    	this.gvActions.setOnItemClickListener(this);
+//    	registerForContextMenu(this.gvActions);
     	
-    	this.selectedQuickAction = 0;
+//    	this.selectedQuickAction = 0;
     	
-    	this.quickActionAdapter = new DbQuickActionAdapter(this);
+//    	this.quickActionAdapter = new DbQuickActionAdapter(this);
     	
     	this.llUserListWrapper = (LinearLayout) findViewById(R.id.ll_user_list_wrapper);
     	this.llUserListWrapper.setOnClickListener(this);
     	
+    	this.llUserNewWrapper = (LinearLayout) findViewById(R.id.ll_user_new_wrapper);
+    	this.llUserNewWrapper.setOnClickListener(this);
+    	
+    	this.llUserNewPaymentWrapper = (LinearLayout) findViewById(R.id.ll_user_new_payment_wrapper);
+    	this.llUserNewPaymentWrapper.setOnClickListener(this);
+    	
     	this.llGroupListWrapper = (LinearLayout) findViewById(R.id.ll_group_list_wrapper);
     	this.llGroupListWrapper.setOnClickListener(this);
+    	
+    	this.llGroupNewWrapper = (LinearLayout) findViewById(R.id.ll_group_new_wrapper);
+    	this.llGroupNewWrapper.setOnClickListener(this);
     	
     	
     	
@@ -129,22 +141,28 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
     	
     	if(!this.prefs.getBoolean("allow_individual", true)){
     		this.llUserListWrapper.setVisibility(View.GONE);
+    		this.llUserNewPaymentWrapper.setVisibility(View.GONE);
+    		this.llUserNewWrapper.setVisibility(View.GONE);
     		llBalanceWrapper.setVisibility(View.GONE);
     	} else {
     		this.llUserListWrapper.setVisibility(View.VISIBLE);
+    		this.llUserNewPaymentWrapper.setVisibility(View.VISIBLE);
+    		this.llUserNewWrapper.setVisibility(View.VISIBLE);
     		llBalanceWrapper.setVisibility(View.VISIBLE);
     	}
     	
     	if(!this.prefs.getBoolean("allow_group", true)){
     		this.llGroupListWrapper.setVisibility(View.GONE);
+    		this.llGroupNewWrapper.setVisibility(View.GONE);
     	} else {
     		this.llGroupListWrapper.setVisibility(View.VISIBLE);
+    		this.llGroupNewWrapper.setVisibility(View.VISIBLE);
     	}
     }
     
-    private void getQuickActions(){
-    	this.quickActions = this.quickActionAdapter.get();
-    }
+//    private void getQuickActions(){
+//    	this.quickActions = this.quickActionAdapter.get();
+//    }
     
     private String getOwedText(ArrayList<User> users){
     	String totalText = "";
@@ -182,8 +200,17 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
 			case R.id.ll_user_list_wrapper:
 				startActivityForResult(Intents.userList(this), Constants.ACTIVITY_USER_LIST);
 				break;
+			case R.id.ll_user_new_wrapper:
+				startActivityForResult(Intents.userNew(this), Constants.ACTIVITY_NEW_USER);
+				break;
+			case R.id.ll_user_new_payment_wrapper:
+				startActivityForResult(Intents.newPayment(this), Constants.ACTIVITY_NEW_PAYMENT);
+				break;
 			case R.id.ll_group_list_wrapper:
 				startActivityForResult(Intents.groupList(this), Constants.ACTIVITY_GROUP_LIST);
+				break;
+			case R.id.ll_group_new_wrapper:
+				startActivityForResult(Intents.groupNew(this), Constants.ACTIVITY_GROUP_NEW);
 				break;
 		}
 	}
@@ -196,79 +223,86 @@ public class Main extends SherlockActivity implements OnClickListener, OnItemCli
 			case Constants.ACTIVITY_GROUP_LIST:
 				this.populateView();
 				break;
-			case Constants.ACTIVITY_QUICK_ACTION_NEW:
-				this.updateQuickActions();
-				break;
-			case Constants.ACTIVITY_QUICK_ACTION_EXCECUTE:
-				this.populateView();
-				break;
-			case Constants.ACTIVITY_POPUP_DELETE:
-				if(resultCode == Activity.RESULT_OK){
-					if(data.getBooleanExtra("result", false)){
-						this.quickActionAdapter.delete(this.quickActions.get(this.selectedQuickAction));
-						this.updateQuickActions();
-					}
-				}
-				break;
-			case Constants.ACTIVITY_QUICK_ACTION_EDIT:
-				this.updateQuickActions();
-				break;
+//			case Constants.ACTIVITY_QUICK_ACTION_NEW:
+//				this.updateQuickActions();
+//				break;
+//			case Constants.ACTIVITY_QUICK_ACTION_EXCECUTE:
+//				this.populateView();
+//				break;
+//			case Constants.ACTIVITY_POPUP_DELETE:
+//				if(resultCode == Activity.RESULT_OK){
+//					if(data.getBooleanExtra("result", false)){
+//						this.quickActionAdapter.delete(this.quickActions.get(this.selectedQuickAction));
+//						this.updateQuickActions();
+//					}
+//				}
+//				break;
+//			case Constants.ACTIVITY_QUICK_ACTION_EDIT:
+//				this.updateQuickActions();
+//				break;
 			case Constants.ACTIVITY_SETTINGS:
 				this.populateView();
-				this.updateQuickActions();
+//				this.updateQuickActions();
 				break;
 			case Constants.ACTIVITY_START_PAGE:
 				this.populateView();
 				finish();
 				break;
+			case Constants.ACTIVITY_NEW_USER:
+				break;
+			case Constants.ACTIVITY_NEW_PAYMENT:
+				this.populateView();
+				break;
+			case Constants.ACTIVITY_GROUP_NEW:
+				break;
 		}
 	}
 	
-	private void updateQuickActions(){
-		this.getQuickActions();
-    	this.actionGridApater.setQuickActions(this.quickActions);
-    	this.actionGridApater.notifyDataSetChanged();
-		this.gvActions.refreshDrawableState();
-	}
+//	private void updateQuickActions(){
+//		this.getQuickActions();
+//    	this.actionGridApater.setQuickActions(this.quickActions);
+//    	this.actionGridApater.notifyDataSetChanged();
+//		this.gvActions.refreshDrawableState();
+//	}
 
-	@Override
-	public void onItemClick(AdapterView<?> v, View arg1, int position, long arg3) {
-		switch(v.getId()){
-			case R.id.gv_actions:
-				startActivityForResult(this.quickActions.get(position).getIntent(), Constants.ACTIVITY_QUICK_ACTION_EXCECUTE);
-				break;
-		}
-		
-	}
+//	@Override
+//	public void onItemClick(AdapterView<?> v, View arg1, int position, long arg3) {
+//		switch(v.getId()){
+//			case R.id.gv_actions:
+//				startActivityForResult(this.quickActions.get(position).getIntent(), Constants.ACTIVITY_QUICK_ACTION_EXCECUTE);
+//				break;
+//		}
+//		
+//	}
 	
-	@Override
-	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-		AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-		switch(v.getId()){
-			case R.id.gv_actions:
-				this.selectedQuickAction = info.position;
-				
-				menu.setHeaderTitle(this.getString(R.string.context_heading));
-				
-				menu.add(Menu.NONE, Constants.CONTEXT_EDIT, Constants.CONTEXT_EDIT, this.getString(R.string.context_edit));
-				menu.add(Menu.NONE, Constants.CONTEXT_DELETE, Constants.CONTEXT_DELETE, this.getString(R.string.context_delete));
-				
-				break;
-		}
-	}
+//	@Override
+//	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+//		AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+//		switch(v.getId()){
+//			case R.id.gv_actions:
+//				this.selectedQuickAction = info.position;
+//				
+//				menu.setHeaderTitle(this.getString(R.string.context_heading));
+//				
+//				menu.add(Menu.NONE, Constants.CONTEXT_EDIT, Constants.CONTEXT_EDIT, this.getString(R.string.context_edit));
+//				menu.add(Menu.NONE, Constants.CONTEXT_DELETE, Constants.CONTEXT_DELETE, this.getString(R.string.context_delete));
+//				
+//				break;
+//		}
+//	}
 	
-	public boolean onContextItemSelected(android.view.MenuItem item) {
-		int menuItemIndex = item.getItemId();
-		switch(menuItemIndex){
-			case Constants.CONTEXT_EDIT:
-				startActivityForResult(Intents.quickActionEdit(this, this.quickActions.get(this.selectedQuickAction).getId()), Constants.ACTIVITY_QUICK_ACTION_EDIT);
-				break;
-			case Constants.CONTEXT_DELETE:
-				startActivityForResult(Intents.popupDelete(this, Constants.QUICK_ACTION), Constants.ACTIVITY_POPUP_DELETE);
-				break;
-		}
-		return true;
-	}
+//	public boolean onContextItemSelected(android.view.MenuItem item) {
+//		int menuItemIndex = item.getItemId();
+//		switch(menuItemIndex){
+//			case Constants.CONTEXT_EDIT:
+//				startActivityForResult(Intents.quickActionEdit(this, this.quickActions.get(this.selectedQuickAction).getId()), Constants.ACTIVITY_QUICK_ACTION_EDIT);
+//				break;
+//			case Constants.CONTEXT_DELETE:
+//				startActivityForResult(Intents.popupDelete(this, Constants.QUICK_ACTION), Constants.ACTIVITY_POPUP_DELETE);
+//				break;
+//		}
+//		return true;
+//	}
 	
 	
 }

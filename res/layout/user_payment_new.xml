@@ -4,7 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="10dip"
-    android:paddingRight="10dip">
+    android:paddingRight="10dip"
+	android:descendantFocusability="beforeDescendants"
+	android:focusableInTouchMode="true">
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
@@ -12,18 +14,18 @@
 		android:weightSum="1.0"
 		android:id="@+id/ll_controls"
 		android:layout_alignParentBottom="true">
-		<Button
-	  		android:layout_width="wrap_content"
-	  		android:layout_height="wrap_content"
-	  		android:id="@+id/bt_save"
-	  		android:text="@string/bt_save"
-	  		android:layout_weight="0.5">
-	  	</Button>
 	  	<Button
 	  		android:layout_width="wrap_content"
 	  		android:layout_height="wrap_content"
 	  		android:id="@+id/bt_cancel"
 	  		android:text="@string/bt_cancel"
+	  		android:layout_weight="0.5">
+	  	</Button>
+		<Button
+	  		android:layout_width="wrap_content"
+	  		android:layout_height="wrap_content"
+	  		android:id="@+id/bt_save"
+	  		android:text="@string/bt_save"
 	  		android:layout_weight="0.5">
 	  	</Button>
 	</LinearLayout>
@@ -54,13 +56,20 @@
 			        android:layout_height="wrap_content"
 			        android:id="@+id/sp_user_spinner">
 			    </Spinner>
+			    <Button 
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:id="@+id/bt_new_user"
+			        android:text="@string/bt_new_user"
+			        android:visibility="gone">			    </Button>
 			</LinearLayout>
 			<EditText
 		        android:layout_height="wrap_content"
 		        android:layout_width="fill_parent"
 		        android:id="@+id/et_payment_title"
 		        android:hint="@string/et_payment_title_hint"
-		        android:layout_marginTop="10dip">
+		        android:layout_marginTop="10dip"
+		        android:inputType="textCapSentences">
 		    </EditText>
 		    <EditText
 		        android:layout_height="wrap_content"
@@ -71,7 +80,8 @@
 		        android:singleLine="false"
 			    android:minLines="3"
 			    android:maxLines="4"
-			    android:scrollbars="vertical">
+			    android:scrollbars="vertical"
+			    android:inputType="textCapSentences|textMultiLine">
 		    </EditText>
 		    <EditText
 		        android:layout_height="wrap_content"
@@ -113,16 +123,17 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:orientation="horizontal"
-		        android:weightSum="1.0">
+		        android:weightSum="1.0"
+		        android:paddingBottom="10dip">
 		        <RadioButton 
-		            android:text="Loan"
+		            android:text="@string/payment_type_loan"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:id="@+id/rb_loan"
 		            android:layout_weight="0.5">
 		        </RadioButton>
 		        <RadioButton 
-		            android:text="Repayment"
+		            android:text="@string/payment_type_repayment"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:id="@+id/rb_repayment"

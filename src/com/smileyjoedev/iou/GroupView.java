@@ -6,6 +6,7 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.smileyjoedev.genLibrary.Notify;
 import com.smileyjoedev.iou.R;
 
 import android.app.Activity;
@@ -46,6 +47,11 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
 		int groupId = extras.getInt("group_id");
 		this.group = this.groupAdapter.getDetails(groupId);
 		
+		if(this.group.getId() == 0){
+			Notify.toast(this, R.string.toast_group_does_not_exist);
+			finish();
+		}
+		
         this.populateView();
         
     }
@@ -69,6 +75,9 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
 				startActivityForResult(Intents.groupUserPaymentDetails(this, this.group.getId()), Constants.ACTIVITY_GROUP_USER_PAYMENT_DETAILS);
 				return true;
 			case android.R.id.home:
+				Intent intent = new Intent(this, GroupList.class);
+	            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	            startActivity(intent);
 				finish();
 				return true;
 	        default:

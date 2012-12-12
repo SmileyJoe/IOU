@@ -118,6 +118,7 @@ public class Views {
 	public UserPaymentListAdapter paymentList(ArrayList<Payment> payments, LinearLayout wrapper) {
 		
 		ListView list = (ListView) wrapper.findViewById(R.id.lv_payment_list);
+		TextView emptyView = (TextView) wrapper.findViewById(R.id.tv_user_payment_list_empty);
 		
 		int first = list.getFirstVisiblePosition();
 		View top_child = list.getChildAt(0);
@@ -132,7 +133,8 @@ public class Views {
 		UserPaymentListAdapter adapter = new UserPaymentListAdapter(this.context, payments);
 		list.setAdapter(adapter);
 		list.setSelectionFromTop(first, top);
-			
+		list.setEmptyView(emptyView);
+		
 		return adapter;
 	}
 	

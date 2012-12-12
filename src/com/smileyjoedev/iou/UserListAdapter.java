@@ -50,10 +50,16 @@ public class UserListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		User user = this.users.get(position);
-		Contacts cont = new Contacts(this.context);
+
+		convertView = UserListAdapter.populateView(this.context, this.users.get(position), this.showCheck);
+		
+		return convertView;
+	}
+	
+	public static View populateView(Context context, User user, boolean showCheck){
+		Contacts cont = new Contacts(context);
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		convertView = inflater.inflate(R.xml.user_row, null);
+		View convertView = inflater.inflate(R.xml.user_row, null);
 		
 		TextView tvUserName = (TextView) convertView.findViewById(R.id.tv_user_name);
 		ImageView ivUserImage = (ImageView) convertView.findViewById(R.id.iv_user_image);
@@ -63,9 +69,9 @@ public class UserListAdapter extends BaseAdapter {
 		
 		tvUserName.setText(user.getName());
 		
-		Gen.setUserImage(this.context, ivUserImage, user);
+		Gen.setUserImage(context, ivUserImage, user);
 		
-		if(this.showCheck){
+		if(showCheck){
 			if(user.isSelected()){
 				cbUserSelected.setChecked(true);
 			} else {
@@ -82,7 +88,7 @@ public class UserListAdapter extends BaseAdapter {
 					tvUserBalance.setTextColor(Color.RED);
 					vStateIndicator.setBackgroundColor(Color.RED);
 				} else {
-					vStateIndicator.setBackgroundColor(this.context.getResources().getColor(R.color.medium_grey));
+					vStateIndicator.setBackgroundColor(context.getResources().getColor(R.color.medium_grey));
 				}
 			}
 			

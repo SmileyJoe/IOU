@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -16,7 +17,6 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.smileyjoedev.genLibrary.Debug;
-import com.smileyjoedev.genLibrary.R;
 
 public class QuickActionNew extends SherlockActivity implements OnClickListener {
 
@@ -36,6 +36,7 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
 	private boolean isEdit;
 	private boolean returnResult;
 	private SharedPreferences prefs;
+	private LinearLayout llTargetDetails;
 	
 	
     @Override
@@ -117,6 +118,7 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
     	this.returnResult = false;
     	
     	this.prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+    	this.llTargetDetails = (LinearLayout) findViewById(R.id.ll_target_details);
     }
     
     private void populateView(){
@@ -259,6 +261,9 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
 				this.handleSaveButton();
 				break;
 			case R.id.bt_cancel:
+				if(this.returnResult){
+					setResult(Activity.RESULT_CANCELED);
+				}
 				finish();
 				break;
 			case R.id.bt_save:
@@ -289,11 +294,35 @@ public class QuickActionNew extends SherlockActivity implements OnClickListener 
 			case Constants.ACTIVITY_QUICK_ACTION_TARGET_PICKER:
 				if(resultCode == Activity.RESULT_OK){
 					this.quickAction.setTargetId(data.getIntExtra("target_id", 0));
-					this.tvTargetTitle.setText(this.quickAction.getTitle());
+//					this.tvTargetTitle.setText(this.quickAction.getTitle());
+					this.tvTargetTitle.setVisibility(View.GONE);
+					this.llTargetDetails.removeAllViews();
+					View targetDetails;
+					switch(this.quickAction.getType()){
+						case QuickAction.TYPE_USER:
+							targetDetails = UserListAdapter.populateView(this, (User) this.quickAction.getTargetData(), false);
+							this.llTargetDetails.addView(targetDetails);
+							break;
+						case QuickAction.TYPE_GROUP:
+							targetDetails = GroupListAdapter.populateView(this, (Group) this.quickAction.getTargetData());
+							this.llTargetDetails.addView(targetDetails);
+							break;
+						default:
+							this.tvTargetTitle.setVisibility(View.VISIBLE);
+							break;
+					}
+					
 					this.handleSaveButton();
 				}
 				break;
 		}
+	}
+	
+	public void onBackPressed() {
+		if(this.returnResult){
+			setResult(Activity.RESULT_CANCELED);
+		}
+		finish();
 	}
 	
 }

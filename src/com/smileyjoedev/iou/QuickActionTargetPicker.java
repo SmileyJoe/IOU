@@ -18,7 +18,6 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-import com.smileyjoedev.genLibrary.R;
 
 public class QuickActionTargetPicker extends SherlockActivity implements OnItemClickListener, OnClickListener {
 

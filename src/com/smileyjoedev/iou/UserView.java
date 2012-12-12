@@ -79,6 +79,11 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 		
 		this.user = new User(this);
 		this.user = this.userAdapter.getDetails(userId);
+		
+		if(this.user.getId() == 0){
+			Notify.toast(this, R.string.toast_user_does_not_exist);
+			finish();
+		}
         
 		this.populateSpFilter();
         this.populateView();
@@ -161,7 +166,10 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 				this.spPhoneNumberList.performClick();
 				return true;
 			case android.R.id.home:
-				finish();
+				Intent intent = new Intent(this, UserList.class);
+	            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	            startActivity(intent);
+	            finish();
 				return true;
 			default:
 	            return super.onOptionsItemSelected(item);
@@ -454,5 +462,13 @@ public class UserView extends SherlockActivity implements OnClickListener, OnIte
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 		
+	}
+	
+	public void onBackPressed() {
+		if(this.llFilterWrapper.getVisibility() == View.VISIBLE){
+			this.llFilterWrapper.setVisibility(View.GONE);
+		} else {
+			finish();
+		}
 	}
 }

@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import com.smileyjoedev.genLibrary.Contacts;
+import com.smileyjoedev.genLibrary.Debug;
 import com.smileyjoedev.genLibrary.MinimalisticText;
 import com.smileyjoedev.iou.R;
 
@@ -34,10 +35,10 @@ public class Gen {
 	
 	//TODO: instead of include time send a constant through of the format //
 	public static String convertPdt(long pdt, boolean includeTime){
-		String format = "dd MMM yyyy HH:mm";
+		String format = "dd MMM yyyy - HH:mm";
 		
 		if(includeTime){
-			format = "dd MMM yyyy HH:mm";
+			format = "dd MMM yyyy - HH:mm";
 		} else {
 			format = "dd MMM yyyy";
 		}
@@ -147,6 +148,62 @@ public class Gen {
 		return imageFound;
 	}
 	
+	public static void setGroupImage(Context context, ArrayList<User> users, LinearLayout groupImage){
+		ArrayList<ImageView> images = new ArrayList<ImageView>();
+		boolean odd = false;
+		int size = (int) groupImage.getLayoutParams().width/2;
+		int orientation = LinearLayout.HORIZONTAL;
+		
+		if(users.size() == 1){
+			size = size * 2;
+		} else {
+			if(users.size() == 2){
+				size = size * 2;
+				orientation = LinearLayout.VERTICAL;
+			} else {
+				if(users.size()%2 != 0){
+					odd = true;
+				}				
+			}
+		}
+		
+		LinearLayout.LayoutParams imageLayoutParams = new LinearLayout.LayoutParams(size, size);		
+		
+		
+		for(int i = 0; i < users.size(); i++){
+			User user = users.get(i);
+			
+			ImageView image = new ImageView(context);
+			
+			if(odd && i == users.size() - 1){
+				imageLayoutParams = new LinearLayout.LayoutParams(size * 2, size * 2);
+			}
+			
+			image.setLayoutParams(imageLayoutParams);
+			Gen.setUserImage(context, image, user);
+			
+			images.add(image);
+		}
+		
+		for(int i = 0; i < users.size(); i = i + 2){
+			LinearLayout horLayout = new LinearLayout(context);
+			horLayout.setOrientation(orientation);
+			
+			try{
+				horLayout.addView(images.get(i));
+			} catch (IndexOutOfBoundsException e) {
+				
+			}
+			
+			try{
+				horLayout.addView(images.get(i+1));
+			} catch (IndexOutOfBoundsException e) {
+				
+			}
+			groupImage.addView(horLayout);
+		}
+	}
+	
 	public static String getAmountText(Context context, float amount){
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		String symbol = "";
@@ -169,9 +226,9 @@ public class Gen {
 		}
 		
 		if(prefs.getBoolean("currency_symbol_right", false)){
-			number = number + " " + symbol;
+			number = number + symbol;
 		} else {
-			number = symbol + " " + number;
+			number = symbol + number;
 		}
         
         if(!positive){

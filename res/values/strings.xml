@@ -11,6 +11,16 @@
     <string name="widget_quick_add_title">IOU - Quick add</string>
     <string name="widget_balance_title">IOU - Balances</string>
     
+    <!-- DASH -->
+    
+    <string name="dash_user_new">New User</string>
+    <string name="dash_user_new_payment">New Payment</string>
+    <string name="dash_user_view_all">All Users</string>
+    
+    <string name="dash_group_new">New Group</string>
+    <string name="dash_group_new_payment">New Payment</string>
+    <string name="dash_group_view_all">All Groups</string>
+    
     <!-- NOTIFICATION -->
     
     <string name="notification_user_owed">You owe</string>
@@ -69,6 +79,10 @@
     <string name="tv_quick_action_type_title">Type</string>
     <string name="tv_quick_action_action_title">Action</string>
     
+    <string name="tv_group_user_deleted">* User Deleted *</string>
+    
+    <string name="tv_quick_action_target_title">Target</string>
+    
     <!-- QUICK ACTION -->
     
     <string name="quick_action_type_all_title">All</string>
@@ -94,6 +108,7 @@
     <string name="bt_choose_target_user">Choose User</string>
     <string name="bt_choose_target_group">Choose Group</string>
     <string name="bt_widget_quick_add">New IOU</string>
+    <string name="bt_new_user">New User</string>
     
     <!--  USER -->
     
@@ -135,6 +150,7 @@
     <string name="toast_user_updated">User details updated</string>
     <string name="toast_user_deleted">User deleted</string>
     <string name="toast_user_saved_error">An error has occured and the user was not saved.</string>
+    <string name="toast_user_does_not_exist">The selected user does not exist</string>
     
     <string name="toast_payment_saved">Payment saved</string>
 	<string name="toast_payment_updated">Payment details updated</string>
@@ -149,6 +165,7 @@
     <string name="toast_group_deleted">Group deleted</string>
     <string name="toast_group_saved_error">An error has occured and the group was not saved.</string>
     <string name="toast_no_group_title">Please enter a group title</string>
+    <string name="toast_group_does_not_exist">The selected group does not exist</string>
     
     <string name="toast_quick_action_saved">Action saved</string>
 	<string name="toast_quick_action_updated">Action details updated</string>
