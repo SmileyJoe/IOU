@@ -35,6 +35,9 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
 	private DbGroupPaymentAdapter groupPaymentAdapter;
 	private int selectedPayment;
 	private GroupPaymentListAdapter groupPaymentListAdapter;
+	private TextView tvGroupTitle;
+	private TextView tvGroupUsers;
+//	private LinearLayout llGroupImageWrapper;
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,11 +99,27 @@ public class GroupView extends SherlockActivity implements OnItemClickListener, 
     	this.views = new Views(this);
     	this.groupPaymentAdapter = new DbGroupPaymentAdapter(this);
     	this.selectedPayment = 0;
+    	
+    	this.tvGroupTitle = (TextView) findViewById(R.id.tv_group_title);
+    	this.tvGroupUsers = (TextView) findViewById(R.id.tv_group_users);
+//    	this.llGroupImageWrapper = (LinearLayout) findViewById(R.id.ll_group_image_wrapper);
     }
     
     private void populateView(){
     	this.payments = this.groupPaymentAdapter.getByGroup(this.group.getId());
     	this.groupPaymentListAdapter = this.views.groupPaymentList(this.payments, (LinearLayout) findViewById(R.id.ll_group_payment_list_wrapper));
+    	
+//    	Gen.setGroupImage(this, this.group.getUsers(), this.llGroupImageWrapper);
+		
+    	this.tvGroupTitle.setText(this.group.getTitle());
+		
+//		if(!group.getDescription().equals("")){
+//			tvGroupDescription.setText(group.getDescription());
+//		} else {
+//			tvGroupDescription.setVisibility(View.GONE);
+//		}
+		
+    	this.tvGroupUsers.setText(Gen.getUserCsv(this.group.getUsers()));
     }
     
     private void updatePaymentList(){

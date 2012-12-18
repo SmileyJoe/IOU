@@ -4,5 +4,74 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" 
     android:id="@+id/rl_main_wrapper">
+    <RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="5dip"
+		android:paddingBottom="5dip"
+		android:paddingLeft="5dip"
+		android:background="@color/dark_grey">
+<!-- 	    <LinearLayout
+	        android:layout_width="50dip"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:id="@+id/ll_group_image_wrapper"
+		    android:gravity="center_vertical"
+		    android:background="@color/medium_grey">
+	    </LinearLayout> -->
+<!-- 		<LinearLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:id="@+id/rl_total_wrapper"
+		    android:layout_alignParentRight="true"
+		    android:orientation="vertical"
+		    android:gravity="center_vertical"
+		    android:paddingRight="20dip"
+		    android:paddingLeft="20dip">
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/tv_total_state_text"
+		        android:gravity="center_horizontal">
+		    </TextView>
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/tv_total_amount"
+		        android:layout_below="@id/tv_total_state_text"
+		        android:gravity="center_horizontal">
+		    </TextView>
+		</LinearLayout> -->
+		<!-- <View 
+		    android:background="@color/light_grey"
+		    android:layout_width="1dip"
+		    android:layout_height="match_parent"
+		    android:id="@+id/v_header_seperater"
+		    android:layout_toLeftOf="@id/rl_total_wrapper">
+		</View> -->
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:id="@+id/rl_heading_wrapper"
+		    android:layout_alignParentLeft="true"
+		    android:orientation="vertical"
+		    android:gravity="center_vertical"
+		    android:paddingRight="10dip"
+		    android:paddingLeft="10dip">
+		    <TextView 
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/tv_group_title"
+		        android:textColor="@color/white"
+				android:textStyle="bold"
+		        android:singleLine="true">
+		    </TextView>
+		    <TextView 
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/tv_group_users">
+		    </TextView>
+		</LinearLayout>
+	</RelativeLayout>
 	<include layout="@xml/group_payment_list"/>
 </LinearLayout>

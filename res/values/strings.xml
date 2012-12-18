@@ -13,9 +13,9 @@
     
     <!-- DASH -->
     
-    <string name="dash_user_new">New User</string>
+    <string name="dash_user_new">New Friend</string>
     <string name="dash_user_new_payment">New Payment</string>
-    <string name="dash_user_view_all">All Users</string>
+    <string name="dash_user_view_all">All Friends</string>
     
     <string name="dash_group_new">New Group</string>
     <string name="dash_group_new_payment">New Payment</string>
@@ -43,7 +43,7 @@
     <string name="tv_payment_description">Description:</string>
     <string name="tv_payment_amount">Amount:</string>
     
-    <string name="tv_no_users">There are no users</string>
+    <string name="tv_no_users">You havent added any friends</string>
     <string name="tv_no_payments">There are no payments</string>
     <string name="tv_no_groups">There are no groups</string>
     <string name="tv_no_target">None Selected</string>
@@ -52,15 +52,15 @@
     <string name="tv_total_owed_user">Owed to you</string>
     <string name="tv_total_all_square">All Square</string>
     <string name="tv_total_title">Total:</string>
-    <string name="tv_total_title_per_user">Total per user:</string>
+    <string name="tv_total_title_per_user">Total per friend:</string>
     
     <string name="date_title">Date:</string>
     <string name="description_title">Description:</string>
     <string name="tv_display_with_minimalistic_text_title">Minimalistic Text Support</string>
     <string name="tv_variable_name">Variable Name (Must not contain spaces):</string>
     
-    <string name="tv_user_spinner">Select a user</string>
-    <string name="tv_user_list_title">Users:</string>
+    <string name="tv_user_spinner">Select a friend</string>
+    <string name="tv_user_list_title">Friends:</string>
     <string name="tv_last_payment_title">Last</string>
     
     <string name="tv_spent_title">Spent</string>
@@ -79,14 +79,14 @@
     <string name="tv_quick_action_type_title">Type</string>
     <string name="tv_quick_action_action_title">Action</string>
     
-    <string name="tv_group_user_deleted">* User Deleted *</string>
+    <string name="tv_group_user_deleted">* Friend Deleted *</string>
     
     <string name="tv_quick_action_target_title">Target</string>
     
     <!-- QUICK ACTION -->
     
     <string name="quick_action_type_all_title">All</string>
-    <string name="quick_action_type_user_title">User</string>
+    <string name="quick_action_type_user_title">Friend</string>
     <string name="quick_action_type_group_title">Group</string>
     
     <string name="quick_action_action_payment_add_title">New Payment</string>
@@ -105,10 +105,10 @@
     <string name="bt_next">Next</string>
     <string name="bt_previous">Previous</string>
     <string name="bt_choose_target">Choose</string>
-    <string name="bt_choose_target_user">Choose User</string>
+    <string name="bt_choose_target_user">Choose Friend</string>
     <string name="bt_choose_target_group">Choose Group</string>
     <string name="bt_widget_quick_add">New IOU</string>
-    <string name="bt_new_user">New User</string>
+    <string name="bt_new_user">New Friend</string>
     
     <!--  USER -->
     
@@ -121,14 +121,14 @@
 
     <string name="payment_type_loan">Loan</string>
     <string name="payment_type_repayment">Repayment</string>
-    <string name="payment_direction_to_user">To User</string>
-    <string name="payment_direction_from_user">From User</string>
+    <string name="payment_direction_to_user">To Friend</string>
+    <string name="payment_direction_from_user">From Friend</string>
     <string name="payment_direction_to_user_short">To</string>
     <string name="payment_direction_from_user_short">From</string>
-    <string name="payment_type_db_loan_to_user">Loan to user</string>
-    <string name="payment_type_db_loan_from_user">Loan from user</string>
-    <string name="payment_type_db_payment_to_user">Payment to user</string>
-    <string name="payment_type_db_payment_from_user">Payment from user</string>
+    <string name="payment_type_db_loan_to_user">Loan to friend</string>
+    <string name="payment_type_db_loan_from_user">Loan from friend</string>
+    <string name="payment_type_db_payment_to_user">Payment to friend</string>
+    <string name="payment_type_db_payment_from_user">Payment from friend</string>
     <string name="payment_title_repayment">Repayment</string>
     <string name="payment_title_part_repayment">Part Repayment</string>
     <string name="payment_description_repayment_all">All</string>
@@ -138,24 +138,24 @@
     <!-- POPUP DELETE -->
     
 	<string name="tv_popup_delete_payment">Are you sure you want to delete this payment?</string>
-    <string name="tv_popup_delete_user">Are you sure you want to delete this user?</string>
+    <string name="tv_popup_delete_user">Are you sure you want to delete this friend?</string>
     <string name="tv_popup_delete_exit">Are you sure you want to exit?</string>
     <string name="tv_popup_delete_group">Are you sure you want to delete this group?</string>
     <string name="tv_popup_delete_quick_action">Are you sure you want to delete this quick action?</string>
     
     <!-- TOAST -->
     
-	<string name="toast_user_exists">The user already exists</string>
-    <string name="toast_user_saved">User saved</string>
-    <string name="toast_user_updated">User details updated</string>
-    <string name="toast_user_deleted">User deleted</string>
-    <string name="toast_user_saved_error">An error has occured and the user was not saved.</string>
-    <string name="toast_user_does_not_exist">The selected user does not exist</string>
+	<string name="toast_user_exists">The friend already exists</string>
+    <string name="toast_user_saved">Friend saved</string>
+    <string name="toast_user_updated">Friends details updated</string>
+    <string name="toast_user_deleted">Friend deleted</string>
+    <string name="toast_user_saved_error">An error has occured and the friend was not saved.</string>
+    <string name="toast_user_does_not_exist">The selected friend does not exist</string>
     
     <string name="toast_payment_saved">Payment saved</string>
 	<string name="toast_payment_updated">Payment details updated</string>
     <string name="toast_payment_deleted">Payment deleted</string>
-    <string name="toast_no_user_name">Please enter a user name</string>
+    <string name="toast_no_user_name">Please enter a friends name</string>
     <string name="toast_no_amount">Please enter an amount</string>
     <string name="toast_payment_saved_error">An error has occured and the payment was not saved.</string>
     
@@ -199,11 +199,11 @@
     
     <!-- RADIO BUTTONS -->
     
-    <string name="rb_type_user_title">User</string>
+    <string name="rb_type_user_title">Friend</string>
     <string name="rb_type_group_title">Group</string>
     <string name="rb_action_view_all_title">View All</string>
     <string name="rb_action_view_specific_title">View</string>
-    <string name="rb_action_view_specific_user_title">View User</string>
+    <string name="rb_action_view_specific_user_title">View Friend</string>
     <string name="rb_action_view_specific_group_title">View Group</string>
     <string name="rb_action_payment_new_title">New Payment</string>
     
@@ -243,10 +243,10 @@
     
     <!-- MENU BAR -->
     
-    <string name="bar_title_user_new">New User</string>
-    <string name="bar_title_user_edit">Edit User</string>
+    <string name="bar_title_user_new">New Friend</string>
+    <string name="bar_title_user_edit">Edit Friend</string>
     <string name="bar_title_user_view">Payments</string>
-    <string name="bar_title_user_list">Users</string>
+    <string name="bar_title_user_list">Friends</string>
     <string name="bar_title_payment_new">New Payment</string>
     <string name="bar_title_payment_edit">Edit Payment</string>
     <string name="bar_title_group_list">Groups</string>
@@ -257,7 +257,7 @@
     <string name="bar_title_delete">Confirm Delete</string>
     <string name="bar_title_group_payment_new">New Payment</string>
     <string name="bar_title_group_payback">Who owes who?</string>
-    <string name="bar_title_group_user_details">User Details</string>
+    <string name="bar_title_group_user_details">Friends Details</string>
     <string name="bar_title_quick_action_new">New Action</string>
     <string name="bar_title_quick_action_edit">Edit Action</string>
     <string name="bar_title_quick_action_target_picker">Choose</string>
@@ -272,12 +272,12 @@
     <string name="menu_individual">Individuals</string>
     <string name="menu_filter">Filter</string>
     <string name="menu_sort">Sort</string>
-    <string name="menu_user_details">User Details</string>
-    <string name="menu_add_user">Add User</string>
+    <string name="menu_user_details">Friends Details</string>
+    <string name="menu_add_user">Add Friend</string>
     <string name="menu_overflow">More</string>
     <string name="menu_add_payment">Add Payment</string>
     <string name="menu_add_group">Add Group</string>
-    <string name="menu_user_details">User Details</string>
+    <string name="menu_user_details">Friends Details</string>
     <string name="menu_repayment">Who owes who?</string>
     <string name="menu_quick_action_new">New Quick Action</string>
     <string name="menu_edit_user">Edit</string>
@@ -288,7 +288,7 @@
     
     <!-- DIALOG HEADINGS -->
     
-    <string name="dialog_heading_user_new">New User</string>
+    <string name="dialog_heading_user_new">New Friend</string>
     <string name="dialog_heading_delete">Delete?</string>
     <string name="dialog_heading_exit">Exit</string>
     <string name="dialog_heading_group_new">New Group</string>
@@ -336,24 +336,24 @@
     <string name="pref_title_send_crash_data">Send crash data</string>
     
     <string name="pref_start_home_dash_title">Home Dash</string>
-    <string name="pref_start_individual_view_all_title">User List</string>
+    <string name="pref_start_individual_view_all_title">Friend List</string>
     <string name="pref_start_group_view_all_title">Group List</string>
     
     <string name="pref_summary_allow_min_text">When checked, variables can be created to be used in Minimalistic Text</string>
     <string name="pref_summary_about_min_text">I have nothing to do with Minimalistic Text, I just think it\'s an amazing app and wanted to integrate with it. For more information click here to download it from Google Play</string>
     <string name="pref_summary_feedback">Send Feedback to the developer. I wish I was multi-lingual, but I can only understand feedback written in English.</string>
     <string name="pref_summary_bugs">Notify us of a bug. I wish I was multi-lingual, but I can only understand bug reports written in English.</string>
-    <string name="pref_summary_email_reminders">Gives you the option to send an email reminder to a user</string>
+    <string name="pref_summary_email_reminders">Gives you the option to send an email reminder to a friend</string>
     <string name="pref_summary_email_subject">The Default message subject that will be sent. This will be editable before the message is sent.</string>
-    <string name="pref_summary_email_body" formatted="false">The Default message that will be sent. This will be editable before the message is sent. Use %USERNAME and %BALANCE as variables for the user name and user balance respectively</string>
-    <string name="pref_summary_sms_reminders">Gives you the option to send an sms reminder to a user</string>
-    <string name="pref_summary_sms_body" formatted="false">The Default message that will be sent. This will be editable before the message is sent. Use %USERNAME and %BALANCE as variables for the user name and user balance respectively</string>
+    <string name="pref_summary_email_body" formatted="false">The Default message that will be sent. This will be editable before the message is sent. Use %FRIENDNAME and %BALANCE as variables for the friends name and friends balance respectively</string>
+    <string name="pref_summary_sms_reminders">Gives you the option to send an sms reminder to a friend</string>
+    <string name="pref_summary_sms_body" formatted="false">The Default message that will be sent. This will be editable before the message is sent. Use %FRIENDNAME and %BALANCE as variables for the friends name and friends balance respectively</string>
     <string name="pref_summary_currency">Show amounts with your local currency symbol</string>
     <string name="pref_summary_default_start_page">Select the starting page, this will take effect the next time the app starts. The home dash will be disabled if it is not the home page</string>
     <string name="pref_summary_notification_reminders">Allows you to add a reminder to the notification bar</string>
     <string name="pref_summary_allow_individual">When checked, the individual section will be active</string>
     <string name="pref_summary_allow_group">When checked, the group section will be active</string>
-    <string name="pref_summary_individual_options">Options that apply to individual Users</string>
+    <string name="pref_summary_individual_options">Options that apply to individual Friends</string>
     <string name="pref_summary_notification_reminder_persistent">Reminder Notifications will be persistent</string>
     <string name="pref_summary_allow_custom_currency_symbol">Overwrite default device symbol</string>
     <string name="pref_summary_custom_currency_symbol">Symbol to use</string>
@@ -371,8 +371,8 @@
     
     <string name="pref_screen_individual_options">Individual Options</string>
     
-    <string name="default_email_reminder_body" formatted="false">Dear %USERNAME, You owe me %BALANCE. Please pay me as soon as you can.</string>
+    <string name="default_email_reminder_body" formatted="false">Dear %FRIENDNAME, You owe me %BALANCE. Please pay me as soon as you can.</string>
     <string name="default_email_reminder_subject">Please Pay</string>
-    <string name="default_sms_reminder_body" formatted="false">Dear %USERNAME, You owe me %BALANCE. Please pay me as soon as you can.</string>
+    <string name="default_sms_reminder_body" formatted="false">Dear %FRIENDNAME, You owe me %BALANCE. Please pay me as soon as you can.</string>
     <string name="default_currency">R</string>
 </resources>

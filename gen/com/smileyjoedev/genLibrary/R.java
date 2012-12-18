@@ -8,9 +8,9 @@ package com.smileyjoedev.genLibrary;
 
 public final class R {
 	public static final class id {
-		public static final int bt_negative = 0x7f0a009c;
-		public static final int tv_popup_delete_message = 0x7f0a009b;
-		public static final int bt_positive = 0x7f0a009d;
+		public static final int bt_negative = 0x7f0a009f;
+		public static final int tv_popup_delete_message = 0x7f0a009e;
+		public static final int bt_positive = 0x7f0a00a0;
 		public static final int bt_cancel = 0x7f0a0077;
 		public static final int ll_controls = 0x7f0a0076;
 		public static final int dp_date = 0x7f0a0074;
