@@ -159,7 +159,7 @@ public class UserNew extends SherlockActivity implements OnClickListener, TextWa
 			}
 		}
 		
-		if(!this.prefs.getBoolean("allow_minimalistic_text", true)){
+		if(!this.prefs.getBoolean("allow_minimalistic_text", false)){
 			this.llVariableName.setVisibility(View.GONE);
 			this.rlMinimalisticTextWrapper.setVisibility(View.GONE);
 		}

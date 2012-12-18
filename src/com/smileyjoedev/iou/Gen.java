@@ -280,7 +280,7 @@ public class Gen {
 		
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		
-		if(prefs.getBoolean("allow_minimalistic_text", true)){
+		if(prefs.getBoolean("allow_minimalistic_text", false)){
 			MinimalisticText.SendTo(context, variableName, Gen.getAmountText(context, amount));
 			if(amount == 0){
 				MinimalisticText.SendTo(context, variableName + "SIGN", "0");

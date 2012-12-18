@@ -51,7 +51,7 @@
 		android:title="@string/category_title_integration">
 		<CheckBoxPreference
 		        android:title="@string/pref_title_allow_min_text"
-		        android:defaultValue="true"
+		        android:defaultValue="false"
 		        android:summary="@string/pref_summary_allow_min_text"
 		        android:key="allow_minimalistic_text" />
 	</PreferenceCategory>

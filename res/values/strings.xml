@@ -245,12 +245,12 @@
     
     <string name="bar_title_user_new">New User</string>
     <string name="bar_title_user_edit">Edit User</string>
-    <string name="bar_title_user_view">User Details</string>
+    <string name="bar_title_user_view">Payments</string>
     <string name="bar_title_user_list">Users</string>
     <string name="bar_title_payment_new">New Payment</string>
     <string name="bar_title_payment_edit">Edit Payment</string>
     <string name="bar_title_group_list">Groups</string>
-    <string name="bar_title_group_view">Group Details</string>
+    <string name="bar_title_group_view">Payments</string>
     <string name="bar_title_group_new">Group New</string>
     <string name="bar_title_settings">Settings</string>
     <string name="bar_title_settings_user">Individual</string>
