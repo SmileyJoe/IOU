@@ -305,7 +305,7 @@ public class Gen {
 		String username = user.getName();
 		String balance = user.getBalanceText();
 		
-		msg = msg.replace("%USERNAME", username);
+		msg = msg.replace("%FRIENDNAME", username);
 		msg = msg.replace("%BALANCE", balance);
     	
     	return msg;
@@ -317,7 +317,7 @@ public class Gen {
 		String username = user.getName();
 		String balance = user.getBalanceText();
 		
-		message = message.replace("%USERNAME", username);
+		message = message.replace("%FRIENDNAME", username);
 		message = message.replace("%BALANCE", balance);
 		
 		return message;
